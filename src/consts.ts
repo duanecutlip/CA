@@ -1,12 +1,11 @@
 export const SITE_TITLE = 'Cutlip Associates, LLC';
-export const SITE_DESCRIPTION = 'Protect your family from unexpected funeral costs. Duane Cutlip is a Licensed Preneed Funeral Director with 20+ years experience serving families across North Carolina and South Carolina. Call (919) 822-2010.';
+export const SITE_DESCRIPTION = 'Protect your family from unexpected funeral costs. Duane Cutlip is a Licensed Preneed Funeral Director with 20+ years experience serving families across North Carolina. Call (919) 822-2010.';
 export const SITE_URL = 'https://cutlipassociates.com';
 export const PHONE = '(919) 822-2010';
 export const PHONE_RAW = '9198222010';
 export const EMAIL = 'duane@cutlipassociates.com';
 export const ADDRESS = 'Wendell, NC 27591';
-export const LICENSE = 'NC License #XXXXX';
-export const SC_LICENSE = 'SC License #PENDING';
+export const LICENSE = 'NC License #FD-4028';
 
 export const NAV_LINKS = [
   { label: 'Plan Ahead', href: '/plan-ahead' },
@@ -28,7 +27,6 @@ export const FOOTER_NAV = {
   ],
   learn: [
     { label: 'Preneed Insurance (NC)', href: '/learn/preneed-insurance-nc' },
-    { label: 'Preneed Insurance (SC)', href: '/learn/preneed-insurance-sc' },
     { label: 'Medicaid Planning', href: '/learn/medicaid-funeral-planning' },
     { label: 'VA Funeral Benefits', href: '/learn/va-funeral-benefits' },
     { label: 'Preneed vs Final Expense', href: '/learn/preneed-vs-final-expense' },
@@ -161,7 +159,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'What funeral homes does Duane work with?',
-    answer: 'Duane has long-standing relationships with respected funeral homes throughout Wake County, including L. Harold Poole Funeral Home & Crematory. As a Licensed Preneed Funeral Director, he can work with the funeral home of your choice to ensure your plan is honored exactly as written.',
+    answer: 'Duane has long-standing relationships with respected funeral homes throughout North Carolina, including Donaldson Funeral Home & Crematory in Pittsboro, NC. As a Licensed Preneed Funeral Director, he can work with the funeral home of your choice to ensure your plan is honored exactly as written.',
     category: 'Agent',
   },
   {
@@ -366,152 +364,6 @@ export const SERVICE_AREAS: ServiceArea[] = [
   { name: 'Roxboro', slug: 'roxboro', county: 'Person', state: 'NC', region: 'Northern NC' },
   { name: 'Lumberton', slug: 'lumberton', county: 'Robeson', state: 'NC', region: 'Eastern NC' },
   { name: 'Clinton', slug: 'clinton', county: 'Sampson', state: 'NC', region: 'Eastern NC' },
-  // ── South Carolina — Tier 1 ──
-  {
-    name: 'Columbia',
-    slug: 'columbia-sc',
-    county: 'Richland',
-    state: 'SC',
-    region: 'Midlands',
-    description: 'As South Carolina\'s capital city and home to the University of South Carolina, Columbia is a community where military families from nearby Fort Jackson, state employees, and long-established neighborhoods like Five Points and the Vista all share one thing in common — the need to protect their families from unexpected funeral costs. Pre-need planning gives Columbia families the certainty that their wishes will be honored without financial burden.',
-    highlights: [
-      'Serving military families connected to Fort Jackson and surrounding bases',
-      'Experienced with SC preneed regulations and Medicaid exemption rules',
-      'Available for in-person consultations across the Midlands, from Forest Acres to Irmo',
-    ],
-    faq: [
-      { question: 'Does Duane serve families in Columbia, SC?', answer: 'Yes. Duane is licensed in South Carolina and works with families throughout the Columbia metro area, including Forest Acres, the Vista, Five Points, Irmo, and surrounding Richland County communities.' },
-      { question: 'Are preneed plans in South Carolina protected from creditors?', answer: 'Yes. Under South Carolina law, irrevocable preneed funeral contracts are generally protected from creditors and exempt from Medicaid asset calculations, similar to North Carolina. Duane can explain how this applies to your specific situation.' },
-      { question: 'Can Duane coordinate with Columbia funeral homes?', answer: 'Absolutely. Duane works with respected funeral homes throughout the Columbia area. As a Licensed Preneed Funeral Director, he\'ll coordinate your plan with the funeral home of your choice to ensure every detail is honored.' },
-    ],
-  },
-  {
-    name: 'Charleston',
-    slug: 'charleston-sc',
-    county: 'Charleston',
-    state: 'SC',
-    region: 'Lowcountry',
-    description: 'Charleston\'s historic neighborhoods — from The Battery to Mount Pleasant to West Ashley — are home to families with deep roots and strong traditions. With a major medical district anchored by MUSC and a significant military presence at Joint Base Charleston, the community understands the value of planning ahead. Pre-need insurance helps Charleston families preserve their traditions while protecting loved ones from rising funeral costs.',
-    highlights: [
-      'Serving families from downtown Charleston through West Ashley, James Island, and Johns Island',
-      'Experienced with military family preneed planning near Joint Base Charleston',
-      'Familiar with Charleston\'s funeral traditions and local providers across the Lowcountry',
-    ],
-    faq: [
-      { question: 'Does Duane work with families in Charleston, SC?', answer: 'Yes. Duane serves families throughout the Charleston metro area, including downtown, West Ashley, James Island, and the surrounding Lowcountry. He\'s available by phone or for in-person consultations.' },
-      { question: 'How does pre-need planning work for military families near Joint Base Charleston?', answer: 'Military families often face unique circumstances — frequent relocations, deployment considerations, and specific burial preferences including Arlington or VA national cemeteries. Pre-need policies are portable, so your plan travels with you. Duane has experience helping military families navigate these decisions.' },
-      { question: 'What funeral costs should Charleston families expect?', answer: 'Funeral costs in the Charleston area often exceed $8,000 and continue to rise. Pre-need insurance locks in today\'s prices, ensuring your family is never burdened with unexpected expenses during an already difficult time.' },
-    ],
-  },
-  {
-    name: 'Greenville',
-    slug: 'greenville-sc',
-    county: 'Greenville',
-    state: 'SC',
-    region: 'Upstate',
-    description: 'Greenville has transformed into one of the Southeast\'s most dynamic cities, with Falls Park on the Reedy, a revitalized Main Street, and a growing population drawn by employers like BMW and the expanding tech sector. For families putting down roots in Greenville — whether near Furman University, along the Swamp Rabbit Trail, or in the established neighborhoods off Augusta Road — pre-need planning ensures their wishes are documented and their loved ones are protected.',
-    highlights: [
-      'Serving the growing Greenville metro from Simpsonville to Travelers Rest',
-      'Experienced with SC preneed insurance for families relocating to the Upstate',
-      'Available for consultations throughout Greenville County and the I-85 corridor',
-    ],
-    faq: [
-      { question: 'Can Duane help families in Greenville, SC with pre-need planning?', answer: 'Yes. Duane is licensed in South Carolina and actively serves families throughout the Greenville metro, including Simpsonville, Mauldin, Travelers Rest, and Greer. He\'s available by phone or in person.' },
-      { question: 'I recently moved to Greenville — can I still get a pre-need plan?', answer: 'Absolutely. Many families who relocate to Greenville for work or retirement use pre-need planning to establish their wishes in their new community. Duane can help you connect with a local funeral home and create a plan tailored to your preferences.' },
-      { question: 'How much does a funeral cost in Greenville, SC?', answer: 'The average funeral in the Greenville area runs $7,500 to $9,000 or more, depending on services chosen. Pre-need insurance locks in current prices so your family never has to worry about future cost increases.' },
-    ],
-  },
-  {
-    name: 'Rock Hill',
-    slug: 'rock-hill-sc',
-    county: 'York',
-    state: 'SC',
-    region: 'Charlotte Metro',
-    description: 'Situated just south of the North Carolina border, Rock Hill serves as a gateway between the Carolinas. Home to Winthrop University and the growing Knowledge Park district, Rock Hill attracts families from the Charlotte metro who want a quieter community with strong roots. Pre-need planning is especially practical here, where families often have connections on both sides of the state line.',
-    highlights: [
-      'Ideal for families with ties to both NC and SC — Duane is licensed in both states',
-      'Serving Rock Hill, Fort Mill, Tega Cay, and all of York County',
-      'Convenient for Charlotte-area families who live or work across the border',
-    ],
-    faq: [
-      { question: 'Does Duane serve Rock Hill and York County?', answer: 'Yes. Rock Hill is a natural extension of Duane\'s service area given its proximity to North Carolina. He works with families throughout York County, including Fort Mill, Tega Cay, and Lake Wylie.' },
-      { question: 'I live in Rock Hill but my family is in North Carolina — can one plan cover both states?', answer: 'Pre-need insurance policies are portable across state lines. Duane is licensed in both NC and SC, making him uniquely positioned to help families with cross-border connections. Your plan will be honored regardless of where the need arises.' },
-      { question: 'What funeral homes serve Rock Hill, SC?', answer: 'Several well-established funeral homes serve the Rock Hill and York County community. Duane can help you evaluate options and coordinate your plan with the provider that best fits your family\'s preferences and traditions.' },
-    ],
-  },
-  // ── South Carolina — Tier 2 ──
-  {
-    name: 'Spartanburg',
-    slug: 'spartanburg-sc',
-    county: 'Spartanburg',
-    state: 'SC',
-    region: 'Upstate',
-    description: 'Known as "Hub City" for its historic role as a railroad junction, Spartanburg today is a college town anchored by Wofford and Converse University, with a revitalized Morgan Square at its heart. Along the I-85 corridor between Charlotte and Atlanta, Spartanburg\'s mix of longtime residents and newcomers makes pre-need planning especially valuable for families looking to document their wishes clearly.',
-    highlights: [
-      'Serving Spartanburg and surrounding communities along the I-85 corridor',
-      'Familiar with Upstate SC funeral traditions and local providers',
-      'Phone and in-person consultations available throughout Spartanburg County',
-    ],
-    faq: [
-      { question: 'Does Duane serve families in Spartanburg?', answer: 'Yes. Duane works with families throughout the Spartanburg area, including Boiling Springs, Inman, and Chesnee. He\'s available by phone or for in-person consultations in Spartanburg County.' },
-      { question: 'How is pre-need insurance regulated in South Carolina?', answer: 'South Carolina requires preneed funeral directors to be licensed by the state. Pre-need contracts are governed by SC Code of Laws Title 32, which protects consumers by requiring funds to be held in trust or backed by insurance. Duane holds the proper SC licensing for this work.' },
-      { question: 'What should Spartanburg families budget for funeral costs?', answer: 'Funeral costs in the Spartanburg area typically range from $7,000 to $9,000 or more. Pre-need insurance locks in today\'s rate, protecting your family from the steady annual increases in funeral service pricing.' },
-    ],
-  },
-  {
-    name: 'Myrtle Beach',
-    slug: 'myrtle-beach-sc',
-    county: 'Horry',
-    state: 'SC',
-    region: 'Grand Strand',
-    description: 'The Grand Strand draws visitors year-round, but Myrtle Beach and nearby Conway are also home to one of the fastest-growing retiree communities on the East Coast. For retirees who\'ve settled along the coast — many from northern states without local family nearby — pre-need planning provides essential peace of mind. It ensures your wishes are honored even when loved ones are hundreds of miles away.',
-    highlights: [
-      'Specialized in serving retirees who\'ve relocated to the Grand Strand',
-      'Helps families document wishes when loved ones live out of state',
-      'Serving Myrtle Beach, North Myrtle Beach, Conway, and Surfside Beach',
-    ],
-    faq: [
-      { question: 'Does Duane serve the Myrtle Beach area?', answer: 'Yes. Duane works with families throughout the Grand Strand, including Myrtle Beach, North Myrtle Beach, Conway, Surfside Beach, and the broader Horry County area. Phone consultations make it easy to get started.' },
-      { question: 'I retired to Myrtle Beach but my children live up north — how does pre-need planning help?', answer: 'Pre-need planning is especially valuable when family is far away. Every detail is documented in advance — service type, funeral home, music, readings — so your children won\'t have to make difficult decisions long-distance during an emotional time. The plan is fully funded and goes directly to the funeral home.' },
-      { question: 'Are there many retirees using pre-need insurance on the Grand Strand?', answer: 'Absolutely. The Myrtle Beach area has one of the highest concentrations of retirees in South Carolina, and pre-need planning is increasingly common. Many retirees find peace of mind knowing their arrangements are handled, especially when their families live in other states.' },
-    ],
-  },
-  {
-    name: 'Summerville',
-    slug: 'summerville-sc',
-    county: 'Dorchester',
-    state: 'SC',
-    region: 'Lowcountry',
-    description: 'Known as the "Flower Town in the Pines," Summerville has grown from a charming small town into one of Charleston\'s most sought-after suburbs. With Azalea Park at its center and neighborhoods expanding rapidly along the I-26 corridor, Summerville is home to young families and retirees alike. Pre-need planning helps Summerville families lock in today\'s prices in a community where growth is driving costs upward across the board.',
-    highlights: [
-      'Serving the fast-growing Summerville and Dorchester County community',
-      'Convenient for families in the greater Charleston metro\'s northern suburbs',
-      'Experienced with preneed planning for both established residents and new arrivals',
-    ],
-    faq: [
-      { question: 'Does Duane serve Summerville, SC?', answer: 'Yes. Summerville and Dorchester County are part of Duane\'s South Carolina service area. He works with families throughout the community, from historic downtown Summerville to the newer neighborhoods along I-26.' },
-      { question: 'Is Summerville considered part of the Charleston area for funeral planning?', answer: 'Summerville families often have ties to both Dorchester County and Charleston County funeral homes. Duane can help you evaluate options in either area and coordinate your plan with the provider that best fits your needs.' },
-      { question: 'How do I start pre-need planning in Summerville?', answer: 'Call Duane at (919) 822-2010. He\'ll have a brief conversation to understand your needs, answer your questions, and schedule a time to walk through your options. Most plans are completed within two weeks, and there\'s never any pressure.' },
-    ],
-  },
-  {
-    name: 'Mount Pleasant',
-    slug: 'mount-pleasant-sc',
-    county: 'Charleston',
-    state: 'SC',
-    region: 'Lowcountry',
-    description: 'Across the Arthur Ravenel Jr. Bridge from downtown Charleston, Mount Pleasant combines coastal living with a strong sense of community. From Patriots Point and Shem Creek to the historic grounds of Boone Hall, Mount Pleasant families value tradition and forward planning. As one of South Carolina\'s most affluent communities, families here understand the importance of protecting assets and ensuring their wishes are carried out with precision.',
-    highlights: [
-      'Serving Mount Pleasant, Sullivan\'s Island, Isle of Palms, and eastern Charleston County',
-      'Experienced with comprehensive estate-integrated preneed planning',
-      'Familiar with Mount Pleasant\'s established funeral homes and memorial traditions',
-    ],
-    faq: [
-      { question: 'Does Duane work with families in Mount Pleasant?', answer: 'Yes. Duane serves families throughout Mount Pleasant and the East Cooper area, including Sullivan\'s Island and Isle of Palms. He\'s available for phone or in-person consultations.' },
-      { question: 'How does pre-need insurance fit into broader estate planning?', answer: 'Pre-need insurance complements your estate plan by earmarking funeral funds separately from your estate. The policy pays the funeral home directly — bypassing probate entirely. This protects your family from out-of-pocket costs and ensures your arrangements are handled independently of estate settlement timelines.' },
-      { question: 'What funeral homes serve the Mount Pleasant area?', answer: 'Mount Pleasant and the East Cooper area are served by several well-regarded funeral homes. Duane can help you evaluate your options and coordinate every detail of your pre-need plan with the provider you choose.' },
-    ],
-  },
 ];
 
 export const HOW_IT_WORKS_STEPS = [
