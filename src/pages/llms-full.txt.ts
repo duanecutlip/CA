@@ -5,16 +5,16 @@ export const GET: APIRoute = async () => {
   const sections: string[] = [];
 
   sections.push(`# Cutlip Associates, LLC — Full Content
-> Pre-Need Insurance & Advance Funeral Planning — North Carolina & South Carolina
+> Pre-Need Insurance & Advance Funeral Planning — North Carolina
 > Phone: ${PHONE} | Website: ${SITE_URL}
 `);
 
   // About
   sections.push(`## About Duane Cutlip
 
-Duane Cutlip is a Licensed Preneed Funeral Director in both North Carolina and South Carolina with over 20 years of experience. He specializes in helping families make advance funeral arrangements — pre-need insurance that locks in today's prices and ensures wishes are honored exactly as planned.
+Duane Cutlip is a Licensed Preneed Funeral Director in North Carolina with over 20 years of experience. He specializes in helping families make advance funeral arrangements — pre-need insurance that locks in today's prices and ensures wishes are honored exactly as planned.
 
-Duane works closely with L. Harold Poole Funeral Home & Crematory and other respected funeral homes throughout NC and SC. He is an active member of the National Funeral Directors Association (NFDA). Cutlip Associates, LLC was founded in 2003.
+Duane works closely with Donaldson Funeral Home & Crematory in Pittsboro, NC and other respected funeral homes throughout NC. He is an active member of the National Funeral Directors Association (NFDA). Cutlip Associates, LLC was founded in 2003. His NC License number is FD-4028.
 
 He lives in Wendell, NC with his wife Angie and their two daughters. He is active in his Baptist church and volunteers as an ARRL amateur radio volunteer examiner, reflecting his deep commitment to community service. Every call goes directly to Duane — no call center, no pressure, no obligation.
 
@@ -37,7 +37,7 @@ Personalized celebrations that reflect the unique life of the person being honor
 VA burial benefits cover only $300–$2,000 of funeral costs. Pre-need insurance bridges the gap, supplementing VA benefits to ensure families aren't burdened with unexpected expenses.
 
 ### Funeral Home Staffing (B2B)
-Licensed funeral director staffing for independently-owned NC and SC funeral homes. Overflow coverage, vacation relief, emergency staffing, and pre-need counseling.
+Licensed funeral director staffing for independently-owned NC funeral homes. Overflow coverage, vacation relief, emergency staffing, and pre-need counseling.
 
 ### Pricing
 Most families invest between $3,000 and $15,000 in pre-need insurance. The exact amount depends on the type of service, casket or urn selection, and personal preferences. Duane helps each family find a plan that fits their budget.
@@ -80,7 +80,6 @@ ${item.answer}
 
   // Service Areas
   const ncAreas = SERVICE_AREAS.filter((a) => !a.state || a.state === 'NC');
-  const scAreas = SERVICE_AREAS.filter((a) => a.state === 'SC');
 
   sections.push(`## Service Areas
 
@@ -89,21 +88,6 @@ Duane is licensed in North Carolina and serves families statewide, with a focus 
 `);
   for (const area of ncAreas) {
     sections.push(`- **${area.name}**, ${area.county} County, NC`);
-  }
-  sections.push('');
-
-  if (scAreas.length) {
-    sections.push(`### South Carolina
-Duane is also licensed in South Carolina and serves families across the state:
-`);
-    for (const area of scAreas) {
-      sections.push(`- **${area.name}**, ${area.county ? area.county + ' County, ' : ''}SC`);
-    }
-    sections.push('');
-  } else {
-    sections.push(`### South Carolina
-Duane is also licensed in South Carolina and serves families across the entire state, including Columbia, Charleston, Greenville, Rock Hill, Spartanburg, Myrtle Beach, Summerville, and Mount Pleasant.
-`);
   }
   sections.push('');
 

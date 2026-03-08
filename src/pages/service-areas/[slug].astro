@@ -16,14 +16,14 @@ interface Props {
 }
 
 const { area } = Astro.props;
-const stateName = area.state === 'NC' ? 'North Carolina' : 'South Carolina';
+const stateName = 'North Carolina';
 
 const title = `Pre-Need Insurance in ${area.name}, ${area.state} | ${SITE_TITLE}`;
 const description = `Pre-need funeral planning for families in ${area.name}, ${area.county} County ${area.state}. Lock in today's prices and protect your loved ones. Call ${PHONE}.`;
 
 const cityFaqs: Record<string, { question: string; answer: string }[]> = {
   raleigh: [
-    { question: `What funeral homes in Raleigh does Duane work with?`, answer: `Duane has relationships with respected funeral homes throughout Raleigh, including L. Harold Poole Funeral Home & Crematory. As a Licensed Preneed Funeral Director, he can coordinate your plan with the Raleigh funeral home of your choice.` },
+    { question: `What funeral homes in Raleigh does Duane work with?`, answer: `Duane has relationships with respected funeral homes throughout Raleigh and the Triangle area, including Donaldson Funeral Home & Crematory in Pittsboro, NC. As a Licensed Preneed Funeral Director, he can coordinate your plan with the Raleigh funeral home of your choice.` },
     { question: `How much does a funeral cost in Raleigh, NC?`, answer: `The average funeral in the Raleigh area costs $7,848 or more, and costs continue to rise. Pre-need insurance locks in today's prices so your family never pays the difference.` },
     { question: `Can I meet Duane in person in Raleigh?`, answer: `Yes. Duane meets with Raleigh families in person at a location convenient to you — your home, a coffee shop, or wherever you're comfortable. He also offers phone consultations.` },
   ],
