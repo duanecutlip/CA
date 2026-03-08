@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'Preneed Program Consulting | NC & SC';
+const description = 'Preneed program consulting for NC & SC funeral homes. Program assessment, carrier selection, lead generation, compliance review. 20+ years experience.';
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Preneed Program Consulting',
+	description: 'Comprehensive preneed program consulting for funeral homes in North Carolina and South Carolina.',
+	provider: {
+		'@type': 'Person',
+		'@id': 'https://cutlipassociates.com/#duane-cutlip',
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+	},
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
+	serviceType: 'Preneed Program Consulting',
+};
+---
+
+<BaseLayout title={title} description={description} keywords="preneed program consulting, funeral home preneed consultant, preneed carrier selection, NC SC preneed program">
+	<Hero variant="interior" title="Preneed Program Consulting for Funeral Homes" subtitle="Build, fix, or grow your preneed program with a practitioner who's done it for 20+ years." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Funeral Homes', href: '/for-funeral-homes' }, { label: 'Consulting' }]} />
+
+		<!-- Overview -->
+		<section class="mb-16">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					A strong preneed program doesn't happen by accident. It requires the right carrier relationship, a repeatable sales process, consistent lead generation, trained staff, and airtight compliance. Most funeral homes have some of these pieces — few have all of them working together.
+				</p>
+				<p class="leading-relaxed">
+					Duane Cutlip works directly with funeral home owners and managers to assess what's working, identify what's broken, and build a preneed program that produces measurable results. This isn't theory from a textbook or a corporate playbook designed for the largest 5% of funeral homes. It's practical, hands-on consulting built from 20+ years of doing this work in funeral homes across North Carolina and South Carolina.
+				</p>
+			</div>
+		</section>
+
+		<!-- What's Included -->
+		<section class="mb-16">
+			<SectionHeading title="What's Included" accent />
+			<div class="space-y-4 text-charcoal-700">
+				<ul class="space-y-3">
+					{[
+						{ bold: 'Program assessment', text: 'A thorough review of your current preneed operation — penetration rate, average face amount, sales process, lead sources, compliance documentation, and carrier performance. You\'ll know exactly where you stand.' },
+						{ bold: 'Lead generation strategy', text: 'Most funeral homes wait for preneed leads to walk in the door. Duane builds proactive lead pipelines using community seminars, church partnerships, referral networks, direct mail, and digital outreach tailored to your market.' },
+						{ bold: 'Sales process design', text: 'A repeatable, consultative sales process your staff can actually follow. No high-pressure tactics — a structured approach that respects the family while consistently closing preneed business.' },
+						{ bold: 'Carrier evaluation and selection', text: 'Not all carriers are equal. Duane reviews your current carrier relationship — commission structures, policy terms, trust arrangements, cancellation provisions — and recommends changes if they\'d benefit your funeral home.' },
+						{ bold: 'Compliance review', text: 'State regulations in NC and SC govern preneed contracts, trust requirements, and disclosure obligations. Duane ensures your program meets all regulatory requirements and identifies gaps before they become problems.' },
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-charcoal-900">{item.bold}:</strong> {item.text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- Who It's For -->
+		<section class="mb-16">
+			<SectionHeading title="Who This Is For" accent />
+			<div class="grid sm:grid-cols-2 gap-6">
+				{[
+					{ title: 'No Preneed Program Yet', desc: 'You know you need one, but you don\'t know where to start. Duane builds your program from the ground up — carrier selection, staff training, lead generation, compliance setup.' },
+					{ title: 'Underperforming Program', desc: 'Your penetration rate is below 20%, your staff avoids preneed conversations, or your lead pipeline has dried up. Duane diagnoses the problem and fixes it.' },
+					{ title: 'Carrier Transition', desc: 'You\'re considering switching carriers or have been approached by a new one. Duane provides an objective analysis of your options — he doesn\'t represent any single carrier.' },
+					{ title: 'New Ownership', desc: 'You\'ve recently acquired a funeral home and inherited a preneed program you don\'t fully understand. Duane audits what\'s in place and optimizes it for your goals.' },
+				].map((scenario) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{scenario.title}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{scenario.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Process -->
+		<section class="mb-16">
+			<SectionHeading title="How the Engagement Works" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<ol class="space-y-4 list-none pl-0">
+					{[
+						{ step: '1', title: 'Discovery Call', desc: 'A 30-minute phone conversation where Duane learns about your funeral home, your current preneed situation, and your goals. No charge, no obligation.' },
+						{ step: '2', title: 'On-Site Assessment', desc: 'Duane visits your funeral home to review your program firsthand — interviewing staff, reviewing documentation, analyzing your market, and observing your current process.' },
+						{ step: '3', title: 'Strategy & Recommendations', desc: 'You receive a detailed written report with specific, actionable recommendations. Not generic advice — a roadmap tailored to your funeral home, your market, and your team.' },
+						{ step: '4', title: 'Implementation Support', desc: 'Duane doesn\'t just hand you a report and disappear. He\'s available for ongoing support — staff training, carrier negotiations, lead generation setup, and quarterly check-ins to track progress.' },
+					].map((step) => (
+						<li class="flex items-start gap-4">
+							<span class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-sm">{step.step}</span>
+							<div>
+								<strong class="text-charcoal-900">{step.title}.</strong>
+								<span class="text-charcoal-700"> {step.desc}</span>
+							</div>
+						</li>
+					))}
+				</ol>
+			</div>
+		</section>
+
+		<!-- Investment -->
+		<section class="mb-16">
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">Investment</h3>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					Consulting engagements start at <strong class="text-charcoal-900">$2,500</strong> for a program assessment and strategy report. Full-service engagements that include implementation support, staff training, and ongoing advisory are scoped based on the size of your operation and the complexity of the work. Every engagement begins with a free discovery call — no commitment required.
+				</p>
+				<a href={`tel:${PHONE_RAW}`} class="inline-flex items-center gap-2 text-xl font-heading font-bold text-burgundy-600 hover:text-burgundy-700">
+					<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+					</svg>
+					Call {PHONE}
+				</a>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section class="mb-8">
+			<SectionHeading title="Common Questions" accent />
+			<div class="space-y-6">
+				{[
+					{ q: 'How long does a consulting engagement take?', a: 'A program assessment typically takes 2-3 weeks from discovery call to final report. Full implementation support is ongoing — most funeral homes work with Duane for 3-6 months to get their program fully operational.' },
+					{ q: 'Do you work with funeral homes of all sizes?', a: 'Yes. Duane has worked with single-location family-owned funeral homes and multi-location operations. The principles are the same — the tactics are tailored to your scale and resources.' },
+					{ q: 'Will you recommend a specific carrier?', a: 'Duane is carrier-agnostic. He\'ll evaluate your current carrier relationship and, if a change makes sense, present options with a clear comparison of terms, commissions, and trust arrangements. The decision is always yours.' },
+					{ q: 'Can you help if we already have a preneed program?', a: 'Absolutely. Most of Duane\'s work is with funeral homes that have an existing program that isn\'t performing. A fresh set of expert eyes often reveals opportunities that are hard to see from the inside.' },
+				].map((faq) => (
+					<div class="border-b border-border-light pb-6">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{faq.q}</h3>
+						<p class="text-charcoal-500 leading-relaxed">{faq.a}</p>
+					</div>
+				))}
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="Let's Talk About Your Preneed Program" subtitle="Call Duane for a free discovery conversation. No obligation, no pressure — just an honest assessment of where your program stands." />
+
+	<JsonLd data={serviceJsonLd} />
+</BaseLayout>

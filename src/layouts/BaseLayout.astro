@@ -1,0 +1,118 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import BaseHead from '../components/BaseHead.astro';
+import JsonLd from '../components/JsonLd.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import StickyPhoneBar from '../components/StickyPhoneBar.astro';
+import {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  SITE_URL,
+  PHONE,
+  PHONE_RAW,
+  EMAIL,
+  ADDRESS,
+  SERVICE_AREAS,
+} from '../consts';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
+  keywords?: string;
+}
+
+const { title, description = SITE_DESCRIPTION, image, article, keywords } = Astro.props;
+
+let siteName = SITE_TITLE;
+let siteDescription = description;
+
+try {
+  const { getSiteSettings, getSeo } = await import('../lib/strapi');
+  const [settings, seo] = await Promise.all([getSiteSettings(), getSeo()]);
+  if (settings?.siteName) siteName = settings.siteName;
+  if (seo?.organizationName) siteName = seo.organizationName;
+} catch {
+  // Strapi unavailable, use consts
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'InsuranceAgency',
+  '@id': 'https://cutlipassociates.com/#insurance-agency',
+  name: siteName,
+  description: siteDescription,
+  url: SITE_URL,
+  telephone: PHONE,
+  email: EMAIL,
+  foundingDate: '2003',
+  knowsLanguage: 'English',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Wendell',
+    addressRegion: 'NC',
+    postalCode: '27591',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 35.7813,
+    longitude: -78.3697,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '17:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '09:00',
+      closes: '12:00',
+    },
+  ],
+  areaServed: [
+    ...SERVICE_AREAS.map((area) => ({
+      '@type': 'City',
+      name: area.name,
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: `${area.county} County, ${area.state || 'NC'}`,
+      },
+    })),
+    {
+      '@type': 'State',
+      name: 'North Carolina',
+      sameAs: 'https://en.wikipedia.org/wiki/North_Carolina',
+    },
+    {
+      '@type': 'State',
+      name: 'South Carolina',
+      sameAs: 'https://en.wikipedia.org/wiki/South_Carolina',
+    },
+  ],
+  sameAs: [],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} image={image} article={article} keywords={keywords} />
+    <JsonLd data={jsonLd} />
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen flex flex-col bg-warm-white text-charcoal-700">
+    <div id="nav-sentinel" style="height:1px;position:absolute;top:0;left:0;right:0;"></div>
+    <Navbar />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <StickyPhoneBar />
+  </body>
+</html>

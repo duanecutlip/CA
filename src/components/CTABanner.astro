@@ -1,0 +1,40 @@
+---
+import { PHONE, PHONE_RAW } from '../consts';
+
+interface Props {
+	title?: string;
+	subtitle?: string;
+}
+
+const { title = 'Your Family Deserves Peace of Mind', subtitle = "Take the first step today. Call Duane for a free, no-pressure conversation about planning ahead." } = Astro.props;
+---
+
+<section class="bg-teal-600 py-16 md:py-20">
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+		<h2 class="font-heading text-3xl md:text-4xl font-bold !text-white mb-4">
+			{title}
+		</h2>
+		<p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+			{subtitle}
+		</p>
+
+		<!-- Phone CTA with hours -->
+		<div class="inline-block rounded-xl bg-white/10 px-8 py-5 mb-6">
+			<a
+				href={`tel:${PHONE_RAW}`}
+				class="text-[28px] md:text-[32px] font-heading font-bold !text-white hover:!text-white/90 transition-colors no-underline"
+			>
+				{PHONE}
+			</a>
+			<p class="text-white/60 text-sm mt-1">Mon–Fri 9am–5pm · Sat by appointment</p>
+		</div>
+
+		<!-- Scheduling as subordinate option -->
+		<p class="text-white/70 text-sm">
+			Prefer to pick a specific time?
+			<a href="/contact#schedule" class="text-white underline underline-offset-2 hover:text-white/90 transition-colors">
+				Schedule a free call
+			</a>
+		</p>
+	</div>
+</section>

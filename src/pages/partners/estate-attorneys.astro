@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import Button from '../../components/Button.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'For Estate Attorneys | Preneed Insurance Resource';
+const description = 'A resource for NC & SC estate planning attorneys. Preneed insurance is Medicaid-exempt and protects your clients\' assets. Partner with Duane Cutlip.';
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Preneed Insurance Referral Partnership for Estate Attorneys',
+	description: 'Referral partnership for estate planning attorneys in NC & SC. Irrevocable preneed insurance is Medicaid-exempt and protects client assets.',
+	provider: {
+		'@type': 'InsuranceAgency',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
+	serviceType: 'Preneed Insurance Consultation',
+};
+---
+
+<BaseLayout title={title} description={description} keywords="preneed insurance estate planning, Medicaid exempt funeral insurance, estate attorney preneed referral, NC SC preneed insurance">
+	<Hero variant="interior" title="Why Every Estate Plan Should Include Preneed Insurance" subtitle="A resource for estate planning attorneys serving families in North Carolina and South Carolina." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Partners', href: '/partners/estate-attorneys' }, { label: 'Estate Attorneys' }]} />
+
+		<!-- Opening -->
+		<section class="mb-16">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					As an estate planning attorney, you help families protect their assets, plan for incapacity, and ensure their wishes are honored. But there's one expense most estate plans overlook — and it's one that hits families hard at the worst possible time: <strong>funeral costs</strong>.
+				</p>
+				<p class="leading-relaxed">
+					The average funeral in North Carolina costs <strong>$8,136</strong>. In South Carolina, it's <strong>$8,224</strong>. Without advance planning, these costs come directly out of the estate — or worse, out of a grieving family's pocket within 48 hours of death. For your clients who have spent years building and protecting their assets, an unplanned funeral expense can undo careful planning in a single afternoon.
+				</p>
+				<p class="leading-relaxed">
+					Preneed insurance solves this problem cleanly. It removes funeral costs from the estate equation entirely, documents the decedent's wishes in advance, and — critically for many of your clients — provides a Medicaid-exempt vehicle for asset protection.
+				</p>
+			</div>
+		</section>
+
+		<!-- The Medicaid Angle -->
+		<section class="mb-16">
+			<SectionHeading title="The Medicaid Exemption: What Every Estate Attorney Should Know" accent />
+			<div class="bg-linen rounded-xl p-8 mb-6 border border-border-light">
+				<p class="text-xl font-heading font-bold text-charcoal-900 mb-3">
+					Irrevocable preneed insurance is <span class="text-burgundy-600">exempt from Medicaid asset calculations</span> in both NC and SC.
+				</p>
+				<p class="text-charcoal-500">
+					Under N.C.G.S. &sect; 108A-28.1, irrevocable preneed funeral contracts are excluded from the resource calculation for Medicaid eligibility. South Carolina follows a similar exemption under its Medicaid policy manual.
+				</p>
+			</div>
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					For your clients who are approaching Medicaid eligibility — or who may need Medicaid in the future for long-term care — preneed insurance is one of the few remaining legal strategies to protect assets. Unlike many spend-down strategies that face increasing scrutiny, irrevocable preneed contracts have a clear statutory basis and are well-established in Medicaid planning.
+				</p>
+				<p class="leading-relaxed">
+					Here's how it works: your client purchases an irrevocable preneed insurance policy that covers their funeral and burial expenses at today's prices. Because the contract is irrevocable, the funds are no longer considered a countable asset for Medicaid purposes. The money is earmarked specifically for funeral costs and paid directly to the funeral home — it never passes through the estate or probate.
+				</p>
+				<p class="leading-relaxed">
+					This is particularly valuable for clients with assets just above the Medicaid threshold. A $10,000-$15,000 preneed contract can be the difference between eligibility and a painful spend-down period. And unlike gifting strategies, there's no look-back penalty for purchasing preneed insurance at fair market value.
+				</p>
+			</div>
+		</section>
+
+		<!-- How Preneed Fits Estate Planning -->
+		<section class="mb-16">
+			<SectionHeading title="How Preneed Insurance Strengthens Your Client's Estate Plan" accent />
+			<div class="space-y-4 text-charcoal-700">
+				<p class="leading-relaxed">Preneed insurance addresses several estate planning concerns simultaneously:</p>
+				<ul class="space-y-3">
+					{[
+						{ bold: 'Removes funeral costs from the estate', text: 'The preneed policy pays the funeral home directly, bypassing probate entirely. Your client\'s estate is preserved for the beneficiaries you\'ve carefully planned for.' },
+						{ bold: 'Eliminates family disputes', text: 'When funeral wishes are documented in a preneed contract, there\'s no room for disagreement among heirs. The decedent made their own choices — music, service type, burial vs. cremation — and they\'re legally binding.' },
+						{ bold: 'Locks in today\'s prices', text: 'Funeral costs have risen over 40% in the last decade. A preneed contract purchased today guarantees coverage at today\'s prices, regardless of when the need arises. This is an inflation hedge built into the estate plan.' },
+						{ bold: 'Provides Medicaid asset protection', text: 'As noted above, irrevocable preneed contracts are exempt from Medicaid resource calculations in both NC and SC — a critical tool for elder law planning.' },
+						{ bold: 'Reduces executor burden', text: 'Your client\'s executor won\'t need to source funeral funds, negotiate with funeral homes, or make service decisions under pressure. Everything is pre-arranged and pre-funded.' },
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-charcoal-900">{item.bold}:</strong> {item.text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- Common Scenarios -->
+		<section class="mb-16">
+			<SectionHeading title="When to Recommend Preneed Insurance to Your Clients" accent />
+			<div class="grid sm:grid-cols-2 gap-6">
+				{[
+					{ title: 'Medicaid Planning', desc: 'Clients approaching Medicaid eligibility need to reduce countable assets. Irrevocable preneed is one of the few exempt asset classes with clear statutory authority.' },
+					{ title: 'Elderly Clients Updating Wills', desc: 'When clients over 65 update their estate documents, preneed should be part of the conversation. It\'s a practical step that complements every will and trust.' },
+					{ title: 'Clients with Chronic Illness', desc: 'For clients facing a terminal or chronic diagnosis, preneed planning provides certainty during an uncertain time. Many policies require no medical exam.' },
+					{ title: 'Blended Family Situations', desc: 'When children from different marriages may disagree about funeral arrangements, a preneed contract removes the ambiguity and potential for conflict.' },
+					{ title: 'High-Asset Estate Protection', desc: 'Even for wealthy clients, removing funeral costs from the estate streamlines probate and ensures arrangements aren\'t delayed by estate settlement timelines.' },
+					{ title: 'Trust & Estate Reviews', desc: 'During periodic trust reviews, preneed insurance is an easy addition that addresses a frequently overlooked expense.' },
+				].map((scenario) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{scenario.title}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{scenario.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- How the Referral Works -->
+		<section class="mb-16">
+			<SectionHeading title="How the Referral Works" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					The process is simple, professional, and designed to respect your client relationship:
+				</p>
+				<ol class="space-y-4 list-none pl-0">
+					{[
+						{ step: '1', title: 'You introduce Duane', desc: 'When preneed insurance is appropriate for your client, you mention Duane as a trusted resource. You can provide his contact information directly, or with your client\'s permission, Duane will reach out.' },
+						{ step: '2', title: 'Duane handles the consultation', desc: 'Duane meets with your client — in person or by phone — for a no-pressure conversation about their wishes and options. He explains coverage, costs, and the Medicaid implications specific to their situation.' },
+						{ step: '3', title: 'Your client is protected', desc: 'Once the preneed contract is in place, your client\'s funeral costs are locked in, their wishes are documented, and the Medicaid exemption is secured. The estate plan is stronger for it.' },
+						{ step: '4', title: 'You stay informed', desc: 'With your client\'s authorization, Duane can provide documentation of the preneed contract for your files. This ensures continuity between the estate plan and the preneed arrangement.' },
+					].map((step) => (
+						<li class="flex items-start gap-4">
+							<span class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-sm">{step.step}</span>
+							<div>
+								<strong class="text-charcoal-900">{step.title}.</strong>
+								<span class="text-charcoal-700"> {step.desc}</span>
+							</div>
+						</li>
+					))}
+				</ol>
+			</div>
+		</section>
+
+		<!-- Why Attorneys Trust Duane -->
+		<section class="mb-16">
+			<SectionHeading title="Why Estate Attorneys Trust Duane Cutlip" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Duane Cutlip has been a Licensed Preneed Funeral Director for over 20 years. He holds licenses in both North Carolina and South Carolina, is a member of the National Funeral Directors Association (NFDA), and is associated with L. Harold Poole Funeral Home & Crematory — one of the most respected funeral homes in Wake County.
+				</p>
+				<p class="leading-relaxed">
+					Attorneys who refer clients to Duane do so because he operates with the same professionalism they expect in their own practice. There's no high-pressure sales. No cold calls to your clients. No marketing gimmicks. Duane treats every referral as a trust extended to him — and he honors that trust with every family he serves.
+				</p>
+				<p class="leading-relaxed">
+					He understands the legal landscape of preneed insurance in both Carolinas, speaks fluently about Medicaid exemptions and estate integration, and can answer the technical questions your clients will ask. When you refer a client to Duane, you're not sending them to a salesperson — you're connecting them with a subject matter expert.
+				</p>
+			</div>
+		</section>
+
+		<!-- Free Presentation Offer -->
+		<section class="mb-16">
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">Free CLE-Eligible Presentation for Your Practice Group</h3>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					Duane offers a free 30-minute overview of preneed insurance tailored specifically for estate planning attorneys. He covers the Medicaid exemption framework, common client scenarios, how preneed integrates with wills and trusts, and the referral process. This presentation is ideal for practice group meetings, bar association events, or CLE sessions.
+				</p>
+				<p class="text-charcoal-500 text-sm mb-6">
+					Topics include: NC & SC statutory framework for preneed, irrevocable vs. revocable contracts, Medicaid look-back considerations, preneed as an estate planning complement, and real-world case studies.
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<Button variant="phone" href={`tel:${PHONE_RAW}`}>
+						Call {PHONE}
+					</Button>
+					<Button variant="primary" href="/contact">
+						Request a Presentation
+					</Button>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="mb-8">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<h2 class="font-heading text-2xl font-bold text-charcoal-900">Let's Connect</h2>
+				<p class="leading-relaxed">
+					Duane works with estate planning attorneys across North Carolina and South Carolina. Whether you have a single client who needs preneed guidance or you'd like to build an ongoing referral relationship, he's happy to start with a conversation.
+				</p>
+				<p class="leading-relaxed">
+					Call Duane directly at <a href={`tel:${PHONE_RAW}`} class="text-burgundy-600 font-bold hover:text-burgundy-700">{PHONE}</a> or use the contact form below. He answers personally — no call center, no voicemail maze.
+				</p>
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="Partner with Duane" subtitle="Connect your clients with a trusted preneed insurance expert. Call for a confidential conversation." />
+
+	<JsonLd data={serviceJsonLd} />
+</BaseLayout>

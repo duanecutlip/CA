@@ -1,0 +1,46 @@
+---
+import Button from './Button.astro';
+import { PHONE, PHONE_RAW } from '../consts';
+---
+
+<section class="py-16 md:py-24 bg-warm-white">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="grid md:grid-cols-2 gap-12 items-center">
+			<div class="relative">
+				<div class="rounded-2xl w-full aspect-[3/2] bg-linen flex items-center justify-center border border-border-light">
+					<div class="text-center p-8">
+						<div class="w-20 h-20 rounded-full bg-teal-600/10 mx-auto mb-4 flex items-center justify-center">
+							<svg class="w-10 h-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+							</svg>
+						</div>
+						<p class="text-charcoal-400 text-sm">Photo of Duane</p>
+						<p class="text-charcoal-400 text-xs mt-1">Seated, warm, approachable</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">
+					Meet Duane Cutlip
+				</h2>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					For over 20 years, Duane has helped families across the Raleigh-Wake County area plan ahead with confidence. As a Licensed Preneed Funeral Director, he brings deep expertise and genuine compassion to every conversation.
+				</p>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					Duane isn't a salesperson — he's a neighbor. He lives in Wendell with his wife Angie and their two daughters. He's active in his Baptist church, volunteers as an ARRL ham radio examiner, and is deeply rooted in the Wake County community.
+				</p>
+				<p class="text-charcoal-500 leading-relaxed mb-8">
+					"I got into this work because I saw too many families blindsided by decisions they weren't prepared to make. Planning ahead is one of the most loving things you can do for the people you care about."
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<Button variant="primary" href="/about">
+						Read Duane's Full Story
+					</Button>
+					<Button variant="phone" href={`tel:${PHONE_RAW}`}>
+						Call {PHONE}
+					</Button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

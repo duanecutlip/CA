@@ -1,0 +1,31 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+	try {
+		const { getArticles } = await import('../../lib/strapi');
+		const articles = await getArticles();
+		return articles.map((article) => ({
+			params: { slug: article.slug },
+			props: { article },
+		}));
+	} catch {
+		return [];
+	}
+}
+
+const { article } = Astro.props;
+const htmlContent = await marked(article.body || '');
+---
+
+<BlogPost
+	title={article.title}
+	description={article.description}
+	pubDate={new Date(article.pubDate)}
+	updatedDate={article.updatedDate ? new Date(article.updatedDate) : undefined}
+	heroImage={article.heroImage?.url}
+	slug={article.slug}
+>
+	<Fragment set:html={htmlContent} />
+</BlogPost>

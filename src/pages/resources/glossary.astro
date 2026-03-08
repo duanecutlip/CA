@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const title = 'Funeral Planning Glossary';
+const description = 'Confused by funeral industry terms? This plain-English glossary explains pre-need insurance, final expense, cremation, embalming, and more.';
+
+const terms = [
+  { term: 'At-Need', definition: 'Arrangements made after someone has passed away — as opposed to pre-need, which is planned in advance. At-need planning often happens under time pressure and emotional stress.' },
+  { term: 'Beneficiary', definition: 'The person or entity designated to receive the benefits of an insurance policy or trust upon the policyholder\'s death.' },
+  { term: 'Burial Vault', definition: 'A lined and sealed outer container placed in the grave that encloses the casket. Most cemeteries require a vault to prevent the ground from sinking over time.' },
+  { term: 'Casket', definition: 'A container in which the deceased is placed for burial. Caskets come in a wide range of materials (wood, metal, fiberglass) and price points.' },
+  { term: 'Celebration of Life', definition: 'A memorial service that focuses on celebrating the person\'s life rather than mourning their death. These can be formal or informal, religious or secular.' },
+  { term: 'Columbarium', definition: 'A structure with small compartments (niches) designed to hold urns containing cremated remains.' },
+  { term: 'Cremation', definition: 'The process of reducing the body to bone fragments through high-temperature burning. The remains (cremains) are returned to the family, typically in an urn.' },
+  { term: 'Death Certificate', definition: 'A legal document recording the date, location, and cause of death. Multiple certified copies are usually needed for insurance claims, bank accounts, and legal matters.' },
+  { term: 'Direct Burial', definition: 'A burial that takes place shortly after death with no formal viewing or ceremony beforehand. This is typically the most affordable burial option.' },
+  { term: 'Embalming', definition: 'A chemical process that preserves and sanitizes the body for viewing. Embalming is not legally required in most cases but is standard for traditional open-casket services.' },
+  { term: 'Eulogy', definition: 'A speech given during a funeral or memorial service that honors and remembers the deceased. Eulogies are typically delivered by family members, friends, or clergy.' },
+  { term: 'Final Expense Insurance', definition: 'A type of whole life insurance designed to cover funeral and burial costs, typically with a smaller death benefit ($5,000-$25,000). Unlike pre-need insurance, it\'s not tied to a specific funeral plan.' },
+  { term: 'Funeral Director', definition: 'A licensed professional who oversees funeral arrangements, prepares the deceased, and coordinates all aspects of the funeral service.' },
+  { term: 'Graveside Service', definition: 'A funeral service conducted at the cemetery, at the site of the burial. This can be the only service or follow a ceremony at a funeral home or church.' },
+  { term: 'Green Burial', definition: 'An environmentally friendly burial that avoids embalming chemicals, uses a biodegradable casket or shroud, and skips a burial vault. Green burial grounds are becoming more common in North Carolina.' },
+  { term: 'Irrevocable Trust', definition: 'A pre-need funding arrangement that cannot be changed or cancelled once established. Irrevocable pre-need trusts are typically exempt from Medicaid asset calculations.' },
+  { term: 'Medicaid Exempt', definition: 'An asset or arrangement that does not count against the resource limits for Medicaid eligibility. In North Carolina, irrevocable pre-need funeral contracts are generally Medicaid exempt.' },
+  { term: 'Memorial Service', definition: 'A ceremony honoring the deceased, held without the body present. Memorial services can take place days, weeks, or even months after death.' },
+  { term: 'Niche', definition: 'A small compartment in a columbarium or mausoleum designed to hold an urn with cremated remains.' },
+  { term: 'Obituary', definition: 'A published notice of someone\'s death, typically including a brief biography, surviving family members, and funeral service details.' },
+  { term: 'Pallbearer', definition: 'A person who helps carry or escort the casket during a funeral. Traditionally there are six active pallbearers and sometimes honorary pallbearers.' },
+  { term: 'Pre-Need Insurance', definition: 'An insurance policy specifically designed to cover funeral and burial expenses, tied to a specific funeral plan. Pre-need insurance locks in today\'s prices and goes directly to the funeral home — not through probate.' },
+  { term: 'Preneed Funeral Director', definition: 'A professional licensed by the state to sell pre-need funeral plans and counsel families on advance funeral planning. In North Carolina, this requires a specific state license.' },
+  { term: 'Probate', definition: 'The legal process of validating a will and distributing a deceased person\'s assets. Pre-need insurance bypasses probate because funds go directly to the funeral home.' },
+  { term: 'Revocable Trust', definition: 'A pre-need funding arrangement that can be changed or cancelled by the owner. Unlike irrevocable trusts, revocable trusts may count as assets for Medicaid eligibility.' },
+  { term: 'Urn', definition: 'A container for holding cremated remains. Urns come in many materials and styles, from simple to decorative, and can be displayed, buried, or placed in a columbarium.' },
+  { term: 'Viewing / Visitation', definition: 'A scheduled time before the funeral when family and friends can see the deceased and pay respects. Viewings can be open-casket or closed-casket.' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero variant="interior" title="Funeral Planning Glossary" subtitle="Common terms explained in plain English — no jargon, no fine print" />
+
+  <section class="py-12 md:py-16 bg-warm-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Resources', href: '/faq' }, { label: 'Glossary' }]} />
+
+      <p class="text-lg text-charcoal-500 mb-10 max-w-2xl">
+        The funeral industry uses a lot of specialized language. Here are the terms you're most likely to encounter, explained in a way that actually makes sense.
+      </p>
+
+      <dl class="space-y-6">
+        {terms.map((item) => (
+          <div class="border-b border-border-light pb-6" id={item.term.toLowerCase().replace(/\s+/g, '-')}>
+            <dt class="font-heading text-lg font-bold text-charcoal-900 mb-1">{item.term}</dt>
+            <dd class="text-charcoal-500">{item.definition}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

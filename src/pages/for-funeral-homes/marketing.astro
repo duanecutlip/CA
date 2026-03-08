@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'Funeral Home Marketing | Preneed Lead Generation';
+const description = 'Marketing strategy for funeral homes focused on preneed lead generation. Community seminars, church partnerships, digital presence, and referral networks.';
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Funeral Home Marketing Strategy',
+	description: 'Marketing strategy and preneed lead generation for funeral homes in North Carolina and South Carolina.',
+	provider: {
+		'@type': 'Person',
+		'@id': 'https://cutlipassociates.com/#duane-cutlip',
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+	},
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
+	serviceType: 'Funeral Home Marketing',
+};
+---
+
+<BaseLayout title={title} description={description} keywords="funeral home marketing, preneed lead generation, funeral home community seminar, funeral home digital marketing">
+	<Hero variant="interior" title="Marketing Strategy for Funeral Homes That Want to Grow Preneed" subtitle="The channels that actually work for preneed lead generation — and how to use them." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Funeral Homes', href: '/for-funeral-homes' }, { label: 'Marketing' }]} />
+
+		<!-- Overview -->
+		<section class="mb-16">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					Most funeral homes market for at-need. Their website talks about services they offer after someone dies. Their advertising targets families in crisis. Their community presence is built around being the place you call when something terrible happens.
+				</p>
+				<p class="leading-relaxed">
+					That's a problem if you want to grow preneed. <strong>Preneed marketing is fundamentally different from at-need marketing.</strong> You're reaching people who aren't in crisis, who have time to research and compare, and who need to be educated before they're ready to act. The channels, the messaging, and the timing are all different — and most funeral homes haven't made that shift.
+				</p>
+				<p class="leading-relaxed">
+					Duane helps funeral homes build marketing strategies specifically designed to generate preneed leads. Not general "brand awareness" — actionable strategies that put qualified prospects in front of your preneed counselors.
+				</p>
+			</div>
+		</section>
+
+		<!-- Channels That Work -->
+		<section class="mb-16">
+			<SectionHeading title="Channels That Work for Preneed" accent />
+			<div class="grid sm:grid-cols-2 gap-6">
+				{[
+					{ title: 'Community Seminars', desc: 'Free educational seminars at churches, community centers, and civic organizations. This is the single most effective preneed lead generation channel Duane has used in 20+ years. A well-executed seminar produces 15-30 qualified leads per event.' },
+					{ title: 'Church Partnerships', desc: 'Building ongoing relationships with local churches and faith communities. Not a one-time event — a sustained partnership where the funeral home becomes a trusted resource for the congregation\'s senior members.' },
+					{ title: 'Direct Mail', desc: 'Targeted mailings to homeowners 55+ in your service area. When done right — specific offer, clear call to action, no hard sell — direct mail still produces consistent preneed leads at a predictable cost per acquisition.' },
+					{ title: 'Digital Presence', desc: 'Your website, Google Business Profile, and online content. Most funeral home websites are built for at-need. Duane helps you add preneed-focused content, landing pages, and calls to action that capture preneed interest online.' },
+					{ title: 'Referral Networks', desc: 'Estate attorneys, financial advisors, elder care facilities, and hospice organizations. These professionals interact with preneed-ready families every day. Duane helps you build referral relationships that produce a steady stream of warm introductions.' },
+					{ title: 'Civic & Professional Groups', desc: 'Rotary clubs, Lions clubs, veterans organizations, and retirement communities. Educational presentations to these groups position your funeral home as the community expert on planning ahead.' },
+				].map((channel) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{channel.title}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{channel.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- What Most Homes Get Wrong -->
+		<section class="mb-16">
+			<SectionHeading title="What Most Funeral Homes Get Wrong" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Duane sees the same mistakes at funeral home after funeral home:
+				</p>
+				<ul class="space-y-3">
+					{[
+						{ bold: 'Marketing at-need when they want preneed', text: 'Your website homepage talks about "serving families in their time of need." That\'s fine for at-need — but a 62-year-old researching preneed options doesn\'t see themselves in that message.' },
+						{ bold: 'No dedicated preneed content', text: 'If someone Googles "preneed funeral planning [your city]," does your funeral home show up? Most don\'t. They have no preneed-specific pages, no educational content, and no way to capture preneed interest online.' },
+						{ bold: 'Waiting for leads instead of generating them', text: 'Preneed leads rarely walk through the front door. They come from community outreach, referral relationships, and targeted marketing. Funeral homes that wait for preneed business rarely get it.' },
+						{ bold: 'One-and-done events', text: 'A single community seminar isn\'t a strategy. Consistent, monthly outreach builds name recognition and trust over time. Duane helps funeral homes build sustainable outreach calendars, not one-off events.' },
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-burgundy-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+							</svg>
+							<span><strong class="text-charcoal-900">{item.bold}:</strong> {item.text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- Community Seminar Model -->
+		<section class="mb-16">
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">Duane's Community Seminar Model</h3>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					The community seminar is the cornerstone of Duane's preneed marketing approach. Over 20 years, he's refined a model that consistently produces results:
+				</p>
+				<div class="space-y-3 text-charcoal-700">
+					{[
+						'Partner with a local church or community center to host a free, educational event',
+						'Topic focuses on "planning ahead" — not selling insurance. Families learn what preneed is, how it works, and why it matters',
+						'Duane (or your trained staff) presents in a conversational, no-pressure format. Refreshments, handouts, Q&A',
+						'Every attendee completes a simple interest card — name, phone, and whether they\'d like a follow-up conversation',
+						'Follow-up happens within 48 hours. A personal call, not a form letter. This is where preneed contracts are born',
+						'Average results: 15-30 attendees per seminar, 40-60% express interest in follow-up, 25-35% of those convert to funded contracts',
+					].map((item) => (
+						<div class="flex items-start gap-2">
+							<svg class="w-4 h-4 text-teal-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-sm">{item}</span>
+						</div>
+					))}
+				</div>
+				<p class="text-charcoal-500 text-sm mt-4">
+					Duane can train your staff to run these seminars independently, or he can lead them on your behalf as part of a staffing arrangement.
+				</p>
+			</div>
+		</section>
+
+		<!-- Digital Presence -->
+		<section class="mb-16">
+			<SectionHeading title="Digital Presence Audit" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					As part of his marketing strategy work, Duane offers a digital presence audit for funeral homes. This isn't a full website redesign — it's a practical review of how your funeral home appears online to someone searching for preneed information.
+				</p>
+				<p class="leading-relaxed">
+					The audit covers your website's preneed content (or lack of it), your Google Business Profile optimization, your online reviews strategy, and your search visibility for preneed-related keywords in your market. Duane provides specific, actionable recommendations your web team can implement — or he can connect you with trusted partners who specialize in funeral home digital marketing.
+				</p>
+				<p class="leading-relaxed">
+					Duane is unusually tech-savvy for the funeral industry. He's built his own CRM systems, understands SEO fundamentals, and stays current with digital marketing trends that apply to preneed lead generation. You're not getting advice from someone who thinks "digital marketing" means posting on Facebook once a week.
+				</p>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="mb-8">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<h2 class="font-heading text-2xl font-bold text-charcoal-900">Build Your Preneed Marketing Strategy</h2>
+				<p class="leading-relaxed">
+					Call Duane at <a href={`tel:${PHONE_RAW}`} class="text-burgundy-600 font-bold hover:text-burgundy-700">{PHONE}</a> to discuss your funeral home's marketing goals. Whether you need a complete preneed marketing strategy, help launching community seminars, or a digital presence audit, Duane will start with a no-obligation conversation about where you are and where you want to be.
+				</p>
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="Stop Waiting for Preneed Leads" subtitle="Call Duane to build a marketing strategy that brings qualified preneed prospects to your funeral home." />
+
+	<JsonLd data={serviceJsonLd} />
+</BaseLayout>

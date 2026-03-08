@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Button from '../components/Button.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL, SITE_TITLE } from '../consts';
+
+const title = 'About Duane Cutlip | Preneed Funeral Director';
+const description = `Duane Cutlip has 20+ years helping families plan ahead. Licensed Preneed Funeral Director serving Raleigh & Wake County NC. Call ${PHONE}.`;
+
+const personJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Duane Cutlip',
+	jobTitle: 'Licensed Preneed Funeral Director',
+	telephone: PHONE,
+	worksFor: {
+		'@type': 'InsuranceAgency',
+		name: SITE_TITLE,
+		url: SITE_URL,
+	},
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Wendell',
+		addressRegion: 'NC',
+		addressCountry: 'US',
+	},
+	knowsAbout: [
+		'Preneed insurance',
+		'Funeral pre-planning',
+		'North Carolina preneed regulations',
+		'South Carolina preneed regulations',
+		'Medicaid planning',
+		'Funeral home marketing',
+		'Preneed sales training',
+		'Funeral home technology',
+		'Business automation',
+		'AI-powered CRM systems',
+		'Bookkeeping and accounting',
+	],
+	memberOf: {
+		'@type': 'Organization',
+		name: 'National Funeral Directors Association',
+		alternateName: 'NFDA',
+	},
+	hasCredential: [
+		{
+			'@type': 'EducationalOccupationalCredential',
+			credentialCategory: 'license',
+			name: 'Licensed Preneed Funeral Director — North Carolina',
+		},
+		{
+			'@type': 'EducationalOccupationalCredential',
+			credentialCategory: 'license',
+			name: 'Licensed Preneed Funeral Director — South Carolina',
+		},
+	],
+};
+
+---
+
+<BaseLayout title={title} description={description}>
+	<Hero variant="interior" title="Meet Duane Cutlip" subtitle="Licensed Preneed Funeral Director. 20+ years serving families across Wake County." />
+
+	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About Duane' }]} />
+
+	<section class="py-16 md:py-24 bg-warm-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid md:grid-cols-5 gap-12">
+				<div class="md:col-span-2">
+					<div class="rounded-2xl w-full aspect-[3/4] bg-linen flex items-center justify-center border border-border-light sticky top-24">
+						<div class="text-center p-8">
+							<div class="w-24 h-24 rounded-full bg-teal-600/10 mx-auto mb-4 flex items-center justify-center">
+								<svg class="w-12 h-12 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+								</svg>
+							</div>
+							<p class="text-charcoal-400 text-sm">Professional portrait</p>
+							<p class="text-charcoal-400 text-xs mt-1">Duane Cutlip, Wendell NC</p>
+						</div>
+					</div>
+				</div>
+				<div class="md:col-span-3 prose max-w-none">
+					<h2>A Calling, Not Just a Career</h2>
+					<p>
+						For over 20 years, Duane Cutlip has helped families across the Raleigh-Wake County area plan ahead with confidence. As a Licensed Preneed Funeral Director in North Carolina, he specializes in helping families make advance funeral arrangements — so they never have to make difficult decisions in their hardest moments.
+					</p>
+					<p>
+						Duane's journey in funeral services began when he witnessed firsthand how unprepared families suffered — financially, emotionally, and spiritually — when death arrived without warning. He made it his mission to change that, one family at a time.
+					</p>
+
+					<h2>Professional Background</h2>
+					<p>
+						Duane holds all required North Carolina licenses for preneed funeral planning and maintains current continuing education certifications. He is an active member of the <strong>National Funeral Directors Association (NFDA)</strong> and works closely with respected local funeral homes, including <strong>L. Harold Poole Funeral Home & Crematory</strong>.
+					</p>
+					<p>
+						Over two decades, he has helped hundreds of families create personalized funeral plans — from traditional services to celebrations of life, from simple cremation arrangements to elaborate multi-day memorials. Every plan reflects the unique wishes of the person behind it.
+					</p>
+
+					<h2>Family & Faith</h2>
+					<p>
+						Duane lives in Wendell, North Carolina, with his wife <strong>Angie</strong> and their two daughters. He's an active member of his Baptist church, where he serves his congregation and draws strength from his faith.
+					</p>
+					<p>
+						"My faith is the foundation of this work," Duane says. "Every family I sit with deserves the same compassion and respect I'd want for my own family. That's not a business principle — it's a personal one."
+					</p>
+
+					<h2>Community Roots</h2>
+					<p>
+						Beyond his professional work, Duane is deeply rooted in the Wake County community. He's a licensed <strong>amateur radio operator</strong> and serves as an <strong>ARRL Volunteer Examiner</strong>, helping others earn their ham radio licenses. It's a hobby that reflects his personality: patient, technical, and always willing to help.
+					</p>
+					<p>
+						He's also active in local community organizations and enjoys connecting with neighbors, church members, and local business owners throughout the region.
+					</p>
+
+					<h2>Why Families Choose Duane</h2>
+					<p>
+						Families don't choose Duane because of a slick website or aggressive marketing. They choose him because a friend, a pastor, or a family member told them: <em>"Call Duane. He'll take care of you."</em>
+					</p>
+					<p>
+						That reputation — earned one conversation at a time over 20 years — is what sets Duane apart. He doesn't sell plans. He helps families protect each other.
+					</p>
+
+					<div class="not-prose mt-8 flex flex-wrap gap-4">
+						<Button variant="phone" href={`tel:${PHONE_RAW}`}>
+							Call {PHONE}
+						</Button>
+						<Button variant="primary" href="/contact#schedule">
+							Schedule a Free Call
+						</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 md:py-24 bg-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-heading text-2xl md:text-3xl font-bold text-charcoal-900 mb-6">Beyond Families: Consulting & Industry Expertise</h2>
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Duane doesn't just help families — he helps funeral homes build and grow their preneed programs. With 20+ years of hands-on experience, he's one of the most knowledgeable preneed professionals in the Carolinas.
+				</p>
+				<p class="leading-relaxed">
+					His consulting work includes preneed program development, sales training for funeral home staff, program audits, and strategic marketing guidance. Funeral homes across North Carolina and South Carolina rely on Duane's expertise to strengthen their preneed offerings and better serve their communities.
+				</p>
+				<div class="not-prose mt-6">
+					<Button variant="secondary" href="/for-funeral-homes/">
+						Learn About Funeral Home Services
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 md:py-24 bg-warm-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-heading text-2xl md:text-3xl font-bold text-charcoal-900 mb-6">A Modern Approach to a Traditional Industry</h2>
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Duane isn't just a preneed expert — he's one of the rare funeral industry professionals who truly understands technology. Before entering the preneed industry, Duane built and sold custom computers, ran his own mail servers on dual T2 lines, and still maintains an extensive home lab. That hands-on tech expertise never left.
+				</p>
+				<p class="leading-relaxed">
+					Today, his own business runs on a modern AI-powered tech stack — CRM, automated workflows, and a website built with cutting-edge tools. Many funeral homes are still running on paper systems and outdated software. Duane helps them transition to modern CRM systems, digital marketing, and efficient workflows — without the intimidation factor.
+				</p>
+				<p class="leading-relaxed">
+					With professional bookkeeping and accounting experience, Duane understands the financial side of running a funeral home inside and out. He helps owners streamline their accounting and actually understand their numbers. In short, Duane bridges two worlds — deep industry expertise and modern technology. He speaks the language of funeral home owners who've been doing things the same way for decades, AND he understands the tools that can transform their business.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 md:py-24 bg-linen">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-heading text-2xl md:text-3xl font-bold text-charcoal-900 mb-8">Credentials & Expertise</h2>
+			<div class="grid sm:grid-cols-2 gap-4">
+				{[
+					'Licensed Preneed Funeral Director — North Carolina',
+					'Licensed Preneed Funeral Director — South Carolina',
+					'20+ years of industry experience',
+					'National Funeral Directors Association (NFDA) member',
+					'Associated with L. Harold Poole Funeral Home & Crematory',
+					'Technology consulting & modernization',
+					'AI-powered business systems',
+					'Bookkeeping & accounting',
+				].map((credential) => (
+					<div class="flex items-start gap-3">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+						<span class="text-charcoal-700">{credential}</span>
+					</div>
+				))}
+			</div>
+			<div class="mt-8">
+				<h3 class="font-heading text-lg font-bold text-charcoal-900 mb-4">Areas of Expertise</h3>
+				<div class="flex flex-wrap gap-2">
+					{[
+						'Preneed Insurance',
+						'Funeral Pre-Planning',
+						'NC & SC Preneed Regulations',
+						'Medicaid Planning',
+						'Funeral Home Marketing',
+						'Preneed Sales Training',
+						'Program Audits',
+						'Speaking & Seminars',
+						'Technology Consulting',
+						'Business Automation & AI',
+						'Bookkeeping & Accounting',
+					].map((area) => (
+						<span class="px-3 py-1 bg-white rounded-full text-sm text-charcoal-600 border border-border-light">{area}</span>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 md:py-24 bg-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="font-heading text-2xl md:text-3xl font-bold text-charcoal-900 mb-6">Speaking & Events</h2>
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Duane is available for speaking engagements at industry conferences, funeral home retreats, church workshops, and community events. He brings two decades of real-world experience to every presentation — practical, actionable insights that audiences can put to use immediately.
+				</p>
+				<p class="leading-relaxed">
+					Topics include preneed program development, preneed sales strategies, regulatory compliance in NC & SC, Medicaid and preneed planning, and end-of-life planning workshops for community groups.
+				</p>
+				<div class="not-prose mt-6 flex flex-wrap gap-4">
+					<Button variant="primary" href="/for-funeral-homes/speaking">
+						Learn About Speaking Engagements
+					</Button>
+					<Button variant="secondary" href="/contact">
+						Request Duane as a Speaker
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<CTABanner title="Ready to Start Planning?" subtitle="Call Duane for a free, no-pressure conversation. Most calls take about 15 minutes." />
+
+	<JsonLd data={personJsonLd} />
+</BaseLayout>

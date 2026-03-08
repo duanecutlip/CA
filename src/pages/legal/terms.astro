@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE_TITLE, SITE_URL, EMAIL, PHONE } from '../../consts';
+
+const title = 'Terms of Service';
+const description = `Terms of service for ${SITE_TITLE}. Read our website usage terms, disclaimers, and policies.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero variant="interior" title="Terms of Service" />
+
+  <section class="py-12 md:py-16 bg-warm-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Legal' }, { label: 'Terms of Service' }]} />
+
+      <div class="prose max-w-none text-charcoal-500 space-y-6">
+        <p><strong class="text-charcoal-700">Effective Date:</strong> March 1, 2026</p>
+
+        <p>Welcome to {SITE_URL}. By accessing or using this website, you agree to be bound by these Terms of Service. If you do not agree, please do not use the site.</p>
+
+        <h2 class="font-heading text-xl font-bold text-charcoal-900">Use of This Website</h2>
+        <p>This website is provided for informational purposes about pre-need funeral planning and insurance services offered by {SITE_TITLE}. The content on this site does not constitute legal, financial, or insurance advice. Always consult a qualified professional for advice specific to your situation.</p>
+
+        <h2 class="font-heading text-xl font-bold text-charcoal-900">Accuracy of Information</h2>
+        <p>We strive to keep all information on this site accurate and up to date. However, we make no warranties about the completeness, accuracy, or reliability of any information. Funeral costs, insurance rates, and regulations may vary and are subject to change.</p>
+
+        <h2 class="font-heading text-xl font-bold text-charcoal-900">Insurance Disclaimers</h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Pre-need insurance policies are subject to the terms and conditions of the issuing insurance carrier.</li>
+          <li>Coverage, pricing, and availability may vary based on age, health, and other factors.</li>
+          <li>Duane Cutlip is a Licensed Preneed Funeral Director in the state of North Carolina, not a general insurance agent.</li>
+          <li>This website does not constitute a binding offer or contract for insurance services.</li>
+        </ul>
+
+        <h2 class="font-heading text-xl font-bold text-charcoal-900">Intellectual Property</h2>
+        <p>All content on this website — including text, graphics, logos, and images — is the property of {SITE_TITLE} and is protected by copyright law. You may not reproduce, distribute, or modify any content without written permission.</p>
+
+        <h2 class="font-heading text-xl font-bold text-charcoal-900">Third-Party Links</h2>
+        <p>This website may contain links to external websites. We are not responsible for the content or practices of third-party sites and provide these links for convenience only.</p>
+
+        <h2 class="font-heading text-xl font-bold text-charcoal-900">Limitation of Liability</h2>
+        <p>{SITE_TITLE} shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this website or reliance on any information provided herein.</p>
+
+        <h2 class="font-heading text-xl font-bold text-charcoal-900">Governing Law</h2>
+        <p>These Terms are governed by the laws of the State of North Carolina. Any disputes shall be resolved in the courts of Wake County, North Carolina.</p>
+
+        <h2 class="font-heading text-xl font-bold text-charcoal-900">Changes to These Terms</h2>
+        <p>We may update these Terms of Service at any time. Continued use of the website after changes constitutes acceptance of the updated terms.</p>
+
+        <h2 class="font-heading text-xl font-bold text-charcoal-900">Contact Us</h2>
+        <p>If you have questions about these Terms, contact us at:</p>
+        <ul class="list-none space-y-1">
+          <li>Phone: <a href="tel:9198222010" class="text-teal-600 hover:text-teal-700">{PHONE}</a></li>
+          <li>Email: <a href={`mailto:${EMAIL}`} class="text-teal-600 hover:text-teal-700">{EMAIL}</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

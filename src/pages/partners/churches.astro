@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import Button from '../../components/Button.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'For Churches | End-of-Life Planning Ministry';
+const description = 'Free resources for church leaders. Help your congregation plan ahead with dignity and faith. Duane Cutlip partners with NC & SC churches.';
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Church Partnership for End-of-Life Planning',
+	description: 'Free workshops and resources for NC & SC churches. Help your congregation plan ahead with dignity, stewardship, and faith.',
+	provider: {
+		'@type': 'InsuranceAgency',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
+	serviceType: 'Preneed Insurance Consultation',
+};
+---
+
+<BaseLayout title={title} description={description} keywords="church end of life planning, funeral planning ministry, preneed insurance church workshop, NC SC church planning">
+	<Hero variant="interior" title="A Pastor's Guide to Helping Your Congregation Plan Ahead" subtitle="Free workshops and resources for churches across North Carolina and South Carolina." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Partners', href: '/partners/estate-attorneys' }, { label: 'Churches' }]} />
+
+		<!-- Opening -->
+		<section class="mb-16">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					Pastors see it more often than anyone else. A phone call comes in — a church member has passed away, and the family is reeling. They're grieving, they're overwhelmed, and within hours they're facing decisions about caskets, services, flowers, and costs they never expected. The bill arrives before the tears have dried.
+				</p>
+				<p class="leading-relaxed">
+					It doesn't have to be this way. When families plan ahead, they transform one of life's most difficult moments into an act of love and stewardship. They choose the hymns they want sung. They document whether they prefer burial or cremation. They lock in today's funeral costs so their children never have to bear that burden. And they do it all while they're healthy, clear-minded, and surrounded by the support of their church community.
+				</p>
+				<p class="leading-relaxed">
+					Duane Cutlip partners with churches across North Carolina and South Carolina to make this conversation easier. He's a Baptist himself, and he understands that planning ahead isn't about fear — it's about <strong>faith, stewardship, and love for your family</strong>.
+				</p>
+			</div>
+		</section>
+
+		<!-- Why Churches Should Address This -->
+		<section class="mb-16">
+			<SectionHeading title="Why This Matters for Your Church" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					The average funeral in North Carolina costs over <strong>$8,000</strong>. For many families in your congregation — especially those on fixed incomes, single-income households, or families caring for aging parents — an unexpected funeral expense can be financially devastating. Some families go into debt. Others make heartbreaking compromises on the service their loved one deserved.
+				</p>
+				<p class="leading-relaxed">
+					As a pastor, you can't prevent death. But you can help your congregation prepare for it — practically, financially, and spiritually. Offering a "Planning Ahead" workshop through your church is a ministry of care that serves families at one of the most vulnerable moments of their lives.
+				</p>
+			</div>
+			<div class="grid sm:grid-cols-2 gap-6 mt-8">
+				{[
+					{ title: 'Stewardship of Resources', desc: 'Planning ahead is good stewardship. It protects the family\'s finances, prevents debt, and ensures that funeral costs don\'t consume resources meant for the surviving spouse or children.' },
+					{ title: 'Easing Family Burden', desc: 'When arrangements are made in advance, the family can focus on grieving, remembering, and supporting one another — not scrambling to make decisions under pressure.' },
+					{ title: 'Honoring Personal Wishes', desc: 'A preneed plan documents everything: the hymns, the Scripture readings, the type of service. The person\'s faith and personality are reflected in every detail — because they chose it themselves.' },
+					{ title: 'Reducing Family Conflict', desc: 'Without documented wishes, families sometimes disagree about funeral arrangements. Advance planning removes this source of tension during an already painful time.' },
+				].map((item) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{item.title}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{item.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Workshop Offering -->
+		<section class="mb-16">
+			<SectionHeading title='Free "Planning Ahead" Workshop for Your Church' accent />
+			<div class="bg-linen rounded-xl p-8 border border-border-light mb-6">
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">What Duane Covers</h3>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					Duane offers free 30-minute "Planning Ahead" workshops designed specifically for church groups. These aren't sales presentations — they're pastoral conversations about practical preparation. Duane has presented at churches throughout Wake County and the surrounding communities, and he tailors each session to your congregation's needs.
+				</p>
+				<ul class="space-y-3">
+					{[
+						'What preneed insurance is and how it works',
+						'Why planning ahead is an act of love and stewardship',
+						'How to start the conversation with your family',
+						'What decisions need to be made (and why it\'s better to make them now)',
+						'How preneed protects families on fixed incomes and Medicaid recipients',
+						'Q&A — honest answers to any question, with no pressure',
+					].map((item) => (
+						<li class="flex items-start gap-3 text-charcoal-700">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>{item}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					The workshop works well as a standalone event, or as part of a broader ministry initiative — a "Getting Your Affairs in Order" series, a senior ministry gathering, or a Sunday school class on stewardship. Duane is flexible with scheduling and happy to work around your church calendar.
+				</p>
+				<p class="leading-relaxed">
+					Many churches pair the workshop with a light meal or fellowship time. Some invite other professionals — an estate attorney, a financial advisor — to address related topics. Duane can help you plan a comprehensive event if that's something your congregation would benefit from.
+				</p>
+			</div>
+		</section>
+
+		<!-- What Pastors Should Know -->
+		<section class="mb-16">
+			<SectionHeading title="What Pastors Should Know About Preneed Insurance" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					You don't need to become an expert in preneed insurance to support your congregation. But understanding the basics helps you recognize when a family might benefit from a conversation with Duane.
+				</p>
+				<ul class="space-y-3">
+					{[
+						{ bold: 'It\'s not a sales pitch', text: 'Preneed planning is a caring, practical conversation about protecting family. Duane never pressures anyone. Many families simply appreciate having the information and make their decision in their own time.' },
+						{ bold: 'It locks in today\'s prices', text: 'Funeral costs have risen over 40% in the last decade. A preneed policy purchased today guarantees coverage at today\'s price, regardless of when the need arises. This is especially important for families on fixed incomes.' },
+						{ bold: 'It\'s Medicaid-protected', text: 'For church members who are on Medicaid or may need it in the future, irrevocable preneed contracts are generally exempt from asset calculations in both NC and SC. This means families can set aside funeral funds without losing benefits.' },
+						{ bold: 'It documents wishes in detail', text: 'From the hymns to the Scripture readings to the choice of burial or cremation, a preneed plan captures everything. The family doesn\'t have to guess — and the service truly reflects the person\'s faith and life.' },
+						{ bold: 'It pays the funeral home directly', text: 'The money never passes through the family\'s hands or the estate. It goes directly to the funeral home, bypassing probate and ensuring the arrangements are honored without delay.' },
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-charcoal-900">{item.bold}:</strong> {item.text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- How to Partner -->
+		<section class="mb-16">
+			<SectionHeading title="Ways to Partner with Duane" accent />
+			<div class="grid sm:grid-cols-2 gap-6">
+				{[
+					{ title: 'Invite Duane to Speak', desc: 'Schedule a free 30-minute "Planning Ahead" workshop for your congregation. Duane handles the presentation — you provide the space and the invitation.' },
+					{ title: 'Include Resources in Bulletins', desc: 'Duane can provide brief, tasteful inserts about planning ahead that you can include in your church bulletin or newsletter.' },
+					{ title: 'Refer Members Directly', desc: 'When a church member mentions concerns about funeral costs or planning ahead, you can share Duane\'s number with confidence. He\'ll treat them with the same care you would.' },
+					{ title: 'Senior Ministry Partnership', desc: 'If your church has a senior ministry or care team, Duane can be a standing resource — available to answer questions and meet with families as needs arise.' },
+				].map((item) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{item.title}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{item.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- About Duane's Faith -->
+		<section class="mb-16">
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">A Man of Faith</h3>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					Duane Cutlip is a Baptist and an active member of his church community in Wendell, North Carolina. He's been a Licensed Preneed Funeral Director for over 20 years, and he approaches every family with the same compassion and respect he'd extend to his own.
+				</p>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					"My faith is the foundation of this work," Duane says. "When I sit with a family, I'm not there to sell anything. I'm there to help them make decisions that reflect their values, honor their loved ones, and protect the people they care about most."
+				</p>
+				<p class="text-charcoal-700 leading-relaxed">
+					Church communities across Wake County and the surrounding areas have invited Duane to speak — and families are grateful. He understands the language of faith, the importance of community, and the role that church plays in helping families navigate life's most difficult transitions.
+				</p>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="mb-8">
+			<div class="text-center">
+				<h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-4">Invite Duane to Your Church</h2>
+				<p class="text-charcoal-500 mb-6 max-w-2xl mx-auto leading-relaxed">
+					Call Duane directly to schedule a free workshop for your congregation. He's happy to work around your church calendar and tailor the presentation to your community's needs.
+				</p>
+				<div class="flex flex-wrap justify-center gap-4">
+					<Button variant="phone" href={`tel:${PHONE_RAW}`}>
+						Call {PHONE}
+					</Button>
+					<Button variant="primary" href="/contact">
+						Request a Workshop
+					</Button>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="Serve Your Congregation" subtitle="Help families plan ahead with dignity and faith. Invite Duane for a free church workshop." />
+
+	<JsonLd data={serviceJsonLd} />
+</BaseLayout>

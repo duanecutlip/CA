@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'Preneed Program Audit | Performance Review';
+const description = 'Comprehensive preneed program audit for NC & SC funeral homes. Penetration rates, conversion analysis, compliance review, and actionable recommendations.';
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Preneed Program Audit',
+	description: 'Comprehensive preneed program performance audit for funeral homes in North Carolina and South Carolina.',
+	provider: {
+		'@type': 'Person',
+		'@id': 'https://cutlipassociates.com/#duane-cutlip',
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+	},
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
+	serviceType: 'Preneed Program Audit',
+};
+---
+
+<BaseLayout title={title} description={description} keywords="preneed program audit, funeral home preneed review, preneed penetration rate, preneed performance analysis">
+	<Hero variant="interior" title="Is Your Preneed Program Performing? Find Out." subtitle="A comprehensive audit that tells you exactly where your program stands — and what to fix." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Funeral Homes', href: '/for-funeral-homes' }, { label: 'Program Audit' }]} />
+
+		<!-- Overview -->
+		<section class="mb-16">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					Most funeral home owners have a gut feeling about their preneed program — they know it could be doing better, but they don't have hard numbers to prove it. They don't know their actual penetration rate, they can't tell you their lead-to-sale conversion percentage, and they haven't reviewed their carrier terms in years.
+				</p>
+				<p class="leading-relaxed">
+					Duane's preneed program audit replaces guesswork with data. In a comprehensive, on-site review, he examines every aspect of your preneed operation — from top-line metrics to compliance documentation — and delivers a written report with specific, prioritized recommendations you can act on immediately.
+				</p>
+			</div>
+		</section>
+
+		<!-- What the Audit Reviews -->
+		<section class="mb-16">
+			<SectionHeading title="What the Audit Reviews" accent />
+			<div class="grid sm:grid-cols-2 gap-6">
+				{[
+					{ title: 'Penetration Rate', desc: 'What percentage of your at-need families had a preneed contract in place? The industry benchmark is 25-35%. If you\'re below that, there\'s significant revenue being left on the table.', metric: 'Benchmark: 25-35%' },
+					{ title: 'Average Face Amount', desc: 'Are your preneed contracts covering the actual cost of a funeral at your home? Duane compares your average face amount against your average at-need revenue to identify underfunding gaps.', metric: 'vs. at-need revenue' },
+					{ title: 'Lead-to-Sale Conversion', desc: 'How many preneed inquiries actually become funded contracts? A healthy program converts 30-40% of qualified leads. Duane analyzes your pipeline to find where leads are falling off.', metric: 'Target: 30-40%' },
+					{ title: 'Cancellation Rate', desc: 'High cancellation rates signal problems — buyer\'s remorse, inadequate onboarding, poor follow-up, or misaligned expectations. Duane reviews your cancellation data and identifies root causes.', metric: 'Root cause analysis' },
+					{ title: 'Compliance Documentation', desc: 'NC and SC have specific requirements for preneed contracts, disclosures, and trust arrangements. Duane reviews your documentation for gaps that could create regulatory or legal exposure.', metric: 'NC & SC requirements' },
+					{ title: 'Carrier Terms', desc: 'When was the last time you compared your carrier\'s commission structure, policy terms, and trust arrangements against the market? Duane benchmarks your carrier relationship to ensure you\'re getting competitive terms.', metric: 'Market comparison' },
+				].map((item) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-1">{item.title}</h3>
+						<p class="text-teal-600 text-sm font-medium mb-3">{item.metric}</p>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{item.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- The Deliverable -->
+		<section class="mb-16">
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">What You Receive</h3>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					Every audit concludes with a <strong>written report</strong> delivered in person, including:
+				</p>
+				<ul class="space-y-2 text-charcoal-700">
+					{[
+						'Current performance metrics with industry benchmarks for comparison',
+						'Identified gaps and risks, prioritized by impact and urgency',
+						'Specific, actionable recommendations with implementation steps',
+						'Carrier comparison data (if applicable)',
+						'Compliance checklist with any items requiring attention',
+						'A 90-day action plan to begin implementing improvements',
+					].map((item) => (
+						<li class="flex items-start gap-2">
+							<svg class="w-4 h-4 text-teal-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-sm">{item}</span>
+						</li>
+					))}
+				</ul>
+				<p class="text-charcoal-500 text-sm mt-4">
+					Duane presents the findings in person and walks through every recommendation so you understand the "why" behind each one.
+				</p>
+			</div>
+		</section>
+
+		<!-- Process -->
+		<section class="mb-16">
+			<SectionHeading title="Audit Process" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<ol class="space-y-4 list-none pl-0">
+					{[
+						{ step: '1', title: 'Data Collection', desc: 'Duane requests your preneed sales data, contract records, carrier statements, and compliance documentation in advance. He reviews everything before setting foot in your funeral home.' },
+						{ step: '2', title: 'On-Site Observation', desc: 'A full day at your funeral home. Duane observes your preneed process in action — how leads are handled, how consultations are conducted, how contracts are documented, and how follow-up happens (or doesn\'t).' },
+						{ step: '3', title: 'Staff Interviews', desc: 'Confidential conversations with your preneed counselors, funeral directors, front desk staff, and management. Duane identifies training gaps, process breakdowns, and internal barriers to preneed success.' },
+						{ step: '4', title: 'Analysis & Benchmarking', desc: 'Duane analyzes your data against industry benchmarks and his experience with similar funeral homes. He identifies specific opportunities and quantifies the potential impact of recommended changes.' },
+						{ step: '5', title: 'Presentation & Discussion', desc: 'Duane presents the full audit report in person, walks through every finding, and answers your questions. You leave the meeting with a clear understanding of where you stand and a prioritized plan to improve.' },
+					].map((step) => (
+						<li class="flex items-start gap-4">
+							<span class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-sm">{step.step}</span>
+							<div>
+								<strong class="text-charcoal-900">{step.title}.</strong>
+								<span class="text-charcoal-700"> {step.desc}</span>
+							</div>
+						</li>
+					))}
+				</ol>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section class="mb-8">
+			<SectionHeading title="Common Questions" accent />
+			<div class="space-y-6">
+				{[
+					{ q: 'How long does the audit take?', a: 'Data collection takes about a week. The on-site visit is a full day. Analysis and report writing take another week. From start to finished report, expect 2-3 weeks total.' },
+					{ q: 'Will my staff know they\'re being evaluated?', a: 'That\'s your call. Some funeral home owners prefer Duane to observe naturally without announcing the audit. Others introduce him to the team upfront. Both approaches work — Duane adapts to your preference.' },
+					{ q: 'What if our numbers are bad?', a: 'That\'s exactly why you need the audit. Duane has worked with funeral homes at every performance level. There\'s no judgment — just an honest assessment and a clear path forward. Most funeral homes are surprised by how quickly targeted changes produce results.' },
+				].map((faq) => (
+					<div class="border-b border-border-light pb-6">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{faq.q}</h3>
+						<p class="text-charcoal-500 leading-relaxed">{faq.a}</p>
+					</div>
+				))}
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="Get an Honest Assessment" subtitle="Call Duane to schedule a preneed program audit. Find out where you stand — and where you could be." />
+
+	<JsonLd data={serviceJsonLd} />
+</BaseLayout>

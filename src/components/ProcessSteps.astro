@@ -1,0 +1,37 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { HOW_IT_WORKS_STEPS } from '../consts';
+---
+
+<section class="py-16 md:py-24 bg-linen">
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+		<SectionHeading
+			title="How It Works"
+			subtitle="Three simple steps to protect your family."
+			accent
+		/>
+
+		<div class="mt-12 relative">
+			{/* Connecting line */}
+			<div class="absolute left-8 top-8 bottom-8 w-0.5 bg-teal-600/20 hidden md:block" aria-hidden="true"></div>
+
+			<div class="space-y-8 md:space-y-12">
+				{HOW_IT_WORKS_STEPS.map((step) => (
+					<div class="flex gap-6 md:gap-8 items-start">
+						<div class="flex-shrink-0 w-16 h-16 rounded-full bg-teal-600 text-white flex items-center justify-center font-heading text-2xl font-bold relative z-10">
+							{step.step}
+						</div>
+						<div class="pt-2">
+							<h3 class="font-heading text-xl md:text-2xl font-semibold text-charcoal-900 mb-2">
+								{step.title}
+							</h3>
+							<p class="text-charcoal-500 leading-relaxed max-w-xl">
+								{step.description}
+							</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SchedulingWidgetPlaceholder from '../components/SchedulingWidgetPlaceholder.astro';
+import Button from '../components/Button.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, EMAIL, ADDRESS, SITE_TITLE, SITE_URL } from '../consts';
+
+const title = 'Contact Duane Cutlip | Free Consultation';
+const description = `Call ${PHONE} for a free pre-need insurance consultation. Duane Cutlip, Licensed Preneed Funeral Director serving Raleigh & Wake County NC.`;
+
+const contactJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'ContactPoint',
+	contactType: 'customer service',
+	telephone: PHONE,
+	email: EMAIL,
+	areaServed: 'North Carolina and South Carolina',
+	availableLanguage: 'English',
+};
+
+const breadcrumbJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+		{ '@type': 'ListItem', position: 2, name: 'Contact', item: `${SITE_URL}/contact` },
+	],
+};
+---
+
+<BaseLayout title={title} description={description}>
+	<Hero variant="interior" title="Contact Duane Cutlip — Free Pre-Need Consultation" subtitle="No pressure. No obligation. Just a friendly conversation about protecting your family." />
+
+	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
+
+	<section class="py-16 md:py-24 bg-warm-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+				<div id="schedule">
+					<SchedulingWidgetPlaceholder />
+				</div>
+
+				<div>
+					<h2 class="font-heading text-2xl md:text-3xl font-bold text-charcoal-900 mb-6">
+						Contact Information
+					</h2>
+
+					<div class="space-y-6">
+						<div>
+							<p class="text-sm text-charcoal-400 mb-2">Call Duane directly:</p>
+							<a
+								href={`tel:${PHONE_RAW}`}
+								class="text-[28px] md:text-[32px] font-heading font-bold text-burgundy-600 hover:text-burgundy-700 transition-colors"
+							>
+								{PHONE}
+							</a>
+						</div>
+
+						<div>
+							<p class="text-sm text-charcoal-400 mb-1">Email</p>
+							<a href={`mailto:${EMAIL}`} class="text-teal-600 hover:text-teal-700 underline underline-offset-2">
+								{EMAIL}
+							</a>
+						</div>
+
+						<div>
+							<p class="text-sm text-charcoal-400 mb-1">Location</p>
+							<p class="text-charcoal-700">{ADDRESS}</p>
+							<p class="text-charcoal-500 text-sm mt-1">Serving all of Wake County</p>
+						</div>
+
+						<div>
+							<p class="text-sm text-charcoal-400 mb-1">Hours</p>
+							<p class="text-charcoal-700">Monday – Friday: 9:00 AM – 5:00 PM</p>
+							<p class="text-charcoal-700">Saturday: By appointment</p>
+							<p class="text-charcoal-700">Sunday: Closed</p>
+						</div>
+					</div>
+
+					<div class="mt-10 bg-linen rounded-xl border border-border-light p-6">
+						<h3 class="font-heading text-lg font-semibold text-charcoal-900 mb-3">
+							What to Expect When You Call
+						</h3>
+						<p class="text-charcoal-500 leading-relaxed">
+							Duane answers personally — no call center, no voicemail maze. He'll introduce himself, ask about your family, and listen to what prompted your call. Most initial conversations last about 15 minutes. There's no sales pitch and no pressure.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<JsonLd data={contactJsonLd} />
+	<JsonLd data={breadcrumbJsonLd} />
+</BaseLayout>

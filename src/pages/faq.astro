@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { FAQ_ITEMS, PHONE, PHONE_RAW } from '../consts';
+
+const title = 'Pre-Need Insurance FAQ | Raleigh NC';
+const description = `Answers to common questions about pre-need insurance, funeral planning costs, and the planning process. Call ${PHONE} for personalized guidance.`;
+
+const categories = ['Basics', 'Costs', 'Process', 'Comparisons', 'Agent'];
+const categoryLabels: Record<string, string> = {
+	Basics: 'Pre-Need Insurance Basics',
+	Costs: 'Costs & Payment',
+	Process: 'The Planning Process',
+	Comparisons: 'Comparisons',
+	Agent: 'About Duane',
+};
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: FAQ_ITEMS.map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: item.answer,
+		},
+	})),
+};
+
+---
+
+<BaseLayout title={title} description={description}>
+	<Hero variant="interior" title="Pre-Need Insurance FAQ" subtitle="The questions families ask most — answered in plain English." />
+
+	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
+
+	<section class="py-16 md:py-24 bg-warm-white">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+			{categories.map((cat) => {
+				const items = FAQ_ITEMS.filter((item) => item.category === cat);
+				if (!items.length) return null;
+				return (
+					<div class="mb-12">
+						<h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-6 pb-3 border-b border-border-light">
+							{categoryLabels[cat] || cat}
+						</h2>
+						<div class="space-y-3">
+							{items.map((item) => (
+								<details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+									<summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+										{item.question}
+										<svg
+											class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+										>
+											<polyline points="6 9 12 15 18 9" />
+										</svg>
+									</summary>
+									<div class="px-6 pb-5 text-charcoal-500 leading-relaxed">
+										{item.answer}
+									</div>
+								</details>
+							))}
+						</div>
+					</div>
+				);
+			})}
+
+		</div>
+	</section>
+
+	<CTABanner title="Have a Question That's Not Listed Here?" subtitle="Duane is happy to answer any question you have — no obligation, no pressure." />
+
+	<JsonLd data={faqJsonLd} />
+</BaseLayout>

@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import Button from '../../components/Button.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'For Hospice Workers | Preneed Quick Reference';
+const description = 'Quick reference for hospice and social workers. Help families understand preneed insurance options in NC & SC. Partner with Duane Cutlip.';
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Preneed Insurance Resource for Hospice & Social Workers',
+	description: 'Quick reference and referral resource for hospice social workers in NC & SC. Help families understand preneed insurance options.',
+	provider: {
+		'@type': 'InsuranceAgency',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
+	serviceType: 'Preneed Insurance Consultation',
+};
+---
+
+<BaseLayout title={title} description={description} keywords="hospice funeral planning, social worker preneed referral, preneed insurance hospice families, NC SC funeral planning">
+	<Hero variant="interior" title="When Families Ask About Funeral Costs: A Guide for Social Workers" subtitle="A quick reference for hospice teams and social workers in North Carolina and South Carolina." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Partners', href: '/partners/estate-attorneys' }, { label: 'Hospice & Social Workers' }]} />
+
+		<!-- Opening -->
+		<section class="mb-16">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					When a patient enters hospice care, the family's world shifts. Alongside the emotional weight of the diagnosis, practical concerns start surfacing — and one of the most common is: <strong>"How much is the funeral going to cost?"</strong>
+				</p>
+				<p class="leading-relaxed">
+					As a social worker or hospice team member, you're often the first person families turn to with these questions. You don't need to have all the answers — but you do need a trusted resource to point them to. Someone who will treat the family with compassion, explain their options clearly, and never apply pressure during an already overwhelming time.
+				</p>
+				<p class="leading-relaxed">
+					That's Duane Cutlip. He's a Licensed Preneed Funeral Director with over 20 years of experience, and he works regularly with hospice teams across North Carolina and South Carolina. When you refer a family to Duane, you know they'll be treated with the same care and professionalism you provide.
+				</p>
+			</div>
+		</section>
+
+		<!-- Quick Facts -->
+		<section class="mb-16">
+			<SectionHeading title="Quick Facts for Your Reference" accent />
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<div class="grid sm:grid-cols-2 gap-6">
+					<div>
+						<p class="text-sm text-charcoal-400 mb-1">Average Funeral Cost (NC)</p>
+						<p class="text-2xl font-heading font-bold text-burgundy-600 mb-3">$8,136+</p>
+						<p class="text-sm text-charcoal-400 mb-1">Average Funeral Cost (SC)</p>
+						<p class="text-2xl font-heading font-bold text-burgundy-600">$8,224+</p>
+					</div>
+					<div class="space-y-3">
+						<div class="flex items-start gap-2">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-charcoal-700 text-sm">Preneed can still be purchased during hospice (in many cases)</span>
+						</div>
+						<div class="flex items-start gap-2">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-charcoal-700 text-sm">Irrevocable preneed is Medicaid-exempt in NC & SC</span>
+						</div>
+						<div class="flex items-start gap-2">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-charcoal-700 text-sm">Pays funeral home directly — bypasses probate</span>
+						</div>
+						<div class="flex items-start gap-2">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-charcoal-700 text-sm">No medical exam required for most policies</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- When to Recommend -->
+		<section class="mb-16">
+			<SectionHeading title="When to Recommend Preneed" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Timing matters in preneed planning — especially for families in hospice situations. Here are the key moments when a referral to Duane can make the biggest difference:
+				</p>
+				<ul class="space-y-3">
+					{[
+						{ bold: 'As early as possible', text: 'The sooner a family begins planning, the more options they have. Early in the hospice journey, families are often more able to have these conversations and make thoughtful decisions.' },
+						{ bold: 'Before Medicaid spend-down', text: 'For families who are spending down assets to qualify for Medicaid, preneed insurance is one of the few exempt asset categories. An irrevocable preneed contract can protect $8,000-$15,000 from the spend-down calculation.' },
+						{ bold: 'When the family starts asking about costs', text: 'If a family member asks you "How much does a funeral cost?" or "What are we supposed to do when the time comes?", that\'s a natural opening to mention preneed planning as an option.' },
+						{ bold: 'When there\'s family disagreement', text: 'If family members disagree about what the patient would want, a preneed plan — documented while the patient can still participate — resolves those disputes before they become painful.' },
+						{ bold: 'When financial stress is evident', text: 'For families already struggling with medical costs, the prospect of an $8,000+ funeral can feel insurmountable. Preneed insurance with installment payments can ease that burden.' },
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-charcoal-900">{item.bold}:</strong> {item.text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- What Duane Does Differently -->
+		<section class="mb-16">
+			<SectionHeading title="What Duane Does Differently" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					You need to know that anyone you refer families to will handle the situation with appropriate sensitivity. Here's how Duane approaches hospice family consultations:
+				</p>
+			</div>
+			<div class="grid sm:grid-cols-2 gap-6 mt-6">
+				{[
+					{ title: 'No Pressure, Ever', desc: 'Duane understands the emotional weight of the situation. He listens first, explains options clearly, and gives families all the time they need. There is never a hard sell.' },
+					{ title: 'Comes to the Family', desc: 'Duane meets families wherever is most comfortable — at home, at the hospice facility, or by phone. He works around the family\'s schedule and the patient\'s condition.' },
+					{ title: 'Handles Everything', desc: 'From paperwork to funeral home coordination to insurance processing, Duane manages every detail so the family doesn\'t have to. One call starts the entire process.' },
+					{ title: 'Keeps You Informed', desc: 'With the family\'s permission, Duane can keep the hospice team updated on the status of funeral planning. This helps ensure continuity of care and reduces the family\'s communication burden.' },
+				].map((item) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{item.title}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{item.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Medicaid Section -->
+		<section class="mb-16">
+			<SectionHeading title="Medicaid & Preneed: What Social Workers Need to Know" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					One of the most valuable aspects of preneed insurance for hospice families is its Medicaid exemption. In both North Carolina and South Carolina, irrevocable preneed funeral contracts are excluded from the asset calculation for Medicaid eligibility.
+				</p>
+				<p class="leading-relaxed">
+					This means a family can purchase an irrevocable preneed policy — typically $8,000 to $15,000 — and those funds are <strong>not counted</strong> when determining Medicaid eligibility. For families who are navigating the spend-down process, this is a critical planning tool that protects a meaningful amount of assets while ensuring the patient's funeral wishes are honored.
+				</p>
+				<p class="leading-relaxed">
+					Duane is well-versed in the Medicaid implications of preneed planning in both states and can explain the specifics to families in plain language. He works regularly with elder law attorneys and Medicaid planners to ensure that preneed contracts are structured properly for maximum protection.
+				</p>
+			</div>
+		</section>
+
+		<!-- How to Refer -->
+		<section class="mb-16">
+			<SectionHeading title="How to Refer a Family" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Referring a family to Duane is straightforward:
+				</p>
+				<ol class="space-y-4 list-none pl-0">
+					{[
+						{ step: '1', title: 'Share Duane\'s number', desc: 'Give the family Duane\'s direct line: (919) 822-2010. He answers personally — no call center, no voicemail maze. Or, with the family\'s permission, call Duane yourself and he\'ll reach out to them.' },
+						{ step: '2', title: 'Duane contacts the family', desc: 'He\'ll introduce himself, listen to their situation, and schedule a time to meet — wherever and whenever is most convenient for the family.' },
+						{ step: '3', title: 'The family gets answers', desc: 'Duane walks through options, costs, and the planning process. If the family wants to move forward, he handles all paperwork and coordination. If they need time, there\'s no follow-up pressure.' },
+					].map((step) => (
+						<li class="flex items-start gap-4">
+							<span class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-sm">{step.step}</span>
+							<div>
+								<strong class="text-charcoal-900">{step.title}.</strong>
+								<span class="text-charcoal-700"> {step.desc}</span>
+							</div>
+						</li>
+					))}
+				</ol>
+			</div>
+		</section>
+
+		<!-- About Duane -->
+		<section class="mb-16">
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">About Duane Cutlip</h3>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					Duane Cutlip is a Licensed Preneed Funeral Director with over 20 years of experience serving families in North Carolina and South Carolina. He holds licenses in both states, is a member of the National Funeral Directors Association (NFDA), and is associated with L. Harold Poole Funeral Home & Crematory.
+				</p>
+				<p class="text-charcoal-700 leading-relaxed">
+					He understands the hospice environment, respects the emotional complexity of end-of-life planning, and treats every family with the compassion they deserve. When you refer a family to Duane, you're connecting them with someone who will honor the trust you've placed in him.
+				</p>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="mb-8">
+			<div class="text-center">
+				<h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-4">Connect with Duane</h2>
+				<p class="text-charcoal-500 mb-6 max-w-2xl mx-auto leading-relaxed">
+					Save Duane's number for when families need a trusted preneed resource. He's available for hospice team consultations and can provide printed reference materials for your office.
+				</p>
+				<div class="flex flex-wrap justify-center gap-4">
+					<Button variant="phone" href={`tel:${PHONE_RAW}`}>
+						Call {PHONE}
+					</Button>
+					<Button variant="primary" href="/contact">
+						Request Reference Materials
+					</Button>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="A Trusted Resource for Your Team" subtitle="When families ask about funeral costs, you'll know exactly who to call." />
+
+	<JsonLd data={serviceJsonLd} />
+</BaseLayout>

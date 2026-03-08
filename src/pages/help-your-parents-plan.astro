@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Button from '../components/Button.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../consts';
+
+const title = 'Help Your Parents Plan | Pre-Need Guide';
+const description = 'A guide for adult children who want to help their parents plan ahead for funeral expenses. Start the conversation with confidence. Raleigh & Wake County NC.';
+
+const articleJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	headline: 'Help Your Parents Plan Ahead — A Guide for Adult Children',
+	description: 'A guide for adult children who want to help their parents plan ahead for funeral expenses.',
+	author: {
+		'@type': 'Person',
+		'@id': 'https://cutlipassociates.com/#duane-cutlip',
+		name: 'Duane Cutlip',
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+};
+---
+
+<BaseLayout title={title} description={description} keywords="help parents plan funeral, talk to parents about funeral, adult children pre-need planning">
+	<Hero variant="interior" title="Help Your Parents Plan Ahead with Pre-Need Insurance" subtitle="Starting the conversation about funeral pre-planning isn't easy — but it might be the most important gift you ever give them." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Your Parents' }]} />
+
+		<!-- Why This Matters -->
+		<section class="mb-16">
+			<SectionHeading title="Why This Matters" accent />
+			<div class="space-y-4 text-charcoal-700">
+				<p class="text-lg leading-relaxed">
+					When a parent passes without a plan, their children are left to make dozens of difficult decisions in a matter of hours — while grieving.
+				</p>
+				<div class="bg-linen rounded-xl p-8 border border-border-light my-8">
+					<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-4">The reality families face without a plan:</h3>
+					<ul class="space-y-3">
+						{[
+							'The average funeral costs $7,848+ in North Carolina — due within days',
+							'63% of Americans have no funeral plan in place',
+							'Families without a plan spend 30-40% more on funeral costs',
+							'Siblings often disagree about arrangements, creating lasting family conflict',
+							'Grieving families are vulnerable to overspending under emotional pressure',
+						].map((stat) => (
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-burgundy-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+								</svg>
+								<span>{stat}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+				<p class="leading-relaxed">
+					By helping your parents plan ahead, you're not just saving money — you're preventing family stress, honoring their wishes, and giving yourself peace of mind.
+				</p>
+			</div>
+		</section>
+
+		<!-- How to Start the Conversation -->
+		<section class="mb-16">
+			<SectionHeading title="How to Start the Conversation" accent />
+			<p class="text-charcoal-500 mb-8">These conversations don't have to be awkward. Here are approaches that work:</p>
+			<div class="space-y-6">
+				{[
+					{
+						tip: 'Lead with love, not logistics',
+						detail: '"Mom, Dad — I want to make sure we honor what you want someday. Can we talk about that?" Starting with why you care makes it feel like an act of love, not a business transaction.',
+					},
+					{
+						tip: 'Use a real-life moment',
+						detail: 'A friend\'s loss, a news story, or a health scare can open the door naturally. "After what happened with Uncle Bill, I\'ve been thinking..." gives context without pressure.',
+					},
+					{
+						tip: 'Make it about them, not you',
+						detail: 'Frame it around their wishes: "I want to make sure your service reflects who you are." Parents often respond to the idea that their preferences matter.',
+					},
+					{
+						tip: 'Bring a resource',
+						detail: 'Share this page or Duane\'s website. Sometimes it\'s easier to say "I found this — what do you think?" than to start from scratch.',
+					},
+					{
+						tip: 'Offer to be there',
+						detail: '"Would you like me to sit with you when you call?" Having support makes the first step much easier for everyone.',
+					},
+				].map((item, i) => (
+					<div class="flex gap-4">
+						<div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center font-heading font-bold">
+							{i + 1}
+						</div>
+						<div>
+							<h3 class="font-heading font-bold text-charcoal-900 text-lg">{item.tip}</h3>
+							<p class="text-charcoal-500 mt-1 leading-relaxed">{item.detail}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- What Happens Next -->
+		<section class="mb-16">
+			<SectionHeading title="What Happens Next" accent />
+			<p class="text-lg text-charcoal-700 mb-6">The process is simpler than you think:</p>
+			<div class="space-y-6">
+				{[
+					{
+						step: 'A 15-minute phone call',
+						desc: 'Your parent (or both of you together) calls Duane. He listens, asks thoughtful questions, and explains options. No pressure, no obligation.',
+					},
+					{
+						step: 'A personalized plan',
+						desc: 'Duane creates a plan based on your parent\'s wishes — service type, music, readings, flowers, everything. Your parent reviews and approves every detail.',
+					},
+					{
+						step: 'Peace of mind for everyone',
+						desc: 'The plan is documented, the costs are locked in, and your family knows exactly what to do when the time comes. No guessing, no conflict, no financial surprise.',
+					},
+				].map((item, i) => (
+					<div class="flex gap-4 items-start">
+						<div class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-500 text-charcoal-900 flex items-center justify-center font-heading font-bold text-sm">
+							{i + 1}
+						</div>
+						<div>
+							<h3 class="font-heading font-bold text-charcoal-900">{item.step}</h3>
+							<p class="text-charcoal-500 mt-1 leading-relaxed">{item.desc}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+
+		<!-- Share This Page -->
+		<section class="mb-16">
+			<div class="bg-white rounded-xl p-8 border border-border-light text-center">
+				<h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-3">Share This Page with Your Family</h2>
+				<p class="text-charcoal-500 mb-6 max-w-lg mx-auto">
+					Sometimes the best way to start the conversation is to share a resource. Send this page to your parents or siblings.
+				</p>
+				<div class="flex flex-wrap justify-center gap-4">
+					<Button variant="primary" href={`mailto:?subject=I found this helpful — pre-need planning info&body=I thought this might be worth reading: ${SITE_URL}/help-your-parents-plan`}>
+						Share via Email
+					</Button>
+					<Button variant="secondary" href={`sms:?body=I thought this was worth reading: ${SITE_URL}/help-your-parents-plan`}>
+						Share via Text
+					</Button>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="Schedule a Call Together" subtitle="You and your parents can call Duane together. He'll guide the conversation so nobody has to do this alone." />
+
+	<JsonLd data={articleJsonLd} />
+</BaseLayout>

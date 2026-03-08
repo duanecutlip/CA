@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { PHONE } from '../../consts';
+
+const title = 'Blog | Pre-Need Planning Resources';
+const description = `Educational articles about pre-need insurance, funeral planning, and protecting your family. By Duane Cutlip. Call ${PHONE}.`;
+
+let articles: any[] = [];
+try {
+	const { getArticles } = await import('../../lib/strapi');
+	articles = await getArticles();
+} catch {}
+---
+
+<BaseLayout title={title} description={description}>
+	<Hero variant="interior" title="Blog" subtitle="Educational articles to help your family plan ahead with confidence." />
+
+	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
+
+	<section class="py-16 md:py-24 bg-warm-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			{articles.length > 0 ? (
+				<div class="grid gap-8">
+					{articles.map((article) => (
+						<a href={`/blog/${article.slug}`} class="block bg-white rounded-xl border border-border-light p-8 hover:border-teal-600/30 hover:shadow-sm transition-all">
+							<h2 class="font-heading text-xl md:text-2xl font-bold text-charcoal-900 mb-3 hover:text-teal-600 transition-colors">
+								{article.title}
+							</h2>
+							<p class="text-charcoal-500 leading-relaxed mb-4">
+								{article.description}
+							</p>
+							<time class="text-sm text-charcoal-400" datetime={article.pubDate}>
+								{new Date(article.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+							</time>
+						</a>
+					))}
+				</div>
+			) : (
+				<div class="text-center py-12 bg-linen rounded-xl border border-border-light">
+					<h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-4">
+						Articles Coming Soon
+					</h2>
+					<p class="text-charcoal-500 max-w-md mx-auto">
+						We're working on educational resources to help families plan ahead. Check back soon, or call Duane directly with any questions.
+					</p>
+				</div>
+			)}
+		</div>
+	</section>
+
+	<CTABanner />
+</BaseLayout>

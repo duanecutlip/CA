@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import BenefitCard from '../components/BenefitCard.astro';
+import TestimonialSection from '../components/TestimonialSection.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import AboutSection from '../components/AboutSection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTABanner from '../components/CTABanner.astro';
+import SchedulingWidgetPlaceholder from '../components/SchedulingWidgetPlaceholder.astro';
+import ServiceAreaList from '../components/ServiceAreaList.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { SITE_TITLE, SITE_URL, PHONE, EMAIL, BENEFITS, SERVICE_AREAS } from '../consts';
+
+const title = `Pre-Need Insurance Raleigh NC | ${SITE_TITLE}`;
+const description = `Protect your family from unexpected funeral costs. Call ${PHONE}. Duane Cutlip, Licensed Preneed Funeral Director, 20+ years serving Raleigh & Wake County NC.`;
+
+const websiteJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	'@id': 'https://cutlipassociates.com/#website',
+	name: SITE_TITLE,
+	url: SITE_URL,
+};
+
+const localBusinessJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'LocalBusiness',
+	'@id': 'https://cutlipassociates.com/#local-business',
+	name: SITE_TITLE,
+	telephone: PHONE,
+	email: EMAIL,
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Wendell',
+		addressRegion: 'NC',
+		postalCode: '27591',
+		addressCountry: 'US',
+	},
+	areaServed: SERVICE_AREAS.map((area) => ({
+		'@type': 'City',
+		name: `${area.name}, ${area.state}`,
+	})),
+	priceRange: '$$',
+	openingHoursSpecification: [
+		{
+			'@type': 'OpeningHoursSpecification',
+			dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+			opens: '09:00',
+			closes: '17:00',
+		},
+		{
+			'@type': 'OpeningHoursSpecification',
+			dayOfWeek: 'Saturday',
+			opens: '09:00',
+			closes: '12:00',
+			description: 'By appointment only',
+		},
+	],
+	employee: {
+		'@type': 'Person',
+		'@id': 'https://cutlipassociates.com/#duane-cutlip',
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+		telephone: PHONE,
+	},
+};
+---
+
+<BaseLayout title={title} description={description}>
+	<Hero
+		variant="home"
+		title="Pre-Need Funeral Planning for North Carolina & South Carolina Families"
+		subtitle="Pre-need funeral planning protects the people you love from difficult decisions, unexpected costs, and the stress of guessing what you would have wanted."
+	/>
+
+	<TrustBar />
+
+	<section class="py-16 md:py-24 bg-warm-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal-900 mb-4">
+					Why Plan Ahead?
+				</h2>
+				<p class="text-charcoal-500 max-w-2xl mx-auto">
+					Planning ahead isn't about dying — it's about living with the peace of knowing your family is protected.
+				</p>
+			</div>
+			<div class="grid md:grid-cols-3 gap-6">
+				{BENEFITS.map((benefit) => (
+					<BenefitCard
+						title={benefit.title}
+						description={benefit.description}
+						icon={benefit.icon as 'heart' | 'shield' | 'star'}
+					/>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<TestimonialSection />
+
+	<ProcessSteps />
+
+	<AboutSection />
+
+	<FAQSection limit={6} title="Common Questions" subtitle="The answers families ask for most — before they even pick up the phone." />
+
+	<section class="py-16 md:py-24 bg-warm-white">
+		<div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-8">
+				<h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal-900 mb-4">
+					Can't Call Right Now?
+				</h2>
+				<p class="text-charcoal-500 max-w-xl mx-auto">
+					Pick a time that works for you. Duane will call you personally — no salespeople, no pressure.
+				</p>
+			</div>
+			<SchedulingWidgetPlaceholder heading="Pick a Time" subheading="Choose a date and time below and Duane will call you at that exact time." />
+		</div>
+	</section>
+
+	<CTABanner />
+
+	<ServiceAreaList />
+
+	<JsonLd data={websiteJsonLd} />
+	<JsonLd data={localBusinessJsonLd} />
+</BaseLayout>

@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import Button from '../../components/Button.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { PHONE } from '../../consts';
+
+const title = 'Industry Insights | Preneed & Funeral Industry';
+const description = 'Expert analysis on preneed insurance trends, regulations, and best practices for NC & SC funeral professionals. By Duane Cutlip.';
+
+const articles = [
+	{
+		title: 'The State of Preneed in the Carolinas — 2026',
+		href: '/insights/state-of-preneed-carolinas-2026',
+		description: 'A comprehensive look at the preneed market in North Carolina and South Carolina: cremation trends, carrier landscape shifts, NC HB 1003, the boomer wave, and what funeral homes should do now.',
+		date: 'March 2026',
+	},
+	{
+		title: '5 Preneed KPIs Every Funeral Home Should Track',
+		href: '/insights/preneed-kpis-every-funeral-home-should-track',
+		description: 'Most funeral homes fly blind on preneed performance. Here are the five metrics that matter — penetration rate, average face amount, conversion rate, cancellation rate, and cost per acquisition — with benchmarks and formulas.',
+		date: 'March 2026',
+	},
+	{
+		title: 'North Carolina Preneed Regulations Explained in Plain English',
+		href: '/insights/nc-preneed-regulations-explained',
+		description: 'A full walkthrough of N.C.G.S. 90-210.60 through 90-210.73 — licensing, trust requirements, insurance-funded preneed, consumer protections, NC HB 1003 changes, and a compliance checklist for funeral homes.',
+		date: 'March 2026',
+	},
+];
+---
+
+<BaseLayout title={title} description={description} keywords="preneed insurance trends, funeral industry insights, NC preneed regulations, funeral home KPIs, preneed best practices">
+	<Hero variant="interior" title="Preneed Industry Insights" subtitle="Expert analysis on preneed insurance trends, regulations, and best practices for funeral professionals in North Carolina and South Carolina." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Insights' }]} />
+
+		<p class="text-lg text-charcoal-700 leading-relaxed mb-4">
+			These articles are written for funeral directors, preneed managers, and industry professionals — not consumers. If you're a family looking for preneed planning help, visit our <a href="/plan-ahead" class="text-teal-600 hover:text-teal-700 underline">Plan Ahead</a> page.
+		</p>
+		<p class="text-charcoal-500 leading-relaxed mb-12">
+			By <strong class="text-charcoal-900">Duane Cutlip</strong>, Licensed Preneed Funeral Director with 20+ years of experience across NC and SC.
+		</p>
+
+		<!-- Articles -->
+		<SectionHeading title="Articles & Analysis" accent />
+
+		<div class="grid gap-8 mb-16">
+			{articles.map((article) => (
+				<a href={article.href} class="block bg-white rounded-xl border border-border-light p-8 hover:border-teal-600/30 hover:shadow-sm transition-all">
+					<div class="flex items-center gap-3 mb-3">
+						<span class="text-sm text-charcoal-400">{article.date}</span>
+					</div>
+					<h3 class="font-heading text-xl md:text-2xl font-bold text-charcoal-900 mb-3 hover:text-teal-600 transition-colors">
+						{article.title}
+					</h3>
+					<p class="text-charcoal-500 leading-relaxed">
+						{article.description}
+					</p>
+				</a>
+			))}
+		</div>
+
+		<!-- Newsletter CTA -->
+		<div class="bg-linen rounded-xl border border-border-light p-8 md:p-10 mb-16">
+			<h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-3">Subscribe to The Preneed Insider</h2>
+			<p class="text-charcoal-500 leading-relaxed mb-6">
+				Monthly insights on preneed trends, regulatory changes, and actionable strategies for funeral professionals in the Carolinas. Coming soon.
+			</p>
+			<p class="text-sm text-charcoal-400">
+				Newsletter launching soon. In the meantime, <a href="/contact" class="text-teal-600 hover:text-teal-700 underline">reach out directly</a> to discuss your preneed program.
+			</p>
+		</div>
+
+		<!-- Link to consulting -->
+		<div class="text-center">
+			<p class="text-charcoal-500 mb-4">Looking for hands-on help with your funeral home's preneed program?</p>
+			<Button variant="primary" href="/for-funeral-homes">
+				Explore Consulting Services
+			</Button>
+		</div>
+	</div>
+
+	<CTABanner title="Let's Talk About Your Preneed Program" subtitle="Duane consults with funeral homes across NC and SC on preneed strategy, compliance, and growth." />
+</BaseLayout>

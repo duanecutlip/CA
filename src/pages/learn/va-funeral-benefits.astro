@@ -1,0 +1,569 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'VA Funeral Benefits Guide | What\'s Actually Covered';
+const description = 'VA burial benefits only cover $300–$2,000 of funeral costs. Learn the real gap and how preneed insurance fills it. Guide for NC & SC military families by Duane Cutlip.';
+const keywords = 'VA funeral benefits, veteran burial benefits, VA burial allowance, military funeral planning, preneed insurance veterans NC SC, Fort Liberty funeral planning';
+
+const articleJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	headline: 'VA Funeral Benefits: What Veterans and Military Families Need to Know',
+	description: description,
+	author: {
+		'@type': 'Person',
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+		worksFor: {
+			'@type': 'Organization',
+			name: 'Cutlip Associates, LLC',
+		},
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+	datePublished: '2026-03-06',
+	dateModified: '2026-03-06',
+	url: `${SITE_URL}/learn/va-funeral-benefits`,
+	mainEntityOfPage: `${SITE_URL}/learn/va-funeral-benefits`,
+};
+
+const faqItems = [
+	{
+		question: 'How much does the VA actually pay for a veteran\'s funeral?',
+		answer: 'The VA burial allowance is $300 for non-service-connected deaths (for veterans receiving a VA pension or discharged from a VA hospital) and up to $2,000 for service-connected deaths. If the veteran is buried in a VA national cemetery, the government provides a free burial plot, headstone, and opening/closing of the grave — but the family still pays for the funeral service, casket or urn, transportation, and preparation. Most families spend $6,000–$8,000 or more out of pocket even with full VA benefits.',
+	},
+	{
+		question: 'Can my spouse be buried in a national cemetery with me?',
+		answer: 'Yes. Eligible spouses and dependents can be interred in a national cemetery alongside the veteran at no additional cost for the gravesite. The spouse\'s name and dates are inscribed on the veteran\'s headstone. However, the family is still responsible for the funeral service costs for the spouse. Preneed insurance can cover both the veteran\'s and the spouse\'s funeral expenses to ensure neither service creates a financial burden.',
+	},
+	{
+		question: 'Do I need to apply for VA burial benefits in advance?',
+		answer: 'You don\'t have to, but it\'s highly recommended. The VA offers a Pre-Need Eligibility Determination program (VA Form 40-10007) that confirms your eligibility for national cemetery burial before the need arises. This saves your family from navigating paperwork during an already difficult time. Duane can help you gather the documents — including your DD-214 — and coordinate this with your preneed insurance plan.',
+	},
+	{
+		question: 'Does preneed insurance affect my VA benefits?',
+		answer: 'No. Preneed funeral insurance is a separate, private insurance product and does not reduce, replace, or interfere with any VA burial benefits. The two work together: VA benefits cover what they cover (burial allowance, national cemetery plot, headstone), and preneed insurance covers everything else (funeral home services, casket, transportation, preparation, and more). Your family receives the full value of both.',
+	},
+	{
+		question: 'What if I\'m a veteran on Medicaid — can I still get preneed insurance?',
+		answer: 'Yes. In both North Carolina and South Carolina, irrevocable preneed funeral contracts are generally exempt from Medicaid asset calculations. This means you can purchase preneed insurance without jeopardizing your Medicaid eligibility. For veterans who rely on both VA benefits and Medicaid, preneed insurance is one of the few ways to set aside funds specifically for funeral costs without triggering a spend-down. Duane can walk you through the details for your specific situation.',
+	},
+	{
+		question: 'How do I request military funeral honors?',
+		answer: 'Military funeral honors are available to all eligible veterans at no cost. The honors typically include at least two uniformed service members, the folding and presentation of the American flag, and the playing of Taps. Your family or the funeral home can request honors by contacting the appropriate military branch or the local VA national cemetery. When you create a preneed plan with Duane, he documents your military honors preferences — specific branch traditions, gun salute requests, unit involvement — so the funeral home knows exactly what to coordinate when the time comes.',
+	},
+];
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: item.answer,
+		},
+	})),
+};
+---
+
+<BaseLayout title={title} description={description} keywords={keywords} article>
+	<Hero
+		variant="interior"
+		title="VA Funeral Benefits: What Veterans and Military Families Need to Know"
+		subtitle="The VA provides real benefits — but they don't cover nearly as much as most families expect. Here's what's actually included, what's not, and how to close the gap."
+	/>
+
+	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Learn', href: '/learn' }, { label: 'VA Funeral Benefits' }]} />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+		<!-- Key Takeaway -->
+		<div class="bg-teal-50 border-l-4 border-teal-600 rounded-r-xl p-6 mb-12">
+			<p class="font-heading font-bold text-charcoal-900 mb-2">Key Takeaway</p>
+			<p class="text-charcoal-700 leading-relaxed">The VA provides meaningful burial benefits for eligible veterans — including a free burial plot in a national cemetery and a government headstone. But the VA's burial allowance only covers $300 to $2,000 of actual funeral costs, while the average funeral runs $8,000 or more. Preneed insurance bridges this gap so military families aren't left with thousands in unexpected expenses.</p>
+		</div>
+
+		<!-- Section 1: What VA Burial Benefits Actually Cover -->
+		<section class="mb-16">
+			<SectionHeading title="What VA Burial Benefits Actually Cover" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p>The Department of Veterans Affairs provides several categories of burial benefits to eligible veterans and their families. Understanding exactly what's included — and what's not — is the first step toward making sure your family is truly protected.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Burial Allowance</h3>
+				<p>The VA pays a flat burial allowance to help offset funeral costs, but the amount depends on the cause of death:</p>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Non-service-connected death:</strong> $300 toward burial and funeral expenses (if the veteran was receiving a VA pension or was discharged from a VA facility). An additional plot allowance of up to $948 may be available if the veteran is not buried in a national cemetery.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Service-connected death:</strong> Up to $2,000 toward burial expenses. This amount has not increased significantly in years, even as funeral costs have risen steadily.</span>
+					</li>
+				</ul>
+				<p>These allowances have not kept pace with funeral cost inflation. When the burial allowance was established, it covered a meaningful portion of funeral expenses. Today, $300 covers less than 4% of the average funeral.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">National Cemetery Burial</h3>
+				<p>Veterans who choose burial in a VA national cemetery receive several benefits at no cost to the family:</p>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Free burial plot with perpetual maintenance</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Opening and closing of the grave</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Government-issued headstone or marker</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Presidential Memorial Certificate</span>
+					</li>
+				</ul>
+				<p>National cemeteries in the Carolinas include Salisbury National Cemetery, Sandhills State Veterans Cemetery, and Coastal Carolina State Veterans Cemetery in North Carolina, and Florence National Cemetery and Fort Jackson National Cemetery in South Carolina.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Burial Flag</h3>
+				<p>The VA provides a free American flag to drape the veteran's casket or accompany the urn. After the service, the flag is presented to the next of kin or a close friend as a keepsake honoring the veteran's service.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Military Funeral Honors</h3>
+				<p>Every eligible veteran is entitled to military funeral honors at no cost, which include at minimum two uniformed service members, the folding and presentation of the American flag, and the playing of Taps (either live or recorded). Full honors for higher-ranking veterans may include a gun salute, caisson, and honor guard.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Headstone or Marker</h3>
+				<p>The VA provides a free government-issued headstone, marker, or medallion for any eligible veteran — even those buried in private cemeteries. The family may need to pay for setting the headstone at a private cemetery, but the headstone itself is provided at no charge.</p>
+			</div>
+		</section>
+
+		<!-- Stat Callout Box -->
+		<div class="bg-linen rounded-xl p-8 mb-16 border border-border-light">
+			<p class="text-2xl font-heading font-bold text-charcoal-900 mb-2">VA burial allowance: <span class="text-burgundy-600">$300–$2,000</span></p>
+			<p class="text-2xl font-heading font-bold text-charcoal-900 mb-2">Average funeral cost: <span class="text-burgundy-600">$8,000+</span></p>
+			<p class="text-2xl font-heading font-bold text-charcoal-900 mb-2">The gap your family must cover: <span class="text-burgundy-600">$6,000–$7,700+</span></p>
+			<p class="text-charcoal-500 mt-4">This gap is the single biggest financial surprise military families face. Preneed insurance eliminates it entirely.</p>
+		</div>
+
+		<!-- Section 2: The Benefits Gap -->
+		<section class="mb-16">
+			<SectionHeading title="The Benefits Gap: What the VA Doesn't Cover" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p>Even with full VA burial benefits, families are still responsible for the majority of funeral costs. Here's what the VA does <strong>not</strong> pay for:</p>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Funeral home services and staff</strong> — the professional fees for coordinating and directing the service</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Casket or urn</strong> — ranging from $1,000 to $10,000+ depending on material and style</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Embalming and body preparation</strong> — required for open-casket viewings</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Transportation</strong> — transfer from place of death, hearse to cemetery, family limousine</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Flowers, programs, and obituary notices</strong> — the personal touches that make a service meaningful</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Reception and gathering costs</strong> — venue rental, catering, and refreshments</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Clothing for the deceased</strong> — sometimes overlooked but a real cost</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Additional death certificates</strong> — needed for insurance claims, bank accounts, property transfers, and more</span>
+					</li>
+				</ul>
+				<p>To put this in perspective: the $300 non-service-connected burial allowance covers roughly 3–4% of a typical funeral. Even the $2,000 service-connected allowance covers only about 25%. The remaining balance — anywhere from $6,000 to $8,000 or more — falls directly on the family, often at the worst possible time.</p>
+				<p>Many families assume the VA "takes care of everything" for veterans. The reality is that VA burial benefits are a supplement, not a solution. Without additional planning, families are left scrambling to cover thousands of dollars in unexpected costs within days of losing their loved one.</p>
+			</div>
+		</section>
+
+		<!-- Section 3: VA Burial in National Cemeteries -->
+		<section class="mb-16">
+			<SectionHeading title="VA Burial in National Cemeteries" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p>National cemetery burial is one of the most valuable VA benefits available — but it's important to understand what it includes and what it doesn't.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">What's Provided Free of Charge</h3>
+				<p>At a national cemetery, the VA covers the burial plot, the opening and closing of the grave, a government headstone or marker, and perpetual care of the gravesite. This eliminates thousands of dollars in cemetery costs that families would otherwise pay at a private cemetery — a typical private plot in North Carolina runs $1,500 to $5,000, plus $500 to $1,500 for opening and closing.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Who's Eligible</h3>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Veterans discharged under conditions other than dishonorable</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Active-duty service members</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>National Guard and Reserve members who were called to federal active duty or completed 20 years of qualifying service</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Eligible spouses and dependent children (buried alongside the veteran)</span>
+					</li>
+				</ul>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">National Cemeteries in the Carolinas</h3>
+				<p>Veterans and their families in North Carolina and South Carolina have access to several national and state veterans cemeteries:</p>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>North Carolina:</strong> Salisbury National Cemetery, Sandhills State Veterans Cemetery (Spring Lake), Coastal Carolina State Veterans Cemetery (Jacksonville), Western Carolina State Veterans Cemetery (Black Mountain)</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>South Carolina:</strong> Florence National Cemetery, Fort Jackson National Cemetery (Columbia), Beaufort National Cemetery</span>
+					</li>
+				</ul>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">The Critical Distinction</h3>
+				<p>While the <strong>plot</strong> is free at a national cemetery, the <strong>funeral service</strong> still costs money. The VA does not pay for the funeral home's professional services, the casket or urn, transportation to the cemetery, embalming, or any other service-related expenses. A family choosing national cemetery burial still needs to pay the funeral home for everything that happens before the casket reaches the gravesite.</p>
+				<p>For veterans choosing a <strong>private cemetery</strong>, the VA provides a headstone or marker at no charge, but the family pays for the plot itself, the opening and closing of the grave, and all funeral service costs. This is where the gap becomes even larger.</p>
+			</div>
+		</section>
+
+		<!-- Section 4: Fort Liberty Families -->
+		<section class="mb-16">
+			<SectionHeading title="Fort Liberty Families: Planning for Cumberland County Veterans" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p>Fort Liberty — formerly Fort Bragg — is one of the largest military installations in the world. Home to the XVIII Airborne Corps, U.S. Army Special Operations Command, and the 82nd Airborne Division, Fort Liberty represents the heart of American military readiness. The surrounding Fayetteville and Cumberland County area is home to thousands of active-duty service members, veterans, military retirees, and their families.</p>
+				<p>For these families, funeral planning carries unique urgency. Frequent deployments mean service members may be overseas when a family emergency occurs. PCS (permanent change of station) orders can uproot a family on short notice, making it essential that any plan is fully portable. And the emotional weight of military service — the awareness of risk that comes with the uniform — makes many military families more motivated to plan ahead than the general population.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Why Preneed Insurance Matters for Fort Liberty Families</h3>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Portability:</strong> Preneed insurance travels with you. If you PCS from Fort Liberty to Fort Cavazos, Fort Stewart, or anywhere else, your plan and your documented wishes go with you.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Pre-deployment planning:</strong> Many Fort Liberty families use preneed to ensure wishes are documented before a deployment. If the unthinkable happens, the family has a clear plan — not a pile of decisions to make under duress.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>VA benefit coordination:</strong> Duane helps Fort Liberty families understand exactly what the VA will and won't cover, and builds a preneed plan that fills every gap.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Proximity to Sandhills State Veterans Cemetery:</strong> Located in Spring Lake, just minutes from Fort Liberty, Sandhills is one of the most accessible state veterans cemeteries in NC.</span>
+					</li>
+				</ul>
+				<p>Duane serves the Fort Liberty community and understands the realities of military family life — the PCS cycle, the deployment tempo, the mix of active-duty and veteran populations. If you're stationed at Fort Liberty or live in the <a href="/service-areas/fayetteville" class="text-teal-600 hover:text-teal-700 underline">Fayetteville area</a>, Duane can help you build a plan that works with your VA benefits and moves with you wherever you go.</p>
+			</div>
+		</section>
+
+		<!-- Section 5: Joint Base Charleston Families -->
+		<section class="mb-16">
+			<SectionHeading title="Joint Base Charleston Families: Planning for Lowcountry Veterans" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p>Joint Base Charleston is a major Air Force and Navy installation that supports airlift, global reach, and maritime operations. The base and its associated commands bring a significant military population to the Charleston metro area — from North Charleston and Goose Creek to Summerville and Mount Pleasant.</p>
+				<p>Military families in the Charleston area face many of the same planning challenges as those at Fort Liberty: the possibility of reassignment, the need for portable coverage, and the desire to ensure family members aren't burdened with unexpected costs. South Carolina preneed rules (governed by SC Code § 32-7-10) require licensed preneed funeral directors to manage these plans, and Duane holds the proper SC licensing to serve Charleston-area families.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Key Considerations for Charleston Military Families</h3>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Access to Fort Jackson National Cemetery in nearby Columbia for national cemetery burial</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Beaufort National Cemetery is another option for Lowcountry military families</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>SC Medicaid preneed exemption rules protect irrevocable funeral contracts from asset spend-down</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Duane is licensed in both NC and SC — ideal for families with cross-state military connections</span>
+					</li>
+				</ul>
+				<p>Whether you're active duty at Joint Base Charleston, a Navy veteran living in Mount Pleasant, or a retiree who settled in the Lowcountry after your service, Duane can help you build a preneed plan that supplements your VA benefits and protects your family. Learn more about Duane's work in the <a href="/service-areas/charleston-sc" class="text-teal-600 hover:text-teal-700 underline">Charleston area</a>.</p>
+			</div>
+		</section>
+
+		<!-- Section 6: How Preneed Insurance Supplements VA Benefits -->
+		<section class="mb-16">
+			<SectionHeading title="How Preneed Insurance Supplements VA Benefits" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p>Preneed insurance and VA burial benefits are designed to work together, not replace each other. The VA covers certain cemetery and memorial costs; preneed insurance covers everything else. When both are in place, the result is straightforward: <strong>your family pays nothing out of pocket.</strong></p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Side-by-Side: VA Benefits vs. Preneed Coverage</h3>
+				<div class="overflow-x-auto not-prose">
+					<table class="w-full border-collapse text-sm">
+						<thead>
+							<tr class="bg-linen">
+								<th class="text-left px-4 py-3 font-heading font-bold text-charcoal-900">Cost Category</th>
+								<th class="text-left px-4 py-3 font-heading font-bold text-charcoal-900">VA Covers?</th>
+								<th class="text-left px-4 py-3 font-heading font-bold text-charcoal-900">Preneed Covers?</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Burial plot (national cemetery)</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+								<td class="px-4 py-3 text-charcoal-400">Not needed</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Headstone / marker</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+								<td class="px-4 py-3 text-charcoal-400">Not needed</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Burial flag</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+								<td class="px-4 py-3 text-charcoal-400">Not needed</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Military funeral honors</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+								<td class="px-4 py-3 text-charcoal-400">Not needed</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Funeral home services & staff</td>
+								<td class="px-4 py-3 text-burgundy-600 font-semibold">No</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Casket or urn</td>
+								<td class="px-4 py-3 text-burgundy-600 font-semibold">No</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Embalming & preparation</td>
+								<td class="px-4 py-3 text-burgundy-600 font-semibold">No</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Transportation (hearse, transfers)</td>
+								<td class="px-4 py-3 text-burgundy-600 font-semibold">No</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Flowers, programs, obituary</td>
+								<td class="px-4 py-3 text-burgundy-600 font-semibold">No</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Reception / gathering</td>
+								<td class="px-4 py-3 text-burgundy-600 font-semibold">No</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+							</tr>
+							<tr class="border-b border-border-light">
+								<td class="px-4 py-3 text-charcoal-700">Death certificates</td>
+								<td class="px-4 py-3 text-burgundy-600 font-semibold">No</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+							</tr>
+							<tr>
+								<td class="px-4 py-3 text-charcoal-700">Private cemetery plot & opening</td>
+								<td class="px-4 py-3 text-burgundy-600 font-semibold">No</td>
+								<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Key Advantages of Preneed for Veterans</h3>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Locks in today's prices:</strong> The VA burial allowance is a fixed dollar amount that rarely increases. Meanwhile, funeral costs rise 3–5% per year. Preneed insurance freezes your costs at today's rates.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Documents exact wishes:</strong> Military honors combined with personal preferences — specific hymns, readings, unit involvement, flag recipient designation — are all recorded in the preneed plan.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Pays the funeral home directly:</strong> Your family doesn't have to front thousands of dollars and wait for VA reimbursement. The preneed policy pays the funeral home upon need, and VA benefits are received separately.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Works alongside VA benefits:</strong> Preneed insurance supplements VA benefits — it doesn't replace them. Your family receives the full value of both.</span>
+					</li>
+				</ul>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Example Scenario</h3>
+				<p>A retired Army veteran in Fayetteville has full VA burial benefits and chooses burial at Sandhills State Veterans Cemetery. The VA covers the plot, headstone, and opening/closing. The veteran also has a preneed insurance policy that covers the funeral home services, casket, transportation, flowers, programs, and reception. When the time comes, the family's out-of-pocket cost is <strong>$0</strong>. The funeral home is paid by the preneed policy. The VA provides the cemetery benefits. The family can focus entirely on grieving, remembering, and honoring their loved one.</p>
+			</div>
+		</section>
+
+		<!-- Section 7: Pre-Planning for Veterans Checklist -->
+		<section class="mb-16">
+			<SectionHeading title="Pre-Planning for Veterans: What to Document" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p>Veterans who want to ensure their families are fully prepared should gather and organize the following documents and decisions. This checklist works hand-in-hand with a preneed insurance plan — together, they give your family everything they need.</p>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Essential Documents</h3>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>DD-214 (Certificate of Release or Discharge from Active Duty):</strong> This is the most important document for establishing VA burial benefit eligibility. Keep the original in a safe, accessible location and give a copy to your preneed funeral director.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>VA benefits letter:</strong> Confirms your current VA benefit status and eligibility.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Medal and award documentation:</strong> Specific medals or commendations you want recognized during the service or inscribed on the headstone.</span>
+					</li>
+				</ul>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Military Service Details to Record</h3>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Branch of service (Army, Navy, Air Force, Marines, Coast Guard, Space Force)</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Dates of service (entry and discharge)</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Rank at discharge</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Unit assignments (especially for honor guard coordination)</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span>Wartime service periods (Korea, Vietnam, Desert Storm, OEF/OIF, etc.)</span>
+					</li>
+				</ul>
+
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mt-8 mb-3">Funeral and Memorial Preferences</h3>
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Burial location:</strong> National cemetery, state veterans cemetery, or private cemetery</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Military honors:</strong> Standard honors (two-person detail, flag folding, Taps) or full honors (gun salute, caisson, honor guard)</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Flag recipient:</strong> Who should receive the folded flag — spouse, child, parent, or another person</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Personal elements:</strong> Specific hymns, scripture readings, poems, or songs</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Special requests:</strong> Unit involvement, buddy escort, specific veterans organization participation (VFW, American Legion)</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><strong>Burial vs. cremation preference:</strong> And if cremation, whether the urn will be interred, placed in a columbarium, or kept by the family</span>
+					</li>
+				</ul>
+
+				<p class="mt-6">When you combine this documentation with a preneed insurance plan, every detail is accounted for — both the financial coverage and the personal wishes. Your family will have a complete roadmap. No guesswork. No scrambling. No unexpected bills. Learn more about <a href="/plan-ahead" class="text-teal-600 hover:text-teal-700 underline">how preneed planning works</a> or visit our <a href="/faq" class="text-teal-600 hover:text-teal-700 underline">FAQ page</a> for additional questions.</p>
+			</div>
+		</section>
+
+		<!-- Section 8: FAQ -->
+		<section class="mb-16">
+			<SectionHeading title="Frequently Asked Questions: VA Benefits & Preneed Insurance" accent />
+			<div class="space-y-3">
+				{faqItems.map((faq) => (
+					<details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+						<summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+							{faq.question}
+							<svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg>
+						</summary>
+						<div class="px-6 pb-5 text-charcoal-500 leading-relaxed">{faq.answer}</div>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<!-- Related Resources -->
+		<section class="mb-16">
+			<SectionHeading title="Related Resources" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<ul class="space-y-3 list-none pl-0">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><a href="/military-families" class="text-teal-600 hover:text-teal-700 underline">Preneed Insurance for Military Families</a> — overview of how preneed bridges the VA benefits gap</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><a href="/learn/preneed-insurance-nc" class="text-teal-600 hover:text-teal-700 underline">Preneed Insurance in North Carolina</a> — NC-specific regulations and requirements</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><a href="/learn/preneed-insurance-sc" class="text-teal-600 hover:text-teal-700 underline">Preneed Insurance in South Carolina</a> — SC-specific regulations and requirements</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><a href="/learn/medicaid-funeral-planning" class="text-teal-600 hover:text-teal-700 underline">Medicaid & Funeral Planning</a> — how preneed insurance protects your Medicaid eligibility</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><a href="/service-areas" class="text-teal-600 hover:text-teal-700 underline">Service Areas</a> — all NC and SC communities Duane serves</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						<span><a href="/contact" class="text-teal-600 hover:text-teal-700 underline">Contact Duane</a> — schedule a free consultation about your preneed plan</span>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Author Byline -->
+		<div class="bg-linen rounded-xl p-8 border border-border-light mb-8">
+			<div class="flex items-start gap-4">
+				<div class="w-16 h-16 rounded-full bg-teal-600/10 flex items-center justify-center flex-shrink-0">
+					<svg class="w-8 h-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+					</svg>
+				</div>
+				<div>
+					<p class="font-heading font-bold text-charcoal-900">Written by Duane Cutlip</p>
+					<p class="text-charcoal-500 text-sm mb-2">Licensed Preneed Funeral Director | 20+ Years Experience | NFDA Member</p>
+					<p class="text-charcoal-700 text-sm leading-relaxed">Duane Cutlip is a Licensed Preneed Funeral Director serving families across North Carolina and South Carolina. He works closely with military families at Fort Liberty and Joint Base Charleston, helping them understand how VA burial benefits work alongside preneed insurance to eliminate out-of-pocket funeral costs. Duane's approach is simple: listen first, explain the options honestly, and build a plan that gives your family complete peace of mind. Call him directly at <a href={`tel:${PHONE_RAW}`} class="text-teal-600 hover:text-teal-700 underline">{PHONE}</a>.</p>
+				</div>
+			</div>
+			<p class="text-charcoal-400 text-xs mt-4">Last updated: March 2026</p>
+		</div>
+
+	</div>
+
+	<CTABanner
+		title="Protect Your Family from the VA Benefits Gap"
+		subtitle="Call Duane for a free consultation about supplementing your VA burial benefits with preneed insurance. Licensed in NC and SC."
+	/>
+
+	<JsonLd data={articleJsonLd} />
+	<JsonLd data={faqJsonLd} />
+</BaseLayout>

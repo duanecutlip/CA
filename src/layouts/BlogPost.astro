@@ -1,0 +1,89 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import JsonLd from '../components/JsonLd.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { SITE_TITLE, SITE_URL, PHONE } from '../consts';
+
+interface Props {
+	title: string;
+	description: string;
+	pubDate: Date;
+	updatedDate?: Date;
+	heroImage?: string;
+	slug: string;
+}
+
+const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.props;
+
+const articleJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	headline: title,
+	description: description,
+	datePublished: pubDate.toISOString(),
+	...(updatedDate && { dateModified: updatedDate.toISOString() }),
+	author: {
+		'@type': 'Person',
+		name: 'Duane Cutlip',
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: SITE_TITLE,
+		url: SITE_URL,
+	},
+};
+
+const breadcrumbJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+		{ '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+		{ '@type': 'ListItem', position: 3, name: title, item: `${SITE_URL}/blog/${slug}` },
+	],
+};
+---
+
+<BaseLayout title={title} description={description} article>
+	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: title }]} />
+
+	<article class="py-12 md:py-16">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+			<header class="mb-10">
+				<h1 class="font-heading text-3xl md:text-[40px] font-bold text-charcoal-900 leading-tight mb-4">
+					{title}
+				</h1>
+				<p class="text-lg text-charcoal-500 mb-4">{description}</p>
+				<div class="flex items-center gap-4 text-sm text-charcoal-400">
+					<time datetime={pubDate.toISOString()}>
+						<FormattedDate date={pubDate} />
+					</time>
+					{updatedDate && (
+						<span>
+							Updated: <FormattedDate date={updatedDate} />
+						</span>
+					)}
+				</div>
+			</header>
+
+			{heroImage && (
+				<img
+					src={heroImage}
+					alt={title}
+					class="w-full rounded-xl mb-10 aspect-[16/9] object-cover"
+				/>
+			)}
+
+			<div class="prose max-w-none">
+				<slot />
+			</div>
+		</div>
+	</article>
+
+	<CTABanner />
+
+	<JsonLd data={articleJsonLd} />
+	<JsonLd data={breadcrumbJsonLd} />
+</BaseLayout>

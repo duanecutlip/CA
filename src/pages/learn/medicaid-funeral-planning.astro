@@ -1,0 +1,548 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'Medicaid & Funeral Planning | Protect Your Assets';
+const description = 'Preneed insurance is exempt from Medicaid asset calculations in NC & SC. Learn how to protect funeral funds while qualifying for Medicaid. Expert guide by Duane Cutlip.';
+const keywords = 'Medicaid funeral planning, Medicaid exempt preneed insurance, irrevocable preneed trust Medicaid, Medicaid spend down funeral, funeral planning Medicaid NC SC';
+const pageUrl = `${SITE_URL}/learn/medicaid-funeral-planning`;
+
+const articleJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	headline: 'Medicaid and Funeral Planning: How Preneed Insurance Protects Your Family',
+	description: description,
+	author: {
+		'@type': 'Person',
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: 'Cutlip Associates LLC',
+		url: SITE_URL,
+	},
+	datePublished: '2026-03-06',
+	dateModified: '2026-03-06',
+	url: pageUrl,
+	mainEntityOfPage: pageUrl,
+};
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: 'Does preneed insurance really protect my money from Medicaid?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Yes — but only if the preneed contract is irrevocable. An irrevocable preneed funeral trust or insurance-funded preneed plan cannot be canceled or cashed out, which means Medicaid does not count it as an available asset. This exemption is recognized in both North Carolina and South Carolina. Revocable preneed plans, by contrast, are counted as assets and will not protect your funds.',
+			},
+		},
+		{
+			'@type': 'Question',
+			name: "What's the maximum I can put into a Medicaid-exempt preneed plan?",
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'There is no fixed dollar cap written into NC or SC statute, but the amount must be "reasonable" and reflect the fair market value of the funeral services and merchandise selected. In practice, most families fund preneed plans between $3,000 and $15,000. Overfunding a plan — putting in significantly more than the actual cost of the selected services — can trigger Medicaid scrutiny and may be treated as a disqualifying transfer.',
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'Can Medicaid take back my preneed funds after I\'m approved?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'No. Once an irrevocable preneed contract is established and you are approved for Medicaid, those funds are permanently designated for funeral expenses. Medicaid cannot claw back funds from a properly established irrevocable preneed trust. The funds are paid directly to the funeral home when the time comes, never passing through the estate or back to the individual.',
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'What if I need to change my funeral plans after making them irrevocable?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'You can still modify specific service preferences — such as changing the music, readings, or flower arrangements — within the overall value of the contract. What you cannot do is cancel the contract and receive a cash refund. You can also typically transfer the contract to a different funeral home if needed. The irrevocable nature applies to the funding, not every detail of the service.',
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'Should I set up preneed before or after applying for Medicaid?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Before. Setting up an irrevocable preneed plan should be part of your Medicaid planning strategy, ideally well before you apply. While purchasing preneed at fair market value is not considered a disqualifying transfer, doing it too close to your application date without proper documentation can raise questions. Work with an elder law attorney and a licensed preneed agent like Duane to time it correctly.',
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'Does final expense insurance work the same way for Medicaid?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'No. Final expense insurance (also called burial insurance) is a general life insurance policy that pays a death benefit to a beneficiary. It is NOT automatically exempt from Medicaid asset calculations the way an irrevocable preneed contract is. The cash value of a final expense policy may be counted as an asset. To get the Medicaid exemption, you need a preneed contract specifically designated for funeral expenses and structured as irrevocable.',
+			},
+		},
+	],
+};
+---
+
+<BaseLayout title={title} description={description} keywords={keywords} article>
+	<Hero
+		variant="interior"
+		title="Medicaid and Funeral Planning: How Preneed Insurance Protects Your Family"
+		subtitle="An irrevocable preneed plan can shield your funeral funds from Medicaid spend-down — legally and effectively."
+	/>
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Learn' }, { label: 'Medicaid & Funeral Planning' }]} />
+
+		<!-- Key Takeaway -->
+		<div class="bg-teal-50 border-l-4 border-teal-600 rounded-r-xl p-6 mb-12">
+			<p class="font-heading font-bold text-charcoal-900 mb-2">Key Takeaway</p>
+			<p class="text-charcoal-700 leading-relaxed">
+				In both North Carolina and South Carolina, irrevocable preneed funeral trusts are exempt from Medicaid asset calculations. This means you can set aside funds specifically for your funeral — typically $3,000 to $15,000 — without jeopardizing your Medicaid eligibility. It's one of the most important and least understood planning tools available to families navigating Medicaid.
+			</p>
+		</div>
+
+		<!-- Section 1: Why Medicaid Matters for Funeral Planning -->
+		<section class="mb-16">
+			<SectionHeading title="Why Medicaid Matters for Funeral Planning" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					Medicaid is the primary payer for long-term care in America. When a person needs nursing home care, assisted living, or extended home health services, Medicaid is often the only program that covers those costs — which can run $7,000 to $10,000 per month or more. But Medicaid is a means-tested program, which means you must meet strict financial limits to qualify.
+				</p>
+				<p class="leading-relaxed">
+					In both North Carolina and South Carolina, the individual asset limit for Medicaid eligibility is <strong>$2,000</strong>. That means if you have more than $2,000 in countable assets — savings accounts, investments, cash value life insurance, and most other financial resources — you don't qualify. To become eligible, you must "spend down" your assets until you reach that threshold.
+				</p>
+				<p class="leading-relaxed">
+					This spend-down process can be devastating. A lifetime of careful saving can be consumed by healthcare costs in a matter of months. Families watch as their parents' or grandparents' savings dwindle to almost nothing, eaten up by the relentless cost of long-term care. And once those assets are gone, there's nothing left for the expenses that follow — including funeral costs.
+				</p>
+				<p class="leading-relaxed">
+					The average funeral in North Carolina costs more than <strong>$8,000</strong>. In South Carolina, the figure is similar. When a family member passes after a period on Medicaid, there is often literally no money left to pay for the funeral. The burden falls on surviving family members — adult children, siblings, grandchildren — who must come up with thousands of dollars within days, often on short notice and during the most emotionally difficult period of their lives.
+				</p>
+				<p class="leading-relaxed">
+					Many families discover this reality too late. They assume that "something will be there" to cover the funeral, or that Medicare or Medicaid will help with burial costs. Neither does. Medicare provides zero funeral coverage. Medicaid in most states provides little to no death benefit. Without advance planning, the family is left holding the bill entirely.
+				</p>
+				<p class="leading-relaxed">
+					This is precisely the problem that preneed funeral planning solves — and it does so in a way that is specifically designed to work within Medicaid's rules.
+				</p>
+			</div>
+		</section>
+
+		<!-- Section 2: How Irrevocable Preneed Trusts Are Medicaid-Exempt -->
+		<section class="mb-16">
+			<SectionHeading title="How Irrevocable Preneed Trusts Are Medicaid-Exempt" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					The key to protecting funeral funds from Medicaid spend-down lies in one word: <strong>irrevocable</strong>. An irrevocable preneed funeral trust is a legal arrangement in which funds are set aside exclusively for funeral expenses, and the arrangement <em>cannot be canceled or cashed out</em> by the owner. Because the owner has permanently relinquished access to the funds, Medicaid does not consider them a countable asset.
+				</p>
+				<p class="leading-relaxed">
+					This exemption exists because Medicaid recognizes that funeral expenses are an inevitable cost, and allowing families to set aside a reasonable amount for those expenses serves a legitimate purpose. The alternative — forcing families to exhaust every dollar and then leaving survivors with no way to pay for a funeral — creates a worse outcome for everyone involved.
+				</p>
+				<p class="leading-relaxed">
+					The Medicaid exemption for irrevocable preneed is recognized in both North Carolina and South Carolina, as well as in the vast majority of other states. Here's how the legal framework works in each state:
+				</p>
+
+				<div class="bg-linen rounded-xl p-8 mb-6 border border-border-light">
+					<p class="text-xl font-heading font-bold text-charcoal-900 mb-3">
+						North Carolina
+					</p>
+					<p class="text-charcoal-700 leading-relaxed mb-3">
+						NC preneed funeral contracts are governed by <strong>N.C.G.S. &sect; 90-210.60</strong> and subsequent sections. The NC Medicaid manual (Section MA-3325) explicitly excludes irrevocable preneed funeral trusts from the resource calculation for Medicaid eligibility. The funds must be held in trust or backed by an insurance policy, and the contract must be irrevocable.
+					</p>
+					<p class="text-xl font-heading font-bold text-charcoal-900 mb-3 mt-6">
+						South Carolina
+					</p>
+					<p class="text-charcoal-700 leading-relaxed">
+						SC preneed contracts are governed by <strong>SC Code &sect; 32-7-10 through 32-7-120</strong> and regulated by the SC Board of Funeral Service. South Carolina's Medicaid policy manual similarly excludes irrevocable preneed funeral arrangements from countable assets. The protections are substantially similar to North Carolina's framework.
+					</p>
+				</div>
+
+				<p class="leading-relaxed">
+					When the time comes, the funds in an irrevocable preneed trust go directly to the funeral home to pay for the services and merchandise selected in the contract. The money never returns to the individual, never enters the estate, and never passes through probate. It serves exactly one purpose: paying for the funeral, exactly as planned.
+				</p>
+				<p class="leading-relaxed">
+					Insurance-funded preneed plans work the same way. Instead of placing money in a trust account, you purchase a life insurance policy that is assigned irrevocably to the preneed contract. The death benefit pays the funeral home directly. Because the policy is irrevocably assigned, it is not a countable Medicaid asset.
+				</p>
+			</div>
+		</section>
+
+		<!-- Section 3: Revocable vs Irrevocable -->
+		<section class="mb-16">
+			<SectionHeading title="Revocable vs. Irrevocable Preneed: The Critical Difference" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					This is the single most important distinction in Medicaid funeral planning, and it's the one families get wrong most often. Not all preneed plans are created equal when it comes to Medicaid. The difference between a revocable and an irrevocable preneed plan is the difference between full protection and no protection at all.
+				</p>
+				<p class="leading-relaxed">
+					A <strong>revocable</strong> preneed plan can be canceled by the owner at any time. You can walk away, get your money back, and use it for something else. Because you retain access to those funds, Medicaid considers them a countable asset — just like a savings account. A revocable preneed plan provides zero Medicaid protection.
+				</p>
+				<p class="leading-relaxed">
+					An <strong>irrevocable</strong> preneed plan cannot be canceled. Once you sign the irrevocable contract, the funds are permanently designated for funeral expenses. You cannot get a cash refund. Because you no longer have access to the money, Medicaid does not count it as an asset. This is what creates the exemption.
+				</p>
+			</div>
+
+			<!-- Comparison Table -->
+			<div class="overflow-x-auto mt-8 mb-8">
+				<table class="w-full border-collapse text-sm">
+					<thead>
+						<tr class="bg-linen">
+							<th class="text-left px-4 py-3 font-heading font-bold text-charcoal-900">Feature</th>
+							<th class="text-left px-4 py-3 font-heading font-bold text-charcoal-900">Revocable Preneed</th>
+							<th class="text-left px-4 py-3 font-heading font-bold text-charcoal-900">Irrevocable Preneed</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="border-b border-border-light">
+							<td class="px-4 py-3 font-medium text-charcoal-900">Can be canceled?</td>
+							<td class="px-4 py-3 text-charcoal-700">Yes — full refund available</td>
+							<td class="px-4 py-3 text-charcoal-700">No — funds are permanently committed</td>
+						</tr>
+						<tr class="border-b border-border-light">
+							<td class="px-4 py-3 font-medium text-charcoal-900">Medicaid exempt?</td>
+							<td class="px-4 py-3 text-red-600 font-semibold">No</td>
+							<td class="px-4 py-3 text-teal-600 font-semibold">Yes</td>
+						</tr>
+						<tr class="border-b border-border-light">
+							<td class="px-4 py-3 font-medium text-charcoal-900">Cash refundable?</td>
+							<td class="px-4 py-3 text-charcoal-700">Yes</td>
+							<td class="px-4 py-3 text-charcoal-700">No</td>
+						</tr>
+						<tr class="border-b border-border-light">
+							<td class="px-4 py-3 font-medium text-charcoal-900">Protects funeral funds?</td>
+							<td class="px-4 py-3 text-charcoal-700">No — Medicaid can require liquidation</td>
+							<td class="px-4 py-3 text-charcoal-700">Yes — funds are fully protected</td>
+						</tr>
+						<tr class="border-b border-border-light">
+							<td class="px-4 py-3 font-medium text-charcoal-900">Transferable to another funeral home?</td>
+							<td class="px-4 py-3 text-charcoal-700">Yes</td>
+							<td class="px-4 py-3 text-charcoal-700">Yes (in most states including NC & SC)</td>
+						</tr>
+						<tr class="border-b border-border-light">
+							<td class="px-4 py-3 font-medium text-charcoal-900">Service preferences modifiable?</td>
+							<td class="px-4 py-3 text-charcoal-700">Yes</td>
+							<td class="px-4 py-3 text-charcoal-700">Yes — within the contract value</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Many families mistakenly set up revocable preneed plans thinking they are protected. They hear "preneed" and assume it means "Medicaid safe." It does not — not unless the plan is specifically structured as irrevocable. If you are planning for Medicaid, this distinction is non-negotiable. The plan <strong>must</strong> be irrevocable to receive the exemption.
+				</p>
+				<p class="leading-relaxed">
+					This is one of the most important reasons to work with a licensed preneed funeral director who understands Medicaid planning. Duane ensures that every contract intended for Medicaid protection is properly structured as irrevocable from the start, so there are no surprises when the Medicaid application is filed.
+				</p>
+			</div>
+		</section>
+
+		<!-- Section 4: Step-by-Step -->
+		<section class="mb-16">
+			<SectionHeading title="Step-by-Step: Setting Up Medicaid-Exempt Preneed" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Setting up a Medicaid-exempt preneed plan is straightforward when you work with the right professionals. Here is the process, from start to finish:
+				</p>
+				<ol class="space-y-4 list-none pl-0">
+					{[
+						{ step: '1', title: 'Consult with your elder law attorney', desc: 'Before making any financial moves related to Medicaid, talk to an elder law attorney about your overall planning timeline. They\'ll advise you on when to set up the preneed plan relative to your Medicaid application and ensure it fits within your broader strategy.' },
+						{ step: '2', title: 'Contact a licensed preneed funeral director', desc: 'Reach out to a licensed preneed agent like Duane who understands Medicaid requirements. Not all funeral directors are experienced with Medicaid-exempt planning — you need someone who knows the rules in your state.' },
+						{ step: '3', title: 'Choose your funeral services and preferences', desc: 'Work with your preneed agent to select the services, merchandise, and arrangements you want. This includes everything from the type of service (traditional, cremation, celebration of life) to specific details like music, flowers, and readings.' },
+						{ step: '4', title: 'Select irrevocable funding', desc: 'Choose between a trust-funded or insurance-funded irrevocable preneed arrangement. Your agent will explain the differences and help you select the option that best fits your situation. Both provide the Medicaid exemption.' },
+						{ step: '5', title: 'Sign the irrevocable preneed contract', desc: 'The contract documents your funeral preferences and establishes the irrevocable nature of the funding. This is the legal instrument that creates the Medicaid exemption. Review it carefully with your agent and attorney.' },
+						{ step: '6', title: 'Provide documentation to your Medicaid caseworker', desc: 'Give a copy of the irrevocable preneed contract to your Medicaid caseworker or elder law attorney. They\'ll include it in your Medicaid application as evidence that these funds are exempt from the asset calculation.' },
+						{ step: '7', title: 'The preneed plan is excluded from your asset calculation', desc: 'Once properly documented, the irrevocable preneed contract is excluded from your countable assets. Your funeral is funded, your Medicaid eligibility is preserved, and your family is protected.' },
+					].map((item) => (
+						<li class="flex items-start gap-4">
+							<span class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-sm">{item.step}</span>
+							<div>
+								<strong class="text-charcoal-900">{item.title}.</strong>
+								<span class="text-charcoal-700"> {item.desc}</span>
+							</div>
+						</li>
+					))}
+				</ol>
+			</div>
+
+			<div class="bg-teal-50 border-l-4 border-teal-600 rounded-r-xl p-6 mt-8">
+				<p class="font-heading font-bold text-charcoal-900 mb-2">Important Timing Note</p>
+				<p class="text-charcoal-700 leading-relaxed">
+					Medicaid has a <strong>5-year look-back period</strong> in most states, meaning transfers made within 5 years of your application are scrutinized. However, purchasing an irrevocable preneed plan at fair market value is <strong>not</strong> considered a disqualifying transfer — you are receiving goods and services of equal value in exchange for your payment. That said, the earlier you plan, the cleaner your Medicaid application will be. Don't wait until the last minute.
+				</p>
+			</div>
+		</section>
+
+		<!-- Section 5: Common Mistakes -->
+		<section class="mb-16">
+			<SectionHeading title="Common Mistakes Families Make" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					After more than 20 years of helping families with preneed planning, Duane has seen the same mistakes repeated over and over. Each one can cost a family thousands of dollars or jeopardize Medicaid eligibility. Here are the most common errors — and how to avoid them:
+				</p>
+				<ul class="space-y-3">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+						<span><strong class="text-charcoal-900">Setting up a revocable plan instead of irrevocable.</strong> This is the number one mistake. Families hear "preneed" and assume they're protected. If the contract is revocable, Medicaid counts it as an asset. Always confirm — in writing — that the contract is irrevocable before signing.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+						<span><strong class="text-charcoal-900">Waiting until after the Medicaid application to plan.</strong> By the time you're actively applying for Medicaid, your options are limited. Preneed planning should happen <em>before</em> the application, as part of your overall Medicaid strategy.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+						<span><strong class="text-charcoal-900">Overfunding the preneed plan.</strong> The preneed contract must reflect the fair market value of the services and merchandise selected. Putting $25,000 into a preneed plan for a $10,000 funeral will raise red flags with Medicaid. The amount must be reasonable and documented.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+						<span><strong class="text-charcoal-900">Not keeping proper documentation.</strong> You need a copy of the irrevocable preneed contract for your Medicaid application. If you can't produce documentation proving the arrangement is irrevocable, the caseworker may count those funds as assets. Keep copies in multiple safe locations.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+						<span><strong class="text-charcoal-900">Confusing preneed insurance with final expense insurance.</strong> Final expense insurance is a general life insurance policy — it is <em>not</em> automatically Medicaid-exempt. The cash value of a final expense policy can be counted as an asset. Only an irrevocable preneed contract specifically designated for funeral expenses receives the exemption.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+						<span><strong class="text-charcoal-900">Not involving an elder law attorney early enough.</strong> Preneed planning for Medicaid purposes should be coordinated with an attorney who specializes in Medicaid and elder law. The preneed agent handles the funeral planning; the attorney handles the legal strategy. Both are essential.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+						<span><strong class="text-charcoal-900">Assuming a savings account labeled "funeral fund" is exempt.</strong> It is not. A bank account — no matter what you call it — is a countable Medicaid asset. Labeling it as a funeral fund provides zero legal protection. Only a properly structured irrevocable preneed contract creates the exemption.</span>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Section 6: How Elder Law Attorneys and Preneed Agents Work Together -->
+		<section class="mb-16">
+			<SectionHeading title="How Elder Law Attorneys and Preneed Agents Work Together" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Medicaid planning is a team effort. No single professional handles every piece of the puzzle. Understanding how elder law attorneys and preneed funeral directors work together can help you get the best result for your family.
+				</p>
+				<p class="leading-relaxed">
+					<strong>The elder law attorney</strong> is your strategic quarterback. They assess your overall financial picture, determine when and how you should apply for Medicaid, advise on asset protection strategies (including irrevocable trusts, gifting, and spend-down approaches), and ensure your Medicaid application is properly prepared. They know the rules, the timelines, and the potential pitfalls.
+				</p>
+				<p class="leading-relaxed">
+					<strong>The preneed funeral director</strong> handles the funeral-specific component. They help you choose the services and merchandise you want, ensure the preneed contract is properly structured as irrevocable, select the right funding vehicle (trust or insurance), and document everything so it integrates cleanly with your Medicaid application.
+				</p>
+				<p class="leading-relaxed">
+					When these two professionals work in coordination, the result is seamless. The attorney advises on timing — when to set up the preneed plan relative to the Medicaid application, how much to fund it, and how to document it properly. The preneed agent ensures the funeral arrangements reflect your actual wishes and that the contract meets all legal requirements for the Medicaid exemption.
+				</p>
+				<p class="leading-relaxed">
+					Duane regularly works with elder law attorneys across North Carolina and South Carolina. He understands the legal landscape, speaks the same language, and provides the documentation attorneys need for their clients' Medicaid files. If you don't have an elder law attorney yet, Duane can suggest attorneys in your area who specialize in Medicaid planning. If you already have one, Duane will coordinate directly with them to ensure everything aligns. Learn more about how Duane works with <a href="/partners/estate-attorneys" class="text-teal-600 hover:text-teal-700 underline">estate planning attorneys</a>.
+				</p>
+			</div>
+		</section>
+
+		<!-- Section 7: NC-Specific Medicaid Rules -->
+		<section class="mb-16">
+			<SectionHeading title="North Carolina Medicaid Rules for Preneed" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					North Carolina has a well-established framework for protecting preneed funeral funds from Medicaid asset calculations. Here are the key rules NC families need to know:
+				</p>
+				<ul class="space-y-3">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Asset limit:</strong> NC Medicaid individual asset limit is $2,000. Irrevocable preneed funeral trusts are excluded from this calculation.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Statutory basis:</strong> Preneed funeral contracts in NC are governed by N.C.G.S. &sect; 90-210.60 and subsequent sections. The Medicaid exemption is detailed in the NC Medicaid manual, Section MA-3325.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Reasonable amount:</strong> NC allows preneed plans funded up to a "reasonable amount" for funeral expenses. There is no fixed statutory cap, but the amount must reflect the fair market value of the services selected.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Contract transferability:</strong> NC allows 100% contract transferability even for irrevocable preneed plans. If you move or change your preferred funeral home, the contract moves with you.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Recent legislation:</strong> NC HB 1003 (2025) added trust-to-insurance conversion provisions, giving families additional flexibility in how their irrevocable preneed plans are funded.</span>
+					</li>
+				</ul>
+				<p class="leading-relaxed mt-4">
+					For families in the Raleigh-Durham area, Wake County, Johnston County, and across central North Carolina, Duane is available to walk through these rules in detail and help you set up a plan that meets all NC requirements. Learn more about <a href="/learn/preneed-insurance-nc" class="text-teal-600 hover:text-teal-700 underline">preneed insurance in North Carolina</a>.
+				</p>
+			</div>
+		</section>
+
+		<!-- Section 8: SC-Specific Medicaid Rules -->
+		<section class="mb-16">
+			<SectionHeading title="South Carolina Medicaid Rules for Preneed" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					South Carolina provides similar protections for irrevocable preneed funeral arrangements. Here's what SC families need to know:
+				</p>
+				<ul class="space-y-3">
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Asset limit:</strong> SC Medicaid individual asset limit is $2,000, the same as North Carolina. Irrevocable preneed funeral plans are excluded from this calculation.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Statutory basis:</strong> SC preneed contracts are governed by SC Code &sect; 32-7-10 through 32-7-120. These statutes establish the legal framework for preneed funeral contracts, including trust requirements and consumer protections.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Regulatory oversight:</strong> The SC Board of Funeral Service provides regulatory oversight of preneed funeral contracts in South Carolina, ensuring consumer protections are enforced and funds are properly managed.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Medicaid exemption:</strong> The SC Medicaid policy manual excludes irrevocable preneed funeral arrangements from countable assets, providing the same core protection available in North Carolina.</span>
+					</li>
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span><strong class="text-charcoal-900">Dual-state advantage:</strong> Because Duane is licensed in both NC and SC, families who live near the state border or have connections in both states can work with a single agent who understands both regulatory frameworks.</span>
+					</li>
+				</ul>
+				<p class="leading-relaxed mt-4">
+					For families in Columbia, Charleston, Greenville, Rock Hill, and across South Carolina, Duane provides the same expert guidance on Medicaid-exempt preneed planning. Learn more about <a href="/learn/preneed-insurance-sc" class="text-teal-600 hover:text-teal-700 underline">preneed insurance in South Carolina</a>.
+				</p>
+			</div>
+		</section>
+
+		<!-- Section 9: FAQ -->
+		<section class="mb-16">
+			<SectionHeading title="Frequently Asked Questions" accent />
+			<div class="space-y-4">
+				<details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+					<summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+						Does preneed insurance really protect my money from Medicaid?
+						<svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg>
+					</summary>
+					<div class="px-6 pb-5 text-charcoal-500 leading-relaxed">
+						Yes — but only if the preneed contract is irrevocable. An irrevocable preneed funeral trust or insurance-funded preneed plan cannot be canceled or cashed out, which means Medicaid does not count it as an available asset. This exemption is recognized in both North Carolina and South Carolina. Revocable preneed plans, by contrast, are counted as assets and will not protect your funds. This is the single most important distinction in Medicaid funeral planning.
+					</div>
+				</details>
+
+				<details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+					<summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+						What's the maximum I can put into a Medicaid-exempt preneed plan?
+						<svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg>
+					</summary>
+					<div class="px-6 pb-5 text-charcoal-500 leading-relaxed">
+						There is no fixed dollar cap written into NC or SC statute, but the amount must be "reasonable" and reflect the fair market value of the funeral services and merchandise selected. In practice, most families fund preneed plans between $3,000 and $15,000. Overfunding a plan — putting in significantly more than the actual cost of the selected services — can trigger Medicaid scrutiny and may be treated as a disqualifying transfer. Duane will help you select services that reflect your genuine wishes at a fair price.
+					</div>
+				</details>
+
+				<details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+					<summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+						Can Medicaid take back my preneed funds after I'm approved?
+						<svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg>
+					</summary>
+					<div class="px-6 pb-5 text-charcoal-500 leading-relaxed">
+						No. Once an irrevocable preneed contract is established and you are approved for Medicaid, those funds are permanently designated for funeral expenses. Medicaid cannot claw back funds from a properly established irrevocable preneed trust. The funds are paid directly to the funeral home when the time comes — they never pass through the estate or back to the individual. This is one of the strongest asset protections available in Medicaid planning.
+					</div>
+				</details>
+
+				<details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+					<summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+						What if I need to change my funeral plans after making them irrevocable?
+						<svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg>
+					</summary>
+					<div class="px-6 pb-5 text-charcoal-500 leading-relaxed">
+						You can still modify specific service preferences — such as changing the music, readings, flower arrangements, or even the type of service — within the overall value of the contract. What you cannot do is cancel the contract and receive a cash refund. You can also typically transfer the contract to a different funeral home if you move. The "irrevocable" nature applies to the funding commitment, not to every detail of the service. Duane stays in touch with his clients and is always available to make adjustments as your preferences evolve.
+					</div>
+				</details>
+
+				<details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+					<summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+						Should I set up preneed before or after applying for Medicaid?
+						<svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg>
+					</summary>
+					<div class="px-6 pb-5 text-charcoal-500 leading-relaxed">
+						Before. Setting up an irrevocable preneed plan should be part of your Medicaid planning strategy, ideally well before you apply. While purchasing preneed at fair market value is not considered a disqualifying transfer under the look-back rules, doing it too close to your application date without proper documentation can raise questions from caseworkers. The best approach is to work with both an elder law attorney and a licensed preneed agent like Duane to time the setup correctly within your overall Medicaid strategy.
+					</div>
+				</details>
+
+				<details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+					<summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+						Does final expense insurance work the same way for Medicaid?
+						<svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg>
+					</summary>
+					<div class="px-6 pb-5 text-charcoal-500 leading-relaxed">
+						No — and this is a common and costly misconception. Final expense insurance (also called burial insurance) is a general life insurance policy that pays a death benefit to a named beneficiary. It is <em>not</em> automatically exempt from Medicaid asset calculations. The cash value of a final expense policy may be counted as an asset by Medicaid. To receive the Medicaid exemption, you need an irrevocable preneed contract specifically designated for funeral expenses — not a general life insurance policy. Learn more about the <a href="/learn/preneed-vs-final-expense" class="text-teal-600 hover:text-teal-700 underline">differences between preneed and final expense insurance</a>.
+					</div>
+				</details>
+			</div>
+		</section>
+
+		<!-- Author Byline -->
+		<div class="bg-linen rounded-xl p-8 border border-border-light mb-8">
+			<div class="flex items-start gap-6">
+				<div class="flex-shrink-0 w-16 h-16 rounded-full bg-teal-600 flex items-center justify-center">
+					<span class="text-white font-heading font-bold text-xl">DC</span>
+				</div>
+				<div>
+					<p class="font-heading font-bold text-charcoal-900 text-lg">Duane Cutlip</p>
+					<p class="text-teal-600 text-sm font-medium mb-3">Licensed Preneed Funeral Director — NC & SC</p>
+					<p class="text-charcoal-700 leading-relaxed text-sm">
+						Duane has over 20 years of experience helping families across North Carolina and South Carolina plan ahead for funeral expenses. He is a member of the National Funeral Directors Association (NFDA) and regularly works with elder law attorneys to help families protect their assets through Medicaid-exempt preneed planning. Duane is based in Wendell, NC and serves families throughout the Triangle, central NC, and across South Carolina.
+					</p>
+					<p class="text-charcoal-400 text-xs mt-3">Last updated: March 2026</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Related Resources -->
+		<section class="mb-8">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<h2 class="font-heading text-2xl font-bold text-charcoal-900">Related Resources</h2>
+				<ul class="space-y-2">
+					<li><a href="/plan-ahead" class="text-teal-600 hover:text-teal-700 underline">Plan Ahead</a> — Start your preneed planning journey</li>
+					<li><a href="/learn/preneed-insurance-nc" class="text-teal-600 hover:text-teal-700 underline">Preneed Insurance in North Carolina</a> — NC-specific guide</li>
+					<li><a href="/learn/preneed-insurance-sc" class="text-teal-600 hover:text-teal-700 underline">Preneed Insurance in South Carolina</a> — SC-specific guide</li>
+					<li><a href="/learn/preneed-vs-final-expense" class="text-teal-600 hover:text-teal-700 underline">Preneed vs. Final Expense Insurance</a> — Understanding the differences</li>
+					<li><a href="/faq" class="text-teal-600 hover:text-teal-700 underline">FAQ</a> — Common questions about preneed planning</li>
+					<li><a href="/contact" class="text-teal-600 hover:text-teal-700 underline">Contact Duane</a> — Free, no-pressure conversation</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="Protect Your Funeral Funds from Medicaid Spend-Down" subtitle="Call Duane to learn how an irrevocable preneed plan can protect your family — and your Medicaid eligibility." />
+
+	<JsonLd data={articleJsonLd} />
+	<JsonLd data={faqJsonLd} />
+</BaseLayout>

@@ -1,0 +1,74 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import JsonLd from './JsonLd.astro';
+import { FAQ_ITEMS } from '../consts';
+
+interface Props {
+	limit?: number;
+	showHeading?: boolean;
+	title?: string;
+	subtitle?: string;
+	category?: string;
+}
+
+const { limit, showHeading = true, title = 'Frequently Asked Questions', subtitle, category } = Astro.props;
+
+let faqItems = FAQ_ITEMS;
+
+if (category) {
+	faqItems = faqItems.filter((item) => item.category === category);
+}
+
+if (limit) {
+	faqItems = faqItems.slice(0, limit);
+}
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: item.answer,
+		},
+	})),
+};
+---
+
+<section class="py-16 md:py-24">
+	<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+		{showHeading && (
+			<SectionHeading
+				title={title}
+				subtitle={subtitle || 'Answers to the questions families ask most.'}
+				accent
+			/>
+		)}
+
+		<div class="space-y-3 mt-12">
+			{faqItems.map((item) => (
+				<details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+					<summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+						{item.question}
+						<svg
+							class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<polyline points="6 9 12 15 18 9" />
+						</svg>
+					</summary>
+					<div class="px-6 pb-5 text-charcoal-500 leading-relaxed">
+						{item.answer}
+					</div>
+				</details>
+			))}
+		</div>
+
+		<JsonLd data={faqJsonLd} />
+	</div>
+</section>

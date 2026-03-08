@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQSection from '../components/FAQSection.astro';
+import Button from '../components/Button.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../consts';
+
+const title = 'What Is Pre-Need Insurance? | NC & SC Guide';
+const description = 'Learn what pre-need insurance is, what it covers, how much it costs, and why Raleigh families choose to plan ahead. Free consultation with Duane Cutlip.';
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Pre-Need Insurance Planning',
+	description: 'Comprehensive pre-need funeral insurance planning for families in Raleigh and Wake County, NC.',
+	provider: {
+		'@type': 'InsuranceAgency',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+	areaServed: {
+		'@type': 'City',
+		name: 'Raleigh',
+		containedInPlace: { '@type': 'State', name: 'North Carolina' },
+	},
+	serviceType: 'Pre-Need Funeral Insurance',
+};
+---
+
+<BaseLayout title={title} description={description} keywords="pre-need insurance, preneed funeral planning, funeral insurance Raleigh NC, advance funeral planning">
+	<Hero variant="interior" title="Understanding Pre-Need Insurance" subtitle="Everything you need to know about protecting your family with advance funeral planning." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Plan Ahead' }]} />
+
+		<!-- What Is Pre-Need Insurance? -->
+		<section class="mb-16">
+			<SectionHeading title="What Is Pre-Need Insurance?" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					Pre-need insurance is a specialized policy designed to cover your funeral and burial expenses before the need arises. Unlike regular life insurance, pre-need funds are earmarked specifically for your funeral costs and paid directly to the funeral home — bypassing probate entirely.
+				</p>
+				<p class="leading-relaxed">
+					When you purchase a pre-need policy, you're making two important decisions at once: you're setting aside the money to pay for your funeral, and you're documenting exactly what you want. Every detail — from the type of service to the flowers, music, and readings — is recorded so your family never has to guess.
+				</p>
+				<p class="leading-relaxed">
+					Most importantly, pre-need insurance locks in today's prices. Funeral costs have risen over 40% in the last decade, and they continue to climb. Your policy guarantees that your family will never pay the difference, no matter how many years pass.
+				</p>
+			</div>
+		</section>
+
+		<!-- What Does a Pre-Need Plan Cover? -->
+		<section class="mb-16">
+			<SectionHeading title="What Does a Pre-Need Plan Cover?" accent />
+			<p class="text-charcoal-500 mb-6">A comprehensive pre-need plan covers everything your family would otherwise have to arrange during the most difficult week of their lives:</p>
+			<ul class="grid sm:grid-cols-2 gap-3">
+				{[
+					'Casket or urn selection',
+					'Funeral service type (traditional, graveside, cremation, or celebration of life)',
+					'Transportation and preparation',
+					'Funeral home facilities and staff',
+					'Flowers and decorations',
+					'Music and readings',
+					'Obituary preparation and publication',
+					'Death certificates',
+					'Cemetery or crematory fees',
+					'All associated funeral home fees',
+				].map((item) => (
+					<li class="flex items-start gap-3 text-charcoal-700">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+						</svg>
+						<span>{item}</span>
+					</li>
+				))}
+			</ul>
+		</section>
+
+		<!-- How Much Does It Cost? -->
+		<section class="mb-16">
+			<SectionHeading title="How Much Does It Cost?" accent />
+			<div class="bg-linen rounded-xl p-8 mb-6 border border-border-light">
+				<p class="text-2xl font-heading font-bold text-charcoal-900 mb-2">
+					The average funeral in North Carolina costs <span class="text-burgundy-600">$7,848+</span>
+				</p>
+				<p class="text-charcoal-500">
+					Most families invest between <strong class="text-charcoal-900">$3,000 and $15,000</strong> in a pre-need plan, depending on the type of service and level of coverage chosen.
+				</p>
+			</div>
+			<p class="text-charcoal-700 leading-relaxed mb-4">
+				Without a pre-need plan, your family will face this cost at the worst possible time — often within 24-48 hours of your passing. Pre-need insurance spreads this cost over affordable payments and guarantees today's prices, no matter when the need arises.
+			</p>
+			<p class="text-charcoal-700 leading-relaxed">
+				Duane will walk you through options that fit your budget. There's no pressure and no obligation — just honest guidance from someone who's helped hundreds of families plan ahead.
+			</p>
+		</section>
+
+		<!-- Who Should Consider Pre-Need Insurance? -->
+		<section class="mb-16">
+			<SectionHeading title="Who Should Consider Pre-Need Insurance?" accent />
+			<div class="space-y-4 text-charcoal-700">
+				<p class="leading-relaxed">Pre-need insurance isn't just for the elderly. Families at every stage of life benefit from planning ahead:</p>
+				<ul class="space-y-3">
+					{[
+						{ bold: 'Adults over 50', text: 'who want to protect their children from financial and emotional burden.' },
+						{ bold: 'Couples', text: 'who want to plan together and ensure their wishes complement each other.' },
+						{ bold: 'Parents of adult children', text: 'who don\'t want their kids making painful decisions under pressure.' },
+						{ bold: 'Veterans and military families', text: 'who need to bridge the gap between VA benefits and actual funeral costs.' },
+						{ bold: 'Anyone with specific wishes', text: 'for their funeral — music, readings, venue, or other personal touches.' },
+						{ bold: 'Medicaid recipients or applicants', text: 'since irrevocable pre-need contracts are generally exempt from Medicaid asset calculations in NC.' },
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-charcoal-900">{item.bold}</strong> — {item.text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- Pre-Need vs Final Expense vs Life Insurance -->
+		<section class="mb-16">
+			<SectionHeading title="Pre-Need vs Final Expense vs Life Insurance" accent />
+			<div class="overflow-x-auto">
+				<table class="w-full border-collapse text-sm">
+					<thead>
+						<tr class="bg-linen">
+							<th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Feature</th>
+							<th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Pre-Need Insurance</th>
+							<th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Final Expense</th>
+							<th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Life Insurance</th>
+						</tr>
+					</thead>
+					<tbody>
+						{[
+							['Covers funeral specifically', 'Yes', 'No — general use', 'No — general use'],
+							['Price protection', 'Yes — locks in today\'s prices', 'No', 'No'],
+							['Pays funeral home directly', 'Yes', 'No — pays beneficiary', 'No — pays beneficiary'],
+							['Bypasses probate', 'Yes', 'No', 'No'],
+							['Medical exam required', 'Usually no', 'Usually no', 'Often yes'],
+							['Medicaid exempt (NC)', 'Yes — if irrevocable', 'No', 'No'],
+							['Documents your wishes', 'Yes', 'No', 'No'],
+						].map((row) => (
+							<tr class="border-b border-border-light">
+								<td class="p-4 font-semibold text-charcoal-900">{row[0]}</td>
+								<td class="p-4 text-charcoal-700">{row[1]}</td>
+								<td class="p-4 text-charcoal-700">{row[2]}</td>
+								<td class="p-4 text-charcoal-700">{row[3]}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<!-- Payment Options -->
+		<section class="mb-16">
+			<SectionHeading title="Payment Options" accent />
+			<div class="grid sm:grid-cols-2 gap-6">
+				{[
+					{ title: 'Single Pay (Lump Sum)', desc: 'One payment covers everything. Often provides the best overall value and immediate full coverage.' },
+					{ title: 'Monthly Payments', desc: 'Spread your investment over 1, 5, or 10 years with affordable monthly installments that fit your budget.' },
+					{ title: 'Quarterly or Annual', desc: 'Pay every 3 or 12 months for fewer transactions while still spreading the cost over time.' },
+					{ title: 'Couples Plans', desc: 'Plan together with your spouse. Couples often receive better rates and can coordinate their wishes.' },
+				].map((option) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{option.title}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{option.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+	</div>
+
+	<FAQSection category="Basics" title="Common Questions About Pre-Need Insurance" />
+
+	<CTABanner />
+
+	<JsonLd data={serviceJsonLd} />
+</BaseLayout>

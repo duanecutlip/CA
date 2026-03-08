@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Button from '../components/Button.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { SITE_URL, HOW_IT_WORKS_STEPS } from '../consts';
+
+const title = 'How Pre-Need Insurance Works | 3 Simple Steps';
+const description = 'Pre-need funeral planning is simpler than you think. Three steps: call Duane, plan together, and your family is protected. Free consultation in Raleigh NC.';
+
+const howToJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'HowTo',
+	name: 'How to Plan Ahead with Pre-Need Insurance',
+	description: 'A simple 3-step process to protect your family with pre-need funeral insurance.',
+	step: HOW_IT_WORKS_STEPS.map((s) => ({
+		'@type': 'HowToStep',
+		name: s.title,
+		text: s.description,
+		position: s.step,
+	})),
+};
+
+const expandedSteps = [
+	{
+		...HOW_IT_WORKS_STEPS[0],
+		details: [
+			'Duane answers the phone personally — no call center, no receptionist, no automated menu.',
+			'He\'ll ask about your family, listen to what prompted your call, and answer any questions you have.',
+			'Most initial calls last about 15 minutes. There\'s zero pressure and zero obligation.',
+			'If you\'d like to move forward, he\'ll schedule a time to go over your options in detail — in person or by phone.',
+		],
+	},
+	{
+		...HOW_IT_WORKS_STEPS[1],
+		details: [
+			'Duane creates a plan based entirely on your wishes — not a template, not a one-size-fits-all package.',
+			'You\'ll choose the service type: traditional funeral, graveside, cremation, or celebration of life.',
+			'Every detail is documented: music, readings, flowers, obituary preferences, and any personal touches.',
+			'He\'ll present coverage options that fit your budget with clear, transparent pricing.',
+		],
+	},
+	{
+		...HOW_IT_WORKS_STEPS[2],
+		details: [
+			'Your wishes are legally documented so there\'s no guessing when the time comes.',
+			'Your costs are locked in at today\'s prices — your family will never pay the difference.',
+			'The policy pays the funeral home directly, bypassing probate and family out-of-pocket costs.',
+			'Duane stays in touch. You can update your plan anytime as your life or preferences change.',
+		],
+	},
+];
+---
+
+<BaseLayout title={title} description={description} keywords="how pre-need planning works, funeral planning process, pre-need insurance steps">
+	<Hero variant="interior" title="How Pre-Need Insurance Works — 3 Simple Steps" subtitle="Three conversations. That's all it takes to protect your family from financial stress and difficult decisions." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'How It Works' }]} />
+
+		<!-- 3 Steps -->
+		<section class="mb-16">
+			<div class="space-y-12">
+				{expandedSteps.map((step) => (
+					<div class="flex gap-6 items-start">
+						<div class="flex-shrink-0">
+							<div class="w-14 h-14 rounded-full bg-teal-600 text-white flex items-center justify-center font-heading font-bold text-2xl">
+								{step.step}
+							</div>
+						</div>
+						<div class="flex-1">
+							<h2 class="font-heading text-2xl md:text-3xl font-bold text-charcoal-900 mb-2">{step.title}</h2>
+							<p class="text-lg text-charcoal-500 mb-4 leading-relaxed">{step.description}</p>
+							<ul class="space-y-3">
+								{step.details.map((detail) => (
+									<li class="flex items-start gap-3 text-charcoal-700">
+										<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+										</svg>
+										<span>{detail}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+	</div>
+
+	<CTABanner title="Ready to Take the First Step?" subtitle="Duane answers personally. He'll ask about your family, listen to your wishes, and explain your options. No pressure. Most calls last about 15 minutes." />
+
+	<JsonLd data={howToJsonLd} />
+</BaseLayout>

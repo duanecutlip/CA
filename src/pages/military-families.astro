@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Button from '../components/Button.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../consts';
+
+const title = 'Pre-Need Insurance for Military Families';
+const description = `VA burial benefits cover $300-$2,000. The average funeral costs $7,848+. Pre-need insurance bridges the gap. Call ${PHONE}.`;
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Pre-Need Insurance for Military Families',
+	description: 'Pre-need insurance to bridge the gap between VA burial benefits and actual funeral costs for military families in NC and SC.',
+	provider: {
+		'@type': 'InsuranceAgency',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
+	serviceType: 'Pre-Need Funeral Insurance',
+};
+
+const breadcrumbJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+		{ '@type': 'ListItem', position: 2, name: 'Military Families', item: `${SITE_URL}/military-families` },
+	],
+};
+---
+
+<BaseLayout title={title} description={description}>
+	<Hero
+		variant="interior"
+		title="Pre-Need Insurance for Military Families"
+		subtitle="VA burial benefits cover $300–$2,000. The average funeral costs $7,848+. Pre-need insurance bridges the gap."
+	/>
+
+	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Military Families' }]} />
+
+	<section class="py-16 md:py-24 bg-warm-white">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose">
+			<h2>Understanding VA Burial Benefits</h2>
+			<p>
+				The Department of Veterans Affairs provides burial benefits to eligible veterans and their families. However, these benefits are often much less than families expect:
+			</p>
+			<ul>
+				<li><strong>Service-connected death</strong>: Up to $2,000 toward burial expenses</li>
+				<li><strong>Non-service-connected death</strong>: Up to $300 for burial and $948 for plot interment</li>
+				<li><strong>National cemetery burial</strong>: Free gravesite, opening/closing, headstone — but the family still covers the funeral service, casket, transportation, and preparation</li>
+			</ul>
+			<p>
+				Even with VA benefits and a national cemetery burial, families typically face $5,000–$10,000+ in out-of-pocket funeral costs.
+			</p>
+
+			<h2>The Coverage Gap</h2>
+			<p>
+				The average funeral in North Carolina costs <strong>$7,848 or more</strong> — and that number rises every year. VA benefits cover only a fraction of this cost:
+			</p>
+			<div class="not-prose my-8 bg-linen rounded-xl border border-border-light p-6">
+				<div class="grid grid-cols-2 gap-4 text-center">
+					<div>
+						<p class="text-sm text-charcoal-400 mb-1">VA Benefit (non-service)</p>
+						<p class="font-heading text-3xl font-bold text-charcoal-900">$300</p>
+					</div>
+					<div>
+						<p class="text-sm text-charcoal-400 mb-1">Average Funeral Cost</p>
+						<p class="font-heading text-3xl font-bold text-burgundy-600">$7,848+</p>
+					</div>
+				</div>
+				<div class="text-center mt-4 pt-4 border-t border-border-light">
+					<p class="text-sm text-charcoal-400 mb-1">Family's Out-of-Pocket Gap</p>
+					<p class="font-heading text-4xl font-bold text-charcoal-900">$5,000–$10,000+</p>
+				</div>
+			</div>
+
+			<h2>How Pre-Need Insurance Bridges the Gap</h2>
+			<p>
+				Pre-need insurance is designed to cover the costs that VA benefits don't — ensuring your family is never burdened with unexpected funeral expenses. Here's how it works for military families:
+			</p>
+			<ul>
+				<li><strong>Supplements VA benefits</strong> — covers the gap between VA allowances and actual funeral costs</li>
+				<li><strong>Locks in today's prices</strong> — funeral costs rise every year, but your coverage doesn't</li>
+				<li><strong>No medical exam required</strong> — most policies available regardless of service-connected conditions</li>
+				<li><strong>Medicaid-exempt</strong> — irrevocable pre-need policies are generally protected from Medicaid spend-down</li>
+				<li><strong>Portable</strong> — if you PCS or relocate, your policy travels with you</li>
+			</ul>
+
+			<h2>Military-Specific Considerations</h2>
+			<p>
+				Duane understands the unique needs of military families near Fort Liberty (formerly Fort Bragg) and throughout the Triangle area:
+			</p>
+			<ul>
+				<li>Coordinating pre-need plans with VA burial benefits and national cemetery eligibility</li>
+				<li>Planning for military honors, flag presentations, and ceremonial elements</li>
+				<li>Working with families who may relocate frequently</li>
+				<li>Understanding TRICARE and survivor benefit interactions</li>
+			</ul>
+
+			<h2>Helpful Resources</h2>
+			<ul>
+				<li><a href="https://www.va.gov/burials-memorials/" target="_blank" rel="noopener noreferrer">VA Burial Benefits & Memorial Items</a></li>
+				<li><a href="https://www.cem.va.gov/" target="_blank" rel="noopener noreferrer">National Cemetery Administration</a></li>
+				<li><a href="https://www.va.gov/burials-memorials/pre-need-eligibility/" target="_blank" rel="noopener noreferrer">VA Pre-Need Eligibility Determination</a></li>
+			</ul>
+
+		</div>
+	</section>
+
+	<CTABanner title="Protect Your Family's Future" subtitle="Call Duane for a free consultation about supplementing your VA benefits with pre-need insurance." />
+
+	<JsonLd data={serviceJsonLd} />
+	<JsonLd data={breadcrumbJsonLd} />
+</BaseLayout>

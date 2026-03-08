@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { SITE_URL, PHONE } from '../../consts';
+
+const title = '5 Preneed KPIs Every Funeral Home Should Track';
+const description = 'The five preneed performance metrics every funeral home should measure: penetration rate, average face amount, conversion rate, cancellation rate, and cost per acquisition. With benchmarks and formulas.';
+
+const articleJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	headline: '5 Preneed KPIs Every Funeral Home Should Track',
+	description,
+	author: {
+		'@type': 'Person',
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+	},
+	datePublished: '2026-03-01',
+	dateModified: '2026-03-01',
+	publisher: {
+		'@type': 'Organization',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+};
+---
+
+<BaseLayout title={title} description={description} article={true} keywords="preneed KPIs, funeral home metrics, preneed penetration rate, preneed conversion rate, funeral home performance">
+	<section class="bg-warm-white pt-24 pb-8 md:pt-32 md:pb-12">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h1 class="font-heading text-3xl md:text-[40px] font-bold text-charcoal-900 leading-tight mb-4">
+				5 Preneed KPIs Every Funeral Home Should Track
+			</h1>
+			<p class="text-charcoal-500 mb-2">By <strong class="text-charcoal-900">Duane Cutlip</strong>, Licensed Preneed Funeral Director | March 2026</p>
+		</div>
+	</section>
+
+	<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Insights', href: '/insights' }, { label: 'Preneed KPIs' }]} />
+
+		<article class="prose max-w-none text-charcoal-700">
+
+			<p class="text-lg leading-relaxed">
+				Most funeral homes track at-need cases meticulously — total calls, service types, revenue per case. But when it comes to their preneed programs, they're flying blind. No benchmarks, no trend data, no way to know whether their preneed investment is paying off or slowly bleeding money.
+			</p>
+			<p class="leading-relaxed">
+				This is a problem because preneed is not a set-it-and-forget-it operation. It's a sales and marketing program that needs the same rigor you'd apply to any revenue-generating activity. The funeral homes that consistently grow their preneed books are the ones that measure performance, identify problems early, and adjust their approach based on data.
+			</p>
+			<p class="leading-relaxed">
+				After 20 years of building and evaluating preneed programs across North Carolina and South Carolina, these are the five KPIs I look at first when assessing a funeral home's preneed health. If you're not tracking these, you're guessing — and guessing is expensive.
+			</p>
+
+			<hr class="my-10 border-border-light" />
+
+			<h2 class="font-heading text-2xl font-bold text-charcoal-900 mt-12 mb-4">KPI 1: Preneed Penetration Rate</h2>
+
+			<p class="leading-relaxed">
+				<strong>What it measures:</strong> The percentage of your at-need funeral services that were pre-arranged through a preneed contract.
+			</p>
+
+			<div class="bg-linen rounded-xl p-6 my-6 border border-border-light">
+				<p class="font-heading font-bold text-charcoal-900 mb-2">Formula:</p>
+				<p class="text-lg font-mono text-charcoal-700">
+					Penetration Rate = (Preneed Cases Fulfilled / Total At-Need Cases) x 100
+				</p>
+			</div>
+
+			<p class="leading-relaxed">
+				<strong>Benchmark:</strong> 25-35% is a healthy target for an established preneed program. Top-performing funeral homes achieve 40% or higher. If you're below 20%, your preneed program is significantly underperforming relative to the opportunity.
+			</p>
+			<p class="leading-relaxed">
+				<strong>Why it matters:</strong> Penetration rate tells you how much of your future revenue you've already locked in. A funeral home doing 200 at-need cases per year with a 30% penetration rate has 60 of those cases pre-arranged — meaning the families chose them in advance, the pricing is locked in, and the relationship was built before the moment of need. That's revenue stability that at-need-only funeral homes simply don't have.
+			</p>
+			<p class="leading-relaxed">
+				<strong>What to watch for:</strong> A declining penetration rate may indicate that your preneed sales have plateaued while at-need volume is growing (a good problem to have, but still a gap to close). It can also signal that preneed contracts are being fulfilled at a rate that outpaces new sales — meaning you're depleting your preneed book without replenishing it.
+			</p>
+
+			<hr class="my-10 border-border-light" />
+
+			<h2 class="font-heading text-2xl font-bold text-charcoal-900 mt-12 mb-4">KPI 2: Average Face Amount</h2>
+
+			<p class="leading-relaxed">
+				<strong>What it measures:</strong> The average dollar value of preneed insurance policies you're writing.
+			</p>
+
+			<div class="bg-linen rounded-xl p-6 my-6 border border-border-light">
+				<p class="font-heading font-bold text-charcoal-900 mb-2">Formula:</p>
+				<p class="text-lg font-mono text-charcoal-700">
+					Average Face Amount = Total Preneed Face Value Written / Number of Policies Written
+				</p>
+			</div>
+
+			<p class="leading-relaxed">
+				<strong>Benchmark:</strong> This varies significantly by market and service mix, but in the Carolinas, a healthy range is $8,000 to $12,000 for traditional burial plans and $4,000 to $7,000 for cremation plans. If your average face amount is consistently below $6,000, you may be under-insuring families — leaving them (and your funeral home) exposed to cost gaps at the time of need.
+			</p>
+			<p class="leading-relaxed">
+				<strong>Why it matters:</strong> The average face amount directly impacts whether your preneed contracts will fully cover the cost of services at fulfillment. Funeral costs rise 3-5% annually. A $6,000 policy written today may only cover $4,800 in real purchasing power ten years from now if there's no growth mechanism built in. Policies with adequate face amounts — and carriers that offer growth riders — protect both the family and the funeral home.
+			</p>
+			<p class="leading-relaxed">
+				<strong>What to watch for:</strong> A declining average face amount often indicates one of two things: either your preneed counselors are defaulting to the cheapest option to close sales (an incentive problem), or your carrier's product isn't competitive enough to support higher face amounts without pricing families out. Either way, it's a problem that compounds over time.
+			</p>
+			<p class="leading-relaxed">
+				Also track how your average face amount compares to your average at-need case revenue. If your at-need average is $9,500 but your preneed average face amount is $7,000, you have a $2,500 gap per case that either the family or your funeral home will absorb at the time of need.
+			</p>
+
+			<hr class="my-10 border-border-light" />
+
+			<h2 class="font-heading text-2xl font-bold text-charcoal-900 mt-12 mb-4">KPI 3: Lead-to-Sale Conversion Rate</h2>
+
+			<p class="leading-relaxed">
+				<strong>What it measures:</strong> The percentage of preneed leads (inquiries, appointments, referrals) that result in a signed preneed contract.
+			</p>
+
+			<div class="bg-linen rounded-xl p-6 my-6 border border-border-light">
+				<p class="font-heading font-bold text-charcoal-900 mb-2">Formula:</p>
+				<p class="text-lg font-mono text-charcoal-700">
+					Conversion Rate = (Signed Contracts / Total Leads) x 100
+				</p>
+			</div>
+
+			<p class="leading-relaxed">
+				<strong>Benchmark:</strong> 15-25% is typical for a well-run preneed program. Experienced preneed counselors with warm leads (referrals, existing families) can achieve 30-40%. If your conversion rate is below 10%, your lead quality, sales process, or follow-up cadence likely needs attention.
+			</p>
+			<p class="leading-relaxed">
+				<strong>Why it matters:</strong> Lead generation costs money — whether it's direct mail, digital advertising, community events, or staff time dedicated to preneed outreach. If you're generating 100 leads per month but only converting 5, you're spending a lot of money to acquire very few policies. Improving conversion rate is almost always more cost-effective than generating more leads.
+			</p>
+			<p class="leading-relaxed">
+				<strong>What to watch for:</strong> Break this KPI down by lead source. You may find that seminar leads convert at 25% while cold direct mail converts at 3%. This kind of segmentation tells you where to invest your marketing budget and where to cut losses.
+			</p>
+			<p class="leading-relaxed">
+				Also pay attention to the time from first contact to signed contract. If your average sales cycle is 60+ days, you're losing people in the middle. The most effective preneed programs have a streamlined process that moves from initial conversation to signed paperwork in 7-14 days, with clear follow-up touchpoints along the way.
+			</p>
+
+			<hr class="my-10 border-border-light" />
+
+			<h2 class="font-heading text-2xl font-bold text-charcoal-900 mt-12 mb-4">KPI 4: Cancellation/Transfer Rate</h2>
+
+			<p class="leading-relaxed">
+				<strong>What it measures:</strong> The percentage of active preneed contracts that are cancelled or transferred to another funeral home within a given period.
+			</p>
+
+			<div class="bg-linen rounded-xl p-6 my-6 border border-border-light">
+				<p class="font-heading font-bold text-charcoal-900 mb-2">Formula:</p>
+				<p class="text-lg font-mono text-charcoal-700">
+					Cancellation Rate = (Cancelled or Transferred Contracts / Total Active Contracts) x 100
+				</p>
+			</div>
+
+			<p class="leading-relaxed">
+				<strong>Benchmark:</strong> Under 10% annually is acceptable. Under 5% is excellent. If you're losing more than 10% of your preneed book each year to cancellations and transfers, you have a retention problem that's actively undermining your growth.
+			</p>
+			<p class="leading-relaxed">
+				<strong>Why it matters:</strong> Every preneed contract in your book represents future revenue. When a contract cancels or transfers, you lose that revenue — plus the acquisition cost you invested to win it in the first place. A funeral home that sells 100 new preneed contracts per year but loses 15 to cancellation is only netting 85 — a 15% drag on growth that compounds annually.
+			</p>
+			<p class="leading-relaxed">
+				<strong>What to watch for:</strong> Distinguish between cancellations (family decides not to proceed) and transfers (family moves their contract to a competitor). These have different root causes:
+			</p>
+			<ul class="space-y-2 my-4">
+				<li><strong>High cancellations</strong> often indicate buyer's remorse, which points to problems in the sales process — families felt pressured, didn't fully understand the product, or experienced sticker shock after signing.</li>
+				<li><strong>High transfers</strong> suggest a relationship problem. The family may have had a negative experience with your funeral home, moved out of your area, or been actively recruited by a competitor. Transfers are harder to prevent but not impossible — regular touchpoints with preneed families go a long way.</li>
+			</ul>
+			<p class="leading-relaxed">
+				Track cancellation timing as well. If most cancellations happen within the first 90 days, your sales process may be creating false urgency. If they happen after 1-2 years, you may have a follow-up gap where families feel forgotten.
+			</p>
+
+			<hr class="my-10 border-border-light" />
+
+			<h2 class="font-heading text-2xl font-bold text-charcoal-900 mt-12 mb-4">KPI 5: Cost Per Acquisition (CPA)</h2>
+
+			<p class="leading-relaxed">
+				<strong>What it measures:</strong> The total cost to acquire one signed preneed contract, including all marketing, sales, and overhead expenses associated with your preneed program.
+			</p>
+
+			<div class="bg-linen rounded-xl p-6 my-6 border border-border-light">
+				<p class="font-heading font-bold text-charcoal-900 mb-2">Formula:</p>
+				<p class="text-lg font-mono text-charcoal-700">
+					CPA = Total Preneed Program Costs / Number of New Contracts Signed
+				</p>
+			</div>
+
+			<p class="leading-relaxed">
+				<strong>Benchmark:</strong> CPA varies widely based on marketing mix and market. A reasonable target for most funeral homes in the Carolinas is $200-$500 per signed contract. If your CPA exceeds $750, you should scrutinize your marketing spend and sales efficiency. If it's below $150, you're likely under-investing in growth.
+			</p>
+			<p class="leading-relaxed">
+				<strong>Why it matters:</strong> CPA puts your preneed program's economics into perspective. A funeral home spending $50,000 per year on preneed marketing and sales that produces 100 new contracts has a CPA of $500. If each contract has an average face amount of $9,000, the lifetime value of that book is $900,000 in future revenue — an 18:1 return on investment. That's outstanding.
+			</p>
+			<p class="leading-relaxed">
+				But change the numbers slightly — $50,000 in spend producing only 40 contracts — and CPA jumps to $1,250 per contract. The return still works long-term, but the efficiency is poor, and there's almost certainly a better allocation of that marketing budget.
+			</p>
+			<p class="leading-relaxed">
+				<strong>What to watch for:</strong> Break CPA down by marketing channel. You may find that your community seminars produce contracts at $150 CPA while your direct mail campaigns cost $800 per contract. This data should directly inform your marketing budget allocation.
+			</p>
+			<p class="leading-relaxed">
+				Also factor in your staff's time. If your preneed counselor spends 30 hours on a lead that never converts, that's real cost that needs to be captured in the CPA calculation. Too often, funeral homes calculate CPA using only hard marketing costs and ignore the labor component — which significantly understates the true cost of acquisition.
+			</p>
+
+			<hr class="my-10 border-border-light" />
+
+			<h2 class="font-heading text-2xl font-bold text-charcoal-900 mt-12 mb-4">What to Do When Your KPIs Are Off</h2>
+
+			<p class="leading-relaxed">
+				Tracking KPIs is only valuable if you act on what they tell you. Here's a diagnostic framework:
+			</p>
+
+			<div class="overflow-x-auto my-6">
+				<table class="w-full border-collapse text-sm">
+					<thead>
+						<tr class="bg-linen">
+							<th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Symptom</th>
+							<th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Likely Cause</th>
+							<th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="border-b border-border-light">
+							<td class="p-4 text-charcoal-700">Low penetration rate</td>
+							<td class="p-4 text-charcoal-700">Not enough preneed sales or contracts fulfilling faster than you replace them</td>
+							<td class="p-4 text-charcoal-700">Increase lead generation, hire/train preneed counselor</td>
+						</tr>
+						<tr class="border-b border-border-light">
+							<td class="p-4 text-charcoal-700">Low average face amount</td>
+							<td class="p-4 text-charcoal-700">Under-selling, wrong carrier product, or staff defaulting to minimum</td>
+							<td class="p-4 text-charcoal-700">Review carrier products, retrain on needs-based selling</td>
+						</tr>
+						<tr class="border-b border-border-light">
+							<td class="p-4 text-charcoal-700">Low conversion rate</td>
+							<td class="p-4 text-charcoal-700">Poor lead quality, weak follow-up, or process friction</td>
+							<td class="p-4 text-charcoal-700">Segment leads by source, shorten sales cycle, improve follow-up</td>
+						</tr>
+						<tr class="border-b border-border-light">
+							<td class="p-4 text-charcoal-700">High cancellation rate</td>
+							<td class="p-4 text-charcoal-700">Pressure sales, poor onboarding, or lack of ongoing relationship</td>
+							<td class="p-4 text-charcoal-700">Fix sales approach, add post-sale touchpoints</td>
+						</tr>
+						<tr class="border-b border-border-light">
+							<td class="p-4 text-charcoal-700">High CPA</td>
+							<td class="p-4 text-charcoal-700">Inefficient marketing channels or too much time per lead</td>
+							<td class="p-4 text-charcoal-700">Cut underperforming channels, streamline sales process</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="leading-relaxed">
+				The key insight is that these KPIs are interconnected. A low conversion rate drives up CPA. A low average face amount reduces the lifetime value that justifies your CPA. High cancellation rates undermine your penetration rate. The healthiest preneed programs are the ones where all five metrics are working together.
+			</p>
+
+			<h2 class="font-heading text-2xl font-bold text-charcoal-900 mt-12 mb-4">Start Tracking Today</h2>
+			<p class="leading-relaxed">
+				You don't need sophisticated software to track these KPIs. A simple spreadsheet updated monthly will give you the visibility you need. The important thing is to start — even imperfect data is infinitely more useful than no data.
+			</p>
+			<p class="leading-relaxed">
+				Set aside 30 minutes at the end of each month to calculate these five numbers. After three months, you'll have enough trend data to identify where your preneed program is strong, where it's leaking, and where your investment will have the highest return.
+			</p>
+
+			<div class="bg-linen rounded-xl p-8 mt-12 border border-border-light">
+				<h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-3">Want Duane to Audit Your Preneed KPIs?</h2>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					I work with funeral homes across NC and SC to assess preneed program performance and identify growth opportunities. A preneed audit includes a review of all five KPIs, carrier product evaluation, and a customized improvement plan.
+				</p>
+				<p class="text-charcoal-700 leading-relaxed mb-6">
+					Call me at <a href="tel:9198222010" class="text-teal-600 hover:text-teal-700 font-bold">{PHONE}</a> or learn more about the <a href="/for-funeral-homes/program-audit" class="text-teal-600 hover:text-teal-700 underline">preneed program audit</a>.
+				</p>
+				<p class="text-charcoal-500 text-sm">— Duane Cutlip, Licensed Preneed Funeral Director, NC & SC</p>
+			</div>
+		</article>
+	</div>
+
+	<CTABanner title="Let's Talk About Your Preneed Program" subtitle="Duane consults with funeral homes across NC and SC on preneed strategy, compliance, and growth." />
+	<JsonLd data={articleJsonLd} />
+</BaseLayout>

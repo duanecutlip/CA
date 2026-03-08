@@ -1,0 +1,32 @@
+---
+interface Props {
+  variant?: 'primary' | 'phone' | 'secondary' | 'ghost';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const { variant = 'primary', href, type = 'button', class: className = '' } = Astro.props;
+
+const base = 'inline-flex items-center justify-center min-h-[56px] px-6 rounded-lg font-semibold text-base !no-underline transition-colors focus-visible:outline-2 focus-visible:outline-offset-2';
+
+const variants: Record<string, string> = {
+  primary: 'bg-teal-600 !text-white hover:bg-teal-700 focus-visible:outline-teal-600',
+  phone: 'bg-burgundy-600 !text-white hover:bg-burgundy-700 focus-visible:outline-burgundy-600',
+  secondary: 'bg-transparent border-2 border-teal-600 text-teal-600 hover:bg-teal-600 hover:!text-white focus-visible:outline-teal-600',
+  ghost: 'bg-transparent text-charcoal-700 hover:bg-linen focus-visible:outline-charcoal-400',
+};
+
+const classes = `${base} ${variants[variant]} ${className}`;
+const Tag = href ? 'a' : 'button';
+---
+
+{href ? (
+  <a href={href} class={classes}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class={classes}>
+    <slot />
+  </button>
+)}

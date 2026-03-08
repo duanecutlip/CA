@@ -1,0 +1,574 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Complete Guide to Preneed Insurance in South Carolina",
+  "description": "Everything SC families need to know about preneed insurance — costs, laws, Medicaid rules, carriers, and how to choose a plan.",
+  "author": {
+    "@type": "Person",
+    "name": "Duane Cutlip",
+    "jobTitle": "Licensed Preneed Funeral Director",
+    "url": `${SITE_URL}/about`
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cutlip Associates LLC",
+    "url": SITE_URL
+  },
+  "datePublished": "2026-03-06",
+  "dateModified": "2026-03-06",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/learn/preneed-insurance-sc`
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is preneed insurance required in South Carolina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Preneed insurance is entirely voluntary in South Carolina. However, SC law (SC Code § 32-7) does require that any preneed seller be properly licensed and that all funds collected be placed in trust or backed by an insurance policy. You are never obligated to purchase a preneed plan, but if you choose to, the state ensures strong consumer protections are in place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I transfer my SC preneed plan to another funeral home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. South Carolina law protects your right to transfer a preneed contract to another licensed funeral home within the state. If you move or simply change your preference, you can request a transfer. The original provider must release the funds (either from the trust or the insurance assignment) to the new funeral home. There may be administrative fees, but the core value of your plan is protected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is SC preneed different from NC preneed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both states require preneed funds to be protected through trust accounts or insurance policies, and both states exempt irrevocable preneed plans from Medicaid asset calculations. The key differences are in the regulatory bodies (SC Board of Funeral Service vs NC Board of Funeral Service), licensing fees ($250 in SC vs $50,000 surety bond + $150 in NC), and specific consumer protection statutes. Duane Cutlip is licensed in both states, so he can guide families through either state's requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does preneed insurance affect Medicaid eligibility in South Carolina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An irrevocable preneed insurance plan is exempt from Medicaid asset calculations in South Carolina. This means the funds set aside for your funeral are not counted when determining Medicaid eligibility. This is one of the most important planning tools available to SC families who may need long-term care coverage. However, the plan must be irrevocable — meaning you give up the right to cancel or cash it out — for the Medicaid exemption to apply."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can someone licensed in NC sell preneed in SC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not automatically. Each state has its own licensing requirements. A preneed agent must hold a valid license in the state where they are selling. Duane Cutlip holds licenses in both North Carolina and South Carolina, allowing him to serve families across both states. If you work with an agent who is only licensed in one state, they cannot legally sell preneed plans in the other."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the funeral home I chose goes out of business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your preneed funds are protected under SC law regardless of what happens to the funeral home. If your plan is insurance-funded, the insurance policy remains valid and can be assigned to any other licensed funeral home. If your plan is trust-funded, the funds held in trust are protected from the funeral home's creditors and can be transferred. The SC Board of Funeral Service oversees these situations to ensure consumers are not harmed."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Preneed Insurance in South Carolina | Complete Guide"
+  description="Everything SC families need to know about preneed insurance — costs, laws, Medicaid rules, carriers, and how to choose a plan. By Duane Cutlip, licensed in NC & SC."
+  keywords="preneed insurance South Carolina, SC preneed insurance, preneed funeral planning SC, Medicaid exempt funeral insurance SC, preneed insurance cost SC"
+  article
+>
+  <Hero
+    variant="interior"
+    title="The Complete Guide to Preneed Insurance in South Carolina"
+    subtitle="SC laws, costs, Medicaid planning, carrier options, and how to protect your family — written by a licensed preneed director serving both Carolinas."
+  />
+
+  <Breadcrumbs items={[
+    { label: 'Home', href: '/' },
+    { label: 'Learn', href: '/learn' },
+    { label: 'Preneed Insurance in SC' }
+  ]} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Key Takeaway -->
+    <div class="bg-teal-50 border-l-4 border-teal-600 rounded-r-xl p-6 mb-12">
+      <p class="font-heading font-bold text-charcoal-900 mb-2">Key Takeaway</p>
+      <p class="text-charcoal-700 leading-relaxed">South Carolina provides strong consumer protections for preneed insurance purchases. Under SC Code &sect; 32-7, your preneed funds must be placed in trust or backed by insurance, and irrevocable preneed plans are exempt from Medicaid asset calculations &mdash; a critical planning tool for SC families.</p>
+    </div>
+
+    <!-- Author Byline -->
+    <div class="bg-linen rounded-xl p-8 border border-border-light mb-8">
+      <div class="flex items-start gap-4">
+        <div class="w-16 h-16 rounded-full bg-teal-600/10 flex items-center justify-center flex-shrink-0">
+          <svg class="w-8 h-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+          </svg>
+        </div>
+        <div>
+          <p class="font-heading font-bold text-charcoal-900">Written by Duane Cutlip</p>
+          <p class="text-charcoal-500 text-sm mb-2">Licensed Preneed Funeral Director | 20+ Years Experience | NFDA Member</p>
+          <p class="text-charcoal-700 text-sm leading-relaxed">Duane is licensed in both North Carolina and South Carolina and helps families across the Carolinas plan ahead with confidence. He works with every major preneed insurance carrier and understands the regulatory nuances of both states.</p>
+        </div>
+      </div>
+      <p class="text-charcoal-400 text-xs mt-4">Last updated: March 2026</p>
+    </div>
+
+    <!-- Section 1: What Is Preneed Insurance? -->
+    <section class="mb-16">
+      <SectionHeading title="What Is Preneed Insurance?" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">Preneed insurance is a specialized insurance product designed for one purpose: to fund your funeral and burial expenses before the need arises. Unlike a standard life insurance policy that pays a lump sum to beneficiaries, a preneed policy is assigned directly to a funeral home and earmarked for the specific goods and services you select in advance.</p>
+        <p class="leading-relaxed">When you purchase a preneed plan, you accomplish several things at once. You lock in today's prices for funeral services that will almost certainly cost more in the future. You document your wishes clearly so your family never has to guess what you would have wanted. You ensure the funeral home receives payment directly, bypassing probate entirely. And you remove one of the most stressful financial decisions a grieving family faces.</p>
+        <p class="leading-relaxed">Over the past decade, funeral costs across the United States have risen approximately 40%. In South Carolina specifically, families are feeling the pressure of rising costs for caskets, cemetery plots, embalming, and professional services. A preneed plan acts as a hedge against this inflation, guaranteeing that the services you choose today will be fully covered regardless of future price increases.</p>
+        <p class="leading-relaxed">Preneed insurance is not a general investment vehicle or a savings account. It is a purpose-built financial instrument regulated at the state level, and in South Carolina, those regulations are particularly consumer-friendly. Whether you are planning for yourself or helping aging parents prepare, understanding how preneed insurance works in your specific state is essential.</p>
+      </div>
+    </section>
+
+    <!-- Section 2: How Preneed Insurance Works in South Carolina -->
+    <section class="mb-16">
+      <SectionHeading title="How Preneed Insurance Works in South Carolina" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">South Carolina regulates the sale of preneed funeral contracts through SC Code &sect; 32-7-10 through &sect; 32-7-120. These statutes establish a comprehensive framework that protects consumers while allowing licensed funeral providers to offer advance planning services. The SC Board of Funeral Service serves as the primary regulatory body overseeing all preneed activities in the state.</p>
+        <p class="leading-relaxed">To legally sell preneed contracts in South Carolina, a funeral establishment must hold a valid preneed license issued by the Board. The licensing process requires a $250 fee with biennial renewal, and applicants must demonstrate compliance with all financial protection requirements. Unlike some states that rely on a bonding model, South Carolina mandates that all preneed funds be either placed in a trust account at a South Carolina financial institution or backed by a preneed insurance policy issued by a company licensed to do business in the state.</p>
+        <p class="leading-relaxed">This dual-protection model &mdash; trust or insurance &mdash; is the cornerstone of SC consumer protection for preneed purchases. It ensures that your money is never simply held in a funeral home's general operating account, where it could be vulnerable to business failure or mismanagement. Instead, your funds are ring-fenced and legally protected from the moment you make your first payment.</p>
+        <p class="leading-relaxed">South Carolina law also requires full disclosure in preneed contracts. Every contract must clearly itemize the goods and services being pre-arranged, the total price, the payment schedule, and whether the contract is revocable or irrevocable. The funeral establishment must provide you with a copy of the signed contract and maintain records that are subject to Board audit. If a provider fails to comply with these requirements, the Board has authority to revoke their preneed license, impose fines, or refer the matter for criminal prosecution.</p>
+        <p class="leading-relaxed">For families in the Upstate, Lowcountry, Midlands, and Pee Dee regions, these protections apply uniformly. Whether you live in Charleston, Columbia, Greenville, or a rural community, the same SC Code &sect; 32-7 standards govern every preneed transaction in the state.</p>
+      </div>
+    </section>
+
+    <!-- Section 3: How Much Does Preneed Insurance Cost in SC? -->
+    <section class="mb-16">
+      <SectionHeading title="How Much Does Preneed Insurance Cost in SC?" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">The cost of a preneed insurance plan in South Carolina depends on the type of service, the funeral home, and the specific goods and services you select. However, industry data provides reliable benchmarks to help you plan.</p>
+
+        <div class="bg-linen rounded-xl p-8 mb-6 border border-border-light">
+          <p class="text-2xl font-heading font-bold text-charcoal-900 mb-2">
+            Average SC Traditional Burial: <span class="text-burgundy-600">$8,224</span>
+          </p>
+          <p class="text-charcoal-500">Based on NFDA 2023 Member General Price List Survey data for the Southeast region. National median is $8,300.</p>
+        </div>
+
+        <p class="leading-relaxed">That $8,224 figure covers a traditional funeral with viewing, ceremony, hearse, and burial &mdash; but it does not include the cemetery plot, vault, monument, or flowers, which can add another $3,000 to $7,000 depending on your choices. When all costs are factored in, a complete traditional burial in South Carolina frequently exceeds $12,000.</p>
+        <p class="leading-relaxed">Cremation services in South Carolina are becoming increasingly popular, with the Carolinas cremation rate now between 48% and 60% depending on the specific market. A cremation with a memorial service typically runs around $5,900, while a direct cremation &mdash; the simplest and most affordable option &mdash; averages approximately $1,933 in the Southeast region.</p>
+        <p class="leading-relaxed">Most South Carolina families invest between $3,000 and $15,000 in a preneed plan, depending on their preferences. A direct cremation plan at the lower end offers basic dignity and simplicity. A full traditional burial with premium casket selection and cemetery arrangements occupies the higher end. The majority of families fall somewhere in the middle, choosing a meaningful service that reflects their loved one's life without unnecessary extravagance.</p>
+        <p class="leading-relaxed">Payment flexibility is another advantage of preneed insurance. Most carriers offer single-pay, 5-year, and 10-year payment options. A $10,000 plan paid over 10 years works out to approximately $83 per month &mdash; comparable to a modest streaming subscription bundle. Single-pay plans often come with a small discount since the insurance company receives the full premium upfront and can begin earning interest immediately.</p>
+        <p class="leading-relaxed">The critical advantage of locking in prices through preneed insurance is protection against inflation. If funeral costs continue rising at their historical rate of 3-5% per year, a $10,000 funeral today could cost $13,000 to $16,000 in a decade. A preneed plan purchased today freezes those costs, and the insurance policy's growth is designed to keep pace with or exceed the funeral home's price increases.</p>
+      </div>
+    </section>
+
+    <!-- Section 4: Trust-Funded vs Insurance-Funded Preneed in SC -->
+    <section class="mb-16">
+      <SectionHeading title="Trust-Funded vs Insurance-Funded Preneed in SC" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">South Carolina allows two primary funding mechanisms for preneed contracts: trust accounts and insurance policies. Each has distinct advantages, and understanding the differences will help you make a more informed decision. Most preneed professionals today &mdash; myself included &mdash; recommend insurance-funded plans for the majority of families, though trust-funded plans have their place.</p>
+      </div>
+
+      <div class="overflow-x-auto mt-6 mb-6">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-linen">
+              <th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Feature</th>
+              <th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Trust-Funded</th>
+              <th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Insurance-Funded</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Funding Mechanism</td>
+              <td class="p-4 text-charcoal-700">Funds deposited in SC trust account</td>
+              <td class="p-4 text-charcoal-700">Whole life insurance policy assigned to funeral home</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Growth</td>
+              <td class="p-4 text-charcoal-700">Earns interest (varies by institution)</td>
+              <td class="p-4 text-charcoal-700">Guaranteed growth built into policy</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Immediate Coverage</td>
+              <td class="p-4 text-charcoal-700">Only amount deposited is available</td>
+              <td class="p-4 text-charcoal-700">Full face value from day one (after first premium)</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Medicaid Protection</td>
+              <td class="p-4 text-charcoal-700">Exempt if irrevocable</td>
+              <td class="p-4 text-charcoal-700">Exempt if irrevocable</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Portability</td>
+              <td class="p-4 text-charcoal-700">Transferable within SC</td>
+              <td class="p-4 text-charcoal-700">Transferable; policy stays with you</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Death Before Full Payment</td>
+              <td class="p-4 text-charcoal-700">Only paid-in amount available</td>
+              <td class="p-4 text-charcoal-700">Full face value paid regardless</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Best For</td>
+              <td class="p-4 text-charcoal-700">Those who prefer simplicity or cannot qualify for insurance</td>
+              <td class="p-4 text-charcoal-700">Most families; provides immediate full coverage and guaranteed growth</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">The most significant advantage of insurance-funded preneed is immediate full coverage. If you purchase a $10,000 insurance-funded preneed plan and pass away after making only your first monthly payment, the full $10,000 is available to fund your funeral. With a trust-funded plan, only the amount you have actually deposited would be available, potentially leaving your family to cover the difference out of pocket.</p>
+        <p class="leading-relaxed">Insurance-funded plans also offer guaranteed growth. The policy's cash value increases over time at a rate specified in the contract, ensuring the plan keeps pace with rising funeral costs. Trust accounts earn interest as well, but the rate is subject to market conditions and is typically lower than the guaranteed growth rate on a whole life preneed policy.</p>
+        <p class="leading-relaxed">Trust-funded plans remain a viable option for individuals who cannot qualify for insurance due to health conditions or advanced age. Since trust accounts do not require medical underwriting, anyone can establish a trust-funded preneed plan regardless of their health status. Some carriers also offer guaranteed-issue preneed insurance policies that require no medical questions, though these may come with a graded benefit period during the first two years.</p>
+      </div>
+    </section>
+
+    <!-- Section 5: Preneed and Medicaid in South Carolina -->
+    <section class="mb-16">
+      <SectionHeading title="Preneed and Medicaid in South Carolina" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">For South Carolina families navigating long-term care and Medicaid planning, irrevocable preneed insurance is one of the most powerful &mdash; and most overlooked &mdash; financial tools available. Understanding how it works can save your family thousands of dollars and protect your dignity in your final years.</p>
+        <p class="leading-relaxed">To qualify for Medicaid long-term care benefits in South Carolina, an individual must meet strict asset limits. As of 2026, a single applicant generally cannot have more than $2,000 in countable assets. For married couples, the community spouse resource allowance provides some additional protection, but the limits remain tight. Bank accounts, investments, and most life insurance policies with cash value above $1,500 all count toward these asset limits.</p>
+        <p class="leading-relaxed">Here is where preneed insurance becomes a strategic planning tool: <strong>an irrevocable preneed insurance plan is exempt from Medicaid asset calculations in South Carolina.</strong> When you make a preneed plan irrevocable, you give up the right to cancel the policy or access its cash value. In exchange, those funds are no longer considered a countable asset for Medicaid purposes. This allows you to preserve money specifically for your funeral without jeopardizing your Medicaid eligibility.</p>
+        <p class="leading-relaxed">The practical application is straightforward. If a South Carolina resident has $15,000 in assets and needs to spend down to $2,000 to qualify for Medicaid, they could purchase a $10,000 irrevocable preneed plan, immediately reducing their countable assets to $5,000. Combined with other allowable expenditures, this strategy can accelerate Medicaid eligibility while ensuring the individual's funeral is fully funded.</p>
+        <p class="leading-relaxed">Timing matters enormously. Medicaid has a five-year lookback period for asset transfers. However, purchasing an irrevocable preneed plan is not considered a disqualifying transfer because you receive fair value in return &mdash; you are exchanging cash for a guaranteed funeral benefit of equal value. This distinction is critical, and it is one of the reasons I strongly recommend families consult with both a preneed specialist and an elder law attorney when Medicaid planning is involved.</p>
+        <p class="leading-relaxed">If you are exploring Medicaid planning strategies, our <a href="/learn/medicaid-funeral-planning" class="text-teal-600 hover:text-teal-700 underline">complete guide to Medicaid and funeral planning</a> covers the topic in greater depth, including specific strategies for married couples and common mistakes to avoid.</p>
+      </div>
+    </section>
+
+    <!-- Section 6: SC Preneed Consumer Rights -->
+    <section class="mb-16">
+      <SectionHeading title="SC Preneed Consumer Rights" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">South Carolina law provides several important protections for preneed purchasers. Knowing your rights empowers you to make confident decisions and hold providers accountable.</p>
+      </div>
+      <ul class="space-y-3 mt-6 mb-6">
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Contract Portability:</strong> You have the right to transfer your preneed contract to another licensed funeral home in South Carolina. Your plan follows you, not the funeral home.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Refund Rights:</strong> If your contract is revocable, you may cancel and receive a refund of the trust funds or the cash surrender value of the insurance policy, subject to any applicable fees disclosed in your contract.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Fund Protection:</strong> All preneed funds must be held in trust or backed by insurance. They cannot be commingled with the funeral home's operating funds.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Full Disclosure:</strong> Your contract must itemize all selected goods, services, prices, and payment terms in writing before you sign.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Board Oversight:</strong> The SC Board of Funeral Service has enforcement authority, including license revocation, fines, and criminal referral for providers who violate preneed regulations.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Survivor Protection:</strong> If the funeral home closes or goes out of business, your trust or insurance funds remain protected and can be assigned to another provider.</span>
+        </li>
+      </ul>
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">You can verify any funeral home's preneed license status by contacting the <a href="https://llr.sc.gov/funeral/" class="text-teal-600 hover:text-teal-700 underline" target="_blank" rel="noopener noreferrer">SC Board of Funeral Service</a> directly. If you believe a provider has violated your rights, the Board accepts consumer complaints and has a formal investigation process.</p>
+      </div>
+    </section>
+
+    <!-- Section 7: NC vs SC Preneed Laws -->
+    <section class="mb-16">
+      <SectionHeading title="Differences Between NC and SC Preneed Laws" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">Families in the Carolinas border region &mdash; particularly in the Charlotte, Rock Hill, Myrtle Beach, and Wilmington corridors &mdash; often have ties to both states. Understanding how preneed laws differ between North Carolina and South Carolina helps you make the best decision for your situation. As someone licensed in both states, I can navigate these differences on your behalf.</p>
+      </div>
+
+      <div class="overflow-x-auto mt-6 mb-6">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-linen">
+              <th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">Feature</th>
+              <th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">North Carolina</th>
+              <th class="text-left p-4 font-heading font-bold text-charcoal-900 border-b border-border-light">South Carolina</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Governing Statute</td>
+              <td class="p-4 text-charcoal-700">N.C.G.S. &sect; 90-210.60</td>
+              <td class="p-4 text-charcoal-700">SC Code &sect; 32-7-10</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Licensing Body</td>
+              <td class="p-4 text-charcoal-700">NC Board of Funeral Service</td>
+              <td class="p-4 text-charcoal-700">SC Board of Funeral Service</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Bond / Fee Requirements</td>
+              <td class="p-4 text-charcoal-700">$50,000 surety bond + $150 license fee</td>
+              <td class="p-4 text-charcoal-700">$250 license fee (biennial renewal)</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Fund Protection</td>
+              <td class="p-4 text-charcoal-700">Trust or insurance required</td>
+              <td class="p-4 text-charcoal-700">Trust or insurance required</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Trustee Retention</td>
+              <td class="p-4 text-charcoal-700">Up to 10% of trust funds</td>
+              <td class="p-4 text-charcoal-700">Varies by contract terms</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Contract Transferability</td>
+              <td class="p-4 text-charcoal-700">Transferable within NC</td>
+              <td class="p-4 text-charcoal-700">Transferable within SC</td>
+            </tr>
+            <tr class="border-b border-border-light">
+              <td class="p-4 font-semibold text-charcoal-900">Medicaid Exemption</td>
+              <td class="p-4 text-charcoal-700">Irrevocable plans exempt</td>
+              <td class="p-4 text-charcoal-700">Irrevocable plans exempt</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">One notable difference is in the financial requirements placed on providers. North Carolina requires a $50,000 surety bond in addition to a $150 license fee, representing a significantly higher barrier to entry than South Carolina's $250 fee structure. This means NC providers have a larger financial backstop, but SC compensates with active Board oversight and the universal trust-or-insurance mandate.</p>
+        <p class="leading-relaxed">In practice, both states offer robust consumer protection. The core principles are the same: your funds are protected, your contract is portable, and irrevocable plans are Medicaid-exempt. The differences lie in the administrative details, which is why working with an agent licensed in both states eliminates the guesswork. For a detailed look at NC-specific rules, see our <a href="/learn/preneed-insurance-nc" class="text-teal-600 hover:text-teal-700 underline">complete NC preneed insurance guide</a>.</p>
+      </div>
+    </section>
+
+    <!-- Section 8: How to Choose a Preneed Plan in SC -->
+    <section class="mb-16">
+      <SectionHeading title="How to Choose a Preneed Plan in SC" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">Choosing the right preneed plan requires balancing your personal preferences, budget, and long-term planning goals. Here is a practical framework for making that decision with confidence.</p>
+      </div>
+      <ul class="space-y-3 mt-6 mb-6">
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Work with a licensed agent:</strong> Verify your agent holds a valid SC preneed license. You can confirm this through the <a href="https://llr.sc.gov/funeral/" class="text-teal-600 hover:text-teal-700 underline" target="_blank" rel="noopener noreferrer">SC Board of Funeral Service</a>. An unlicensed seller cannot legally offer preneed contracts in South Carolina.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Decide between trust and insurance funding:</strong> For most families, insurance-funded plans provide better value due to immediate full coverage and guaranteed growth. If health conditions prevent insurance qualification, trust-funded plans are a solid alternative.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Choose your service type:</strong> Traditional burial, cremation with service, direct cremation, or a green burial. Your choice will significantly affect the plan's cost and the details documented in the contract.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Consider Medicaid implications:</strong> If you or your spouse may need Medicaid in the future, discuss irrevocable plan options. This single decision can protect thousands of dollars from asset spend-down requirements.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Select a payment structure:</strong> Single-pay locks in the best value. Monthly payments over 5 or 10 years spread the cost. Either way, the total funeral cost is fixed at today's prices.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Review the contract carefully:</strong> Ensure every line item is listed, the total matches your agreement, and you understand whether the contract is revocable or irrevocable before signing.</span>
+        </li>
+      </ul>
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">If you are ready to explore options, <a href="/plan-ahead" class="text-teal-600 hover:text-teal-700 underline">start your planning process here</a> or <a href="/contact" class="text-teal-600 hover:text-teal-700 underline">contact Duane directly</a> to schedule a no-obligation consultation. I serve families throughout South Carolina and can meet in person or by phone at <a href={`tel:${PHONE_RAW}`} class="text-teal-600 hover:text-teal-700 underline">{PHONE}</a>.</p>
+      </div>
+    </section>
+
+    <!-- Section 9: Preneed Insurance Carriers Available in SC -->
+    <section class="mb-16">
+      <SectionHeading title="Preneed Insurance Carriers Available in SC" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">South Carolina families have access to the full range of preneed insurance carriers that serve the Southeast market. Working with an independent preneed agent &mdash; rather than a funeral-home-employed counselor &mdash; gives you access to multiple carriers and the ability to compare plans side by side. Here are the major carriers I work with in South Carolina:</p>
+      </div>
+      <ul class="space-y-3 mt-6 mb-6">
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Homesteaders Life Company</strong> &mdash; The largest preneed-focused carrier in the U.S., known for competitive rates and strong financial ratings.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Global Atlantic / Forethought Life</strong> &mdash; Broad product portfolio with flexible underwriting options including guaranteed-issue policies.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>National Guardian Life (NGL)</strong> &mdash; Strong presence in the Carolinas with competitive pricing and solid claims track record.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Funeral Directors Life Insurance Company (FDLIC)</strong> &mdash; Industry-owned carrier with products specifically designed for funeral home partnerships.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Investors Heritage</strong> &mdash; Regional carrier with deep Southeast roots and personalized service.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>ELCO Mutual Life Insurance</strong> &mdash; Specializes in preneed and final expense products with straightforward underwriting.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Wellabe (formerly CUNA Mutual)</strong> &mdash; Known for guaranteed-issue options ideal for applicants with health concerns.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Security Plan Life Insurance</strong> &mdash; Southeast-focused carrier with a long history in the preneed market.</span>
+        </li>
+        <li class="flex items-start gap-3 text-charcoal-700">
+          <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span><strong>Physicians Mutual</strong> &mdash; Well-known brand offering final expense and preneed products with nationwide reach.</span>
+        </li>
+      </ul>
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">Each carrier has different strengths in pricing, underwriting flexibility, and growth guarantees. The right carrier for you depends on your age, health, budget, and specific needs. Rather than comparing carriers yourself, let me do the legwork &mdash; I will present you with the best options from across the market. For more on how preneed insurance differs from final expense coverage, see our <a href="/learn/preneed-vs-final-expense" class="text-teal-600 hover:text-teal-700 underline">preneed vs final expense comparison</a>.</p>
+      </div>
+    </section>
+
+    <!-- Section 10: Military Families in South Carolina -->
+    <section class="mb-16">
+      <SectionHeading title="Military Families in South Carolina" accent />
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">South Carolina is home to a significant military community, anchored by Joint Base Charleston and Fort Jackson &mdash; the U.S. Army's largest and most active Initial Entry Training center. The state also hosts Shaw Air Force Base, the Marine Corps Recruit Depot at Parris Island, and the Marine Corps Air Station Beaufort. Tens of thousands of active-duty service members, veterans, and military families call South Carolina home.</p>
+        <p class="leading-relaxed">Many military families assume that VA burial benefits will fully cover funeral costs. In reality, VA benefits are modest: the current burial allowance ranges from approximately $300 for non-service-connected deaths to around $2,000 for service-connected deaths. Veterans buried in VA national cemeteries receive a gravesite, opening and closing of the grave, and a headstone at no charge, but the family is still responsible for the funeral service, transportation, casket or urn, embalming, and all professional fees.</p>
+        <p class="leading-relaxed">For a traditional funeral costing $8,000 or more, VA benefits cover only a fraction of the total expense. This gap is where preneed insurance becomes essential for military families. A well-structured preneed plan works alongside VA benefits to ensure full coverage, so your family never faces an unexpected financial burden during an already difficult time.</p>
+        <p class="leading-relaxed">Military families also face unique challenges with frequent relocations. If you purchase a preneed plan in South Carolina and later move to another state, insurance-funded plans travel with you &mdash; the policy can be reassigned to a funeral home in your new location. This portability makes insurance-funded preneed especially well-suited to the military lifestyle.</p>
+        <p class="leading-relaxed">For a complete breakdown of what VA benefits do and do not cover, visit our <a href="/learn/va-funeral-benefits" class="text-teal-600 hover:text-teal-700 underline">guide to VA funeral benefits</a>. If you are stationed at or retired from a South Carolina installation, I am available to meet at your convenience &mdash; call <a href={`tel:${PHONE_RAW}`} class="text-teal-600 hover:text-teal-700 underline">{PHONE}</a>.</p>
+      </div>
+    </section>
+
+    <!-- Section 11: FAQ -->
+    <section class="mb-16">
+      <SectionHeading title="Frequently Asked Questions" accent />
+      <div class="space-y-4 mt-6">
+
+        <details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+            Is preneed insurance required in South Carolina?
+            <svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-charcoal-500 leading-relaxed">No. Preneed insurance is entirely voluntary in South Carolina. However, SC law (SC Code &sect; 32-7) does require that any preneed seller be properly licensed and that all funds collected be placed in trust or backed by an insurance policy. You are never obligated to purchase a preneed plan, but if you choose to, the state ensures strong consumer protections are in place.</div>
+        </details>
+
+        <details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+            Can I transfer my SC preneed plan to another funeral home?
+            <svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-charcoal-500 leading-relaxed">Yes. South Carolina law protects your right to transfer a preneed contract to another licensed funeral home within the state. If you move or simply change your preference, you can request a transfer. The original provider must release the funds &mdash; either from the trust or the insurance assignment &mdash; to the new funeral home. There may be administrative fees, but the core value of your plan is protected.</div>
+        </details>
+
+        <details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+            How is SC preneed different from NC preneed?
+            <svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-charcoal-500 leading-relaxed">Both states require preneed funds to be protected through trust accounts or insurance policies, and both states exempt irrevocable preneed plans from Medicaid asset calculations. The key differences are in the regulatory bodies (SC Board of Funeral Service vs NC Board of Funeral Service), licensing fees ($250 in SC vs $50,000 surety bond + $150 in NC), and specific consumer protection statutes. Duane Cutlip is licensed in both states, so he can guide families through either state's requirements. See our <a href="/learn/preneed-insurance-nc" class="text-teal-600 hover:text-teal-700 underline">NC preneed guide</a> for a detailed comparison.</div>
+        </details>
+
+        <details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+            Does preneed insurance affect Medicaid eligibility in SC?
+            <svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-charcoal-500 leading-relaxed">An irrevocable preneed insurance plan is exempt from Medicaid asset calculations in South Carolina. This means the funds set aside for your funeral are not counted when determining Medicaid eligibility. This is one of the most important planning tools available to SC families who may need long-term care coverage. However, the plan must be irrevocable &mdash; meaning you give up the right to cancel or access its cash value &mdash; for the Medicaid exemption to apply. Learn more in our <a href="/learn/medicaid-funeral-planning" class="text-teal-600 hover:text-teal-700 underline">Medicaid funeral planning guide</a>.</div>
+        </details>
+
+        <details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+            Can someone licensed in NC sell preneed in SC?
+            <svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-charcoal-500 leading-relaxed">Not automatically. Each state has its own licensing requirements. A preneed agent must hold a valid license in the state where they are selling. Duane Cutlip holds licenses in both North Carolina and South Carolina, allowing him to serve families across both states. If you work with an agent who is only licensed in one state, they cannot legally sell preneed plans in the other.</div>
+        </details>
+
+        <details class="group rounded-xl border border-border-light bg-white overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-charcoal-900 font-heading font-semibold text-lg hover:bg-linen/50 transition-colors">
+            What happens if the funeral home I chose goes out of business?
+            <svg class="w-5 h-5 text-charcoal-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-charcoal-500 leading-relaxed">Your preneed funds are protected under SC law regardless of what happens to the funeral home. If your plan is insurance-funded, the insurance policy remains valid and can be assigned to any other licensed funeral home. If your plan is trust-funded, the funds held in trust are protected from the funeral home's creditors and can be transferred. The SC Board of Funeral Service oversees these situations to ensure consumers are not harmed.</div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Final CTA section -->
+    <section class="mb-16">
+      <div class="prose max-w-none text-charcoal-700 space-y-4">
+        <p class="leading-relaxed">Planning ahead is one of the most meaningful things you can do for the people you love. Whether you are a South Carolina native, a military family stationed at Fort Jackson or Joint Base Charleston, or a Carolinas border family with connections in both states, I am here to help you navigate the process with clarity and compassion.</p>
+        <p class="leading-relaxed">To explore your options, visit our <a href="/plan-ahead" class="text-teal-600 hover:text-teal-700 underline">plan ahead page</a>, review our <a href="/faq" class="text-teal-600 hover:text-teal-700 underline">frequently asked questions</a>, or browse our <a href="/service-areas" class="text-teal-600 hover:text-teal-700 underline">service areas</a> across the Carolinas. You can reach me directly at <a href={`tel:${PHONE_RAW}`} class="text-teal-600 hover:text-teal-700 underline">{PHONE}</a>.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <CTABanner />
+
+  <JsonLd data={articleSchema} />
+  <JsonLd data={faqSchema} />
+</BaseLayout>

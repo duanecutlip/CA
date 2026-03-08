@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { PHONE } from '../../consts';
+
+const title = 'Pre-Need Planning Checklist';
+const description = 'Use this free pre-need planning checklist to organize your personal information, service preferences, financial details, and important documents before your consultation.';
+
+const categories = [
+  {
+    name: 'Personal Information',
+    items: [
+      'Full legal name and any maiden/previous names',
+      'Date and place of birth',
+      'Social Security number',
+      'Marital status and spouse information',
+      'Military service details (branch, dates, discharge papers)',
+      'Religious or spiritual affiliation',
+      'Memberships (lodges, clubs, organizations)',
+    ],
+  },
+  {
+    name: 'Service Preferences',
+    items: [
+      'Type of service (traditional, graveside, cremation, celebration of life)',
+      'Preferred funeral home',
+      'Open or closed casket preference',
+      'Casket or urn selection preferences',
+      'Music selections (hymns, songs, live musicians)',
+      'Readings or scripture passages',
+      'Flowers and arrangements',
+      'Pallbearers (6 active + 2 honorary)',
+      'Special requests (charitable donations, dress code, photo display)',
+    ],
+  },
+  {
+    name: 'Financial Planning',
+    items: [
+      'Current life insurance policies and agent contact info',
+      'Pre-need insurance budget range',
+      'Preferred payment schedule (lump sum, monthly, annual)',
+      'Bank account information for direct payment',
+      'Medicaid or benefits considerations',
+      'Existing burial plots or cemetery arrangements',
+    ],
+  },
+  {
+    name: 'Important Documents',
+    items: [
+      'Birth certificate',
+      'Marriage certificate(s)',
+      'Divorce decree(s) if applicable',
+      'Military discharge papers (DD-214)',
+      'Social Security card',
+      'Will or trust documents',
+      'Power of attorney designations',
+      'Advance directive / living will',
+      'List of accounts, passwords, and digital assets',
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero variant="interior" title="Pre-Need Planning Checklist" subtitle="Everything you need to gather before your consultation with Duane" />
+
+  <section class="py-12 md:py-16 bg-warm-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Resources', href: '/faq' }, { label: 'Planning Checklist' }]} />
+
+      <p class="text-lg text-charcoal-500 mb-10 max-w-2xl">
+        You don't need everything on this list before your first call — Duane will walk you through it all. But having these items gathered ahead of time can make the process smoother and faster.
+      </p>
+
+      <div class="space-y-10">
+        {categories.map((category) => (
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-4">{category.name}</h2>
+            <div class="space-y-2">
+              {category.items.map((item, i) => (
+                <label class="flex items-start gap-3 rounded-lg border border-border-light bg-white px-4 py-3 cursor-pointer hover:bg-linen/50">
+                  <input
+                    type="checkbox"
+                    class="mt-1 h-5 w-5 rounded border-border accent-teal-600 flex-shrink-0"
+                  />
+                  <span class="text-charcoal-700">{item}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-lg bg-linen border border-border-light p-6">
+        <h2 class="font-heading text-xl font-bold text-charcoal-900 mb-2">Don't have everything yet?</h2>
+        <p class="text-charcoal-500">
+          That's perfectly fine. Most families don't. Duane will help you work through each section at your own pace. Call <a href="tel:9198222010" class="font-semibold text-teal-600 hover:text-teal-700">{PHONE}</a> to get started.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

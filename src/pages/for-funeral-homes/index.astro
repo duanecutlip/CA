@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'For Funeral Homes | Preneed Consulting & Training';
+const description = 'Preneed consulting, training, and program audits for NC & SC funeral homes. 20+ years experience. Grow your preneed program with Duane Cutlip.';
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Preneed Consulting & Training for Funeral Homes',
+	description: 'Preneed program consulting, sales training, audits, marketing strategy, and speaking for funeral homes in North Carolina and South Carolina.',
+	provider: {
+		'@type': 'Person',
+		'@id': 'https://cutlipassociates.com/#duane-cutlip',
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+	},
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
+	serviceType: 'Preneed Consulting',
+};
+
+const services = [
+	{
+		title: 'Preneed Program Consulting',
+		href: '/for-funeral-homes/consulting',
+		desc: 'Full program assessment, carrier selection, lead generation strategy, sales process design, and compliance review. Build a preneed program that actually produces results.',
+		icon: 'M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15a2.25 2.25 0 0 1 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25Z',
+	},
+	{
+		title: 'Sales Training Workshops',
+		href: '/for-funeral-homes/training',
+		desc: 'On-site half-day and full-day workshops that teach your staff consultative selling, objection handling, community outreach, and compliance fundamentals.',
+		icon: 'M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5',
+	},
+	{
+		title: 'Program Audit',
+		href: '/for-funeral-homes/program-audit',
+		desc: 'Comprehensive review of your penetration rate, average face amount, conversion rates, cancellation trends, compliance documentation, and carrier terms.',
+		icon: 'M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z',
+	},
+	{
+		title: 'Marketing Strategy',
+		href: '/for-funeral-homes/marketing',
+		desc: 'Community seminar planning, church partnerships, direct mail campaigns, digital presence audits, and referral network development for preneed lead generation.',
+		icon: 'M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6',
+	},
+	{
+		title: 'Speaking & Seminars',
+		href: '/for-funeral-homes/speaking',
+		desc: 'Keynotes, workshops, and seminar series for funeral home retreats, state association conferences, carrier events, and community workshops.',
+		icon: 'M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z',
+	},
+];
+---
+
+<BaseLayout title={title} description={description} keywords="preneed consulting funeral homes, preneed sales training, funeral home preneed program, NC SC preneed consulting">
+	<Hero variant="interior" title="Grow Your Preneed Program with a 20-Year Industry Expert" subtitle="Consulting, training, audits, and strategy for funeral homes across North Carolina and South Carolina." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Funeral Homes' }]} />
+
+		<!-- Intro -->
+		<section class="mb-16">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					Most funeral homes know they should be doing more with preneed. But the reality is messy: <strong>penetration rates stuck below 15%</strong>, staff who avoid the conversation, compliance gaps that create liability, and carriers whose terms don't actually serve the funeral home's interests.
+				</p>
+				<p class="leading-relaxed">
+					Duane Cutlip has spent 20+ years in the trenches of preneed — not in a corporate office, but on the floor of funeral homes across North Carolina and South Carolina. He's built programs from scratch, turned around underperforming ones, trained hundreds of staff members, and helped funeral homes navigate carrier transitions without losing a single policy. He knows what works because he's done the work.
+				</p>
+			</div>
+		</section>
+
+		<!-- Services Grid -->
+		<section class="mb-16">
+			<SectionHeading title="How Duane Helps Funeral Homes" accent />
+			<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				{services.map((service) => (
+					<a href={service.href} class="group rounded-xl border border-border-light bg-white p-6 hover:border-teal-600/30 hover:shadow-md transition-all">
+						<div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-600/10">
+							<svg class="h-5 w-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d={service.icon} />
+							</svg>
+						</div>
+						<h3 class="font-heading text-lg font-bold text-charcoal-900 mb-2 group-hover:text-teal-600 transition-colors">{service.title}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{service.desc}</p>
+					</a>
+				))}
+			</div>
+		</section>
+
+		<!-- Why Duane -->
+		<section class="mb-16">
+			<SectionHeading title="Why Funeral Homes Choose Duane" accent />
+			<div class="space-y-4 text-charcoal-700">
+				<ul class="space-y-3">
+					{[
+						{ bold: '20+ years hands-on preneed experience', text: 'Not theory — Duane has personally written policies, trained counselors, built lead pipelines, and managed carrier relationships for funeral homes of every size.' },
+						{ bold: 'Licensed in NC and SC', text: 'Dual-state licensing means he understands the regulatory landscape in both Carolinas and can serve funeral homes across state lines.' },
+						{ bold: 'Carrier-agnostic advice', text: 'Duane doesn\'t represent a single carrier. His recommendations are based on what\'s best for your funeral home, not what earns him the biggest commission.' },
+						{ bold: 'Tech-savvy practitioner', text: 'From AI-powered CRM systems to digital lead generation, Duane helps funeral homes modernize their preneed operations — not just maintain them.' },
+						{ bold: 'NFDA member, L. Harold Poole association', text: 'Duane is embedded in the industry. He\'s not an outsider consultant — he\'s a colleague who happens to specialize in making preneed programs work.' },
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-charcoal-900">{item.bold}:</strong> {item.text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- Staffing -->
+		<section class="mb-16">
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">Need Staffing Support?</h3>
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					Duane is also available for funeral home staffing — overflow coverage, vacation relief, emergency staffing, and contract preneed counseling. He's a Licensed Preneed Funeral Director who can step in seamlessly when your team needs support.
+				</p>
+				<a href="/funeral-home-staffing" class="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium">
+					Learn about staffing services
+					<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+					</svg>
+				</a>
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="Let's Talk About Your Preneed Program" subtitle="Call Duane for a confidential conversation about where your program stands and where it could go." />
+
+	<JsonLd data={serviceJsonLd} />
+</BaseLayout>

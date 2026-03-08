@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import Button from '../../components/Button.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
+
+const title = 'For Financial Advisors | Preneed Planning Resource';
+const description = 'Help your clients lock in funeral costs at today\'s prices. Preneed insurance as an inflation hedge for retirement planning. Partner with Duane Cutlip.';
+
+const serviceJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Service',
+	name: 'Preneed Insurance Referral Partnership for Financial Advisors',
+	description: 'Referral partnership for financial advisors in NC & SC. Preneed insurance locks in funeral costs and complements retirement planning.',
+	provider: {
+		'@type': 'InsuranceAgency',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
+	serviceType: 'Preneed Insurance Consultation',
+};
+---
+
+<BaseLayout title={title} description={description} keywords="preneed insurance retirement planning, funeral cost inflation hedge, financial advisor preneed referral, NC SC preneed insurance">
+	<Hero variant="interior" title="Preneed Insurance: The Retirement Planning Tool Your Clients Need" subtitle="A resource for financial advisors who want to help clients eliminate a predictable — and rising — expense." />
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Partners', href: '/partners/estate-attorneys' }, { label: 'Financial Advisors' }]} />
+
+		<!-- Opening -->
+		<section class="mb-16">
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="text-lg leading-relaxed">
+					Your clients plan meticulously for retirement income, healthcare expenses, long-term care, and legacy distribution. But there's one expense that almost always gets overlooked in the financial plan — and it's one that's <strong>guaranteed to happen</strong>: funeral costs.
+				</p>
+				<p class="leading-relaxed">
+					The average funeral in North Carolina costs <strong>$8,136</strong>. In South Carolina, it's <strong>$8,224</strong>. These costs have risen over 40% in the last decade, outpacing general inflation by a wide margin. And unlike most expenses in retirement, funeral costs hit the family all at once — typically within 48 hours of death — with no time to shop around or negotiate.
+				</p>
+				<p class="leading-relaxed">
+					Preneed insurance addresses this gap directly. It's not an investment. It's not a speculative product. It's the elimination of a known future expense at today's price — and for your clients approaching retirement, that's a conversation worth having.
+				</p>
+			</div>
+		</section>
+
+		<!-- Preneed as Inflation Hedge -->
+		<section class="mb-16">
+			<SectionHeading title="Preneed Insurance as an Inflation Hedge" accent />
+			<div class="bg-linen rounded-xl p-8 mb-6 border border-border-light">
+				<div class="grid sm:grid-cols-2 gap-6">
+					<div>
+						<p class="text-sm text-charcoal-400 mb-1">Average NC Funeral Cost</p>
+						<p class="text-3xl font-heading font-bold text-burgundy-600">$8,136</p>
+					</div>
+					<div>
+						<p class="text-sm text-charcoal-400 mb-1">Average SC Funeral Cost</p>
+						<p class="text-3xl font-heading font-bold text-burgundy-600">$8,224</p>
+					</div>
+				</div>
+				<p class="text-charcoal-500 mt-4 text-sm">
+					Funeral costs have risen 40%+ over the last decade. Industry projections suggest 3-5% annual increases will continue. A funeral that costs $8,000 today could cost $13,000-$16,000 in 15 years.
+				</p>
+			</div>
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Unlike most inflation hedges, preneed insurance offers a guaranteed outcome. Your client pays today's price — either as a lump sum or over an installment period — and the funeral home is contractually obligated to deliver the agreed-upon services regardless of future cost increases. There's no market risk, no duration mismatch, and no basis risk. The expense is simply eliminated from the retirement cash flow projection.
+				</p>
+				<p class="leading-relaxed">
+					For clients who are 5-15 years from needing these services, the inflation protection alone can represent thousands of dollars in savings. And for clients who are further out, locking in today's prices with a modest monthly premium is one of the most capital-efficient decisions in their entire financial plan.
+				</p>
+			</div>
+		</section>
+
+		<!-- How Preneed Fits Retirement Planning -->
+		<section class="mb-16">
+			<SectionHeading title="How Preneed Fits Into the Retirement Plan" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Preneed insurance isn't a replacement for life insurance, long-term care coverage, or any other component of a comprehensive financial plan. It serves a distinct purpose: <strong>eliminating a specific, predictable expense</strong> so that your client's other assets remain dedicated to their intended purposes.
+				</p>
+			</div>
+			<div class="grid sm:grid-cols-2 gap-6 mt-6">
+				{[
+					{ title: 'Preserves Life Insurance for Survivors', desc: 'Without preneed, families often use life insurance proceeds to pay funeral costs — reducing the death benefit that was intended for income replacement, mortgage payoff, or legacy planning.' },
+					{ title: 'Protects Retirement Savings', desc: 'An $8,000-$12,000 funeral expense drawn from retirement accounts can have an outsized impact on a surviving spouse\'s income plan, especially early in retirement.' },
+					{ title: 'Simplifies Estate Settlement', desc: 'Preneed pays the funeral home directly — no probate, no executor involvement, no waiting for estate funds to clear. The family never handles funeral money.' },
+					{ title: 'Provides Medicaid Protection', desc: 'For clients who may need Medicaid for long-term care, irrevocable preneed contracts are exempt from asset calculations in both NC (N.C.G.S. § 108A-28.1) and SC.' },
+				].map((item) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 text-lg mb-2">{item.title}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{item.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Tax Considerations -->
+		<section class="mb-16">
+			<SectionHeading title="Tax & Financial Considerations" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Financial advisors often ask about the tax treatment of preneed insurance. Here's what you and your clients should know:
+				</p>
+				<ul class="space-y-3">
+					{[
+						{ bold: 'Not tax-deductible', text: 'Preneed insurance premiums are paid with after-tax dollars and are not deductible as a medical or personal expense.' },
+						{ bold: 'Growth is not taxed', text: 'The cash value growth within a preneed insurance policy is generally not subject to income tax during the insured\'s lifetime. Benefits are paid directly to the funeral home at death.' },
+						{ bold: 'Not included in taxable estate (for most clients)', text: 'For clients below the federal estate tax threshold, preneed benefits are not a concern. For high-net-worth clients, the policy value may be included in the gross estate, but the practical impact is typically minimal relative to the estate size.' },
+						{ bold: 'Medicaid exempt when irrevocable', text: 'The most significant financial benefit: irrevocable preneed contracts are excluded from Medicaid asset calculations in NC and SC, making them a legitimate planning tool for long-term care scenarios.' },
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-charcoal-900">{item.bold}:</strong> {item.text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- Client Conversation Triggers -->
+		<section class="mb-16">
+			<SectionHeading title="When to Bring Up Preneed with Your Clients" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Preneed insurance fits naturally into several common advisory conversations:
+				</p>
+				<ul class="space-y-3">
+					{[
+						{ bold: 'Retirement readiness reviews', text: 'When projecting retirement expenses, funeral costs should be on the list. Preneed eliminates the variable.' },
+						{ bold: 'Clients turning 65', text: 'The Medicare conversation is a natural time to discuss other end-of-life planning — including preneed and long-term care.' },
+						{ bold: 'Estate planning referrals', text: 'When you\'re referring a client to an estate attorney, preneed should be part of the package. It complements wills, trusts, and powers of attorney.' },
+						{ bold: 'Life insurance reviews', text: 'When reviewing existing life insurance coverage, ask whether the death benefit is intended to cover funeral costs. If so, preneed can free up that coverage for its intended purpose.' },
+						{ bold: 'Long-term care discussions', text: 'For clients considering Medicaid planning, preneed is one of the most straightforward asset protection strategies available.' },
+						{ bold: 'Loss of a spouse', text: 'When a client loses a spouse, they often become acutely aware of funeral costs. It\'s a sensitive but appropriate time to discuss preneed for their own planning.' },
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span><strong class="text-charcoal-900">{item.bold}:</strong> {item.text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+
+		<!-- The Referral Process -->
+		<section class="mb-16">
+			<SectionHeading title="How the Referral Works" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<ol class="space-y-4 list-none pl-0">
+					{[
+						{ step: '1', title: 'You introduce Duane', desc: 'When preneed is appropriate for your client, you provide Duane\'s contact information or — with your client\'s permission — share their information with Duane for a follow-up call.' },
+						{ step: '2', title: 'Duane consults with the client', desc: 'Duane meets with your client for a no-pressure conversation about their wishes, options, and budget. He explains coverage clearly and answers questions about Medicaid implications, pricing, and payment options.' },
+						{ step: '3', title: 'The plan is put in place', desc: 'Once your client is comfortable, Duane handles all paperwork and coordination with the funeral home. The preneed contract locks in today\'s prices and documents the client\'s wishes in full detail.' },
+						{ step: '4', title: 'Your client\'s plan is complete', desc: 'You can update your financial plan to reflect the eliminated expense. With your client\'s authorization, Duane provides documentation for your records.' },
+					].map((step) => (
+						<li class="flex items-start gap-4">
+							<span class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-sm">{step.step}</span>
+							<div>
+								<strong class="text-charcoal-900">{step.title}.</strong>
+								<span class="text-charcoal-700"> {step.desc}</span>
+							</div>
+						</li>
+					))}
+				</ol>
+				<p class="leading-relaxed mt-6">
+					Duane operates with the same professionalism your clients expect from their advisory team. There are no high-pressure tactics, no unsolicited follow-ups to your other clients, and no interference with your advisory relationship. He's a specialist resource — not a competitor for your client's attention.
+				</p>
+			</div>
+		</section>
+
+		<!-- About Duane -->
+		<section class="mb-16">
+			<SectionHeading title="About Duane Cutlip" accent />
+			<div class="prose max-w-none text-charcoal-700 space-y-4">
+				<p class="leading-relaxed">
+					Duane Cutlip is a Licensed Preneed Funeral Director with over 20 years of experience serving families across North Carolina and South Carolina. He holds licenses in both states, is a member of the National Funeral Directors Association (NFDA), and is associated with L. Harold Poole Funeral Home & Crematory.
+				</p>
+				<p class="leading-relaxed">
+					He's helped hundreds of families create personalized preneed plans, and he works regularly with financial advisors, estate attorneys, and elder law professionals who recognize preneed insurance as an essential component of comprehensive planning.
+				</p>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="mb-8">
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">Let's Start a Conversation</h3>
+				<p class="text-charcoal-700 leading-relaxed mb-6">
+					Whether you have a single client who needs preneed guidance or you'd like to establish an ongoing referral relationship, Duane is happy to start with a call. He can also provide a brief overview of preneed insurance for your practice group or client seminars.
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<Button variant="phone" href={`tel:${PHONE_RAW}`}>
+						Call {PHONE}
+					</Button>
+					<Button variant="primary" href="/contact">
+						Schedule a Call
+					</Button>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<CTABanner title="Partner with Duane" subtitle="Give your clients a complete retirement plan. Connect them with a trusted preneed insurance expert." />
+
+	<JsonLd data={serviceJsonLd} />
+</BaseLayout>

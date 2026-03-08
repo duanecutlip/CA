@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  accent?: boolean;
+}
+
+const { title, subtitle, accent = false } = Astro.props;
+---
+
+<div class="mb-8 md:mb-10">
+  {accent && (
+    <div class="mb-3 h-1 w-12 rounded-full bg-gold-500"></div>
+  )}
+  <h2 class="font-heading text-3xl font-bold text-charcoal-900 md:text-4xl">
+    {title}
+  </h2>
+  {subtitle && (
+    <p class="mt-3 max-w-2xl text-lg text-charcoal-500">
+      {subtitle}
+    </p>
+  )}
+</div>

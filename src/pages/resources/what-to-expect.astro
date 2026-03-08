@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { PHONE, PHONE_RAW } from '../../consts';
+
+const title = 'What to Expect | First Consultation';
+const description = 'Nervous about your first pre-need consultation? Here\'s exactly what to expect when you call Duane — step by step, with no surprises and no pressure.';
+
+const steps = [
+  {
+    title: 'You Call Duane',
+    description: `When you call ${PHONE}, Duane answers personally. No call center, no receptionist, no phone tree. He'll introduce himself, ask what prompted your call, and simply listen. This first conversation usually lasts about 15 minutes.`,
+    reassurance: 'There is no sales pitch. If you want to hang up after five minutes, that\'s completely fine.',
+  },
+  {
+    title: 'You Ask Questions',
+    description: 'Most families have questions they\'ve been thinking about for weeks or even months. How much does it cost? What does it cover? What happens if I move? Duane will answer everything in plain English — no jargon, no fine print.',
+    reassurance: 'There are no bad questions. Duane has heard them all, and he\'s happy to go at your pace.',
+  },
+  {
+    title: 'You Schedule a Meeting (If You\'d Like)',
+    description: 'If you decide you want to learn more, Duane will schedule a time to sit down with you — at your home, a coffee shop, or by phone. This meeting is where you\'ll go through your options in detail and start shaping your plan.',
+    reassurance: 'Scheduling a meeting doesn\'t commit you to anything. You can change your mind at any time.',
+  },
+  {
+    title: 'You Build Your Plan Together',
+    description: 'During your meeting, Duane walks you through every decision: service type, music, flowers, casket or urn, funeral home, and more. He documents everything so your family will know exactly what you want.',
+    reassurance: 'You don\'t have to decide everything in one sitting. Many families take a week to finalize the details.',
+  },
+  {
+    title: 'Your Plan Is Set — And Your Family Is Protected',
+    description: 'Once your plan is finalized, your costs are locked in at today\'s prices. Your wishes are documented. And your family will never have to make these decisions under pressure. Most families complete the process within two weeks.',
+    reassurance: 'Duane stays in touch and is always available if you want to make changes later.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero variant="interior" title="What to Expect" subtitle="Your first consultation — step by step, with no surprises" />
+
+  <section class="py-12 md:py-16 bg-warm-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Resources', href: '/faq' }, { label: 'What to Expect' }]} />
+
+      <p class="text-lg text-charcoal-500 mb-10 max-w-2xl">
+        If you've never talked to a pre-need planner before, it's natural to feel a little nervous. Here's exactly what will happen — so there are no surprises.
+      </p>
+
+      <div class="space-y-8">
+        {steps.map((step, i) => (
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-teal-600 text-lg font-bold text-white">
+                {i + 1}
+              </div>
+            </div>
+            <div class="pb-8 border-b border-border-light last:border-0">
+              <h2 class="font-heading text-xl font-bold text-charcoal-900 mb-2">{step.title}</h2>
+              <p class="text-charcoal-500 mb-3">{step.description}</p>
+              <p class="text-sm text-teal-700 bg-teal-600/5 rounded-lg px-4 py-2 border border-teal-600/10">
+                {step.reassurance}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-lg bg-linen border border-border-light p-6 text-center">
+        <h2 class="font-heading text-xl font-bold text-charcoal-900 mb-2">Ready When You Are</h2>
+        <p class="text-charcoal-500 mb-4">There's no rush. When you're ready, Duane is here.</p>
+        <a
+          href={`tel:${PHONE_RAW}`}
+          class="inline-flex items-center gap-2 text-2xl font-heading font-bold text-burgundy-600 hover:text-burgundy-700"
+        >
+          {PHONE}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>
