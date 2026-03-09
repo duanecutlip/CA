@@ -24,17 +24,17 @@ const description = `Pre-need funeral planning for families in ${area.name}, ${a
 const cityFaqs: Record<string, { question: string; answer: string }[]> = {
   raleigh: [
     { question: `What funeral homes in Raleigh does Duane work with?`, answer: `Duane has relationships with respected funeral homes throughout Raleigh and the Triangle area, including Donaldson Funeral Home & Crematory in Pittsboro, NC. As a Licensed Preneed Funeral Director, he can coordinate your plan with the Raleigh funeral home of your choice.` },
-    { question: `How much does a funeral cost in Raleigh, NC?`, answer: `The average funeral in the Raleigh area costs $7,848 or more, and costs continue to rise. Pre-need insurance locks in today's prices so your family never pays the difference.` },
+    { question: `How much does a funeral cost in Raleigh, NC?`, answer: `When all expenses are counted—funeral home fees, burial vault, cemetery plot, opening and closing fees, and grave marker—the true cost of a funeral in the Raleigh area typically ranges from $12,000 to $20,000, and costs continue to rise. Pre-need insurance locks in today's prices so your family never pays the difference.` },
     { question: `Can I meet Duane in person in Raleigh?`, answer: `Yes. Duane meets with Raleigh families in person at a location convenient to you — your home, a coffee shop, or wherever you're comfortable. He also offers phone consultations.` },
   ],
   cary: [
     { question: `Does Duane serve families in Cary?`, answer: `Absolutely. Cary is one of Duane's primary service areas in Wake County. He regularly meets with Cary families to help them plan ahead.` },
-    { question: `What are typical funeral costs in Cary, NC?`, answer: `Funeral costs in Cary mirror the greater Raleigh area, averaging $7,848 or more. Pre-need planning locks in current prices and prevents future cost increases from burdening your family.` },
+    { question: `What are typical funeral costs in Cary, NC?`, answer: `Funeral costs in Cary mirror the greater Raleigh area. When all expenses are included, families typically spend $12,000 to $20,000. Pre-need planning locks in current prices and prevents future cost increases from burdening your family.` },
     { question: `Where can I meet with Duane in Cary?`, answer: `Duane is happy to meet you wherever is most convenient — your home in Cary, a local coffee shop, or by phone. There's no office visit required.` },
   ],
   apex: [
     { question: `Is pre-need insurance available in Apex, NC?`, answer: `Yes. Duane serves families throughout Apex and western Wake County. He can meet with you locally or by phone to discuss your options.` },
-    { question: `How much does a funeral cost in the Apex area?`, answer: `Funeral costs in Apex are consistent with Wake County averages — $7,848 or more. Pre-need insurance ensures your family never has to cover rising costs.` },
+    { question: `How much does a funeral cost in the Apex area?`, answer: `Funeral costs in Apex are consistent with Wake County averages. When vault, cemetery, and marker costs are included, families typically spend $12,000 to $20,000. Pre-need insurance ensures your family never has to cover rising costs.` },
     { question: `What funeral homes are near Apex?`, answer: `There are several funeral homes serving the Apex community. Duane can help you choose one that fits your preferences and coordinate your pre-need plan with them directly.` },
   ],
   garner: [
@@ -49,7 +49,7 @@ const cityFaqs: Record<string, { question: string; answer: string }[]> = {
   ],
   knightdale: [
     { question: `Does Duane serve Knightdale families?`, answer: `Yes. Knightdale is part of Duane's service area in eastern Wake County. He regularly meets with families there for pre-need consultations.` },
-    { question: `What are funeral costs in the Knightdale area?`, answer: `Funeral costs in Knightdale are consistent with the greater Raleigh average of $7,848 or more. Pre-need insurance protects your family from these rising costs.` },
+    { question: `What are funeral costs in the Knightdale area?`, answer: `Funeral costs in Knightdale are consistent with the greater Raleigh area. All-in costs including vault, cemetery, and grave marker typically reach $12,000 to $20,000. Pre-need insurance protects your family from these rising costs.` },
     { question: `Can Duane come to my home in Knightdale?`, answer: `Absolutely. Duane is happy to meet at your home, a local spot, or by phone — whatever makes you most comfortable.` },
   ],
   'wake-forest': [
@@ -59,7 +59,7 @@ const cityFaqs: Record<string, { question: string; answer: string }[]> = {
   ],
   'holly-springs': [
     { question: `Is pre-need planning available in Holly Springs?`, answer: `Yes. Duane serves families throughout Holly Springs and southwestern Wake County. He's available for in-person or phone consultations.` },
-    { question: `What does a funeral cost in Holly Springs, NC?`, answer: `Funeral costs in Holly Springs align with Wake County averages — approximately $7,848 or more. Pre-need insurance locks in today's prices to protect your family.` },
+    { question: `What does a funeral cost in Holly Springs, NC?`, answer: `Funeral costs in Holly Springs align with Wake County averages. All-in costs including burial vault, cemetery plot, and grave marker typically reach $12,000 to $20,000. Pre-need insurance locks in today's prices to protect your family.` },
     { question: `How do I start pre-need planning in Holly Springs?`, answer: `Call Duane at ${PHONE}. He'll listen to your needs, explain your options, and set up a time to create your personalized plan. No pressure, no obligation.` },
   ],
   'fuquay-varina': [
@@ -151,7 +151,7 @@ const faqJsonLd = faqs.length > 0 ? {
           <>
             <h2 class="font-heading text-2xl font-bold text-charcoal-900 mt-10 mb-4">Why {area.name} Families Choose Pre-Need Planning</h2>
             <p class="text-charcoal-500 mb-4">
-              The average funeral in {stateName} costs $7,848 or more — and prices continue to climb every year. For {area.name} families, pre-need insurance offers a way to lock in today's prices and ensure your wishes are documented before they're needed.
+              The NFDA reports a national median funeral cost of $8,300 — but that figure excludes the burial vault, cemetery plot, opening and closing fees, and grave marker. When all expenses are counted, North Carolina families typically spend $12,000 to $20,000 on a traditional burial. For {area.name} families, pre-need insurance locks in today's prices across all of those costs and ensures your wishes are documented before they're needed.
             </p>
             <p class="text-charcoal-500 mb-4">
               When you work with Duane, every detail is planned in advance: the type of service, the music, the flowers, and even the funeral home. Your family will never have to guess what you wanted, and they won't face unexpected bills during the hardest week of their lives.

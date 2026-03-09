@@ -107,7 +107,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   // Basics
   {
     question: 'How much does pre-need insurance cost?',
-    answer: 'Most families invest between $3,000 and $15,000, depending on the type of service and level of coverage. The average funeral in North Carolina costs $7,848 or more. Pre-need insurance locks in today\'s prices, so your family never pays the difference. Duane will walk you through options that fit your budget — there\'s no pressure and no obligation.',
+    answer: 'Most families invest between $3,000 and $15,000, depending on the type of service and level of coverage. The NFDA reports a median funeral cost of $8,300 — but that figure excludes the burial vault, cemetery plot, opening and closing fees, and grave marker, which virtually every family needs. When all expenses are included, North Carolina families typically spend $12,000 to $20,000 on a traditional burial, with many spending closer to $15,000. Pre-need insurance locks in today\'s prices across all of those costs, so your family never pays the difference. Duane will walk you through options that fit your budget — there\'s no pressure and no obligation.',
     category: 'Costs',
   },
   {
@@ -162,7 +162,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'Can I plan for my spouse and me at the same time?',
-    answer: 'Absolutely — and many couples do. Planning together ensures your wishes complement each other and can sometimes offer better rates. Duane frequently works with couples who want to "get their affairs in order" together. It\'s one of the most thoughtful things you can do for each other and for your children.',
+    answer: 'Absolutely — and many couples do. Planning together ensures your wishes complement each other. Duane frequently works with couples who want to "get their affairs in order" together. It\'s one of the most thoughtful things you can do for each other and for your children.',
     category: 'Process',
   },
   {
@@ -237,7 +237,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     faq: [
       { question: 'Does Duane serve families in Durham, NC?', answer: 'Yes. Durham is a core part of Duane\'s Triangle service area. He works with families across the city — from Brightleaf Square to Southpoint to the Eno River neighborhoods.' },
-      { question: 'How much does a funeral cost in Durham?', answer: 'The average funeral in the Durham area costs $7,500 to $9,000 or more. Pre-need insurance locks in today\'s prices, so your family never pays the difference as costs continue to rise.' },
+      { question: 'How much does a funeral cost in Durham?', answer: 'When all expenses are counted — funeral home fees, burial vault, cemetery plot, opening and closing fees, and grave marker — the true cost of a funeral in the Durham area typically ranges from $12,000 to $20,000. Pre-need insurance locks in today\'s prices so your family is never left covering those costs under pressure.' },
       { question: 'Can Duane coordinate with Durham funeral homes?', answer: 'Absolutely. Duane has relationships with respected funeral homes throughout Durham County and can coordinate your plan with the provider of your choice.' },
     ],
   },
@@ -328,7 +328,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     faq: [
       { question: 'Does Duane serve families in Sanford, NC?', answer: 'Yes. Duane works with families in Sanford and throughout Lee County. He\'s happy to meet by phone or in person at a time and place that works for you.' },
       { question: 'How far in advance should I start pre-need planning?', answer: 'There\'s no wrong time to start. Many Sanford families begin planning in their 50s or 60s, but younger families benefit from lower premiums and locked-in prices. The sooner you plan, the more you save.' },
-      { question: 'What funeral costs should Sanford families expect?', answer: 'Funeral costs in the Sanford area typically range from $7,000 to $9,000. Pre-need insurance locks in today\'s prices so your family is never burdened with increases that average 3-5% per year in the funeral industry.' },
+      { question: 'What funeral costs should Sanford families expect?', answer: 'The all-in cost of a traditional burial in the Sanford area — including funeral home fees, burial vault, cemetery plot, opening and closing fees, and a grave marker — typically ranges from $12,000 to $18,000. Pre-need insurance locks in today\'s prices so your family is never left covering those costs under pressure.' },
     ],
   },
   // ── North Carolina — Triangle additions ──
