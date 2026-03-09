@@ -8,7 +8,7 @@ import JsonLd from '../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, SITE_URL, SITE_TITLE } from '../consts';
 
 const title = 'About Duane Cutlip | Preneed Funeral Director';
-const description = `Duane Cutlip has nearly 20 years helping families plan ahead. Licensed Preneed Funeral Director serving Raleigh & Wake County NC. Call ${PHONE}.`;
+const description = `Duane Cutlip has 20+ years helping families plan ahead. Licensed Preneed Funeral Director serving Raleigh & Wake County NC. Call ${PHONE}.`;
 
 const personJsonLd = {
 	'@context': 'https://schema.org',
@@ -51,14 +51,18 @@ const personJsonLd = {
 			credentialCategory: 'license',
 			name: 'Licensed Preneed Funeral Director — North Carolina',
 		},
-
+		{
+			'@type': 'EducationalOccupationalCredential',
+			credentialCategory: 'license',
+			name: 'Licensed Preneed Funeral Director — North Carolina (License #FD-4028)',
+		},
 	],
 };
 
 ---
 
 <BaseLayout title={title} description={description}>
-	<Hero variant="interior" title="Meet Duane Cutlip" subtitle="Licensed Preneed Funeral Director. Serving North Carolina families since 2009." />
+	<Hero variant="interior" title="Meet Duane Cutlip" subtitle="Licensed Preneed Funeral Director. 20+ years serving families across Wake County." />
 
 	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About Duane' }]} />
 
@@ -81,7 +85,7 @@ const personJsonLd = {
 				<div class="md:col-span-3 prose max-w-none">
 					<h2>A Calling, Not Just a Career</h2>
 					<p>
-						For nearly 20 years, Duane Cutlip has helped families across the Raleigh-Wake County area plan ahead with confidence. As a Licensed Preneed Funeral Director in North Carolina, he specializes in helping families make advance funeral arrangements — so they never have to make difficult decisions in their hardest moments.
+						For over 20 years, Duane Cutlip has helped families across the Raleigh-Wake County area plan ahead with confidence. As a Licensed Preneed Funeral Director in North Carolina, he specializes in helping families make advance funeral arrangements — so they never have to make difficult decisions in their hardest moments.
 					</p>
 					<p>
 						Duane's journey in funeral services began when he witnessed firsthand how unprepared families suffered — financially, emotionally, and spiritually — when death arrived without warning. He made it his mission to change that, one family at a time.
@@ -92,7 +96,7 @@ const personJsonLd = {
 						Duane holds all required North Carolina licenses for preneed funeral planning and maintains current continuing education certifications. He is an active member of the <strong>National Funeral Directors Association (NFDA)</strong> and works closely with respected local funeral homes, including <strong>Donaldson Funeral Home & Crematory in Pittsboro, NC</strong>.
 					</p>
 					<p>
-						Nearly two decades, he has helped hundreds of families create personalized funeral plans — from traditional services to celebrations of life, from simple cremation arrangements to elaborate multi-day memorials. Every plan reflects the unique wishes of the person behind it.
+						Over two decades, he has helped hundreds of families create personalized funeral plans — from traditional services to celebrations of life, from simple cremation arrangements to elaborate multi-day memorials. Every plan reflects the unique wishes of the person behind it.
 					</p>
 
 					<h2>Family & Faith</h2>
@@ -116,7 +120,7 @@ const personJsonLd = {
 						Families don't choose Duane because of a slick website or aggressive marketing. They choose him because a friend, a pastor, or a family member told them: <em>"Call Duane. He'll take care of you."</em>
 					</p>
 					<p>
-						That reputation — earned one conversation at a time over the years — is what sets Duane apart. He doesn't sell plans. He helps families protect each other.
+						That reputation — earned one conversation at a time over 20 years — is what sets Duane apart. He doesn't sell plans. He helps families protect each other.
 					</p>
 
 					<div class="not-prose mt-8 flex flex-wrap gap-4">
@@ -137,7 +141,7 @@ const personJsonLd = {
 			<h2 class="font-heading text-2xl md:text-3xl font-bold text-charcoal-900 mb-6">Beyond Families: Consulting & Industry Expertise</h2>
 			<div class="prose max-w-none text-charcoal-700 space-y-4">
 				<p class="leading-relaxed">
-					Duane doesn't just help families — he helps funeral homes build and grow their preneed programs. With nearly 20 years of hands-on experience, he's one of the most knowledgeable preneed professionals in North Carolina.
+					Duane doesn't just help families — he helps funeral homes build and grow their preneed programs. With 20+ years of hands-on experience, he's one of the most knowledgeable preneed professionals in the Carolinas.
 				</p>
 				<p class="leading-relaxed">
 					His consulting work includes preneed program development, sales training for funeral home staff, program audits, and strategic marketing guidance. Funeral homes across North Carolina rely on Duane's expertise to strengthen their preneed offerings and better serve their communities.
@@ -174,8 +178,8 @@ const personJsonLd = {
 			<div class="grid sm:grid-cols-2 gap-4">
 				{[
 					'Licensed Preneed Funeral Director — North Carolina',
-					
-					'nearly 20 years of industry experience',
+					'Licensed Preneed Funeral Director — North Carolina (License #FD-4028)',
+					'20+ years of industry experience',
 					'National Funeral Directors Association (NFDA) member',
 					'Associated with Donaldson Funeral Home & Crematory, Pittsboro, NC',
 					'Technology consulting & modernization',
@@ -196,7 +200,7 @@ const personJsonLd = {
 					{[
 						'Preneed Insurance',
 						'Funeral Pre-Planning',
-						'NC Preneed Regulations',
+						'NC & SC Preneed Regulations',
 						'Medicaid Planning',
 						'Funeral Home Marketing',
 						'Preneed Sales Training',
@@ -218,10 +222,10 @@ const personJsonLd = {
 			<h2 class="font-heading text-2xl md:text-3xl font-bold text-charcoal-900 mb-6">Speaking & Events</h2>
 			<div class="prose max-w-none text-charcoal-700 space-y-4">
 				<p class="leading-relaxed">
-					Duane is available for speaking engagements at industry conferences, funeral home retreats, church workshops, and community events. He brings nearly two decades of real-world experience to every presentation — practical, actionable insights that audiences can put to use immediately.
+					Duane is available for speaking engagements at industry conferences, funeral home retreats, church workshops, and community events. He brings two decades of real-world experience to every presentation — practical, actionable insights that audiences can put to use immediately.
 				</p>
 				<p class="leading-relaxed">
-					Topics include preneed program development, preneed sales strategies, regulatory compliance in North Carolina, Medicaid and preneed planning, and end-of-life planning workshops for community groups.
+					Topics include preneed program development, preneed sales strategies, regulatory compliance in NC & SC, Medicaid and preneed planning, and end-of-life planning workshops for community groups.
 				</p>
 				<div class="not-prose mt-6 flex flex-wrap gap-4">
 					<Button variant="primary" href="/for-funeral-homes/speaking">

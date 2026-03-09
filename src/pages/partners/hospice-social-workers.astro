@@ -9,13 +9,13 @@ import JsonLd from '../../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
 
 const title = 'For Hospice Workers | Preneed Quick Reference';
-const description = 'Quick reference for hospice and social workers. Help families understand preneed insurance options in North Carolina. Partner with Duane Cutlip.';
+const description = 'Quick reference for hospice and social workers. Help families understand preneed insurance options in NC & SC. Partner with Duane Cutlip.';
 
 const serviceJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'Service',
 	name: 'Preneed Insurance Resource for Hospice & Social Workers',
-	description: 'Quick reference and referral resource for hospice social workers in North Carolina. Help families understand preneed insurance options.',
+	description: 'Quick reference and referral resource for hospice social workers in NC & SC. Help families understand preneed insurance options.',
 	provider: {
 		'@type': 'InsuranceAgency',
 		name: 'Cutlip Associates, LLC',
@@ -23,14 +23,14 @@ const serviceJsonLd = {
 	},
 	areaServed: [
 		{ '@type': 'State', name: 'North Carolina' },
-		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
 	],
 	serviceType: 'Preneed Insurance Consultation',
 };
 ---
 
-<BaseLayout title={title} description={description} keywords="hospice funeral planning, social worker preneed referral, preneed insurance hospice families, NC funeral planning">
-	<Hero variant="interior" title="When Families Ask About Funeral Costs: A Guide for Social Workers" subtitle="A quick reference for hospice teams and social workers in North Carolina." />
+<BaseLayout title={title} description={description} keywords="hospice funeral planning, social worker preneed referral, preneed insurance hospice families, NC SC funeral planning">
+	<Hero variant="interior" title="When Families Ask About Funeral Costs: A Guide for Social Workers" subtitle="A quick reference for hospice teams and social workers in North Carolina and South Carolina." />
 
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Partners', href: '/partners/estate-attorneys' }, { label: 'Hospice & Social Workers' }]} />
@@ -45,7 +45,7 @@ const serviceJsonLd = {
 					As a social worker or hospice team member, you're often the first person families turn to with these questions. You don't need to have all the answers — but you do need a trusted resource to point them to. Someone who will treat the family with compassion, explain their options clearly, and never apply pressure during an already overwhelming time.
 				</p>
 				<p class="leading-relaxed">
-					That's Duane Cutlip. He's a Licensed Preneed Funeral Director with nearly 20 years of experience, and he works regularly with hospice teams across North Carolina. When you refer a family to Duane, you know they'll be treated with the same care and professionalism you provide.
+					That's Duane Cutlip. He's a Licensed Preneed Funeral Director with over 20 years of experience, and he works regularly with hospice teams across North Carolina and South Carolina. When you refer a family to Duane, you know they'll be treated with the same care and professionalism you provide.
 				</p>
 			</div>
 		</section>
@@ -72,7 +72,7 @@ const serviceJsonLd = {
 							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
 							</svg>
-							<span class="text-charcoal-700 text-sm">Irrevocable preneed is Medicaid-exempt in North Carolina</span>
+							<span class="text-charcoal-700 text-sm">Irrevocable preneed is Medicaid-exempt in NC & SC</span>
 						</div>
 						<div class="flex items-start gap-2">
 							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -145,13 +145,13 @@ const serviceJsonLd = {
 			<SectionHeading title="Medicaid & Preneed: What Social Workers Need to Know" accent />
 			<div class="prose max-w-none text-charcoal-700 space-y-4">
 				<p class="leading-relaxed">
-					One of the most valuable aspects of preneed insurance for hospice families is its Medicaid exemption. In both North Carolina, irrevocable preneed funeral contracts are excluded from the asset calculation for Medicaid eligibility.
+					One of the most valuable aspects of preneed insurance for hospice families is its Medicaid exemption. In both North Carolina and South Carolina, irrevocable preneed funeral contracts are excluded from the asset calculation for Medicaid eligibility.
 				</p>
 				<p class="leading-relaxed">
 					This means a family can purchase an irrevocable preneed policy — typically $8,000 to $15,000 — and those funds are <strong>not counted</strong> when determining Medicaid eligibility. For families who are navigating the spend-down process, this is a critical planning tool that protects a meaningful amount of assets while ensuring the patient's funeral wishes are honored.
 				</p>
 				<p class="leading-relaxed">
-					Duane is well-versed in the Medicaid implications of preneed planning in North Carolina and can explain the specifics to families in plain language. He works regularly with elder law attorneys and Medicaid planners to ensure that preneed contracts are structured properly for maximum protection.
+					Duane is well-versed in the Medicaid implications of preneed planning in both states and can explain the specifics to families in plain language. He works regularly with elder law attorneys and Medicaid planners to ensure that preneed contracts are structured properly for maximum protection.
 				</p>
 			</div>
 		</section>
@@ -186,7 +186,7 @@ const serviceJsonLd = {
 			<div class="bg-linen rounded-xl p-8 border border-border-light">
 				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">About Duane Cutlip</h3>
 				<p class="text-charcoal-700 leading-relaxed mb-4">
-					Duane Cutlip is a Licensed Preneed Funeral Director with nearly 20 years of experience serving families in North Carolina. He holds licenses in North Carolina, is a member of the National Funeral Directors Association (NFDA), and is associated with Donaldson Funeral Home & Crematory in Pittsboro, NC.
+					Duane Cutlip is a Licensed Preneed Funeral Director with over 20 years of experience serving families in North Carolina and South Carolina. He holds licenses in both states, is a member of the National Funeral Directors Association (NFDA), and is associated with L. Harold Poole Funeral Home & Crematory.
 				</p>
 				<p class="text-charcoal-700 leading-relaxed">
 					He understands the hospice environment, respects the emotional complexity of end-of-life planning, and treats every family with the compassion they deserve. When you refer a family to Duane, you're connecting them with someone who will honor the trust you've placed in him.
