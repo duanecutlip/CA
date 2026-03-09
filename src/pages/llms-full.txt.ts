@@ -12,9 +12,9 @@ export const GET: APIRoute = async () => {
   // About
   sections.push(`## About Duane Cutlip
 
-Duane Cutlip is a Licensed Preneed Funeral Director in North Carolina with over 20 years of experience. He specializes in helping families make advance funeral arrangements — pre-need insurance that locks in today's prices and ensures wishes are honored exactly as planned.
+Duane Cutlip is a Licensed Preneed Funeral Director in North Carolina with nearly 20 years of experience. He specializes in helping families make advance funeral arrangements — pre-need insurance that locks in today's prices and ensures wishes are honored exactly as planned.
 
-Duane works closely with Donaldson Funeral Home & Crematory in Pittsboro, NC and other respected funeral homes throughout NC. He is an active member of the National Funeral Directors Association (NFDA). Cutlip Associates, LLC was founded in 2003. His NC License number is FD-4028.
+Duane works closely with Donaldson Funeral Home & Crematory in Pittsboro, NC and other respected funeral homes throughout NC. He is an active member of the National Funeral Directors Association (NFDA). Cutlip Associates, LLC was founded in 2003. His 
 
 He lives in Wendell, NC with his wife Angie and their two daughters. He is active in his Baptist church and volunteers as an ARRL amateur radio volunteer examiner, reflecting his deep commitment to community service. Every call goes directly to Duane — no call center, no pressure, no obligation.
 

@@ -7,30 +7,27 @@ import CTABanner from '../../components/CTABanner.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
 
-const title = 'Preneed Program Consulting | NC & SC';
-const description = 'Preneed program consulting for NC & SC funeral homes. Program assessment, carrier selection, lead generation, compliance review. 20+ years experience.';
+const title = 'Preneed Program Consulting for NC Funeral Homes';
+const description = 'Preneed program consulting for North Carolina funeral homes. Program assessment, carrier selection, lead generation, compliance review. Nearly 20 years experience.';
 
 const serviceJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'Service',
 	name: 'Preneed Program Consulting',
-	description: 'Comprehensive preneed program consulting for funeral homes in North Carolina and South Carolina.',
+	description: 'Comprehensive preneed program consulting for funeral homes in North Carolina.',
 	provider: {
 		'@type': 'Person',
 		'@id': 'https://cutlipassociates.com/#duane-cutlip',
 		name: 'Duane Cutlip',
 		jobTitle: 'Licensed Preneed Funeral Director',
 	},
-	areaServed: [
-		{ '@type': 'State', name: 'North Carolina' },
-		{ '@type': 'State', name: 'South Carolina' },
-	],
+	areaServed: { '@type': 'State', name: 'North Carolina' },
 	serviceType: 'Preneed Program Consulting',
 };
 ---
 
-<BaseLayout title={title} description={description} keywords="preneed program consulting, funeral home preneed consultant, preneed carrier selection, NC SC preneed program">
-	<Hero variant="interior" title="Preneed Program Consulting for Funeral Homes" subtitle="Build, fix, or grow your preneed program with a practitioner who's done it for 20+ years." />
+<BaseLayout title={title} description={description} keywords="preneed program consulting, funeral home preneed consultant, preneed carrier selection, NC preneed program">
+	<Hero variant="interior" title="Preneed Program Consulting for Funeral Homes" subtitle="Build, fix, or grow your preneed program with a North Carolina practitioner who's been doing this for nearly 20 years." />
 
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Funeral Homes', href: '/for-funeral-homes' }, { label: 'Consulting' }]} />
@@ -42,7 +39,7 @@ const serviceJsonLd = {
 					A strong preneed program doesn't happen by accident. It requires the right carrier relationship, a repeatable sales process, consistent lead generation, trained staff, and airtight compliance. Most funeral homes have some of these pieces — few have all of them working together.
 				</p>
 				<p class="leading-relaxed">
-					Duane Cutlip works directly with funeral home owners and managers to assess what's working, identify what's broken, and build a preneed program that produces measurable results. This isn't theory from a textbook or a corporate playbook designed for the largest 5% of funeral homes. It's practical, hands-on consulting built from 20+ years of doing this work in funeral homes across North Carolina and South Carolina.
+					Duane Cutlip works directly with funeral home owners and managers to assess what's working, identify what's broken, and build a preneed program that produces measurable results. This isn't theory from a textbook or a corporate playbook designed for the largest 5% of funeral homes. It's practical, hands-on consulting built from nearly 20 years of doing this work in funeral homes across North Carolina.
 				</p>
 			</div>
 		</section>
@@ -57,7 +54,7 @@ const serviceJsonLd = {
 						{ bold: 'Lead generation strategy', text: 'Most funeral homes wait for preneed leads to walk in the door. Duane builds proactive lead pipelines using community seminars, church partnerships, referral networks, direct mail, and digital outreach tailored to your market.' },
 						{ bold: 'Sales process design', text: 'A repeatable, consultative sales process your staff can actually follow. No high-pressure tactics — a structured approach that respects the family while consistently closing preneed business.' },
 						{ bold: 'Carrier evaluation and selection', text: 'Not all carriers are equal. Duane reviews your current carrier relationship — commission structures, policy terms, trust arrangements, cancellation provisions — and recommends changes if they\'d benefit your funeral home.' },
-						{ bold: 'Compliance review', text: 'State regulations in NC and SC govern preneed contracts, trust requirements, and disclosure obligations. Duane ensures your program meets all regulatory requirements and identifies gaps before they become problems.' },
+						{ bold: 'Compliance review', text: 'North Carolina statutes under N.C.G.S. Chapter 90, Article 13D govern preneed contracts, trust requirements, and disclosure obligations. Duane ensures your program meets all regulatory requirements and identifies gaps before they become problems.' },
 					].map((item) => (
 						<li class="flex items-start gap-3">
 							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

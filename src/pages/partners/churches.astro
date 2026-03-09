@@ -9,13 +9,13 @@ import JsonLd from '../../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
 
 const title = 'For Churches | End-of-Life Planning Ministry';
-const description = 'Free resources for church leaders. Help your congregation plan ahead with dignity and faith. Duane Cutlip partners with NC & SC churches.';
+const description = 'Free resources for church leaders. Help your congregation plan ahead with dignity and faith. Duane Cutlip partners with North Carolina churches.';
 
 const serviceJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'Service',
 	name: 'Church Partnership for End-of-Life Planning',
-	description: 'Free workshops and resources for NC & SC churches. Help your congregation plan ahead with dignity, stewardship, and faith.',
+	description: 'Free workshops and resources for North Carolina churches. Help your congregation plan ahead with dignity, stewardship, and faith.',
 	provider: {
 		'@type': 'InsuranceAgency',
 		name: 'Cutlip Associates, LLC',
@@ -23,14 +23,14 @@ const serviceJsonLd = {
 	},
 	areaServed: [
 		{ '@type': 'State', name: 'North Carolina' },
-		{ '@type': 'State', name: 'South Carolina' },
+		{ '@type': 'State', name: 'North Carolina' },
 	],
 	serviceType: 'Preneed Insurance Consultation',
 };
 ---
 
-<BaseLayout title={title} description={description} keywords="church end of life planning, funeral planning ministry, preneed insurance church workshop, NC SC church planning">
-	<Hero variant="interior" title="A Pastor's Guide to Helping Your Congregation Plan Ahead" subtitle="Free workshops and resources for churches across North Carolina and South Carolina." />
+<BaseLayout title={title} description={description} keywords="church end of life planning, funeral planning ministry, preneed insurance church workshop, NC church planning">
+	<Hero variant="interior" title="A Pastor's Guide to Helping Your Congregation Plan Ahead" subtitle="Free workshops and resources for churches across North Carolina." />
 
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Partners', href: '/partners/estate-attorneys' }, { label: 'Churches' }]} />
@@ -45,7 +45,7 @@ const serviceJsonLd = {
 					It doesn't have to be this way. When families plan ahead, they transform one of life's most difficult moments into an act of love and stewardship. They choose the hymns they want sung. They document whether they prefer burial or cremation. They lock in today's funeral costs so their children never have to bear that burden. And they do it all while they're healthy, clear-minded, and surrounded by the support of their church community.
 				</p>
 				<p class="leading-relaxed">
-					Duane Cutlip partners with churches across North Carolina and South Carolina to make this conversation easier. He's a Baptist himself, and he understands that planning ahead isn't about fear — it's about <strong>faith, stewardship, and love for your family</strong>.
+					Duane Cutlip partners with churches across North Carolina to make this conversation easier. He's a Baptist himself, and he understands that planning ahead isn't about fear — it's about <strong>faith, stewardship, and love for your family</strong>.
 				</p>
 			</div>
 		</section>
@@ -123,7 +123,7 @@ const serviceJsonLd = {
 					{[
 						{ bold: 'It\'s not a sales pitch', text: 'Preneed planning is a caring, practical conversation about protecting family. Duane never pressures anyone. Many families simply appreciate having the information and make their decision in their own time.' },
 						{ bold: 'It locks in today\'s prices', text: 'Funeral costs have risen over 40% in the last decade. A preneed policy purchased today guarantees coverage at today\'s price, regardless of when the need arises. This is especially important for families on fixed incomes.' },
-						{ bold: 'It\'s Medicaid-protected', text: 'For church members who are on Medicaid or may need it in the future, irrevocable preneed contracts are generally exempt from asset calculations in both NC and SC. This means families can set aside funeral funds without losing benefits.' },
+						{ bold: 'It\'s Medicaid-protected', text: 'For church members who are on Medicaid or may need it in the future, irrevocable preneed contracts are generally exempt from asset calculations in both North Carolina. This means families can set aside funeral funds without losing benefits.' },
 						{ bold: 'It documents wishes in detail', text: 'From the hymns to the Scripture readings to the choice of burial or cremation, a preneed plan captures everything. The family doesn\'t have to guess — and the service truly reflects the person\'s faith and life.' },
 						{ bold: 'It pays the funeral home directly', text: 'The money never passes through the family\'s hands or the estate. It goes directly to the funeral home, bypassing probate and ensuring the arrangements are honored without delay.' },
 					].map((item) => (
@@ -161,7 +161,7 @@ const serviceJsonLd = {
 			<div class="bg-linen rounded-xl p-8 border border-border-light">
 				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">A Man of Faith</h3>
 				<p class="text-charcoal-700 leading-relaxed mb-4">
-					Duane Cutlip is a Baptist and an active member of his church community in Wendell, North Carolina. He's been a Licensed Preneed Funeral Director for over 20 years, and he approaches every family with the same compassion and respect he'd extend to his own.
+					Duane Cutlip is a Baptist and an active member of his church community in Wendell, North Carolina. He's been a Licensed Preneed Funeral Director for nearly 20 years, and he approaches every family with the same compassion and respect he'd extend to his own.
 				</p>
 				<p class="text-charcoal-700 leading-relaxed mb-4">
 					"My faith is the foundation of this work," Duane says. "When I sit with a family, I'm not there to sell anything. I'm there to help them make decisions that reflect their values, honor their loved ones, and protect the people they care about most."
