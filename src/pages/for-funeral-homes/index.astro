@@ -8,23 +8,20 @@ import JsonLd from '../../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
 
 const title = 'For Funeral Homes | Preneed Consulting & Training';
-const description = 'Preneed consulting, training, and program audits for NC & SC funeral homes. 20+ years experience. Grow your preneed program with Duane Cutlip.';
+const description = 'Preneed consulting, training, and program audits for North Carolina funeral homes. Nearly 20 years experience. Grow your preneed program with Duane Cutlip.';
 
 const serviceJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'Service',
 	name: 'Preneed Consulting & Training for Funeral Homes',
-	description: 'Preneed program consulting, sales training, audits, marketing strategy, and speaking for funeral homes in North Carolina and South Carolina.',
+	description: 'Preneed program consulting, sales training, audits, marketing strategy, and speaking for North Carolina funeral homes.',
 	provider: {
 		'@type': 'Person',
 		'@id': 'https://cutlipassociates.com/#duane-cutlip',
 		name: 'Duane Cutlip',
 		jobTitle: 'Licensed Preneed Funeral Director',
 	},
-	areaServed: [
-		{ '@type': 'State', name: 'North Carolina' },
-		{ '@type': 'State', name: 'South Carolina' },
-	],
+	areaServed: { '@type': 'State', name: 'North Carolina' },
 	serviceType: 'Preneed Consulting',
 };
 
@@ -62,8 +59,8 @@ const services = [
 ];
 ---
 
-<BaseLayout title={title} description={description} keywords="preneed consulting funeral homes, preneed sales training, funeral home preneed program, NC SC preneed consulting">
-	<Hero variant="interior" title="Grow Your Preneed Program with a 20-Year Industry Expert" subtitle="Consulting, training, audits, and strategy for funeral homes across North Carolina and South Carolina." />
+<BaseLayout title={title} description={description} keywords="preneed consulting funeral homes, preneed sales training, funeral home preneed program, NC NC preneed consulting">
+	<Hero variant="interior" title="Grow Your Preneed Program with a North Carolina Preneed Expert" subtitle="Consulting, training, audits, and strategy for funeral homes across North Carolina." />
 
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Funeral Homes' }]} />
@@ -75,7 +72,7 @@ const services = [
 					Most funeral homes know they should be doing more with preneed. But the reality is messy: <strong>penetration rates stuck below 15%</strong>, staff who avoid the conversation, compliance gaps that create liability, and carriers whose terms don't actually serve the funeral home's interests.
 				</p>
 				<p class="leading-relaxed">
-					Duane Cutlip has spent 20+ years in the trenches of preneed — not in a corporate office, but on the floor of funeral homes across North Carolina and South Carolina. He's built programs from scratch, turned around underperforming ones, trained hundreds of staff members, and helped funeral homes navigate carrier transitions without losing a single policy. He knows what works because he's done the work.
+					Duane Cutlip has spent nearly 20 years in the trenches of preneed — not in a corporate office, but on the floor of funeral homes across North Carolina. He's built programs from scratch, turned around underperforming ones, trained hundreds of staff members, and helped funeral homes navigate carrier transitions without losing a single policy. He knows what works because he's done the work.
 				</p>
 			</div>
 		</section>
@@ -104,11 +101,11 @@ const services = [
 			<div class="space-y-4 text-charcoal-700">
 				<ul class="space-y-3">
 					{[
-						{ bold: '20+ years hands-on preneed experience', text: 'Not theory — Duane has personally written policies, trained counselors, built lead pipelines, and managed carrier relationships for funeral homes of every size.' },
-						{ bold: 'Licensed in NC and SC', text: 'Dual-state licensing means he understands the regulatory landscape in both Carolinas and can serve funeral homes across state lines.' },
+						{ bold: 'Nearly 20 years hands-on preneed experience', text: 'Not theory — Duane has personally written policies, trained counselors, built lead pipelines, and managed carrier relationships for funeral homes of every size.' },
+						{ bold: 'Deep NC regulatory knowledge', text: 'Duane is intimately familiar with North Carolina's preneed statutes under N.C.G.S. Chapter 90, Article 13D — licensing, trust requirements, disclosures, and enforcement. He keeps his clients compliant.' },
 						{ bold: 'Carrier-agnostic advice', text: 'Duane doesn\'t represent a single carrier. His recommendations are based on what\'s best for your funeral home, not what earns him the biggest commission.' },
 						{ bold: 'Tech-savvy practitioner', text: 'From AI-powered CRM systems to digital lead generation, Duane helps funeral homes modernize their preneed operations — not just maintain them.' },
-						{ bold: 'NFDA member, L. Harold Poole association', text: 'Duane is embedded in the industry. He\'s not an outsider consultant — he\'s a colleague who happens to specialize in making preneed programs work.' },
+						{ bold: 'NFDA member & industry insider', text: 'Duane is embedded in the funeral profession. He\'s not an outsider consultant — he\'s a colleague who happens to specialize in making preneed programs work.' },
 					].map((item) => (
 						<li class="flex items-start gap-3">
 							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

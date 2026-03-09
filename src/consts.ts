@@ -1,11 +1,10 @@
 export const SITE_TITLE = 'Cutlip Associates, LLC';
-export const SITE_DESCRIPTION = 'Protect your family from unexpected funeral costs. Duane Cutlip is a Licensed Preneed Funeral Director with 20+ years experience serving families across North Carolina. Call (919) 822-2010.';
+export const SITE_DESCRIPTION = 'Protect your family from unexpected funeral costs. Duane Cutlip is a Licensed Preneed Funeral Director with nearly 20 years experience serving families across North Carolina. Call (919) 822-2010.';
 export const SITE_URL = 'https://cutlipassociates.com';
 export const PHONE = '(919) 822-2010';
 export const PHONE_RAW = '9198222010';
 export const EMAIL = 'duane@cutlipassociates.com';
 export const ADDRESS = 'Wendell, NC 27591';
-export const LICENSE = 'NC License #FD-4028';
 
 export const NAV_LINKS = [
   { label: 'Plan Ahead', href: '/plan-ahead' },
@@ -62,6 +61,12 @@ export interface Testimonial {
   city: string;
 }
 
+// ⚠️  TODO — LEGAL COMPLIANCE REQUIRED BEFORE LAUNCH ⚠️
+// The testimonials below are PLACEHOLDER/FABRICATED content.
+// Using fabricated testimonials violates NC deceptive advertising statutes
+// (N.C.G.S. 75-1.1) and insurance marketing regulations.
+// REPLACE with real, documented testimonials from actual clients before publishing,
+// OR REMOVE this section entirely until real testimonials are collected.
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote: "Duane made what I thought would be the hardest conversation of my life feel natural and even comforting. My family knows exactly what I want, and that gives me peace.",
@@ -169,7 +174,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'What are Duane\'s qualifications?',
-    answer: 'Duane Cutlip is a Licensed Preneed Funeral Director in North Carolina with over 20 years of experience. He holds all required state licenses and continuing education certifications. He\'s an active member of the National Funeral Directors Association (NFDA) and has helped hundreds of families in the Raleigh-Wake County area plan ahead with confidence.',
+    answer: 'Duane Cutlip is a Licensed Preneed Funeral Director in North Carolina with nearly 20 years of experience. He holds all required state licenses and continuing education certifications. He\'s an active member of the National Funeral Directors Association (NFDA) and has helped hundreds of families in the Raleigh-Wake County area plan ahead with confidence.',
     category: 'Agent',
   },
   {

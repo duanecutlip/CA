@@ -8,23 +8,20 @@ import JsonLd from '../../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
 
 const title = 'Preneed Sales Training | Funeral Home Workshops';
-const description = 'On-site preneed sales training for funeral home staff. Consultative selling, objection handling, compliance, and community outreach. NC & SC.';
+const description = 'On-site preneed sales training for North Carolina funeral home staff. Consultative selling, objection handling, NC compliance, and community outreach.';
 
 const serviceJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'Service',
 	name: 'Preneed Sales Training Workshops',
-	description: 'On-site preneed sales training workshops for funeral home staff in North Carolina and South Carolina.',
+	description: 'On-site preneed sales training workshops for funeral home staff in North Carolina.',
 	provider: {
 		'@type': 'Person',
 		'@id': 'https://cutlipassociates.com/#duane-cutlip',
 		name: 'Duane Cutlip',
 		jobTitle: 'Licensed Preneed Funeral Director',
 	},
-	areaServed: [
-		{ '@type': 'State', name: 'North Carolina' },
-		{ '@type': 'State', name: 'South Carolina' },
-	],
+	areaServed: { '@type': 'State', name: 'North Carolina' },
 	serviceType: 'Preneed Sales Training',
 };
 ---
@@ -42,7 +39,7 @@ const serviceJsonLd = {
 					Most funeral home staff avoid preneed conversations. Not because they don't care — because nobody taught them how. They're uncomfortable with anything that feels like "selling," they don't know how to bring it up naturally, and they're terrified of saying the wrong thing about compliance or policy details.
 				</p>
 				<p class="leading-relaxed">
-					Duane's training workshops change that. Built from 20+ years of real-world preneed experience, these on-site sessions teach your team a <strong>consultative approach</strong> that feels natural, respects the family, and consistently converts interest into funded preneed contracts. No scripts. No high-pressure tactics. Just a structured, repeatable process your staff will actually use.
+					Duane's training workshops change that. Built from nearly 20 years of real-world preneed experience, these on-site sessions teach your team a <strong>consultative approach</strong> that feels natural, respects the family, and consistently converts interest into funded preneed contracts. No scripts. No high-pressure tactics. Just a structured, repeatable process your staff will actually use.
 				</p>
 			</div>
 		</section>
@@ -57,7 +54,7 @@ const serviceJsonLd = {
 						{ bold: 'Opening the conversation', text: 'The hardest part is starting. Duane teaches specific, natural ways to introduce preneed during at-need arrangements, community events, phone inquiries, and walk-in visits.' },
 						{ bold: 'Objection handling', text: '"I\'m not ready yet." "It\'s too expensive." "I need to talk to my kids." Your staff will learn proven responses to the 10 most common objections — responses that acknowledge the concern and move the conversation forward.' },
 						{ bold: 'Community outreach techniques', text: 'How to plan and execute community seminars, church presentations, and civic group talks that generate qualified preneed leads. Duane shares the exact seminar model he\'s used for two decades.' },
-						{ bold: 'Compliance essentials', text: 'NC and SC preneed regulations your staff must understand — disclosure requirements, contract documentation, trust obligations, and common compliance mistakes that create liability.' },
+						{ bold: 'Compliance essentials', text: 'North Carolina preneed regulations your staff must understand — disclosure requirements, contract documentation, trust obligations, and common compliance mistakes that create liability.' },
 						{ bold: 'Follow-up systems', text: 'Most preneed sales happen on the second or third contact, not the first. Your staff will learn a structured follow-up process that keeps leads warm without being pushy.' },
 					].map((item) => (
 						<li class="flex items-start gap-3">
@@ -122,7 +119,7 @@ const serviceJsonLd = {
 			<div class="bg-linen rounded-xl p-8 border border-border-light">
 				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">What Makes This Training Different</h3>
 				<p class="text-charcoal-700 leading-relaxed mb-4">
-					Duane isn't a corporate trainer reading from a slide deck. He's a Licensed Preneed Funeral Director who has personally written hundreds of preneed contracts, conducted thousands of family consultations, and trained staff at funeral homes across two states. Every exercise in the workshop comes from real scenarios he's encountered. Every objection response has been tested in actual conversations. Your staff will learn from someone who does this work every day — not someone who teaches about it from an office.
+					Duane isn't a corporate trainer reading from a slide deck. He's a Licensed Preneed Funeral Director who has personally written hundreds of preneed contracts, conducted thousands of family consultations, and trained staff at funeral homes across North Carolina. Every exercise in the workshop comes from real scenarios he's encountered. Every objection response has been tested in actual conversations. Your staff will learn from someone who does this work every day — not someone who teaches about it from an office.
 				</p>
 				<p class="text-charcoal-700 leading-relaxed">
 					Workshops are conducted on-site at your funeral home, so your staff trains in the environment where they'll apply what they learn. Duane also provides post-workshop support — follow-up calls to answer questions, review early results, and reinforce key concepts.
@@ -135,7 +132,7 @@ const serviceJsonLd = {
 			<div class="prose max-w-none text-charcoal-700 space-y-4">
 				<h2 class="font-heading text-2xl font-bold text-charcoal-900">Schedule a Workshop</h2>
 				<p class="leading-relaxed">
-					Call Duane at <a href={`tel:${PHONE_RAW}`} class="text-burgundy-600 font-bold hover:text-burgundy-700">{PHONE}</a> to discuss your team's needs and schedule a training session. Workshops are available throughout North Carolina and South Carolina, and Duane will work around your funeral home's schedule to minimize disruption.
+					Call Duane at <a href={`tel:${PHONE_RAW}`} class="text-burgundy-600 font-bold hover:text-burgundy-700">{PHONE}</a> to discuss your team's needs and schedule a training session. Workshops are available throughout North Carolina, and Duane will work around your funeral home's schedule to minimize disruption.
 				</p>
 			</div>
 		</section>

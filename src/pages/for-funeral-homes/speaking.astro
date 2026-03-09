@@ -21,10 +21,7 @@ const serviceJsonLd = {
 		name: 'Duane Cutlip',
 		jobTitle: 'Licensed Preneed Funeral Director',
 	},
-	areaServed: [
-		{ '@type': 'State', name: 'North Carolina' },
-		{ '@type': 'State', name: 'South Carolina' },
-	],
+	areaServed: { '@type': 'State', name: 'North Carolina' },
 	serviceType: 'Speaking & Seminars',
 };
 ---
@@ -39,7 +36,7 @@ const serviceJsonLd = {
 		<section class="mb-16">
 			<div class="prose max-w-none text-charcoal-700 space-y-4">
 				<p class="text-lg leading-relaxed">
-					Duane Cutlip brings 20+ years of hands-on preneed experience to the stage. His presentations are built on real-world results, not theory — every story, every strategy, and every data point comes from actual work with funeral homes across North Carolina and South Carolina.
+					Duane Cutlip brings nearly 20 years of hands-on preneed experience to the stage. His presentations are built on real-world results, not theory — every story, every strategy, and every data point comes from actual work with funeral homes across North Carolina.
 				</p>
 				<p class="leading-relaxed">
 					Whether you're planning a funeral home retreat, a state association conference, a carrier training event, or a community workshop, Duane delivers practical, actionable content your audience can use immediately. No corporate jargon, no recycled slide decks — just honest insights from a practitioner who does this work every day.
@@ -52,11 +49,11 @@ const serviceJsonLd = {
 			<SectionHeading title="Speaking Topics" accent />
 			<div class="grid sm:grid-cols-2 gap-6">
 				{[
-					{ title: 'The State of Preneed', desc: 'Where the preneed industry stands today, what\'s changing, and what funeral homes need to do differently. Covers market trends, consumer behavior shifts, regulatory developments, and competitive pressures that are reshaping preneed in the Carolinas and beyond.' },
+					{ title: 'The State of Preneed', desc: 'Where the preneed industry stands today, what\'s changing, and what funeral homes need to do differently. Covers market trends, consumer behavior shifts, regulatory developments, and competitive pressures that are reshaping preneed in North Carolina and beyond.' },
 					{ title: 'Building a Preneed Program from Scratch', desc: 'A step-by-step blueprint for funeral homes that want to launch a preneed program or completely rebuild one that isn\'t working. Covers carrier selection, staffing, lead generation, sales process design, and the first 90 days of execution.' },
 					{ title: 'The Community Seminar Playbook', desc: 'Duane\'s proven model for community-based preneed lead generation. How to partner with churches and civic organizations, structure the presentation, capture interest, and convert attendees into funded contracts.' },
-					{ title: 'Preneed Compliance Deep Dive', desc: 'NC and SC preneed regulations explained in plain English. Contract requirements, disclosure obligations, trust arrangements, and the most common compliance mistakes Duane sees in his audit work — and how to avoid them.' },
-					{ title: 'The Cremation Shift and Preneed', desc: 'Cremation rates in NC and SC continue to climb. This presentation covers how the cremation trend affects preneed strategy, why cremation families still need preneed planning, and how to adjust your program for a market that\'s moving away from traditional burial.' },
+					{ title: 'Preneed Compliance Deep Dive', desc: 'North Carolina preneed regulations explained in plain English. Contract requirements, disclosure obligations, trust arrangements, and the most common compliance mistakes Duane sees in his audit work — and how to avoid them.' },
+					{ title: 'The Cremation Shift and Preneed', desc: 'Cremation rates in North Carolina continue to climb. This presentation covers how the cremation trend affects preneed strategy, why cremation families still need preneed planning, and how to adjust your program for a market that\'s moving away from traditional burial.' },
 					{ title: 'Technology Modernization for Funeral Homes', desc: 'From AI-powered CRM systems to digital lead generation and online preneed tools, Duane shares how technology can modernize funeral home operations without losing the personal touch that families expect. Built from his own experience implementing these tools.' },
 				].map((topic) => (
 					<div class="bg-white rounded-xl p-6 border border-border-light">
@@ -75,7 +72,7 @@ const serviceJsonLd = {
 				<ul class="space-y-3">
 					{[
 						{ bold: 'Funeral home retreats and team meetings', text: 'Private presentations for your staff, focused on your specific goals and challenges. Often combined with a training workshop for maximum impact.' },
-						{ bold: 'State association conferences', text: 'NCFDA, SCFDA, and regional association events. Duane delivers content that\'s relevant to the local regulatory and market environment.' },
+						{ bold: 'State association conferences', text: 'NCFDA and regional association events. Duane delivers content that\'s relevant to the NC regulatory and market environment.' },
 						{ bold: 'NFDA and national events', text: 'Broader industry presentations on preneed trends, technology modernization, and the future of the profession.' },
 						{ bold: 'Carrier events and training sessions', text: 'Presentations for preneed insurance carriers and their funeral home partners. Duane provides the practitioner\'s perspective that complements carrier-provided content.' },
 						{ bold: 'Church and community workshops', text: 'Public-facing educational events that serve as preneed lead generation for sponsoring funeral homes. Duane can lead these directly or train your staff to run them independently.' },
@@ -114,7 +111,7 @@ const serviceJsonLd = {
 			<div class="bg-linen rounded-xl p-8 border border-border-light">
 				<h3 class="font-heading font-bold text-charcoal-900 text-xl mb-3">About Duane</h3>
 				<p class="text-charcoal-700 leading-relaxed mb-4">
-					Duane Cutlip is a Licensed Preneed Funeral Director with over 20 years of experience in the funeral profession. Licensed in both North Carolina and South Carolina, he is a member of the National Funeral Directors Association (NFDA) and is associated with L. Harold Poole Funeral Home & Crematory in Raleigh.
+					Duane Cutlip is a Licensed Preneed Funeral Director with nearly 20 years of experience in the funeral profession. He is a member of the National Funeral Directors Association (NFDA) and is associated with Donaldson Funeral Home & Crematory in Pittsboro, NC.
 				</p>
 				<p class="text-charcoal-700 leading-relaxed mb-4">
 					Duane has built preneed programs from the ground up, turned around underperforming operations, trained hundreds of funeral home staff members, and helped funeral homes navigate carrier transitions. He brings a practitioner's perspective to every presentation — grounded in real results, not academic theory.
