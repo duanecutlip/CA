@@ -8,7 +8,7 @@ import JsonLd from '../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, SITE_URL } from '../consts';
 
 const title = 'Pre-Need Insurance for Military Families';
-const description = `VA burial benefits cover $300-$2,000. The average funeral costs $7,848+. Pre-need insurance bridges the gap. Call ${PHONE}.`;
+const description = `VA burial benefits cover $300-$2,000. The all-in cost of a funeral reaches $12,000–$20,000. Pre-need insurance bridges the gap. Call ${PHONE}.`;
 
 const serviceJsonLd = {
 	'@context': 'https://schema.org',
@@ -41,7 +41,7 @@ const breadcrumbJsonLd = {
 	<Hero
 		variant="interior"
 		title="Pre-Need Insurance for Military Families"
-		subtitle="VA burial benefits cover $300–$2,000. The average funeral costs $7,848+. Pre-need insurance bridges the gap."
+		subtitle="VA burial benefits cover $300–$2,000. The all-in cost of a funeral reaches $12,000–$20,000. Pre-need insurance bridges the gap."
 	/>
 
 	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Military Families' }]} />
@@ -63,7 +63,7 @@ const breadcrumbJsonLd = {
 
 			<h2>The Coverage Gap</h2>
 			<p>
-				The average funeral in North Carolina costs <strong>$7,848 or more</strong> — and that number rises every year. VA benefits cover only a fraction of this cost:
+				The all-in cost of a funeral in North Carolina—including burial vault, cemetery plot, opening/closing fees, and grave marker—typically reaches <strong>$12,000 to $20,000</strong> — and that number rises every year. VA benefits cover only a fraction of this cost:
 			</p>
 			<div class="not-prose my-8 bg-linen rounded-xl border border-border-light p-6">
 				<div class="grid grid-cols-2 gap-4 text-center">
@@ -73,7 +73,7 @@ const breadcrumbJsonLd = {
 					</div>
 					<div>
 						<p class="text-sm text-charcoal-400 mb-1">Average Funeral Cost</p>
-						<p class="font-heading text-3xl font-bold text-burgundy-600">$7,848+</p>
+						<p class="font-heading text-3xl font-bold text-burgundy-600">$12,000–$20,000</p>
 					</div>
 				</div>
 				<div class="text-center mt-4 pt-4 border-t border-border-light">

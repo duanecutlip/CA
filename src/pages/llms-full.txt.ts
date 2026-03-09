@@ -16,7 +16,7 @@ Duane Cutlip is a Licensed Preneed Funeral Director in North Carolina with nearl
 
 Duane works closely with Donaldson Funeral Home & Crematory in Pittsboro, NC and other respected funeral homes throughout NC. He is an active member of the National Funeral Directors Association (NFDA). Cutlip Associates, LLC was founded in 2003. His 
 
-He lives in Wendell, NC with his wife Angie and their two daughters. He is active in his Baptist church and volunteers as an ARRL amateur radio volunteer examiner, reflecting his deep commitment to community service. Every call goes directly to Duane — no call center, no pressure, no obligation.
+He lives in Wendell, NC with his wife Angie and their two daughters. He is active in his church and volunteers as an ARRL amateur radio volunteer examiner, reflecting his deep commitment to community service. Every call goes directly to Duane — no call center, no pressure, no obligation.
 
 ### Technology & Innovation
 Before entering the preneed industry, Duane owned a computer shop where he built and sold custom PCs, ran dual T2 lines, and self-hosted mail servers he managed himself. He still maintains an extensive home lab setup. That hands-on tech background, combined with professional bookkeeping and accounting experience, gives him a rare dual perspective in the funeral industry.
@@ -28,7 +28,7 @@ Today, Duane runs his business on a modern AI-powered tech stack — CRM, automa
   sections.push(`## Services
 
 ### Pre-Need Funeral Insurance
-Pre-need insurance is a policy specifically designed to cover funeral and burial expenses. Unlike regular life insurance, pre-need funds are earmarked for funeral costs and go directly to the funeral home — not through probate. The average funeral in North Carolina costs $7,848 or more. Most families invest between $3,000 and $15,000.
+Pre-need insurance is a policy specifically designed to cover funeral and burial expenses. Unlike regular life insurance, pre-need funds are earmarked for funeral costs and go directly to the funeral home — not through probate. The NFDA reports a median funeral cost of $8,300, but that figure excludes vault, cemetery, and marker. All-in, North Carolina families typically spend $12,000 to $20,000. Most families invest between $3,000 and $15,000 in a preneed policy.
 
 ### Celebration of Life Planning
 Personalized celebrations that reflect the unique life of the person being honored. Pre-need insurance ensures every detail is covered — from venue to music to personal touches.
