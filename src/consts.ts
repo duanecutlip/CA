@@ -8,6 +8,7 @@ export const ADDRESS = 'Wendell, NC 27591';
 
 export const NAV_LINKS = [
   { label: 'Plan Ahead', href: '/plan-ahead' },
+  { label: 'Final Expense', href: '/final-expense' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Learn', href: '/learn' },
   { label: 'About Duane', href: '/about' },
@@ -17,6 +18,7 @@ export const NAV_LINKS = [
 export const FOOTER_NAV = {
   planning: [
     { label: 'Plan Ahead', href: '/plan-ahead' },
+    { label: 'Final Expense Insurance', href: '/final-expense' },
     { label: 'How It Works', href: '/how-it-works' },
     { label: 'Celebration of Life', href: '/celebration-of-life' },
     { label: 'Military Families', href: '/military-families' },
@@ -29,6 +31,7 @@ export const FOOTER_NAV = {
     { label: 'Medicaid Planning', href: '/learn/medicaid-funeral-planning' },
     { label: 'VA Funeral Benefits', href: '/learn/va-funeral-benefits' },
     { label: 'Preneed vs Final Expense', href: '/learn/preneed-vs-final-expense' },
+    { label: 'Final Expense Insurance', href: '/final-expense' },
     { label: 'FAQ', href: '/faq' },
     { label: 'Glossary', href: '/resources/glossary' },
     { label: 'Blog', href: '/blog' },
