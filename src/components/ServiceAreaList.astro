@@ -8,6 +8,7 @@ interface Props {
 const { showLinks = true } = Astro.props;
 
 const ncAreas = SERVICE_AREAS.filter((a) => a.state === 'NC');
+const scAreas = SERVICE_AREAS.filter((a) => a.state === 'SC');
 
 // Show core NC areas on homepage, collapse the rest
 const coreRegions = ['Wake County', 'Triangle', 'Johnston County'];
@@ -19,10 +20,10 @@ const ncExtended = ncAreas.filter((a) => !coreRegions.includes(a.region || ''));
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-12">
 			<h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal-900 mb-4">
-				Serving Families Across North Carolina
+				Serving Families Across North Carolina & South Carolina
 			</h2>
 			<p class="text-charcoal-500 max-w-2xl mx-auto">
-				Duane works with families throughout North Carolina — from Wake County and the Triangle to the Sandhills, the coast, and beyond.
+				Duane works with families throughout the Carolinas. Whether you're in the Raleigh area or across South Carolina, he's here to help.
 			</p>
 		</div>
 
@@ -67,6 +68,32 @@ const ncExtended = ncAreas.filter((a) => !coreRegions.includes(a.region || ''));
 			)}
 		</div>
 
-
+		<div>
+			<h3 class="font-heading text-lg font-semibold text-charcoal-700 mb-3">South Carolina</h3>
+			<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+				{scAreas.map((area) => (
+					showLinks ? (
+						<a
+							href={`/service-areas/${area.slug}`}
+							class="flex items-center gap-2 bg-white rounded-lg border border-border-light px-4 py-3 hover:border-teal-600/30 hover:bg-teal-600/5 transition-colors"
+						>
+							<svg class="w-4 h-4 text-teal-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+								<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+							</svg>
+							<span class="text-charcoal-700 font-medium">{area.name}</span>
+						</a>
+					) : (
+						<div class="flex items-center gap-2 px-4 py-3">
+							<svg class="w-4 h-4 text-teal-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+								<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+							</svg>
+							<span class="text-charcoal-700">{area.name}</span>
+						</div>
+					)
+				))}
+			</div>
+		</div>
 	</div>
 </section>

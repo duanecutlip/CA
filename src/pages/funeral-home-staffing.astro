@@ -6,34 +6,37 @@ import CTABanner from '../components/CTABanner.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, EMAIL, SITE_URL } from '../consts';
 
-const title = 'Licensed Funeral Director Staffing | North Carolina';
-const description = 'Licensed funeral director staffing for North Carolina funeral homes. At-need coverage, overflow, vacation & emergency relief, and contract preneed counseling. Call (919) 822-2010.';
+const title = 'Funeral Director Staffing | NC & SC';
+const description = 'Licensed funeral director staffing for NC and SC funeral homes. Overflow, vacation, emergency coverage & preneed counseling. 20+ years experience. Call (919) 822-2010.';
 
 const serviceJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'Service',
 	name: 'Funeral Home Staffing Services',
-	description: 'Licensed funeral director staffing for funeral homes in North Carolina. At-need coverage, overflow, vacation, emergency, and contract preneed counseling.',
+	description: 'Licensed funeral director staffing for funeral homes in North Carolina and South Carolina. Overflow, vacation, emergency, and preneed counseling.',
 	provider: {
 		'@type': 'Person',
 		'@id': 'https://cutlipassociates.com/#duane-cutlip',
 		name: 'Duane Cutlip',
 		jobTitle: 'Licensed Preneed Funeral Director',
 	},
-	areaServed: { '@type': 'State', name: 'North Carolina' },
+	areaServed: [
+		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
+	],
 	serviceType: 'Funeral Director Staffing',
 };
 ---
 
 <BaseLayout title={title} description={description}>
-  <Hero variant="interior" title="Licensed Funeral Director Available for Staffing Support" subtitle="At-need coverage, overflow relief, and contract preneed counseling for North Carolina funeral homes." />
+  <Hero variant="interior" title="Funeral Home Staffing — NC & SC" subtitle="Licensed preneed funeral director available for staffing support across North Carolina and South Carolina" />
 
   <section class="py-12 md:py-16 bg-warm-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Funeral Home Staffing' }]} />
 
       <p class="text-lg text-charcoal-500 mb-10 max-w-2xl">
-        Duane Cutlip is a Licensed Funeral Director in North Carolina with nearly 20 years of experience in the funeral profession. He's available to support funeral homes across North Carolina with professional, reliable coverage when you need it most — whether for a single at-need arrangement conference, vacation relief, or ongoing contract preneed counseling.
+        Duane Cutlip is a Licensed Preneed Funeral Director with over 20 years of experience, licensed in both North Carolina and South Carolina. He's available to support funeral homes across both states with professional, reliable staffing when you need it most.
       </p>
 
       <div class="grid md:grid-cols-2 gap-6 mb-12">
@@ -81,7 +84,7 @@ const serviceJsonLd = {
       <div class="rounded-lg bg-linen border border-border-light p-8">
         <h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-4">Contact Duane for Staffing Inquiries</h2>
         <p class="text-charcoal-500 mb-6">
-          Duane is available for short-term and ongoing staffing arrangements throughout North Carolina. Whether you need coverage for a single arrangement conference, vacation relief, emergency support, or a contract preneed counselor, he's ready to help. At-need services are billed per hour, half-day, or day — no long-term commitment required.
+          Duane is available for short-term and ongoing staffing arrangements throughout North Carolina and South Carolina. Whether you need overflow support, vacation relief, emergency coverage, or a dedicated preneed counselor, he's ready to help your funeral home maintain its standard of care.
         </p>
         <div class="flex flex-wrap gap-6">
           <a href={`tel:${PHONE_RAW}`} class="inline-flex items-center gap-2 text-xl font-heading font-bold text-burgundy-600 hover:text-burgundy-700">

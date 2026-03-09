@@ -8,13 +8,13 @@ import JsonLd from '../../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, SITE_URL } from '../../consts';
 
 const title = 'Preneed Program Audit | Performance Review';
-const description = 'Comprehensive preneed program audit for North Carolina funeral homes. Penetration rates, conversion analysis, compliance review, and actionable recommendations.';
+const description = 'Comprehensive preneed program audit for NC & SC funeral homes. Penetration rates, conversion analysis, compliance review, and actionable recommendations.';
 
 const serviceJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'Service',
 	name: 'Preneed Program Audit',
-	description: 'Comprehensive preneed program performance audit for funeral homes in North Carolina.',
+	description: 'Comprehensive preneed program performance audit for funeral homes in North Carolina and South Carolina.',
 	provider: {
 		'@type': 'Person',
 		'@id': 'https://cutlipassociates.com/#duane-cutlip',
@@ -23,7 +23,7 @@ const serviceJsonLd = {
 	},
 	areaServed: [
 		{ '@type': 'State', name: 'North Carolina' },
-		{ '@type': 'State', name: 'North Carolina' },
+		{ '@type': 'State', name: 'South Carolina' },
 	],
 	serviceType: 'Preneed Program Audit',
 };
@@ -56,7 +56,7 @@ const serviceJsonLd = {
 					{ title: 'Average Face Amount', desc: 'Are your preneed contracts covering the actual cost of a funeral at your home? Duane compares your average face amount against your average at-need revenue to identify underfunding gaps.', metric: 'vs. at-need revenue' },
 					{ title: 'Lead-to-Sale Conversion', desc: 'How many preneed inquiries actually become funded contracts? A healthy program converts 30-40% of qualified leads. Duane analyzes your pipeline to find where leads are falling off.', metric: 'Target: 30-40%' },
 					{ title: 'Cancellation Rate', desc: 'High cancellation rates signal problems — buyer\'s remorse, inadequate onboarding, poor follow-up, or misaligned expectations. Duane reviews your cancellation data and identifies root causes.', metric: 'Root cause analysis' },
-					{ title: 'Compliance Documentation', desc: 'North Carolina have specific requirements for preneed contracts, disclosures, and trust arrangements. Duane reviews your documentation for gaps that could create regulatory or legal exposure.', metric: 'North Carolina requirements' },
+					{ title: 'Compliance Documentation', desc: 'NC and SC have specific requirements for preneed contracts, disclosures, and trust arrangements. Duane reviews your documentation for gaps that could create regulatory or legal exposure.', metric: 'NC & SC requirements' },
 					{ title: 'Carrier Terms', desc: 'When was the last time you compared your carrier\'s commission structure, policy terms, and trust arrangements against the market? Duane benchmarks your carrier relationship to ensure you\'re getting competitive terms.', metric: 'Market comparison' },
 				].map((item) => (
 					<div class="bg-white rounded-xl p-6 border border-border-light">
