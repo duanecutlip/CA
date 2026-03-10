@@ -107,7 +107,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   // Basics
   {
     question: 'How much does pre-need insurance cost?',
-    answer: 'Most families invest between $3,000 and $15,000, depending on the type of service and level of coverage. The NFDA reports a median funeral cost of $8,300 — but that figure excludes the burial vault, cemetery plot, opening and closing fees, and grave marker, which virtually every family needs. When all expenses are included, North Carolina families typically spend $12,000 to $20,000 on a traditional burial, with many spending closer to $15,000. Pre-need insurance locks in today\'s prices across all of those costs, so your family never pays the difference. Duane will walk you through options that fit your budget — there\'s no pressure and no obligation.',
+    answer: 'Most families invest between $4,000 and $20,000, depending on the type of service and level of coverage. The NFDA reports a median funeral cost of $8,300 — but that figure excludes the burial vault, cemetery plot, opening and closing fees, and grave marker, which virtually every family needs. When all expenses are included, North Carolina families typically spend $12,000 to $20,000 on a traditional burial, with many spending closer to $15,000. Pre-need insurance locks in today\'s prices across all of those costs, so your family never pays the difference. Duane will walk you through options that fit your budget — there\'s no pressure and no obligation.',
     category: 'Costs',
   },
   {
