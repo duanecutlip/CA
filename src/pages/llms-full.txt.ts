@@ -28,7 +28,7 @@ Today, Duane runs his business on a modern AI-powered tech stack — CRM, automa
   sections.push(`## Services
 
 ### Pre-Need Funeral Insurance
-Pre-need insurance is a policy specifically designed to cover funeral and burial expenses. Unlike regular life insurance, pre-need funds are earmarked for funeral costs and go directly to the funeral home — not through probate. The NFDA reports a median funeral cost of $8,300, but that figure excludes vault, cemetery, and marker. All-in, North Carolina families typically spend $12,000 to $20,000. Most families invest between $3,000 and $15,000 in a preneed policy.
+Pre-need insurance is a policy specifically designed to cover funeral and burial expenses. Unlike regular life insurance, pre-need funds are earmarked for funeral costs and go directly to the funeral home — not through probate. The NFDA reports a median funeral cost of $8,300, but that figure excludes vault, cemetery, and marker. All-in, North Carolina families typically spend $12,000 to $20,000. Most families invest between $4,000 and $20,000 in a preneed policy.
 
 ### Celebration of Life Planning
 Personalized celebrations that reflect the unique life of the person being honored. Pre-need insurance ensures every detail is covered — from venue to music to personal touches.
@@ -40,7 +40,7 @@ VA burial benefits cover only $300–$2,000 of funeral costs. Pre-need insurance
 Licensed funeral director staffing for independently-owned NC funeral homes. Overflow coverage, vacation relief, emergency staffing, and pre-need counseling.
 
 ### Pricing
-Most families invest between $3,000 and $15,000 in pre-need insurance. The exact amount depends on the type of service, casket or urn selection, and personal preferences. Duane helps each family find a plan that fits their budget.
+Most families invest between $4,000 and $20,000 in pre-need insurance. The exact amount depends on the type of service, casket or urn selection, and personal preferences. Duane helps each family find a plan that fits their budget.
 
 ## Pre-Need Insurance vs Other Options
 
