@@ -13,6 +13,7 @@ export const NAV_LINKS = [
   { label: 'Learn', href: '/learn' },
   { label: 'About Duane', href: '/about' },
   { label: 'For Professionals', href: '/for-funeral-homes' },
+  { label: 'Get Started', href: '/get-started' },
 ];
 
 export const FOOTER_NAV = {
