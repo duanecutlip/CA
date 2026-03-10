@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../consts';
+
+const title = 'Start Your Pre-Need Plan | Free Intake Form';
+const description = 'Share a few details and Duane will reach out to schedule your free consultation. Serving families across North Carolina since 2006.';
+---
+
+<BaseLayout title={title} description={description}>
+	<Hero
+		variant="interior"
+		title="Start Your Pre-Need Plan"
+		subtitle="Fill out the form below and Duane will call you within one business day — no pressure, no obligation."
+	/>
+
+	<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Get Started' }]} />
+
+	<section class="py-12 md:py-20 bg-warm-white">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+			<!-- Intro card -->
+			<div class="bg-teal-600/8 border border-teal-600/20 rounded-xl p-6 mb-10 flex gap-4">
+				<svg class="w-6 h-6 text-teal-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+				<div>
+					<p class="text-charcoal-700 leading-relaxed">
+						<strong class="text-charcoal-900">What happens next:</strong> After you submit, Duane reviews your information and calls you personally — usually the same or next business day. Most initial calls take about 15 minutes. Nothing is finalized until you're ready.
+					</p>
+					<p class="text-charcoal-500 text-sm mt-2">
+						Questions first? Call Duane directly at <a href={`tel:${PHONE_RAW}`} class="text-teal-600 hover:text-teal-700 font-semibold">{PHONE}</a>.
+					</p>
+				</div>
+			</div>
+
+			<!-- Form -->
+			<form id="intake-form" novalidate class="space-y-10">
+
+				<!-- ── Section 0: Who is filling this out? ── -->
+				<div class="bg-linen rounded-xl p-6 border border-border-light">
+					<h2 class="font-heading text-xl font-bold text-charcoal-900 mb-4">Who is filling out this form?</h2>
+					<div class="space-y-3">
+						<label class="flex items-center gap-3 cursor-pointer">
+							<input type="radio" name="fillingFor" value="self" checked
+								class="w-4 h-4 text-teal-600 accent-teal-600"
+								onchange="togglePOC(this.value)" />
+							<span class="text-charcoal-700">I'm filling this out for myself</span>
+						</label>
+						<label class="flex items-center gap-3 cursor-pointer">
+							<input type="radio" name="fillingFor" value="other"
+								class="w-4 h-4 text-teal-600 accent-teal-600"
+								onchange="togglePOC(this.value)" />
+							<span class="text-charcoal-700">I'm filling this out for a family member or loved one</span>
+						</label>
+					</div>
+				</div>
+
+				<!-- ── Section A: Point of Contact (shown only when "other") ── -->
+				<div id="poc-section" class="hidden bg-linen rounded-xl p-6 border border-teal-600/30">
+					<h2 class="font-heading text-xl font-bold text-charcoal-900 mb-1">Your Contact Information</h2>
+					<p class="text-charcoal-500 text-sm mb-5">Since you're planning on behalf of someone else, Duane will be in touch with you directly.</p>
+					<div class="grid sm:grid-cols-2 gap-5">
+						<div class="sm:col-span-2">
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Your Full Name</label>
+							<input type="text" name="pocName" autocomplete="name"
+								class="form-input w-full" placeholder="Jane Smith" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Your Relationship</label>
+							<input type="text" name="pocRelation" placeholder="e.g. Daughter, Son, Spouse"
+								class="form-input w-full" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Your Phone Number</label>
+							<input type="tel" name="pocPhone" autocomplete="tel"
+								class="form-input w-full" placeholder="(919) 555-0100" />
+						</div>
+						<div class="sm:col-span-2">
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Your Email Address</label>
+							<input type="email" name="pocEmail" autocomplete="email"
+								class="form-input w-full" placeholder="jane@example.com" />
+						</div>
+						<div class="sm:col-span-2">
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Your Address <span class="text-charcoal-400 font-normal">(optional)</span></label>
+							<input type="text" name="pocAddress"
+								class="form-input w-full" placeholder="123 Main St, Raleigh, NC 27601" />
+						</div>
+					</div>
+				</div>
+
+				<!-- ── Section B: About the Person Being Planned For ── -->
+				<div class="bg-linen rounded-xl p-6 border border-border-light">
+					<h2 class="font-heading text-xl font-bold text-charcoal-900 mb-1" id="person-section-title">About You</h2>
+					<p class="text-charcoal-500 text-sm mb-5" id="person-section-sub">Basic information for the pre-need plan.</p>
+					<div class="grid sm:grid-cols-2 gap-5">
+						<div class="sm:col-span-2">
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Full Legal Name <span class="text-burgundy-600">*</span></label>
+							<input type="text" name="fullName" required autocomplete="name"
+								class="form-input w-full" placeholder="Robert James Smith" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Date of Birth <span class="text-burgundy-600">*</span></label>
+							<input type="text" name="dob" required placeholder="MM/DD/YYYY"
+								class="form-input w-full" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Marital Status</label>
+							<select name="maritalStatus" class="form-input w-full">
+								<option value="">Select…</option>
+								<option>Single</option>
+								<option>Married</option>
+								<option>Widowed</option>
+								<option>Divorced</option>
+							</select>
+						</div>
+						<div class="sm:col-span-2">
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Street Address</label>
+							<input type="text" name="address" autocomplete="street-address"
+								class="form-input w-full" placeholder="123 Oak Lane" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">City</label>
+							<input type="text" name="city" autocomplete="address-level2"
+								class="form-input w-full" placeholder="Raleigh" />
+						</div>
+						<div class="grid grid-cols-2 gap-3">
+							<div>
+								<label class="block text-sm font-semibold text-charcoal-700 mb-1">State</label>
+								<input type="text" name="state" value="NC" autocomplete="address-level1"
+									class="form-input w-full" placeholder="NC" />
+							</div>
+							<div>
+								<label class="block text-sm font-semibold text-charcoal-700 mb-1">ZIP</label>
+								<input type="text" name="zip" autocomplete="postal-code"
+									class="form-input w-full" placeholder="27601" />
+							</div>
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">County</label>
+							<input type="text" name="county" class="form-input w-full" placeholder="Wake" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Occupation</label>
+							<input type="text" name="occupation" class="form-input w-full" placeholder="Retired teacher" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Phone <span class="text-burgundy-600">*</span></label>
+							<input type="tel" name="phone" required autocomplete="tel"
+								class="form-input w-full" placeholder="(919) 555-0100" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Cell Phone <span class="text-charcoal-400 font-normal">(if different)</span></label>
+							<input type="tel" name="cell" autocomplete="tel"
+								class="form-input w-full" placeholder="(919) 555-0200" />
+						</div>
+						<div class="sm:col-span-2">
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Email Address <span class="text-burgundy-600">*</span></label>
+							<input type="email" name="email" required autocomplete="email"
+								class="form-input w-full" placeholder="robert@example.com" />
+						</div>
+						<div class="sm:col-span-2">
+							<label class="block text-sm font-semibold text-charcoal-700 mb-2">Military Service</label>
+							<div class="flex gap-6">
+								<label class="flex items-center gap-2 cursor-pointer">
+									<input type="radio" name="military" value="yes" class="w-4 h-4 accent-teal-600" />
+									<span class="text-charcoal-700">Yes, I served</span>
+								</label>
+								<label class="flex items-center gap-2 cursor-pointer">
+									<input type="radio" name="military" value="no" class="w-4 h-4 accent-teal-600" />
+									<span class="text-charcoal-700">No</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ── Section C: Family Information ── -->
+				<div class="bg-linen rounded-xl p-6 border border-border-light">
+					<h2 class="font-heading text-xl font-bold text-charcoal-900 mb-1">Family Information</h2>
+					<p class="text-charcoal-500 text-sm mb-5">Used for the official record and death certificate. All fields optional.</p>
+					<div class="grid sm:grid-cols-2 gap-5">
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Father's Full Name</label>
+							<input type="text" name="fatherName" class="form-input w-full" placeholder="James William Smith" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Mother's Full Name <span class="text-charcoal-400 font-normal">(incl. maiden)</span></label>
+							<input type="text" name="motherName" class="form-input w-full" placeholder="Mary Anne Jones" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Spouse's Name</label>
+							<input type="text" name="spouseName" class="form-input w-full" placeholder="Susan Marie Smith" />
+						</div>
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-1">Children <span class="text-charcoal-400 font-normal">(names, separated by comma)</span></label>
+							<input type="text" name="children" class="form-input w-full" placeholder="Michael, Jennifer, Thomas" />
+						</div>
+					</div>
+				</div>
+
+				<!-- ── Section D: Service Preferences ── -->
+				<div class="bg-linen rounded-xl p-6 border border-border-light">
+					<h2 class="font-heading text-xl font-bold text-charcoal-900 mb-1">Service Preferences</h2>
+					<p class="text-charcoal-500 text-sm mb-5">Nothing is final yet — these help Duane prepare for your consultation.</p>
+					<div class="space-y-5">
+						<div>
+							<label class="block text-sm font-semibold text-charcoal-700 mb-2">Disposition Preference</label>
+							<div class="flex flex-wrap gap-4">
+								{['burial', 'cremation', 'entombment', 'undecided'].map(opt => (
+									<label class="flex items-center gap-2 cursor-pointer">
+										<input type="radio" name="disposition" value={opt} class="w-4 h-4 accent-teal-600" />
+										<span class="text-charcoal-700 capitalize">{opt}</span>
+									</label>
+								))}
+							</div>
+						</div>
+						<div class="grid sm:grid-cols-2 gap-5">
+							<div>
+								<label class="block text-sm font-semibold text-charcoal-700 mb-1">Cemetery Preference <span class="text-charcoal-400 font-normal">(if known)</span></label>
+								<input type="text" name="cemetery" class="form-input w-full" placeholder="Oakwood Cemetery" />
+							</div>
+							<div>
+								<label class="block text-sm font-semibold text-charcoal-700 mb-1">Church / Place of Worship</label>
+								<input type="text" name="church" class="form-input w-full" placeholder="First Baptist Church of Raleigh" />
+							</div>
+							<div>
+								<label class="block text-sm font-semibold text-charcoal-700 mb-1">Minister / Officiant</label>
+								<input type="text" name="minister" class="form-input w-full" placeholder="Rev. John Williams" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ── Section E: Additional Wishes ── -->
+				<div class="bg-linen rounded-xl p-6 border border-border-light">
+					<h2 class="font-heading text-xl font-bold text-charcoal-900 mb-1">Additional Wishes or Notes</h2>
+					<p class="text-charcoal-500 text-sm mb-4">Anything else you'd like Duane to know before your conversation.</p>
+					<textarea name="notes" rows="4" class="form-input w-full resize-none"
+						placeholder="Specific music, readings, charity donations in lieu of flowers, special family circumstances…"></textarea>
+				</div>
+
+				<!-- ── Privacy notice ── -->
+				<p class="text-xs text-charcoal-400 leading-relaxed">
+					Your information is kept strictly private. It will only be used to prepare your personalized pre-need consultation and to fill your planning documents. It will never be shared, sold, or used for marketing.
+				</p>
+
+				<!-- ── Submit ── -->
+				<div>
+					<button type="submit" id="submit-btn"
+						class="w-full sm:w-auto bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-heading font-bold text-lg px-10 py-4 rounded-xl transition-colors focus:outline-none focus:ring-4 focus:ring-teal-600/30 disabled:opacity-60 disabled:cursor-not-allowed">
+						<span id="btn-text">Send My Information to Duane</span>
+					</button>
+					<p class="text-xs text-charcoal-400 mt-3">Duane will call you personally — usually within one business day.</p>
+				</div>
+
+				<!-- ── Success / Error messages ── -->
+				<div id="form-success" class="hidden bg-teal-600/10 border border-teal-600/30 rounded-xl p-6">
+					<div class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-teal-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+						<div>
+							<p class="font-heading font-bold text-charcoal-900">Got it — thank you!</p>
+							<p class="text-charcoal-700 mt-1">Duane received your information and will call you within one business day. If you'd like to reach him sooner, call <a href={`tel:${PHONE_RAW}`} class="text-teal-600 font-semibold">{PHONE}</a>.</p>
+						</div>
+					</div>
+				</div>
+				<div id="form-error" class="hidden bg-burgundy-50 border border-burgundy-200 rounded-xl p-6">
+					<p class="font-heading font-bold text-charcoal-900">Something went wrong</p>
+					<p class="text-charcoal-700 mt-1">Please call Duane directly at <a href={`tel:${PHONE_RAW}`} class="text-teal-600 font-semibold">{PHONE}</a> or email <a href="mailto:duanecutlip@gmail.com" class="text-teal-600 underline">duanecutlip@gmail.com</a>.</p>
+				</div>
+
+			</form>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+.form-input {
+  @apply rounded-lg border border-border-light bg-white px-4 py-3 text-charcoal-900 placeholder:text-charcoal-300
+         focus:outline-none focus:ring-2 focus:ring-teal-600/40 focus:border-teal-600 transition-colors;
+}
+</style>
+
+<script>
+// Toggle POC section and update "About You" heading
+function togglePOC(val) {
+  const poc = document.getElementById('poc-section');
+  const title = document.getElementById('person-section-title');
+  const sub   = document.getElementById('person-section-sub');
+  if (val === 'other') {
+    poc.classList.remove('hidden');
+    title.textContent = 'About the Person Being Planned For';
+    sub.textContent   = 'Basic information for the pre-need plan — for the person whose arrangements are being made.';
+  } else {
+    poc.classList.add('hidden');
+    title.textContent = 'About You';
+    sub.textContent   = 'Basic information for the pre-need plan.';
+  }
+}
+window.togglePOC = togglePOC;
+
+// Form submission
+document.getElementById('intake-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn     = document.getElementById('submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const success = document.getElementById('form-success');
+  const error   = document.getElementById('form-error');
+  const form    = e.target;
+
+  // Basic validation
+  const required = form.querySelectorAll('[required]');
+  let valid = true;
+  required.forEach(el => {
+    el.classList.remove('ring-2', 'ring-burgundy-400', 'border-burgundy-400');
+    if (!el.value.trim()) {
+      el.classList.add('ring-2', 'ring-burgundy-400', 'border-burgundy-400');
+      valid = false;
+    }
+  });
+  if (!valid) {
+    required[0].focus();
+    return;
+  }
+
+  btn.disabled  = true;
+  btnText.textContent = 'Sending…';
+
+  // Collect all form values
+  const fd = new FormData(form);
+  const data = Object.fromEntries(fd.entries());
+
+  try {
+    const res = await fetch('/api/submit-form', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const json = await res.json();
+    if (json.success) {
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+    } else {
+      throw new Error(json.error || 'Unknown error');
+    }
+  } catch (err) {
+    console.error(err);
+    error.classList.remove('hidden');
+    btn.disabled    = false;
+    btnText.textContent = 'Send My Information to Duane';
+  }
+});
+</script>
