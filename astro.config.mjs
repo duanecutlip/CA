@@ -8,7 +8,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://cutlipassociates.com',
+	site: 'https://duanecutlip.com',
 	integrations: [mdx(), sitemap(), react()],
 	vite: {
 		plugins: [tailwindcss()],
