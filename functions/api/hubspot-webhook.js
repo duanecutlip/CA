@@ -12,6 +12,10 @@
  *   HUBSPOT_WEBHOOK_SECRET   — (optional) HubSpot webhook secret for verification
  */
 
+export async function onRequestGet() {
+  return new Response('HubSpot webhook endpoint is active.', { status: 200 });
+}
+
 export async function onRequestPost({ request, env }) {
   // ── Signature verification (optional but recommended) ─────────────────
   const secret = env.HUBSPOT_WEBHOOK_SECRET;
