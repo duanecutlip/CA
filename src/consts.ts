@@ -123,12 +123,12 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'Is pre-need insurance worth it?',
-    answer: 'For most families, absolutely. Funeral costs have risen 40% in the last decade and continue to climb. Pre-need insurance locks in today\'s prices, ensures your wishes are honored exactly as you want, and spares your family from making expensive decisions during the worst week of their lives. It\'s one of the most practical gifts you can give your loved ones.',
+    answer: 'For most families, absolutely. Funeral costs have risen 40% in the last decade and continue to climb. A pre-need plan with an Inflation Proof Guarantee means the funeral home accepts your plan as payment in full for covered services — whatever those services cost when the time comes. It ensures your wishes are honored exactly as you want, and spares your family from making expensive decisions during the worst week of their lives. It\'s one of the most practical gifts you can give your loved ones.',
     category: 'Basics',
   },
   {
-    question: 'Why do I keep seeing much lower figures — like $1,995 cremations or $8,300 funerals?',
-    answer: 'Those figures are real, but they rarely tell the whole story. The NFDA\'s widely-cited $8,300 median covers the funeral home\'s basic service fees and casket — it does not include the burial vault (required by nearly all cemeteries), the cemetery plot, opening and closing fees, or the grave marker. Each of those is a separate line item, and together they typically add $5,000–$10,000 to the total. Direct cremation starting at $1,995 is also a genuine service — but it typically covers transportation, the cremation itself, and return of ashes only. A memorial service, urn, death certificates, and obituary placement are all additional. This isn\'t a criticism of any provider. It\'s simply that the funeral industry has traditionally quoted costs one line item at a time rather than providing a complete picture upfront. Duane believes in giving you all the numbers before you make any decision — because good information makes good decisions.',
+    question: 'Why do advertised funeral prices seem so much lower than what families actually spend?',
+    answer: 'Advertised prices are usually one line item, not a complete arrangement. The NFDA\'s widely-cited $8,300 median covers the funeral home\'s basic service fees and casket — it does not include the burial vault (required by nearly all cemeteries), the cemetery plot, opening and closing fees, or the grave marker. Each of those is a separate line item that can add $5,000–$10,000 or more. Similarly, deeply discounted "direct cremation" services advertised online cover only transportation, the cremation itself, and return of ashes — no service, no gathering, no support. These are offered by discount providers as a stripped-down option, not by the established independent funeral homes Duane works with. Those homes provide complete, dignified arrangements with the professional care families deserve. Duane believes in giving you all the numbers before you make any decision — because good information makes good decisions.',
     category: 'Costs',
   },
   {
