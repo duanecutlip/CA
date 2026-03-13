@@ -108,7 +108,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   // Basics
   {
     question: 'How much does pre-need insurance cost?',
-    answer: 'Most families invest between $4,000 and $20,000, depending on the type of service and level of coverage. The NFDA reports a median funeral cost of $8,300 — but that figure excludes the burial vault, cemetery plot, opening and closing fees, and grave marker, which virtually every family needs. When all expenses are included, North Carolina families typically spend $12,000 to $20,000 on a traditional burial, with many spending closer to $15,000. Pre-need insurance locks in today\'s prices across all of those costs, so your family never pays the difference. Duane will walk you through options that fit your budget — there\'s no pressure and no obligation.',
+    answer: 'Most families invest between $4,000 and $20,000, depending on the type of service and level of coverage. The NFDA reports a median funeral cost of $8,300 — but that figure excludes the burial vault, cemetery plot, opening and closing fees, and grave marker, which virtually every family needs. When all expenses are included, North Carolina families typically spend $12,000 to $20,000 on a traditional burial, with many spending closer to $15,000. With an Inflation Proof Guarantee, the funeral home accepts your plan as payment in full for covered services — so your family never pays the difference on guaranteed items. Duane will walk you through options that fit your budget — there\'s no pressure and no obligation.',
     category: 'Costs',
   },
   {
@@ -313,7 +313,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     county: 'Wake',
     state: 'NC',
     region: 'Wake County',
-    description: 'Holly Springs is consistently ranked among the best places to live in North Carolina for its family-friendly character, excellent schools, and strong sense of community in southwestern Wake County. Most residents are young families and professionals who moved here intentionally — for the neighborhoods, the schools, and the quality of life. That forward-thinking mindset makes pre-need planning a natural fit: lock in today\'s funeral prices, document your wishes, and give your family one less thing to worry about when it matters most.',
+    description: 'Holly Springs is consistently ranked among the best places to live in North Carolina for its family-friendly character, excellent schools, and strong sense of community in southwestern Wake County. Most residents are young families and professionals who moved here intentionally — for the neighborhoods, the schools, and the quality of life. That forward-thinking mindset makes pre-need planning a natural fit: protect your family against rising funeral costs with an Inflation Proof Guarantee, document your wishes, and give your family one less thing to worry about when it matters most.',
     highlights: [
       'Serving families throughout Holly Springs and southwestern Wake County',
       'Understands the forward-planning values of Holly Springs\' young professional community',
@@ -397,7 +397,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     faq: [
       { question: 'Does Duane serve families in Durham, NC?', answer: 'Yes. Durham is a core part of Duane\'s Triangle service area. He works with families across the city — from Brightleaf Square to Southpoint to the Eno River neighborhoods.' },
-      { question: 'How much does a funeral cost in Durham?', answer: 'When all expenses are counted — funeral home fees, burial vault, cemetery plot, opening and closing fees, and grave marker — the true cost of a funeral in the Durham area typically ranges from $12,000 to $20,000. Pre-need insurance locks in today\'s prices so your family is never left covering those costs under pressure.' },
+      { question: 'How much does a funeral cost in Durham?', answer: 'When all expenses are counted — funeral home fees, burial vault, cemetery plot, opening and closing fees, and grave marker — the true cost of a funeral in the Durham area typically ranges from $12,000 to $20,000. With a pre-need plan\'s Inflation Proof Guarantee, the funeral home accepts the plan as payment in full for covered services — so your family is never left covering those costs under pressure.' },
       { question: 'Can Duane coordinate with Durham funeral homes?', answer: 'Absolutely. Duane has relationships with respected funeral homes throughout Durham County and can coordinate your plan with the provider of your choice.' },
     ],
   },
@@ -443,7 +443,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     county: 'Johnston',
     state: 'NC',
     region: 'Johnston County',
-    description: 'Clayton is one of the fastest-growing towns in North Carolina, attracting young families with its revitalized downtown, new neighborhoods, and easy commute to Raleigh. As the community expands rapidly, many families are putting down roots and thinking about long-term planning for the first time. Pre-need insurance is a smart move for Clayton families who want to lock in today\'s prices while the area — and its costs — continue to grow.',
+    description: 'Clayton is one of the fastest-growing towns in North Carolina, attracting young families with its revitalized downtown, new neighborhoods, and easy commute to Raleigh. As the community expands rapidly, many families are putting down roots and thinking about long-term planning for the first time. Pre-need insurance is a smart move for Clayton families who want to protect against rising costs with an Inflation Proof Guarantee — especially while the area continues to grow.',
     highlights: [
       'Serving Clayton\'s rapidly growing community of young families and new homeowners',
       'Convenient for families who commute to Raleigh but call Clayton home',
@@ -451,7 +451,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     faq: [
       { question: 'Does Duane serve Clayton, NC?', answer: 'Yes. Clayton is part of Duane\'s core Triangle-area service territory. He works with families throughout Clayton and the surrounding Johnston County communities.' },
-      { question: 'I\'m young — is it too early for pre-need insurance?', answer: 'Not at all. Younger applicants lock in the lowest premiums and today\'s funeral prices. Many young families in Clayton use pre-need planning as part of their overall financial preparedness — alongside life insurance and a will.' },
+      { question: 'I\'m young — is it too early for pre-need insurance?', answer: 'Not at all. Younger applicants qualify for the lowest premiums and secure coverage with an Inflation Proof Guarantee on covered services. Many young families in Clayton use pre-need planning as part of their overall financial preparedness — alongside life insurance and a will.' },
       { question: 'What funeral homes serve the Clayton area?', answer: 'Several respected funeral homes serve Clayton and Johnston County. Duane can help you evaluate your options and coordinate a plan with the provider that best fits your family.' },
     ],
   },
@@ -487,8 +487,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     faq: [
       { question: 'Does Duane serve families in Sanford, NC?', answer: 'Yes. Duane works with families in Sanford and throughout Lee County. He\'s happy to meet by phone or in person at a time and place that works for you.' },
-      { question: 'How far in advance should I start pre-need planning?', answer: 'There\'s no wrong time to start. Many Sanford families begin planning in their 50s or 60s, but younger families benefit from lower premiums and locked-in prices. The sooner you plan, the more you save.' },
-      { question: 'What funeral costs should Sanford families expect?', answer: 'The all-in cost of a traditional burial in the Sanford area — including funeral home fees, burial vault, cemetery plot, opening and closing fees, and a grave marker — typically ranges from $12,000 to $18,000. Pre-need insurance locks in today\'s prices so your family is never left covering those costs under pressure.' },
+      { question: 'How far in advance should I start pre-need planning?', answer: 'There\'s no wrong time to start. Many Sanford families begin planning in their 50s or 60s, but younger families benefit from lower premiums and an Inflation Proof Guarantee that protects against rising costs. The sooner you plan, the more you save.' },
+      { question: 'What funeral costs should Sanford families expect?', answer: 'The all-in cost of a traditional burial in the Sanford area — including funeral home fees, burial vault, cemetery plot, opening and closing fees, and a grave marker — typically ranges from $12,000 to $18,000. With a pre-need plan\'s Inflation Proof Guarantee, the funeral home accepts the plan as payment in full for covered services — so your family is never left covering those costs under pressure.' },
     ],
   },
   // ── North Carolina — Triangle additions ──
@@ -508,7 +508,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     faq: [
       { question: 'Does Duane serve families in Pittsboro and Chatham County?', answer: 'Yes. Duane actively serves Pittsboro and the greater Chatham County area. Families here have access to something increasingly rare — the ability to pre-plan with an independent, family-owned funeral home right in their own community.' },
-      { question: 'What makes planning in Pittsboro different from other areas?', answer: 'Chatham County families can pre-plan with a respected independent funeral home rather than a corporate-owned chain. That means a more personal experience, genuine community relationships, and a plan that locks in today\'s prices at a provider your family already knows and trusts.' },
+      { question: 'What makes planning in Pittsboro different from other areas?', answer: 'Chatham County families can pre-plan with a respected independent funeral home rather than a corporate-owned chain. That means a more personal experience, genuine community relationships, and a plan with an Inflation Proof Guarantee at a provider your family already knows and trusts.' },
       { question: 'My address is in Apex or Cary but I\'m actually closer to Pittsboro — can Duane help me?', answer: 'Absolutely. Some families on the western edge of Wake County or in the Chapel Hill area find that Pittsboro is actually more convenient. Duane can help you evaluate your options — including pre-planning with a Chatham County funeral home if that\'s the right fit for your family.' },
     ],
   },
