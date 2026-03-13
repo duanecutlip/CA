@@ -1,6 +1,6 @@
-export const SITE_TITLE = 'Cutlip Associates, LLC';
-export const SITE_DESCRIPTION = 'Protect your family from unexpected funeral costs. Duane Cutlip is a Licensed Preneed Funeral Director with nearly 20 years experience serving families across North Carolina. Call (919) 822-2010.';
-export const SITE_URL = 'https://cutlipassociates.com';
+export const SITE_TITLE = 'Duane Cutlip';
+export const SITE_DESCRIPTION = 'Protect your family from unexpected funeral costs. Duane Cutlip is a Preneed Planning Counselor with nearly 20 years experience serving families across North Carolina. Call (919) 822-2010.';
+export const SITE_URL = 'https://duanecutlip.com';
 export const PHONE = '(919) 822-2010';
 export const PHONE_RAW = '9198222010';
 export const EMAIL = 'duane@duanecutlip.com';
