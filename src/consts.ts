@@ -127,6 +127,11 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'Basics',
   },
   {
+    question: 'Why do I keep seeing much lower figures — like $1,995 cremations or $8,300 funerals?',
+    answer: 'Those figures are real, but they rarely tell the whole story. The NFDA\'s widely-cited $8,300 median covers the funeral home\'s basic service fees and casket — it does not include the burial vault (required by nearly all cemeteries), the cemetery plot, opening and closing fees, or the grave marker. Each of those is a separate line item, and together they typically add $5,000–$10,000 to the total. Direct cremation starting at $1,995 is also a genuine service — but it typically covers transportation, the cremation itself, and return of ashes only. A memorial service, urn, death certificates, and obituary placement are all additional. This isn\'t a criticism of any provider. It\'s simply that the funeral industry has traditionally quoted costs one line item at a time rather than providing a complete picture upfront. Duane believes in giving you all the numbers before you make any decision — because good information makes good decisions.',
+    category: 'Costs',
+  },
+  {
     question: 'Can I pay for pre-need insurance in installments?',
     answer: 'Yes. Most pre-need policies offer flexible payment options including monthly, quarterly, or annual payments over 1, 5, or 10 years. Single-pay (lump sum) options are also available and often provide the best value. Duane will help you find a payment schedule that fits comfortably within your budget.',
     category: 'Costs',
@@ -168,7 +173,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'What funeral homes does Duane work with?',
-    answer: 'Duane has long-standing relationships with respected funeral homes throughout North Carolina, including Donaldson Funeral Home & Crematory in Pittsboro, NC. As a Licensed Preneed Funeral Director, he can work with the funeral home of your choice to ensure your plan is honored exactly as written.',
+    answer: 'Duane has long-standing relationships with respected independent funeral homes throughout North Carolina. As a Licensed Preneed Funeral Director, he can work with the funeral home of your choice — or help you find one that fits your family\'s preferences and values. He\'ll discuss your specific situation when you call.',
     category: 'Agent',
   },
   {
