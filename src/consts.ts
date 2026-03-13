@@ -521,12 +521,12 @@ export const SERVICE_AREAS: ServiceArea[] = [
     description: 'Siler City is a proud, tight-knit community in western Chatham County with deep agricultural roots and a strong sense of local identity. Known for its historic main street, its diverse population, and the close community bonds that come with generations of neighbors looking out for one another, Siler City is a place where families take care of each other. Many Siler City families choose to pre-plan with the independent, family-owned funeral home in nearby Pittsboro — just 14 miles east — rather than travel to a corporate chain in a larger city.',
     highlights: [
       'Serving Siler City, Silk Hope, Bonlee, and western Chatham County',
-      'Siler City families are just 14 miles from a respected independent, family-owned funeral home in Pittsboro — pre-need planning locks in those prices today',
+      'Siler City families are just 14 miles from a respected independent, family-owned funeral home in Pittsboro — pre-need planning protects against rising costs with an Inflation Proof Guarantee',
       'No obligation, no pressure — Duane\'s approach respects the values and traditions of Chatham County communities',
     ],
     faq: [
       { question: 'Does Duane serve Siler City?', answer: 'Yes. Duane serves Siler City and western Chatham County. He\'s available by phone or in person at a time and place convenient to you.' },
-      { question: 'Where do most Siler City families plan their funeral services?', answer: 'Many Siler City families choose the independent, family-owned funeral home in nearby Pittsboro — just 14 miles away. Pre-need planning through Duane locks in today\'s prices at that provider so your family faces no surprises.' },
+      { question: 'Where do most Siler City families plan their funeral services?', answer: 'Many Siler City families choose the independent, family-owned funeral home in nearby Pittsboro — just 14 miles away. Pre-need planning through Duane provides an Inflation Proof Guarantee at that provider, so the funeral home accepts the plan as payment in full for covered services and your family faces no surprises.' },
       { question: 'How do I get started with pre-need planning in Siler City?', answer: `Just call Duane at ${PHONE}. He'll have a short conversation to understand your wishes, then walk you through your options with no pressure and no obligation. Most plans are completed within two weeks.` },
     ],
   },
