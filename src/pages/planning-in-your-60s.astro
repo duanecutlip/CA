@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Button from '../components/Button.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../consts';
+
+const title = 'Funeral Pre-Planning in Your 60s | Best Time to Protect Your Family';
+const description = 'Your 60s are the single best window to lock in funeral pre-need insurance. Rates are low, you\'re in control, and your family never has to guess. Duane Cutlip, NC Licensed Preneed Director.';
+const keywords = 'preneed insurance 60s, funeral planning 60s, pre-need funeral plan retirement, funeral planning before you need it, protect family funeral costs NC';
+
+const articleJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	headline: 'Why Your 60s Are the Best Time to Plan Your Funeral',
+	description: description,
+	author: {
+		'@type': 'Person',
+		'@id': `${SITE_URL}/#duane-cutlip`,
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+};
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+	<Hero
+		variant="interior"
+		title="Planning in Your 60s: The Best Window You'll Ever Have"
+		subtitle="You're healthy. You're thinking clearly. Your children are grown. This is exactly the right time — and most people who wait say they wish they hadn't."
+	/>
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Planning in Your 60s' }]} />
+
+		<!-- Why Your 60s -->
+		<section class="mb-16">
+			<SectionHeading title="Why Your 60s Are Different" accent />
+			<div class="space-y-5 text-charcoal-700 leading-relaxed">
+				<p class="text-lg">
+					Most people think about funeral planning the wrong way. They associate it with old age, illness, or the end of life — so they put it off. But the families Duane works with who have no regrets are almost always the ones who planned in their 60s, while they were healthy and unhurried.
+				</p>
+				<p>
+					Here's why your 60s are genuinely different from any other time:
+				</p>
+				<div class="grid md:grid-cols-2 gap-5 my-8">
+					{[
+						{
+							heading: 'Rates are at their lowest',
+							body: 'Pre-need insurance premiums are based on your age and health at the time you apply. A 64-year-old in good health qualifies for significantly lower rates than someone applying at 72 or 78. Waiting costs real money — and that difference is locked in for life.',
+						},
+						{
+							heading: 'Your health is still on your side',
+							body: 'Most people in their 60s qualify for full, day-one coverage — meaning the entire benefit is available from the first premium payment. Health complications that come later can limit your options or require a waiting period before full coverage applies.',
+						},
+						{
+							heading: 'You\'re making decisions clearly',
+							body: 'Planning your own arrangements while you\'re healthy means you\'re in the driver\'s seat — choosing what you want, how you want to be remembered, and where. Decisions made under grief or in a health crisis are rushed, expensive, and often don\'t reflect what anyone would have wanted.',
+						},
+						{
+							heading: 'Your children can\'t argue with what you wrote down',
+							body: 'One of the most painful things that happens without a plan is family conflict. Siblings disagree. No one is sure what Mom or Dad would have wanted. A documented preneed plan removes that burden entirely — your wishes are in writing, and your family can grieve instead of debate.',
+						},
+					].map((item) => (
+						<div class="bg-white rounded-xl p-6 border border-border-light">
+							<h3 class="font-heading font-bold text-charcoal-900 mb-2">{item.heading}</h3>
+							<p class="text-charcoal-500 text-sm leading-relaxed">{item.body}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- What Happens When You Wait -->
+		<section class="mb-16">
+			<SectionHeading title="What Happens When Families Wait" accent />
+			<div class="bg-linen rounded-xl p-8 border border-border-light mb-6">
+				<p class="text-charcoal-700 leading-relaxed mb-4">
+					Duane has seen this play out hundreds of times over nearly two decades. A family waits — for the right time, a better moment, until things settle down. Then one of these happens:
+				</p>
+				<ul class="space-y-3">
+					{[
+						'A health change makes full coverage no longer available — or the premiums jump significantly',
+						'Funeral costs rise (they have increased 40% in the last decade alone), and the price that was reasonable five years ago is now several thousand dollars higher',
+						'A death happens unexpectedly, and children are suddenly making $15,000 decisions while in shock, with 48 hours to finalize everything',
+						'A spouse passes first, leaving the surviving partner to handle their own arrangements alone, still grieving',
+					].map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-burgundy-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+							</svg>
+							<span class="text-charcoal-700 text-sm leading-relaxed">{item}</span>
+						</li>
+					))}
+				</ul>
+				<p class="text-charcoal-500 text-sm mt-4 italic">
+					None of these are hypotheticals. These are the situations Duane is called into every year.
+				</p>
+			</div>
+		</section>
+
+		<!-- The Real Cost Picture -->
+		<section class="mb-16">
+			<SectionHeading title="The Real Cost of a Funeral in North Carolina" accent />
+			<p class="text-charcoal-700 leading-relaxed mb-6">
+				You may have seen cremation advertised for $1,995, or heard that the "average funeral" costs $8,300. Both numbers are real — but they rarely reflect what a family actually pays when all necessary expenses are counted.
+			</p>
+			<div class="bg-white rounded-xl border border-border-light overflow-hidden mb-6">
+				<div class="p-6 border-b border-border-light bg-warm-white">
+					<p class="font-heading font-bold text-charcoal-900">What's typically not included in advertised prices:</p>
+				</div>
+				<div class="divide-y divide-border-light">
+					{[
+						{ item: 'Burial vault (required by nearly all cemeteries)', cost: '$1,000 – $3,500' },
+						{ item: 'Cemetery plot', cost: '$2,000 – $8,000' },
+						{ item: 'Opening & closing fees', cost: '$1,000 – $2,500' },
+						{ item: 'Grave marker / headstone', cost: '$1,500 – $5,000' },
+					].map(({ item, cost }) => (
+						<div class="flex justify-between items-center px-6 py-4">
+							<span class="text-charcoal-700 text-sm">{item}</span>
+							<span class="font-semibold text-charcoal-900 text-sm whitespace-nowrap ml-4">{cost}</span>
+						</div>
+					))}
+				</div>
+			</div>
+			<div class="bg-teal-50 border border-teal-200 rounded-xl p-6">
+				<p class="text-charcoal-700 leading-relaxed">
+					<strong class="text-charcoal-900">When all real expenses are counted</strong>, most North Carolina families spend $12,000–$20,000 on a traditional burial. Pre-need insurance locks in today's prices across all of these expenses — so what you pay now is what your family pays later, regardless of what costs do in the next 10 or 20 years.
+				</p>
+				<p class="text-charcoal-500 text-sm mt-3">
+					<a href="/learn/preneed-insurance-nc" class="text-teal-700 hover:text-teal-800 underline">Learn exactly how pre-need insurance works →</a>
+				</p>
+			</div>
+		</section>
+
+		<!-- What a Preneed Plan Covers -->
+		<section class="mb-16">
+			<SectionHeading title="What Gets Decided — and Documented" accent />
+			<p class="text-charcoal-700 leading-relaxed mb-6">
+				A preneed plan isn't just an insurance policy. It's a complete record of your wishes, kept on file at the funeral home. When the time comes, your family doesn't have to make a single decision they're not sure about.
+			</p>
+			<div class="space-y-3">
+				{[
+					'Service type — traditional burial, graveside, cremation with memorial, celebration of life, or a combination',
+					'Casket or urn selection — your choice, selected and priced at today\'s rates',
+					'Music, readings, flowers — documented to reflect who you are',
+					'Officiant preference — your pastor, a specific minister, or funeral home staff',
+					'Burial location — specific cemetery and plot if desired',
+					'Military or fraternal honors, if applicable',
+					'Personal touches that matter to your family',
+				].map((item) => (
+					<div class="flex items-start gap-3">
+						<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+						<span class="text-charcoal-700">{item}</span>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section class="mb-16">
+			<SectionHeading title="Questions People in Their 60s Ask Duane" accent />
+			<div class="space-y-6">
+				{[
+					{
+						q: 'I\'m perfectly healthy. Isn\'t it too soon?',
+						a: 'That\'s exactly why now is the right time. The best preneed plans are made by people who aren\'t sick and aren\'t in a hurry. You get better rates, full coverage from day one, and the mental clarity to choose exactly what you want. Waiting until you "need to" usually means waiting until circumstances have taken some of those advantages away.',
+					},
+					{
+						q: 'What if I change my mind later?',
+						a: 'Your plan can be modified at any time. Many people make small updates over the years — a new preference for the service, a different cemetery, a different type of casket. North Carolina law also guarantees you the right to transfer your plan to a different funeral home if you move or circumstances change. You are never locked in.',
+					},
+					{
+						q: 'What if I outlive the policy?',
+						a: 'Pre-need insurance doesn\'t expire. There\'s no maximum age at which coverage ends. You pay your premiums (either as a single lump sum or in monthly payments for a set period), coverage continues for your entire life, and the benefit is available whenever it\'s needed — whether that\'s in five years or thirty.',
+					},
+					{
+						q: 'How long does this take?',
+						a: 'Most families complete the entire process in two or three conversations — a 15-minute call to discuss your situation, a follow-up to go over the plan details, and a final review. There\'s no long application process and no medical exam required for most applicants.',
+					},
+					{
+						q: 'Is this just a sales call, or will Duane actually explain my options?',
+						a: 'Duane has built his practice entirely on referrals. He has no interest in pushing products. His goal in every conversation is to make sure you understand your options — including what pre-need does and doesn\'t cover, what questions to ask, and whether a preneed plan or a different approach makes more sense for your situation. Most calls last about 15 minutes.',
+					},
+				].map(({ q, a }) => (
+					<div class="border-b border-border-light pb-6">
+						<h3 class="font-heading font-bold text-charcoal-900 mb-2">{q}</h3>
+						<p class="text-charcoal-600 leading-relaxed">{a}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Personal note from Duane -->
+		<section class="mb-16">
+			<div class="bg-linen rounded-xl p-8 border border-border-light">
+				<blockquote class="text-charcoal-700 leading-relaxed text-lg italic mb-4">
+					"The calls I remember most are the ones from families who got it right. A daughter who tells me her mother had everything planned, and when the time came, all they had to do was grieve and celebrate her life. No arguments. No financial shock. No regrets. Planning in your 60s is how that happens."
+				</blockquote>
+				<p class="text-charcoal-500 text-sm">— Duane Cutlip, Licensed Preneed Funeral Director</p>
+			</div>
+		</section>
+
+		<div class="flex flex-wrap gap-4 not-prose">
+			<Button variant="phone" href={`tel:${PHONE_RAW}`}>
+				Call {PHONE}
+			</Button>
+			<Button variant="primary" href="/contact#schedule">
+				Schedule a Free Call
+			</Button>
+		</div>
+	</div>
+
+	<CTABanner
+		title="The Best Time Is Now"
+		subtitle="A 15-minute call with Duane costs nothing. The peace of mind it gives your family is priceless."
+	/>
+
+	<JsonLd data={articleJsonLd} />
+</BaseLayout>

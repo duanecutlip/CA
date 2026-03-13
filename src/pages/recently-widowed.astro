@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Button from '../components/Button.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { PHONE, PHONE_RAW, SITE_URL } from '../consts';
+
+const title = 'Funeral Pre-Planning After Losing a Spouse | For Recently Widowed';
+const description = 'Many of Duane\'s clients are widows and widowers who want to spare their children from what they just went through. A gentle guide to planning your own arrangements after losing a spouse.';
+const keywords = 'preneed planning widow, funeral planning after spouse dies, recently widowed preneed, preplan funeral widow NC, spare children funeral burden';
+
+const articleJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	headline: 'Pre-Planning Your Own Funeral After Losing a Spouse',
+	description: description,
+	author: {
+		'@type': 'Person',
+		'@id': `${SITE_URL}/#duane-cutlip`,
+		name: 'Duane Cutlip',
+		jobTitle: 'Licensed Preneed Funeral Director',
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: 'Cutlip Associates, LLC',
+		url: SITE_URL,
+	},
+};
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+	<Hero
+		variant="interior"
+		title="For Those Who Have Recently Lost a Spouse"
+		subtitle="Many of the families Duane works with are widows and widowers. They've just been through something hard — and they've decided they want to spare their children from going through it too."
+	/>
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Recently Widowed' }]} />
+
+		<!-- You already know -->
+		<section class="mb-16">
+			<SectionHeading title="You Already Know What This Is Like" accent />
+			<div class="space-y-5 text-charcoal-700 leading-relaxed">
+				<p class="text-lg">
+					When your spouse passed, you were handed a series of decisions that had to be made quickly — in the days immediately following, while you were in shock and grief. Maybe there was a plan. Maybe there wasn't. Either way, you now understand something that most people don't learn until they're standing in that same spot.
+				</p>
+				<p>
+					You know what it costs. You know how fast those decisions have to be made. You know what it means when a family is left guessing — or arguing — about what someone would have wanted.
+				</p>
+				<p>
+					And you've probably thought, at least once: <em>"I don't want my children to have to go through this."</em>
+				</p>
+				<div class="bg-linen rounded-xl p-8 border border-border-light my-6">
+					<p class="text-charcoal-700 leading-relaxed italic text-lg">
+						"Some of my most meaningful conversations are with people who are calling a few months after losing their husband or wife. They're not in a rush. They're not being dramatic. They just know something now that they didn't know before — and they want to handle it while they can."
+					</p>
+					<p class="text-charcoal-500 text-sm mt-3">— Duane Cutlip</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- There's no rush — but there is a window -->
+		<section class="mb-16">
+			<SectionHeading title="There's No Rush — But There Is a Window" accent />
+			<div class="space-y-5 text-charcoal-700 leading-relaxed">
+				<p>
+					There's no right time to make this call. Some people are ready a few months after their loss. Others take a year or two. A few call the same week they start sorting their own paperwork. All of those timelines are completely fine.
+				</p>
+				<p>
+					What Duane will tell you is that the best time to set up a preneed plan is while:
+				</p>
+				<div class="space-y-3 my-6">
+					{[
+						'Your health still qualifies you for full, day-one coverage — so there\'s no waiting period and no additional health requirements',
+						'Funeral costs are at today\'s prices — they\'ve increased 40% in the last decade, and a plan you put in place now locks in today\'s rates',
+						'You\'re thinking clearly and not in crisis — so your wishes are documented exactly as you want them',
+					].map((item) => (
+						<div class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							<span class="text-charcoal-700">{item}</span>
+						</div>
+					))}
+				</div>
+				<p>
+					The window isn't forever. Health can change. Prices will keep rising. But there's no need to rush — a few months from now is perfectly fine, whenever feels right to you.
+				</p>
+			</div>
+		</section>
+
+		<!-- What this does for your children -->
+		<section class="mb-16">
+			<SectionHeading title="What a Plan Does for Your Children" accent />
+			<p class="text-charcoal-700 leading-relaxed mb-6">
+				The most common reason people call Duane after losing a spouse is this: they want to handle things so their children don't have to. Here's what that actually looks like when a plan is in place:
+			</p>
+			<div class="grid md:grid-cols-2 gap-5">
+				{[
+					{
+						heading: 'No financial shock',
+						body: 'Your children won\'t be hit with a $12,000–$20,000 bill in the days immediately following your passing. The plan is funded. Everything is already paid for or locked in at today\'s prices.',
+					},
+					{
+						heading: 'No decisions under grief',
+						body: 'Every detail is already documented — service type, music, burial preferences, readings, flowers. Your children\'s only job is to show up and be together.',
+					},
+					{
+						heading: 'No family conflict',
+						body: 'When there\'s no plan, siblings sometimes disagree about what a parent would have wanted. Your documented wishes remove that conflict entirely. You spoke for yourself.',
+					},
+					{
+						heading: 'No guessing',
+						body: 'Did she want to be cremated or buried? Did he want a church service or something small? What would she have wanted for music? With a plan, those questions are answered.',
+					},
+				].map((item) => (
+					<div class="bg-white rounded-xl p-6 border border-border-light">
+						<h3 class="font-heading font-bold text-charcoal-900 mb-2">{item.heading}</h3>
+						<p class="text-charcoal-500 text-sm leading-relaxed">{item.body}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- What the process looks like -->
+		<section class="mb-16">
+			<SectionHeading title="What the Process Actually Looks Like" accent />
+			<p class="text-charcoal-700 leading-relaxed mb-6">
+				It's simpler than you might expect — and Duane moves at your pace.
+			</p>
+			<div class="space-y-6">
+				{[
+					{
+						step: 'A phone call — no commitment, no pressure',
+						detail: 'The first conversation is just a conversation. Duane listens to your situation, answers your questions, and explains your options. You decide whether and when you want to move forward. There\'s no sales pressure and no obligation.',
+					},
+					{
+						step: 'A personalized plan, built around your wishes',
+						detail: 'If you decide to move forward, Duane helps you document exactly what you want — where, how, and with what details. He takes notes, you review everything, and you approve it. Nothing is finalized until you\'re satisfied.',
+					},
+					{
+						step: 'Paperwork, handled for you',
+						detail: 'The insurance application and funeral home documentation are handled by Duane. You\'re not left with a stack of forms to figure out alone. He walks you through each piece.',
+					},
+					{
+						step: 'Filed and done',
+						detail: 'Your plan is on file at the funeral home. Your family is notified if you\'d like them to be. You\'re done — and you can rest knowing it\'s handled.',
+					},
+				].map((item, i) => (
+					<div class="flex gap-4 items-start">
+						<div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center font-heading font-bold">
+							{i + 1}
+						</div>
+						<div>
+							<h3 class="font-heading font-bold text-charcoal-900 text-lg">{item.step}</h3>
+							<p class="text-charcoal-500 mt-1 leading-relaxed">{item.detail}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section class="mb-16">
+			<SectionHeading title="Common Questions" accent />
+			<div class="space-y-6">
+				{[
+					{
+						q: 'Is it too soon after my spouse\'s passing to think about this?',
+						a: 'There\'s no timeline that\'s too soon or too late. Some people are ready to handle it fairly quickly — especially if they went through a difficult experience with their spouse\'s arrangements. Others need a year or more. Whatever timeline feels right to you is the right timeline. Duane will never rush you.',
+					},
+					{
+						q: 'I\'m worried I\'ll become emotional on the call. Is that okay?',
+						a: 'Completely. Duane has these conversations every week with people who are still grieving. He\'s patient, he\'s in no hurry, and he\'s had plenty of conversations that included tears. There\'s nothing wrong with that — this is about real life.',
+					},
+					{
+						q: 'I don\'t know what I want yet. Can I still call?',
+						a: 'Yes — that\'s what the first call is for. Duane\'s job is to help you understand your options, not to push you toward a specific decision. Many people who call without knowing what they want leave with a much clearer picture. Some are ready to move forward; others want more time to think. Both are fine.',
+					},
+					{
+						q: 'What if my children want to be involved?',
+						a: 'That\'s welcome. Some widows prefer to handle this privately and surprise their children with the news that it\'s done. Others want a child present for the conversation. Either approach is fine — whatever makes you most comfortable.',
+					},
+					{
+						q: 'How do I make sure my children know about the plan when the time comes?',
+						a: 'Duane will help you make sure the right information is documented and accessible. Some families share the details immediately; others keep a copy in a safe place with other important documents. He can walk you through the options so nothing gets lost.',
+					},
+				].map(({ q, a }) => (
+					<div class="border-b border-border-light pb-6">
+						<h3 class="font-heading font-bold text-charcoal-900 mb-2">{q}</h3>
+						<p class="text-charcoal-600 leading-relaxed">{a}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Soft CTA -->
+		<section class="mb-16">
+			<div class="bg-linen rounded-xl p-8 border border-border-light text-center">
+				<h2 class="font-heading text-2xl font-bold text-charcoal-900 mb-3">
+					When You're Ready
+				</h2>
+				<p class="text-charcoal-500 max-w-lg mx-auto mb-6 leading-relaxed">
+					There's no rush. But when you're ready to talk — even just to ask a few questions — Duane answers his own phone. No receptionist, no callback queue. Just a conversation.
+				</p>
+				<div class="flex flex-wrap justify-center gap-4">
+					<Button variant="phone" href={`tel:${PHONE_RAW}`}>
+						Call {PHONE}
+					</Button>
+					<Button variant="primary" href="/contact#schedule">
+						Schedule a Call
+					</Button>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<CTABanner
+		title="You've Already Done the Hard Part"
+		subtitle="You've been through the loss. Handling your own arrangements is how you protect the people you love from going through it the same way."
+	/>
+
+	<JsonLd data={articleJsonLd} />
+</BaseLayout>
