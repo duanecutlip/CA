@@ -72,7 +72,7 @@ const year = new Date().getFullYear();
           >
             {PHONE}
           </a>
-          <p class="text-white/70">{ADDRESS}</p>
+          {ADDRESS && <p class="text-white/70">{ADDRESS}</p>}
           <a href={`mailto:${EMAIL}`} class="text-white/70 hover:text-white transition-colors">
             {EMAIL}
           </a>

@@ -6,7 +6,7 @@ import { marked } from 'marked';
 export async function getStaticPaths() {
 	const localPosts = await getCollection('blog');
 	const localPaths = localPosts.map((entry) => ({
-		params: { slug: entry.slug },
+		params: { slug: entry.id },
 		props: { source: 'local' as const, entry },
 	}));
 

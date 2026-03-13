@@ -3,8 +3,8 @@ export const SITE_DESCRIPTION = 'Protect your family from unexpected funeral cos
 export const SITE_URL = 'https://cutlipassociates.com';
 export const PHONE = '(919) 822-2010';
 export const PHONE_RAW = '9198222010';
-export const EMAIL = 'duane@cutlipassociates.com';
-export const ADDRESS = 'Raleigh-Triangle Area, NC';
+export const EMAIL = 'duane@duanecutlip.com';
+export const ADDRESS = '';
 
 export const NAV_LINKS = [
   { label: 'Plan Ahead', href: '/plan-ahead' },
@@ -593,8 +593,8 @@ export const BENEFITS = [
     icon: 'heart',
   },
   {
-    title: "Lock in Today's Prices",
-    description: 'Funeral costs have risen 40% in the last decade. Pre-need insurance guarantees today\'s prices — no matter when the need arises. Your family will never pay the difference.',
+    title: 'Protection Against Rising Costs',
+    description: 'Funeral costs have risen 40% in the last decade. With an Inflation Proof Guarantee, the funeral home accepts your pre-need plan as payment in full for covered services — no matter when the need arises.',
     icon: 'shield',
   },
   {
