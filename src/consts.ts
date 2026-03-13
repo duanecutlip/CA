@@ -4,7 +4,7 @@ export const SITE_URL = 'https://cutlipassociates.com';
 export const PHONE = '(919) 822-2010';
 export const PHONE_RAW = '9198222010';
 export const EMAIL = 'duane@cutlipassociates.com';
-export const ADDRESS = 'Wendell, NC 27591';
+export const ADDRESS = 'Raleigh-Triangle Area, NC';
 
 export const NAV_LINKS = [
   { label: 'Plan Ahead', href: '/plan-ahead' },
@@ -286,7 +286,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     highlights: [
       'Serving families throughout Knightdale and eastern Wake County',
       'Experienced working with younger families adding pre-need planning to their financial preparation',
-      'Close to Duane\'s Wendell home base — he knows this part of the county well',
+      'Based in East Wake County himself, Duane knows this community and its neighbors well',
     ],
   },
   {
@@ -445,7 +445,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       'Familiar with Johnston County funeral homes and local providers',
     ],
     faq: [
-      { question: 'Does Duane serve Clayton, NC?', answer: 'Yes. Clayton is just minutes from Duane\'s home base in Wendell. He works with families throughout Clayton and the surrounding Johnston County communities.' },
+      { question: 'Does Duane serve Clayton, NC?', answer: 'Yes. Clayton is part of Duane\'s core Triangle-area service territory. He works with families throughout Clayton and the surrounding Johnston County communities.' },
       { question: 'I\'m young — is it too early for pre-need insurance?', answer: 'Not at all. Younger applicants lock in the lowest premiums and today\'s funeral prices. Many young families in Clayton use pre-need planning as part of their overall financial preparedness — alongside life insurance and a will.' },
       { question: 'What funeral homes serve the Clayton area?', answer: 'Several respected funeral homes serve Clayton and Johnston County. Duane can help you evaluate your options and coordinate a plan with the provider that best fits your family.' },
     ],
@@ -489,8 +489,42 @@ export const SERVICE_AREAS: ServiceArea[] = [
   // ── North Carolina — Triangle additions ──
   { name: 'Hillsborough', slug: 'hillsborough', county: 'Orange', state: 'NC', region: 'Triangle' },
   { name: 'Carrboro', slug: 'carrboro', county: 'Orange', state: 'NC', region: 'Triangle' },
-  { name: 'Pittsboro', slug: 'pittsboro', county: 'Chatham', state: 'NC', region: 'Triangle' },
-  { name: 'Siler City', slug: 'siler-city', county: 'Chatham', state: 'NC', region: 'Triangle' },
+  {
+    name: 'Pittsboro',
+    slug: 'pittsboro',
+    county: 'Chatham',
+    state: 'NC',
+    region: 'Triangle',
+    description: 'Pittsboro is the county seat of Chatham County — a growing but still distinctly community-minded town at the meeting point of the Triangle\'s expansion and the state\'s agricultural heartland. With new residential developments like Chatham Park bringing new neighbors alongside families who have been here for generations, Pittsboro has a character that\'s hard to find anywhere else. Families here can plan ahead with a genuine local connection — their pre-need plan ties directly to a respected, independent, family-owned funeral home right in their community, not a corporate chain two counties over.',
+    highlights: [
+      'Pittsboro families can pre-plan with a respected independent, family-owned funeral home — not a corporate chain',
+      'Serving Pittsboro, Moncure, Bynum, Bennett, and all of central Chatham County',
+      'Families in parts of Apex, Cary, and Chapel Hill that are closer to Pittsboro than their nearest funeral home may also benefit — call Duane to discuss',
+    ],
+    faq: [
+      { question: 'Does Duane serve families in Pittsboro and Chatham County?', answer: 'Yes. Duane actively serves Pittsboro and the greater Chatham County area. Families here have access to something increasingly rare — the ability to pre-plan with an independent, family-owned funeral home right in their own community.' },
+      { question: 'What makes planning in Pittsboro different from other areas?', answer: 'Chatham County families can pre-plan with a respected independent funeral home rather than a corporate-owned chain. That means a more personal experience, genuine community relationships, and a plan that locks in today\'s prices at a provider your family already knows and trusts.' },
+      { question: 'My address is in Apex or Cary but I\'m actually closer to Pittsboro — can Duane help me?', answer: 'Absolutely. Some families on the western edge of Wake County or in the Chapel Hill area find that Pittsboro is actually more convenient. Duane can help you evaluate your options — including pre-planning with a Chatham County funeral home if that\'s the right fit for your family.' },
+    ],
+  },
+  {
+    name: 'Siler City',
+    slug: 'siler-city',
+    county: 'Chatham',
+    state: 'NC',
+    region: 'Triangle',
+    description: 'Siler City is a proud, tight-knit community in western Chatham County with deep agricultural roots and a strong sense of local identity. Known for its historic main street, its diverse population, and the close community bonds that come with generations of neighbors looking out for one another, Siler City is a place where families take care of each other. Many Siler City families choose to pre-plan with the independent, family-owned funeral home in nearby Pittsboro — just 14 miles east — rather than travel to a corporate chain in a larger city.',
+    highlights: [
+      'Serving Siler City, Silk Hope, Bonlee, and western Chatham County',
+      'Siler City families are just 14 miles from a respected independent, family-owned funeral home in Pittsboro — pre-need planning locks in those prices today',
+      'No obligation, no pressure — Duane\'s approach respects the values and traditions of Chatham County communities',
+    ],
+    faq: [
+      { question: 'Does Duane serve Siler City?', answer: 'Yes. Duane serves Siler City and western Chatham County. He\'s available by phone or in person at a time and place convenient to you.' },
+      { question: 'Where do most Siler City families plan their funeral services?', answer: 'Many Siler City families choose the independent, family-owned funeral home in nearby Pittsboro — just 14 miles away. Pre-need planning through Duane locks in today\'s prices at that provider so your family faces no surprises.' },
+      { question: 'How do I get started with pre-need planning in Siler City?', answer: `Just call Duane at ${PHONE}. He'll have a short conversation to understand your wishes, then walk you through your options with no pressure and no obligation. Most plans are completed within two weeks.` },
+    ],
+  },
   { name: 'Mebane', slug: 'mebane', county: 'Alamance', state: 'NC', region: 'Triangle' },
   // ── North Carolina — Johnston County additions ──
   { name: 'Selma', slug: 'selma', county: 'Johnston', state: 'NC', region: 'Johnston County' },

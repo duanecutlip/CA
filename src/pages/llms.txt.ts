@@ -11,7 +11,7 @@ export const GET: APIRoute = async () => {
 ## Contact
 - Phone: ${PHONE} (Duane answers personally)
 - Email: duane@cutlipassociates.com
-- Location: Wendell, NC 27591
+- Location: Triangle Area, North Carolina (serves NC and SC statewide)
 - Website: ${SITE_URL}
 
 ## Credentials
