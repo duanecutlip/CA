@@ -1,6 +1,7 @@
 name = "morning-digest"
 main = "src/index.js"
 compatibility_date = "2024-01-01"
+workers_dev = true
 
 [triggers]
 # 12:00 UTC = 7:00 AM EST (Nov-Mar)

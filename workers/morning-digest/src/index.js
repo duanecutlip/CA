@@ -23,6 +23,13 @@ export default {
   // HTTP: handles approve / skip / edit link clicks
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    // Manual trigger for testing — remove after confirming digest works
+    if (url.pathname === '/trigger') {
+      await runDigest(env);
+      return new Response('Digest triggered — check your email.', { status: 200 });
+    }
+
     const parts = url.pathname.split('/').filter(Boolean);
     if (parts.length !== 2) return new Response('Not found', { status: 404 });
 
@@ -72,7 +79,12 @@ async function getContactsDueToday(env, today) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      filterGroups: [{ filters: [{ propertyName: 'next_follow_up_date', operator: 'EQ', value: today }] }],
+      filterGroups: [{
+        filters: [
+          { propertyName: 'next_follow_up_date', operator: 'GTE', value: String(new Date(today + 'T00:00:00Z').getTime()) },
+          { propertyName: 'next_follow_up_date', operator: 'LTE', value: String(new Date(today + 'T23:59:59Z').getTime()) },
+        ]
+      }],
       properties: ['firstname','lastname','phone','email','hs_lead_status','lifecyclestage',
                    'next_follow_up_date','plan_type','funeral_home','lead_source_detail','first_contact_date'],
       sorts: [{ propertyName: 'lastname', direction: 'ASCENDING' }],
