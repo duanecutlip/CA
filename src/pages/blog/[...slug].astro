@@ -1,6 +1,6 @@
 ---
 import BlogPost from '../../layouts/BlogPost.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { marked } from 'marked';
 
 export async function getStaticPaths() {
@@ -40,7 +40,7 @@ if (source === 'local') {
 	pubDate = entry.data.pubDate;
 	updatedDate = entry.data.updatedDate;
 	heroImage = entry.data.heroImage;
-	const rendered = await entry.render();
+	const rendered = await render(entry);
 	Content = rendered.Content;
 } else {
 	const { article } = Astro.props;
