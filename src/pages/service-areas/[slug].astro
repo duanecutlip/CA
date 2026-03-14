@@ -74,7 +74,7 @@ const cityFaqs: Record<string, { question: string; answer: string }[]> = {
   ],
 };
 
-// Use FAQs from consts.ts (SC cities) or from the inline cityFaqs (NC cities)
+// Use FAQs from consts.ts or from the inline cityFaqs above
 const faqs = area.faq || cityFaqs[area.slug] || [];
 
 const localBusinessJsonLd = {
