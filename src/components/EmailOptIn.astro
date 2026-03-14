@@ -1,0 +1,125 @@
+---
+/**
+ * EmailOptIn — soft email opt-in component
+ *
+ * Wiring: Set HUBSPOT_PORTAL_ID and HUBSPOT_FORM_GUID below.
+ * To get your Form GUID:
+ *   1. Go to HubSpot → Marketing → Forms
+ *   2. Create a new form (simple: First Name, Email fields only)
+ *   3. After saving, open the form → Actions → Share → "Embed code"
+ *   4. Copy the formId value from the embed snippet — that is your GUID
+ *   5. Paste it below as HUBSPOT_FORM_GUID
+ */
+
+const HUBSPOT_PORTAL_ID = '1250503';
+const HUBSPOT_FORM_GUID = 'REPLACE_WITH_YOUR_FORM_GUID'; // ← Duane: fill this in from HubSpot
+
+interface Props {
+	context?: string; // optional — e.g. "checklist", "planning-60s" — logged to HubSpot
+}
+const { context = 'general' } = Astro.props;
+---
+
+<section class="py-12 bg-linen border-t border-border-light">
+	<div class="max-w-xl mx-auto px-4 text-center">
+		<p class="font-heading text-xl font-bold text-charcoal-900 mb-2">
+			Want to stay in touch?
+		</p>
+		<p class="text-charcoal-500 leading-relaxed mb-6">
+			Duane occasionally sends short notes to families thinking about planning ahead — honest information, no sales pressure, nothing frequent. Leave your email if you'd like to hear from him.
+		</p>
+
+		<form
+			id={`optin-form-${context}`}
+			class="flex flex-col sm:flex-row gap-3 justify-center"
+			novalidate
+		>
+			<input
+				type="text"
+				name="firstname"
+				placeholder="First name (optional)"
+				class="flex-1 px-4 py-3 rounded-lg border border-border-mid text-charcoal-700 text-base focus:outline-none focus:ring-2 focus:ring-teal-600 bg-white"
+				autocomplete="given-name"
+			/>
+			<input
+				type="email"
+				name="email"
+				required
+				placeholder="Your email address"
+				class="flex-1 px-4 py-3 rounded-lg border border-border-mid text-charcoal-700 text-base focus:outline-none focus:ring-2 focus:ring-teal-600 bg-white"
+				autocomplete="email"
+			/>
+			<button
+				type="submit"
+				class="px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors whitespace-nowrap"
+			>
+				Stay in Touch
+			</button>
+		</form>
+
+		<p id={`optin-success-${context}`} class="hidden text-teal-700 font-medium mt-4">
+			Thank you — Duane will be in touch personally when he has something worth sharing.
+		</p>
+		<p id={`optin-error-${context}`} class="hidden text-burgundy-600 text-sm mt-4">
+			Something went wrong. Please try again or call Duane directly.
+		</p>
+
+		<p class="text-xs text-charcoal-400 mt-4">
+			No spam, ever. Unsubscribe any time. Duane reads every reply personally.
+		</p>
+	</div>
+</section>
+
+<script define:vars={{ HUBSPOT_PORTAL_ID, HUBSPOT_FORM_GUID, context }}>
+	const form = document.getElementById(`optin-form-${context}`);
+	const success = document.getElementById(`optin-success-${context}`);
+	const error = document.getElementById(`optin-error-${context}`);
+
+	if (form) {
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
+			const email = form.querySelector('[name="email"]').value.trim();
+			const firstname = form.querySelector('[name="firstname"]').value.trim();
+
+			if (!email) return;
+
+			// If GUID not yet set, fall back gracefully
+			if (HUBSPOT_FORM_GUID === 'REPLACE_WITH_YOUR_FORM_GUID') {
+				console.warn('EmailOptIn: HubSpot form GUID not yet configured.');
+				success.classList.remove('hidden');
+				form.classList.add('hidden');
+				return;
+			}
+
+			try {
+				const res = await fetch(
+					`https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+					{
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({
+							fields: [
+								{ name: 'email', value: email },
+								...(firstname ? [{ name: 'firstname', value: firstname }] : []),
+							],
+							context: {
+								pageUri: window.location.href,
+								pageName: document.title,
+							},
+						}),
+					}
+				);
+
+				if (res.ok) {
+					form.classList.add('hidden');
+					success.classList.remove('hidden');
+				} else {
+					error.classList.remove('hidden');
+				}
+			} catch {
+				error.classList.remove('hidden');
+			}
+		});
+	}
+</script>

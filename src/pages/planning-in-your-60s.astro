@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Button from '../components/Button.astro';
+import EmailOptIn from '../components/EmailOptIn.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { PHONE, PHONE_RAW, SITE_URL } from '../consts';
 
@@ -37,6 +38,17 @@ const articleJsonLd = {
 		title="Planning in Your 60s: The Best Window You'll Ever Have"
 		subtitle="You're healthy. You're thinking clearly. Your children are grown. This is exactly the right time — and most people who wait say they wish they hadn't."
 	/>
+
+	<section class="py-10 bg-linen border-t border-b border-border-light">
+		<div class="max-w-2xl mx-auto px-4 text-center">
+			<p class="font-heading text-xl font-bold text-charcoal-900 mb-2">Not sure where to start?</p>
+			<p class="text-charcoal-500 mb-5">Download the free Pre-Planning Checklist — a simple guide to the decisions you'll want to make now, so your family never has to make them later.</p>
+			<a href="/resources/pre-planning-checklist" class="inline-block bg-teal-600 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-teal-700 transition-colors">
+				View the Free Pre-Planning Checklist
+			</a>
+			<p class="text-sm text-charcoal-400 mt-3">No form, no obligation — just helpful information. Duane will walk through it with you if you'd like to call.</p>
+		</div>
+	</section>
 
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Planning in Your 60s' }]} />
@@ -203,7 +215,7 @@ const articleJsonLd = {
 					},
 					{
 						q: 'Is this just a sales call, or will Duane actually explain my options?',
-						a: 'Duane has built his practice entirely on referrals. He has no interest in pushing products. His goal in every conversation is to make sure you understand your options — including what pre-need does and doesn\'t cover, what questions to ask, and whether a preneed plan or a different approach makes more sense for your situation. Most calls last about 15 minutes.',
+						a: 'Duane has built his practice entirely on referrals. He has no interest in pushing products. His goal in every conversation is to make sure you understand your options — including what pre-need does and doesn\'t cover, what questions to ask, and whether a preneed plan or a different approach makes more sense for your situation. If he concludes that a preneed plan isn\'t the right fit for your situation, he\'ll tell you that too. Most calls last about 15 minutes.',
 					},
 				].map(({ q, a }) => (
 					<div class="border-b border-border-light pb-6">
@@ -233,6 +245,8 @@ const articleJsonLd = {
 			</Button>
 		</div>
 	</div>
+
+	<EmailOptIn context="planning-60s" />
 
 	<CTABanner
 		title="The Best Time Is Now"
